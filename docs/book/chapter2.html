@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Making Protein Variants – Protein Engineering</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter3.html" rel="next">
+<link href="./chapter1.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-0efda3af7dc20caffb9f21a679dee48f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Making Protein Variants</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Protein Engineering</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setting Protein Engineering Goals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Making Protein Variants</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The logic of protein engineering</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Protein Structure and Molecular Modeling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Engineering More Stable Proteins</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Engineering tighter binding</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#protein-expression-dna-rightarrow-mrna-rightarrow-protein" id="toc-protein-expression-dna-rightarrow-mrna-rightarrow-protein" class="nav-link active" data-scroll-target="#protein-expression-dna-rightarrow-mrna-rightarrow-protein"><span class="header-section-number">2.1</span> Protein expression (DNA <span class="math inline">\(\rightarrow\)</span> mRNA <span class="math inline">\(\rightarrow\)</span> protein)</a></li>
+  <li><a href="#protein-overexpression" id="toc-protein-overexpression" class="nav-link" data-scroll-target="#protein-overexpression"><span class="header-section-number">2.2</span> Protein overexpression</a>
+  <ul class="collapse">
+  <li><a href="#a-better-rna-polymerase" id="toc-a-better-rna-polymerase" class="nav-link" data-scroll-target="#a-better-rna-polymerase"><span class="header-section-number">2.2.1</span> A better RNA polymerase</a></li>
+  <li><a href="#multiple-copies-of-the-target-protein-gene" id="toc-multiple-copies-of-the-target-protein-gene" class="nav-link" data-scroll-target="#multiple-copies-of-the-target-protein-gene"><span class="header-section-number">2.2.2</span> Multiple copies of the target protein gene</a></li>
+  <li><a href="#ribosome-binding-site" id="toc-ribosome-binding-site" class="nav-link" data-scroll-target="#ribosome-binding-site"><span class="header-section-number">2.2.3</span> Ribosome binding site</a></li>
+  </ul></li>
+  <li><a href="#turning-protein-overexpression-on-or-off" id="toc-turning-protein-overexpression-on-or-off" class="nav-link" data-scroll-target="#turning-protein-overexpression-on-or-off"><span class="header-section-number">2.3</span> Turning protein overexpression on or off</a></li>
+  <li><a href="#pet-plasmids" id="toc-pet-plasmids" class="nav-link" data-scroll-target="#pet-plasmids"><span class="header-section-number">2.4</span> pET plasmids</a></li>
+  <li><a href="#site-directed-mutagenesis" id="toc-site-directed-mutagenesis" class="nav-link" data-scroll-target="#site-directed-mutagenesis"><span class="header-section-number">2.5</span> Site-directed mutagenesis</a></li>
+  <li><a href="#template-independent-synthesis-of-dna" id="toc-template-independent-synthesis-of-dna" class="nav-link" data-scroll-target="#template-independent-synthesis-of-dna"><span class="header-section-number">2.6</span> Template-independent synthesis of DNA</a></li>
+  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#answers" id="toc-answers" class="nav-link" data-scroll-target="#answers">Answers</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<style>
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+</style>
+<a href="#quarto-document-content" class="skip-link">Skip to main content</a>
+<div class="betterenzyme-header">
+  <div class="betterenzyme-header-inner">
+    <a class="betterenzyme-title" href="../">Protein Engineering</a>
+    <nav class="betterenzyme-nav">
+      <a href="../">Home</a>
+      <a href="../about/">About</a>
+      <a href="../scripts/">Scripts</a>
+    </nav>
+  </div>
+</div>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Making Protein Variants</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>© 2023-2026 Romas Kazlauskas. All rights reserved. Last revised: March 2026.</p>
+<p><strong>Summary.</strong> Protein expression converts DNA into protein. It involves two steps: the transcription of the coding region of the DNA into mRNA by RNA polymerase followed by the translation of the mRNA into protein by the ribosome. Proteins are manufactured by modification of the natural protein synthesis pathways in microbes like <em>Escherichia coli</em>. The modifications specify the protein to make and increase the amount of protein made. The DNA encoding the target proteins is carried on plasmids which are circular, independently replicating genetic elements. Protein synthesis also requires DNA regions outside the coding sequence to start and stop transcription of the DNA to mRNA and translation of the mRNA to protein. Experimental techniques for construction of plasmids include template-independent DNA synthesis, cutting of DNA with restrictions enzymes and assembly of DNA fragments using the polymerase chain reaction.</p>
+<p><strong>Key learning goals</strong></p>
+<ul>
+<li>Protein overexpression plasmids encode the target proteins, the control elements needed to make large amounts of protein, and other regions required for plasmids to replicate in microbes.</li>
+<li>The main control of protein expression is at transcription of DNA to mRNA step. The <em>lac</em> operator (a region of DNA) and lac repressor (a protein that binds to the <em>lac</em> operator) serve as on/off switches for transcription of DNA to mRNA. Addition of a non-hydrolyzable lactose analog, IPTG, turns on transcription. Other control points are the plasmid copy number and the strength of the ribosome binding site.</li>
+<li>The pET21 plasmid contains the gene encoding the target protein, T7 RNA polymerase promoter &amp; terminator, <em>lac</em> operator, <em>lac</em>I gene and an ampicillin resistance gene. The pET plasmids uses T7 RNA polymerase, which is 5-10-fold more efficient than endogenous <em>E. coli</em> RNA polymerase.</li>
+<li>Site-directed mutagenesis uses the polymerase chain reaction with chemically or enzymatically synthesized DNA fragments (primers) to alter the DNA sequence to encode protein variants.</li>
+</ul>
+<section id="protein-expression-dna-rightarrow-mrna-rightarrow-protein" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="protein-expression-dna-rightarrow-mrna-rightarrow-protein"><span class="header-section-number">2.1</span> Protein expression (DNA <span class="math inline">\(\rightarrow\)</span> mRNA <span class="math inline">\(\rightarrow\)</span> protein)</h2>
+<p>Protein expression is the conversion of a DNA sequence into the corresponding protein. It consists of two steps. First, the DNA encoding the target protein is transcribed into messenger RNA (mRNA) by RNA polymerase. Second, this mRNA is translated into protein by the ribosome.</p>
+<p>In biotechnology, proteins are manufactured by microbes, typically bacteria or yeast, that have been modified to make large amounts of the target protein. In the laboratory, researchers grow these microbes in 2-liter shake flasks containing approximately 400 mL of culture media (a mixture of amino acids, sugars, and other nutrients) in a warm incubator. Industrial manufacture uses large fermenters similar to those in a brewery. The details below refer to protein expression in prokaryotes like <em>Escherichia coli</em>.</p>
+<p>Protein expression requires control elements outside the region that encodes the target protein. One set of control elements bind and release the RNA polymerase that transcribes the DNA, while another set of control elements bind and release the ribosome that translates the genetic code into protein. Thus, the DNA surrounding the gene that encodes the target protein also contains four additional regions (two start signals, two stop signals) outside the DNA sequence that encodes the target protein.</p>
+<p>Transcription starts by binding the RNA polymerase to the double-stranded DNA upstream of the coding sequence, <a href="#fig-DNA_RNA_protein" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>. The recognition site, called the promoter, includes of two regions each 6 bases long. One occurs approximately 10 base pairs upstream of the start codon and the other occurs 35 base pairs upstream of the start codon. The RNA polymerase is larger than this region so that it covers a larger region when it binds - about 40 base pairs upstream and 20 base pairs downstream of the start codon.</p>
+<div id="fig-DNA_RNA_protein" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Flow diagram showing gene expression in three steps. Top: a DNA strand with a promoter region (containing -35 and -10 elements and the +1 transcription start site), a protein coding sequence, and a terminator. An arrow labeled “transcription” points to the mRNA, which shows a ribosome binding region, an overlapping start translation codon, and a stop translation codon. A second arrow labeled “translation” points to a wavy line representing the unfolded protein chain with labeled N- and C-termini. A third arrow labeled “folding” points to an oval representing the folded protein.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-DNA_RNA_protein-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter2/DNA_RNA_protein.svg" class="img-fluid figure-img" alt="Flow diagram showing gene expression in three steps. Top: a DNA strand with a promoter region (containing -35 and -10 elements and the +1 transcription start site), a protein coding sequence, and a terminator. An arrow labeled “transcription” points to the mRNA, which shows a ribosome binding region, an overlapping start translation codon, and a stop translation codon. A second arrow labeled “translation” points to a wavy line representing the unfolded protein chain with labeled N- and C-termini. A third arrow labeled “folding” points to an oval representing the folded protein." width="450">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-DNA_RNA_protein-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Protein expression requires control elements outside the protein coding region. The transcription of DNA into RNA requires an upstream region to bind the RNA polymerase (promoter region) and a downstream region to release the RNA polymerase (terminator region). The promoter region includes two six-base regions at 10 bp upstream and 35 bp upstream that recognize the RNA polymerase. The translation of RNA to protein requires a ribosome binding site, a start codon and a stop codon. Both the RNA polymerase and the ribosome are large molecular machines. Although they recognize and bind to the regions marked, they also cover a much larger region upon binding including part of the protein coding region marked overlap.
+</figcaption>
+</figure>
+</div>
+<p>Upon binding, the RNA polymerase unwinds approximately 16 bases of DNA around the start codon to expose single-stranded DNA as a template for transcription. The RNA polymerase starts the synthesis of an RNA strand that is complementary to the DNA. As the synthesis proceeds the polymerase unwinds the template DNA ahead of it and rewinds the DNA behind it, maintaining an unwound region of about 16 base pairs in the region of transcription.</p>
+<p>RNA synthesis continues until the polymerase encounters a termination signal. Here the transcription stops, the RNA is released from the polymerase, and the polymerase dissociates from its DNA template. The termination signal in <em>E. coli</em> consists of a symmetrical inverted repeat of a GC-rich sequence followed by four or more A residues. Transcription of the GC-rich inverted repeat results in the formation of a segment of RNA that can form a stable stem-loop structure by complementary base pairing. This structure in the RNA disrupts its base pairing with the DNA template, which causes the termination. Termination occurs <em>after</em> the terminator region because it is the RNA, not the DNA that forms the stem-loop structure. The DNA must first be transcribed into RNA to form the stem-loop structure that causes termination.</p>
+<p>Translation starts when the ribosome binds to the mRNA. The ribosome binding site (Shine-Dalgarno sequence) is approximately 8 bases upstream of the start codon (methionine codon), but the ribosome covers a much larger region including the start codon and the beginning of the coding region. Protein synthesis occurs as the ribosome moves along the RNA sequence in groups of three nucleotides and attaches the next amino acid to the growing protein chain. Termination occurs when the ribosome encounters a stop codon and detaches from the RNA and releases the completed protein. Thus, translation requires a ribosome binding site before the coding sequence and a stop codon after the coding region. The start codon, also required, is within the coding region.</p>
+<p>The DNA sequence encoding the control elements for expression of a <span class="math inline">\(\beta\)</span>-lactamase protein, <a href="#fig-bla_DNA_annotated" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>, shows a specific example of these elements.</p>
+<div id="fig-bla_DNA_annotated" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Annotated DNA sequence for a β-lactamase gene: red text marks the -35 and -10 promoter elements upstream of a transcription-start arrow; colored text marks the ribosome binding site and start codon further downstream; the coding sequence ends with a stop codon, and a hairpin (stem-loop-stem) RNA structure diagram below the sequence shows the terminator that halts transcription.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bla_DNA_annotated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter2/bla_DNA_annotated.svg" class="img-fluid figure-img" alt="Annotated DNA sequence for a β-lactamase gene: red text marks the -35 and -10 promoter elements upstream of a transcription-start arrow; colored text marks the ribosome binding site and start codon further downstream; the coding sequence ends with a stop codon, and a hairpin (stem-loop-stem) RNA structure diagram below the sequence shows the terminator that halts transcription." width="450">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bla_DNA_annotated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: DNA sequence for the expression of a <span class="math inline">\(\beta\)</span>-lactamase protein showing the transcription and translation control elements. The -35 and -10 regions (red text) in the promoter bind the endogenous RNA polymerase, but the polymerase extends beyond these regions. The ribosome binds to the ribosome binding site (blue text), but also extends beyond this region. During transcription, the terminator region of the RNA forms the stem-loop-stem structure shown, which releases the mRNA from the polymerase and stops transcription. The DNA does not for the stem-loop-stem structure.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="protein-overexpression" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="protein-overexpression"><span class="header-section-number">2.2</span> Protein overexpression</h2>
+<p>Cells typically make small amounts of each protein, but to manufacture proteins for biotechnology applications one wants to make as much protein as possible. This overproduction of the target protein is called protein overexpression. The two common strategies to increase protein expression are to use a more efficient RNA polymerase and to include multiple copies of the DNA encoding the target protein. These approaches are very effective; up to 50% of the protein in an <em>E. coli</em> culture can be the target protein.</p>
+<section id="a-better-rna-polymerase" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="a-better-rna-polymerase"><span class="header-section-number">2.2.1</span> A better RNA polymerase</h3>
+<p><em>E. coli</em> bacteria contain an endogenous RNA polymerase, but RNA polymerases from bacteriophage are often faster. Bacteriophage RNA polymerases hijack the cellular machinery of the host bacteria to make phage proteins instead of bacterial proteins. The most common replacement polymerase for increased protein expression is the T7 RNA polymerase, which originates from bacteriophage T7. The T7 RNA polymerase catalyzes RNA synthesis 5-10-fold faster than the <em>E. coli</em> RNA polymerase, so more than the normal amount of mRNA will be produced, which will lead to more protein.</p>
+<p>Overexpressing the target protein with T7 RNA polymerase requires a gene that encodes and expresses the T7 RNA polymerase protein. Some strains of <em>E. coli</em> (such as BL21(DE3) and BL21(DE3)pLysS) have been engineered to contain the T7 RNA polymerase gene in their genomic DNA. These strains should be used for protein overexpression that requires the T7 RNA polymerase.</p>
+<p>Overexpressing the target protein with T7 RNA polymerase also requires a different promoter upstream of the target gene so that it binds the T7, not the <em>E. coli</em>, RNA polymerase. The DNA sequence of the T7 promoter differs from the endogenous promoters in <em>E. coli</em>.</p>
+</section>
+<section id="multiple-copies-of-the-target-protein-gene" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="multiple-copies-of-the-target-protein-gene"><span class="header-section-number">2.2.2</span> Multiple copies of the target protein gene</h3>
+<p>A second way to increase the amount of protein is to have many copies of the DNA that encodes the target protein and its control elements. Protein overexpression uses plasmids, which are small (5-10 kb), independently replicating, circular DNA molecules. The pET plasmid, which will be discussed later in this chapter, makes 15-20 copies of itself in <em>E. coli</em>. These multiple copies of the target protein DNA increase the amount of protein that is produced. pET plasmids are classified as low copy number plasmids; some high copy number plasmids make 500-700 copies of themselves in each cell.</p>
+</section>
+<section id="ribosome-binding-site" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="ribosome-binding-site"><span class="header-section-number">2.2.3</span> Ribosome binding site</h3>
+<p>The slow step of translating mRNA into protein is the initiation of protein synthesis, which depends on binding of the ribosome to the ribosome binding site (Shine-Dalgarno sequence). Optimization of the initiation step can include optimizing the distance between the Shine-Dalgarno sequence and the start codon, eliminating any secondary structure in the mRNA that could hinder binding of the ribosome, and adding additional binding elements upstream of the Shine-Dalgarno sequence.<span class="citation" data-cites="salisAutomatedDesignSynthetic2009"><sup>[<a href="#ref-salisAutomatedDesignSynthetic2009" role="doc-biblioref">1</a>]</sup></span></p>
+</section>
+</section>
+<section id="turning-protein-overexpression-on-or-off" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="turning-protein-overexpression-on-or-off"><span class="header-section-number">2.3</span> Turning protein overexpression on or off</h2>
+<p>Strong overexpression of the target protein hinders the growth of microbes. Diverting most of the cell’s energy and resources to synthesis of the target protein can even prevent growth entirely. The solution is to initially turn off the overepression of the target protein to allow the bacteria to grow, then turn it on to produce the protein. During overexpression phase the bacteria no longer multiply, but instead make the target protein. The most commonly used on/off switch is the <em>lac</em> operator.</p>
+<p>The <em>lac</em> operator originates from the lactose operon or <em>lac</em> operon. An operon is a set of genes whose expression is regulated together. The <em>lac</em> operon consists of three structural genes and a <em>lac</em> operator, <a href="#fig-lac_operon" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>. The <em>lac</em> operator is a section of DNA that controls the expression of the three genes by reversibly binding the <em>lac</em> repressor protein, which is encoded by the <em>lac</em>I gene elsewhere in the genome. The <em>lac</em> operator is in the promoter region where the RNA polymerase must bind, so when the <em>lac</em> repressor protein binds to the <em>lac</em> operator, it blocks the RNA polymerase from binding. By default, the expression of the three genes in the lactose operon is off. Binding of allolactose to the <em>lac</em> repressor protein changes its shape so that it dissociates from the <em>lac</em> operator. Expression is now turned on because the RNA polymerase can bind to the promoter.</p>
+<div id="fig-lac_operon" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Diagram of the lac operon: a DNA bar labeled with the CAP binding site, -35/-10 promoter regions, the +1 transcription start, the lac operator, three structural genes (lacZ, lacY, lacA), and a terminator. Below, two cartoons show the lac repressor protein binding the lac operator alone (blocking transcription) versus bound to allolactose (which changes its shape so it releases the operator).">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lac_operon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter2/lac_operon.svg" class="img-fluid figure-img" alt="Diagram of the lac operon: a DNA bar labeled with the CAP binding site, -35/-10 promoter regions, the +1 transcription start, the lac operator, three structural genes (lacZ, lacY, lacA), and a terminator. Below, two cartoons show the lac repressor protein binding the lac operator alone (blocking transcription) versus bound to allolactose (which changes its shape so it releases the operator)." width="450">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lac_operon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: The <em>lac</em> operon consists of three structural genes and control elements that turn on expression of these genes only when lactose is present in the cell. By default the <em>lac</em> repressor protein binds to the <em>lac</em> operator and prevents the RNA polymerase from binding in this region. When allolactose is present, it binds to the <em>lac</em> repressor protein and changes it shape so that it no longer binds to the <em>lac</em> operator. Upon release of the <em>lac</em> repressor protein, the RNA polymerase can bind and start transcription of the three structural genes.
+</figcaption>
+</figure>
+</div>
+<p>The off state of the lactose operator is not perfect. The <em>lac</em> repressor protein sometimes dissociates from the <em>lac</em> operator even with no lactose present leading to leakiness, that is, constant low-level expression. Given the strong expression from the T7 promoter, the imperfect off state can lead to difficulties in cell growth.</p>
+<p>To improve the off state, researchers use a low copy number plasmid and two copies of the <em>lac</em> operator. The low copy number of the plasmid reduces the probability that the <em>lac</em> repressor protein spontaneously dissociates from the <em>lac</em> operator to turn on protein synthesis.</p>
+<p>The two <em>lac</em> operator switches are used to turn off expression of both the target gene and the T7 RNA polymerase gene. Overexpression of the target protein first requires expression of the T7 RNA polymerase. Placing the <em>lac</em> operator in the promoter region blocks this first step. (Expression of the T7 RNA polymerase uses the endogenous <em>E. coli</em> promoter.) The second location for the <em>lac</em> operator is in the T7 promoter region upstream of the target gene. In the no lactose state, the <em>lac</em> repressor protein should prevent expression of the T7 RNA polymerase and of the target protein thus decreasing the leakiness of the off state.</p>
+<p>To further ensure that protein overexpression is turned off, some researcher add a third switch - an inhibitor of the T7 RNA polymerase. This inhibitor is a protein, T7 lysozyme. It requires an additional plasmid, pLysS, that encodes synthesis of the T7 lysozyme protein.</p>
+<p>In the presence of lactose or an analog, the switches are on. Lactose binds to the lactose repressor protein, which changes its shape in a way that releases it from the two <em>lac</em> operators. Upon release of the lactose repressor protein, the endogenous <em>E. coli</em> polymerase binds and starts to transcribe the gene encoding the T7 RNA polymerase. After it is expressed, the T7 RNA polymerase can bind to the promoter upstream of the target gene to initiate protein expression.</p>
+<p>Lactose induces the <em>lac</em> promoter indirectly. Lactose can be isomerized into allolactose, which induces the <em>lac</em> promoter.<span class="citation" data-cites="jobeLacRepressoroperatorInteraction1972"><sup>[<a href="#ref-jobeLacRepressoroperatorInteraction1972" role="doc-biblioref">2</a>]</sup></span> The natural inducer of the <em>lac</em> promoter is likely galactosyl glycerol found in plant galactolipids and common in the diet of ruminants and herbivores,<span class="citation" data-cites="egelLacOperonIrrelevant1988"><sup>[<a href="#ref-egelLacOperonIrrelevant1988" role="doc-biblioref">3</a>]</sup></span> <a href="#fig-lac_inducers" class="quarto-xref">Figure&nbsp;<span>2.4</span></a>.</p>
+<div id="fig-lac_inducers" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Chemical structures of three inducers of the lac promoter: the natural inducer 3-β-D-galactosyl-sn-glycerol; lactose converting via an arrow to its isomer allolactose, the form actually active in cells; and IPTG, a non-hydrolyzable sulfur-linked analog used in the lab — all sharing a galactose ring linked through different groups.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lac_inducers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter2/lac_inducers.svg" class="img-fluid figure-img" alt="Chemical structures of three inducers of the lac promoter: the natural inducer 3-β-D-galactosyl-sn-glycerol; lactose converting via an arrow to its isomer allolactose, the form actually active in cells; and IPTG, a non-hydrolyzable sulfur-linked analog used in the lab — all sharing a galactose ring linked through different groups." width="450">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lac_inducers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.4: Inducers of the <em>lac</em> promoter. The natural inducer is likely galactosyl glycerol found in plant galactolipids. Lactose itself is not an inducer. IPTG is an non-hydrolyzable analog of galactosyl glycerol and is used to induce the <em>lac</em> promoter in biotechnology.
+</figcaption>
+</figure>
+</div>
+<p>For biotechnology applications, researchers use a non-hydrolyzable analog of galactosyl glycerol to induce the <em>lac</em> promoter. Isopropyl β-D-thiogalactopyranoside, IPTG, contains a sulfur atom at the glycosidic link, which prevent hydrolysis. Induction starts upon addition of IPTG and continues indefinitely since the compound does not hydrolyze.</p>
+<p>A less expensive alternative to the <em>lac</em> promoter often used in industry is the <span class="math inline">\(\lambda\)</span> promoter, which is turned on by heating the culture to 42 °C for 30 min instead of adding IPTG.<span class="citation" data-cites="valdez-cruzProductionRecombinantProteins2010"><sup>[<a href="#ref-valdez-cruzProductionRecombinantProteins2010" role="doc-biblioref">4</a>]</sup></span> Initially the culture is grown at 30 °C and a thermolabile variant of the <span class="math inline">\(\lambda\)</span> cI857 repressor protein binds to the operator site of the <span class="math inline">\(\lambda\)</span> promoter and blocks transcription. Upon heating the repressor irreversibly denatures and no longer binds to the operator allowing protein expression to proceed.</p>
+<p>In summary, there are two or three off switches for protein expression using pET plasmids. Two of the off switches are lac operators in the promoter region: one in the T7lac promoter upstream of the coding region on the plasmid and one in the endogenous promoter upstream of the gene for the T7 RNA polymerase on chromosome. Both of these switches control the synthesis of mRNA. The addition of IPTG turns these switches on. The final switch is the low level expression of T7 lysozyme by the pLysS plasmid to inhibit the T7 RNA polymerase. The BL21(DES)pLysS strain of <em>Escherichia coli</em> includes this plasmid.</p>
+<p><a href="#fig-PETase_gene" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> shows an example gene and its associated control elements for expression in <em>Escherichia coli</em>. This coding region encodes a poly(ethyleneterephthalate)-degrading enzyme, a PETase.<span class="citation" data-cites="austinCharacterizationEngineeringPlasticdegrading2018"><sup>[<a href="#ref-austinCharacterizationEngineeringPlasticdegrading2018" role="doc-biblioref">5</a>]</sup></span> The gene originates from the bacterium <em>Ideonella sakaiensis</em>, but the DNA sequence has been optimized for expression in <em>Escherichia coli</em>. This optimization replaces codons that are rarely used in <em>E. coli</em> with a synonymous, more commonly used codon. The start and stop elements for the RNA polymerase are the T7 promoter and the T7 terminator. The T7 promoter contains the <em>lac</em> operator, which serves as an on/off switch. The start elements for translation are the ribosome binding site (T7_trans_en_RBS) and the start codon (ATG) and the stop element for translation is the stop codon (TGA).</p>
+<div id="fig-PETase_gene" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Linear map of the DNA sequence for a PETase expression cassette: the T7 promoter (with the lacO operator overlapping it) and ribosome binding site precede the start codon; the PETase coding region (825 bp omitted for space) is followed by a His-tag coding sequence, a stop codon, and the T7 terminator sequence with its hairpin structure shown beneath the DNA sequence.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-PETase_gene-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter2/PETase_gene.svg" class="img-fluid figure-img" alt="Linear map of the DNA sequence for a PETase expression cassette: the T7 promoter (with the lacO operator overlapping it) and ribosome binding site precede the start codon; the PETase coding region (825 bp omitted for space) is followed by a His-tag coding sequence, a stop codon, and the T7 terminator sequence with its hairpin structure shown beneath the DNA sequence." width="450">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-PETase_gene-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.5: Control elements before and after the DNA encoding a PETase gene (maroon fill). The T7 promoter region binds the T7 RNA polymerase. The <em>lac</em> operator (lacO) is an on/off switch to control expression. The ribosome binding site is labelled T7_trans_en_RBS. The PETase gene is 870 bp long not including the added His-tag; the central 825 bp are not shown to save space. The His-tag encodes a six-histidine C-terminal tag added to the PETase. The T7_terminator forms secondary structures in the RNA that stop the RNA polymerase.
+</figcaption>
+</figure>
+</div>
+<p>The PETase gene contains eight additional amino acid residues at the C-terminus: a linker (not labelled) and a His-tag. The linker (CTCGAG) encodes the dipeptide Leu-Glu, while the His-tag (CACCACCATCACCACCAC) encodes six histidine residues. The addition of six histidine residues to the protein simplifies purification. After protein expression, the mixture of proteins is added to a column containing bound nickel or cobalt ions, which have a high affinity for the imidazole ring of histidine. Most proteins bind poorly to the column and elute quickly, but the His-tagged protein binds tightly. After washing away the unwanted proteins, eluting with a buffer containing imidazole releases the His-tagged protein.</p>
+</section>
+<section id="pet-plasmids" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="pet-plasmids"><span class="header-section-number">2.4</span> pET plasmids</h2>
+<p>The pET family of plasmids are often used for protein overexpression. The pET family of plasmids all use the T7 RNA polymerase (pET stands for <u>p</u>lasmid for <u>E</u>xpression by <u>T</u>7 RNA polymerase), but differ in the some details. The expression plasmid used to make the PETase protein mentioned above is derived from the pET21 plasmid, <a href="#fig-PETase_plasmid" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>. The pET21 plasmid contains an origin of replication, which determines its copy number, and genes to express the lactose repressor protein (<em>lac</em>I), and an ampicillin resistance protein (AmpR). The lactose repressor protein binds to the <em>lac</em> operator to turn off protein expression. The expression of <em>lac</em>I and AmpR are constitutive (always on) at a normal level (the promoters bind the <em>E. coli</em> RNA polymerase).</p>
+<div id="fig-PETase_plasmid" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Circular map of the 6233-bp plasmid pET21b(+)-ls-PETase, showing (clockwise from the T7 lac promoter) the ribosome binding site, PETase gene, His-tag, T7 terminator, ampicillin-resistance gene AmpR, the pMB1 origin of replication, and the lacI gene. An inset shows the chemical structure of ampicillin with its β-lactam ring cleavage site labeled.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-PETase_plasmid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter2/PETase_plasmid.svg" class="img-fluid figure-img" alt="Circular map of the 6233-bp plasmid pET21b(+)-ls-PETase, showing (clockwise from the T7 lac promoter) the ribosome binding site, PETase gene, His-tag, T7 terminator, ampicillin-resistance gene AmpR, the pMB1 origin of replication, and the lacI gene. An inset shows the chemical structure of ampicillin with its β-lactam ring cleavage site labeled." width="400">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-PETase_plasmid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.6: A plasmid derived from pET21 to overexpress the PETase protein in <em>Escherichia coli</em>. This plasmid contains an origin of replication (yellow section) that controls the copy number of the plasmid. The plasmid also expresses the lactose repressor protein (<em>lac</em>I) and the <span class="math inline">\(\beta\)</span>-lactamase (AmpR) at normal levels. The structure of the antibiotic ampicillin is at the upper right.
+</figcaption>
+</figure>
+</div>
+<p>The ampicillin resistance protein or <span class="math inline">\(\beta\)</span>-lactamase is a selectable marker that ensures that only bacteria containing the pET21 plasmid grow in the culture. Researchers add ampicillin to the growth media, which prevents bacterial growth. Bacteria containing the pET21 plasmid express the <span class="math inline">\(\beta\)</span>-lactamase, so they grow in the presence of ampicillin. This expression of the AmpR gene is constitutive and at a normal level. <a href="#fig-bla_DNA_annotated" class="quarto-xref">Figure&nbsp;<span>2.2</span></a> above shows the sequences of control elements for the AmpR gene on a pET21 plasmid.</p>
+<p>The different pET plasmids (about fifty) differ in mainly in the purification tag. The His-tag may be at the N- or C-terminus; it may be removable with a protease if the linker contains a protease-sensitive site. Some plasmids encode a glutathione-S-transferase (GST) purification tag. GST is a 26 kDa protein. It has a high affinity for glutathione and yields higher purity protein than the His-tag. Another family of plasmids used for protein expression are the pBAD plasmids, which use an arabinose promoter, <a href="#tbl-plasmids" class="quarto-xref">Table&nbsp;<span>2.1</span></a>. Protein expression from these plasmids is more tightly controlled than for pET plasmids and can be turned off more completely or tuned to different levels. Protein synthesis is turned on by the addition of different amounts of arabinose.</p>
+<div id="tbl-plasmids" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-plasmids-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.1: Plasmid families used for protein overexpression.
+</figcaption>
+<div aria-describedby="tbl-plasmids-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 30%">
+<col style="width: 31%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th scope="col"><strong>name</strong></th>
+<th scope="col"><strong>antibiotic resistance</strong></th>
+<th scope="col"><strong>origin of replication</strong></th>
+<th scope="col"><strong>promoter, inducer</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>pET</td>
+<td>ampicillin or kanamycin</td>
+<td>pMB1 ori, 15-20 copies per cell</td>
+<td>strong, T7 or T7<em>lac</em>, IPTG</td>
+</tr>
+<tr class="even">
+<td>pBAD</td>
+<td>ampicillin or kanamycin</td>
+<td>p15A ori, 10-12 copies per cell</td>
+<td>tunable, arabinose</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="site-directed-mutagenesis" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="site-directed-mutagenesis"><span class="header-section-number">2.5</span> Site-directed mutagenesis</h2>
+<p>The most common method of protein engineering is site-directed mutagenesis to replace an existing amino acid residue in a protein with a different amino acid that is expected to improve the protein. Site-directed mutagenesis changes the DNA sequence encoding the target protein to encode a different amino acid at the selected location. Although amino acid replacements are the most common change made to improve proteins, one can also insert additional amino acids or delete amino acids using the same methods.</p>
+<p>As an example of site-directed mutagenesis, consider the replacement of methionine 222 with alanine to stabilize subtilisin for use in laundry detergent,<span class="citation" data-cites="estellEngineeringEnzymeSitedirected1985"><sup>[<a href="#ref-estellEngineeringEnzymeSitedirected1985" role="doc-biblioref">6</a>]</sup></span> Fig <a href="#fig-met_to_ala" class="quarto-xref">Figure&nbsp;<span>2.7</span></a>. This replacement required replacing the ATG codon for methionine with GCG to encode alanine. In contrast to methionine, alanine lacks a sulfur atom and is unaffected by bleach. Alanine is also smaller than methionine so it does not hinder access of the substrate to the active site.</p>
+<div id="fig-met_to_ala" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Table comparing DNA and protein sequence before and after site-directed mutagenesis at codon 222: the original sequence encodes …Asn Gly Thr Ser Met Ala Ser Pro…, while the modified sequence changes only the ATG codon to GCG (lowercase indicating the substituted bases), changing the encoded amino acid from Met to Ala; all other residues are unchanged.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-met_to_ala-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter2/met_to_ala.svg" class="img-fluid figure-img" alt="Table comparing DNA and protein sequence before and after site-directed mutagenesis at codon 222: the original sequence encodes …Asn Gly Thr Ser Met Ala Ser Pro…, while the modified sequence changes only the ATG codon to GCG (lowercase indicating the substituted bases), changing the encoded amino acid from Met to Ala; all other residues are unchanged." width="400">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-met_to_ala-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.7: Site-directed mutagenesis to replace methionine at position 222 with alanine involves replacement of two nucleotides in the codon. The original DNA sequence encoding subtilisin (top) specifies methionine at position 222 using the ATG codon. Replacement of this codon with GCG encodes a variant of subtilisin where position 222 is an alanine (bottom). The two substituted nucleotides are shown in lower case.
+</figcaption>
+</figure>
+</div>
+<p>Smith and coworkers first reported site-directed mutagenesis in 1978,<span class="citation" data-cites="hutchison3rdMutagenesisSpecificPosition1978"><sup>[<a href="#ref-hutchison3rdMutagenesisSpecificPosition1978" role="doc-biblioref">7</a>]</sup></span> but advances in molecular biology methods have yielded improved procedures. The section below describes using an inverse polymerase chain reaction (inverse PCR) to replace methionine 222 in subtilisin with alanine. In the original work the researchers at Genentech and Genencor used another method since their experiments were completed before the invention of the polymerase chain reaction.<span class="citation" data-cites="estellEngineeringEnzymeSitedirected1985"><sup>[<a href="#ref-estellEngineeringEnzymeSitedirected1985" role="doc-biblioref">6</a>]</sup></span></p>
+<p>This site-directed mutagenesis method uses an inverse polymerase chain reaction (inverse PCR) to copy the whole plasmid using back-to-back primers,<span class="citation" data-cites="silvaInversePCRPoint2017"><sup>[<a href="#ref-silvaInversePCRPoint2017" role="doc-biblioref">8</a>]</sup></span> <a href="#fig-SDM_inverse_PCR" class="quarto-xref">Figure&nbsp;<span>2.8</span></a>. The primers are designed to bind back-to-back with the DNA synthesis proceeding outward. Since the plasmid is circular, the result is a linear double stranded copy of the plasmid. Copying the whole plasmid avoids the cut and paste steps that complicated older site-directed mutagenesis methods.</p>
+<div id="fig-SDM_inverse_PCR" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Flowchart of site-directed mutagenesis by inverse PCR. A circular plasmid with a target-gene region and two back-to-back primers (one containing a mismatch, marked x) undergoes inverse PCR to produce a linear double-stranded copy containing the mutation, alongside the original circular methylated template. Treatment with kinase, ligase, and a methylation-specific nuclease circularizes the mutant copy (unchanged) while degrading the original methylated template into fragments.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-SDM_inverse_PCR-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter2/SDM_inverse_PCR.svg" class="img-fluid figure-img" alt="Flowchart of site-directed mutagenesis by inverse PCR. A circular plasmid with a target-gene region and two back-to-back primers (one containing a mismatch, marked x) undergoes inverse PCR to produce a linear double-stranded copy containing the mutation, alongside the original circular methylated template. Treatment with kinase, ligase, and a methylation-specific nuclease circularizes the mutant copy (unchanged) while degrading the original methylated template into fragments." width="450">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SDM_inverse_PCR-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.8: Site-directed mutagenesis involves copying the entire plasmid using mutagenic primers followed by a clean-up step. The magenta section represents the target gene for mutagenesis. Extension of two back-to-back primers (black) using the inverse polymerase chain reaction in the direction shown by the arrows yields a linear copy of the plasmid. If one of the primers contains a mismatch (x), then the copies contain this altered DNA sequence. Clean up involves circularization of the linear copies with kinase and ligase enzymes and fragmentation of the original wild type plasmid with a nuclease that only cleaves DNA containing methylation. The wild-type plasmid, prepared by growth in <em>E. coli</em>, contains methylation, but the mutated plasmid, created by the polymerase chain reaction, does not contain methylation, so the nucleases does not fragment it.
+</figcaption>
+</figure>
+</div>
+<p>The DNA primers are single-stranded 20-30 nucleotide long oligomers. The location of the primers should be such that desired mutation (typically 1-3 base changes) lies approximately in the center of one of the primers, which is the mutagenic primer. The mutagenic primer encodes the new DNA sequence; thus several nucleotides are not complementary to the plasmid DNA. One primer is complementary to one DNA strand; the other primer is complementary to the other DNA strand. The primers should have similar melting temperatures and not form dimers with themselves or each other. <a href="#fig-primers_met_to_ala" class="quarto-xref">Figure&nbsp;<span>2.9</span></a> shows an example of primers designed to replace methionine 222 in subtilisin with alanine.</p>
+<div id="fig-primers_met_to_ala" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Diagram of the DNA region around subtilisin codon 222 showing the double-stranded plasmid sequence with the reverse primer (18 nt, no mismatches) annealed to the forward strand and extending leftward, and the forward primer (22 nt, with a two-nucleotide mismatch changing ATG to GCG) annealed to the reverse strand and extending rightward, illustrating the back-to-back primer design for site-directed mutagenesis.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-primers_met_to_ala-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter2/primers_met_to_ala.svg" class="img-fluid figure-img" alt="Diagram of the DNA region around subtilisin codon 222 showing the double-stranded plasmid sequence with the reverse primer (18 nt, no mismatches) annealed to the forward strand and extending leftward, and the forward primer (22 nt, with a two-nucleotide mismatch changing ATG to GCG) annealed to the reverse strand and extending rightward, illustrating the back-to-back primer design for site-directed mutagenesis." width="450">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-primers_met_to_ala-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.9: Mutagenic back-to-back primers to replace methionine 222 in subtilisin with alanine and a section of the circular plasmid DNA sequence. Top: The reverse primer (18 nt, 50% GC, Tm = 63 °C) binds to the forward strand and contains no mutations. DNA polymerase extends this primer to the left generating the complement to the forward strand. In subsequent PCR cycles, this primer extension will also create complements to the mutated forward strand. Bottom: The forward primer (22 nt, 68% GC, Tm = 61 °C) binds to the reverse strand and contains a two-nucleotide mismatch. DNA polymerase extends this primer to the right generating a complement to the reverse strand. Primers were predicted by NEBaseChanger (https://nebasechanger.neb.com).
+</figcaption>
+</figure>
+</div>
+<p>An additional incubation with three enzymes circularizes this linear DNA fragment for insertion and replication in bacteria, <a href="#fig-SDM_inverse_PCR" class="quarto-xref">Figure&nbsp;<span>2.8</span></a>. Simultaneous treatment with a kinase to add a phosphoryl group to the 5’-ends of the PCR products and a ligase to join the two ends yield a circular double stranded DNA. Also in the same reaction, methylation-specific nuclease fragments the original template, which does not contain the mutation. The template DNA is the circular wild-type plasmid isolated from <em>E. coli</em>. When plasmids replicate in <em>E. coli</em>, methyl groups are added to the DNA. The nuclease recognizes and cleaves DNA containing these methyl groups. In contrast, the primers and the DNA synthesized using the polymerase chain reaction do not contain methyl groups and are ignored by this nuclease. The result is a circular copy of the plasmid only containing the altered DNA sequence. Transfer of this plasmid into <em>E. coli</em> allows researchers to grow cells, which then make the variant protein encoded.</p>
+</section>
+<section id="template-independent-synthesis-of-dna" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="template-independent-synthesis-of-dna"><span class="header-section-number">2.6</span> Template-independent synthesis of DNA</h2>
+<p>The site-directed mutagenesis experiment above relies on the ability to synthesize DNA fragments (primers) with a defined sequence. DNA polymerase can synthesize DNA, but only by copying an existing template. To make primers and even entire genes, one needs a template-independent synthesis of DNA.</p>
+<p>The first approach to template-independent DNA synthesis was chemical synthesis.<span class="citation" data-cites="roySynthesisDNARNA2013"><sup>[<a href="#ref-roySynthesisDNARNA2013" role="doc-biblioref">9</a>]</sup></span> This synthesis is relatively complex and involves reactive intermediates and toxic solvents. Researchers normally order the desired sequence from a commercial service. The synthesis starts with a solid silica support. Reagents such as protected nucleoside phosphoramidites are washed over the silica to carry out the multiple steps needed to add each base. The harsh reaction conditions slowly damage the DNA, which caps the length of the DNA to about 200 bases. More recently, researchers have developed enzymatic approaches for the template-independent synthesis of DNA, <a href="#fig-enzym_DNA_synthesis" class="quarto-xref">Figure&nbsp;<span>2.10</span></a>. This enzymatic approach relies on an engineered terminal deoxynucleotidyl transferase (Tdt) for the coupling step. The enzymatic approach generates less waste, can make longer oligonucleotides (&gt;1000 bases) and can make repetitive sequences that the chemical methods cannot.<span class="citation" data-cites="hooseDNASynthesisTechnologies2023"><sup>[<a href="#ref-hooseDNASynthesisTechnologies2023" role="doc-biblioref">10</a>]</sup></span>,<span class="citation" data-cites="seydelDNAWritingTechnologies2023"><sup>[<a href="#ref-seydelDNAWritingTechnologies2023" role="doc-biblioref">11</a>]</sup></span></p>
+<div id="fig-enzym_DNA_synthesis" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Reaction scheme for enzymatic DNA synthesis: a resin-bound uridine nucleoside reacts with a 3'-protected nucleoside triphosphate and the enzyme TdT (coupling step) to extend the chain by one protected nucleotide; a deprotection step exposes the 3'-hydroxyl for the next coupling cycle (repeated up to 300 times); a final cleavage step releases the finished oligonucleotide from the resin bead.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-enzym_DNA_synthesis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter2/enzym_DNA_synthesis.svg" class="img-fluid figure-img" alt="Reaction scheme for enzymatic DNA synthesis: a resin-bound uridine nucleoside reacts with a 3'-protected nucleoside triphosphate and the enzyme TdT (coupling step) to extend the chain by one protected nucleotide; a deprotection step exposes the 3'-hydroxyl for the next coupling cycle (repeated up to 300 times); a final cleavage step releases the finished oligonucleotide from the resin bead." width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-enzym_DNA_synthesis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.10: Enzymatic synthesis of DNA using 3’-protected nucleoside 5’-triphosphates. Synthesis starts at a uridine attached to a resin bead, which provides a place for terminal deoxynucleotidyl transferase (TdT) to bind and a cleavage site once synthesis is complete. TdT ligates the 3’-protected nucleoside 5’-triphosphate to the 3’-terminus of the growing oligonucleotide chain. Washing removes excess reagents and the pyrophosphate by-product of ligation. Deprotection of the 3’-PG exposed the 3’-hydroxyl for the next synthesis cycle. On completion, the oligonucleotide is cleaved from the resin bead by uracil DNA glycosylase.
+</figcaption>
+</figure>
+</div>
+<p>Entire genes and longer fragments can be synthesized by chemical or enzymatic synthesis of 300 bp DNA fragments, followed by joining them to create longer oligonucleotides.<span class="citation" data-cites="gibsonEnzymaticAssemblyDNA2009"><sup>[<a href="#ref-gibsonEnzymaticAssemblyDNA2009" role="doc-biblioref">12</a>]</sup></span> The experimental procedures for the methods described in this chapter be found online or in molecular biology handbooks.<span class="citation" data-cites="greenMolecularCloningLaboratory2012"><sup>[<a href="#ref-greenMolecularCloningLaboratory2012" role="doc-biblioref">13</a>]</sup></span></p>
+</section>
+<section id="glossary" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="glossary">Glossary</h2>
+<dl>
+<dt>Operator</dt>
+<dd>
+is a section of DNA upstream of the a gene that binds a transcription regulator. For example, the <em>lac</em> operator binds the <em>lac</em> repressor protein, which inhibits transcription of the downstream gene.
+</dd>
+<dt>Promoter</dt>
+<dd>
+a region of DNA upstream of a region that encodes one or more proteins. The promoter region binds the RNA polymerase that will transcribe the DNA into mRNA.
+</dd>
+<dt>Plasmid</dt>
+<dd>
+is a circular, independently replicating, DNA within a microbe separate from the chromosomal DNA. For example, pET plasmids are inserted into <em>Escherichia coli</em> to overexpress proteins under the control of a T7 promoter.
+</dd>
+<dt>Primer</dt>
+<dd>
+is a short (10-50 nucleotides), single-stranded DNA fragment. When this fragment bind to a complementary region on a longer DNA fragment, then DNA polymerase can extend the primer making a complementary copy of the longer DNA fragment. If the primer contains a mutation, then the longer copy will also contain that mutation.
+</dd>
+<dt>T7 promoter</dt>
+<dd>
+is a promoter that binds the T7 RNA polymerase, which is more efficient than the endogenous RNA polymerase in <em>Escherichia coli</em>.
+</dd>
+</dl>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-salisAutomatedDesignSynthetic2009" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Salis, H. M., Mirsky, E. A., &amp; Voigt, C. A. (2009). Automated design of synthetic ribosome binding sites to control protein expression. <em>Nat. Biotechnol.</em>, <em>27</em>(10), 946–950. <a href="https://doi.org/10.1038/nbt.1568">https://doi.org/10.1038/nbt.1568</a></div>
+</div>
+<div id="ref-jobeLacRepressoroperatorInteraction1972" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Jobe, A., &amp; Bourgeois, S. (1972). <span><em>lac</em></span> <span class="nocase">Repressor-operator</span> interaction. <span>VI</span>. <span>The</span> natural inducer of the lac operon. <em>J. Mol. Biol.</em>, <em>69</em>(3), 397–408. <a href="https://doi.org/10.1016/0022-2836(72)90253-7">https://doi.org/10.1016/0022-2836(72)90253-7</a></div>
+</div>
+<div id="ref-egelLacOperonIrrelevant1988" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Egel, R. (1988). The ’<span><em>lac</em></span>’ operon - an irrelevant paradox? <em>Trends Genet.</em>, <em>4</em>(2), 31–31. <a href="https://doi.org/10.1016/0168-9525(88)90062-5">https://doi.org/10.1016/0168-9525(88)90062-5</a></div>
+</div>
+<div id="ref-valdez-cruzProductionRecombinantProteins2010" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Valdez-Cruz, N. A., Caspeta, L., Pérez, N. O., Ramírez, O. T., &amp; Trujillo-Roldán, M. A. (2010). Production of recombinant proteins in <span><em>E</em></span><span><em>. Coli</em></span> by the heat inducible expression system based on the phage lambda <span class="nocase">pL</span> and/or <span class="nocase">pR</span> promoters. <em>Microb Cell Fact</em>, <em>9</em>(1), 18. <a href="https://doi.org/10.1186/1475-2859-9-18">https://doi.org/10.1186/1475-2859-9-18</a></div>
+</div>
+<div id="ref-austinCharacterizationEngineeringPlasticdegrading2018" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Austin, H. P., Allen, M. D., Donohoe, B. S., Rorrer, N. A., Kearns, F. L., Silveira, R. L., Pollard, B. C., Dominick, G., Duman, R., El Omari, K., Mykhaylyk, V., Wagner, A., Michener, W. E., Amore, A., Skaf, M. S., Crowley, M. F., Thorne, A. W., Johnson, C. W., Woodcock, H. L., … Beckham, G. T. (2018). Characterization and engineering of a plastic-degrading aromatic polyesterase. <em>Proc. Natl. Acad. Sci. U. S. A.</em>, <em>115</em>(19), E4350–E4357. <a href="https://doi.org/10.1073/pnas.1718804115">https://doi.org/10.1073/pnas.1718804115</a></div>
+</div>
+<div id="ref-estellEngineeringEnzymeSitedirected1985" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Estell, D. A., Graycar, T. P., &amp; Wells, J. A. (1985). Engineering an enzyme by site-directed mutagenesis to be resistant to chemical oxidation. <em>J. Biol. Chem.</em>, <em>260</em>(11), 6518–6521. <a href="https://doi.org/10.1016/S0021-9258(18)88811-1">https://doi.org/10.1016/S0021-9258(18)88811-1</a></div>
+</div>
+<div id="ref-hutchison3rdMutagenesisSpecificPosition1978" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Hutchison 3rd, C. A., Phillips, S., Edgell, M. H., Gillam, S., Jahnke, P., &amp; Smith, M. (1978). Mutagenesis at a specific position in a <span>DNA</span> sequence. <em>J. Biol. Chem.</em>, <em>253</em>(18), 6551–6560. <a href="https://doi.org/10.1016/S0021-9258(19)46967-6">https://doi.org/10.1016/S0021-9258(19)46967-6</a></div>
+</div>
+<div id="ref-silvaInversePCRPoint2017" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Silva, D., Santos, G., Barroca, M., &amp; Collins, T. (2017). Inverse <span>PCR</span> for point mutation introduction. In L. Domingues (Ed.), <em><span>PCR</span>: <span>Methods</span> and <span>Protocols</span></em> (pp. 87–100). Springer New York. <a href="https://doi.org/10.1007/978-1-4939-7060-5_5">https://doi.org/10.1007/978-1-4939-7060-5_5</a></div>
+</div>
+<div id="ref-roySynthesisDNARNA2013" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Roy, S., &amp; Caruthers, M. (2013). Synthesis of <span>DNA</span>/<span>RNA</span> and their analogs via phosphoramidite and <span class="nocase">H-phosphonate</span> chemistries. <em>Molecules</em>, <em>18</em>(11), 14268–14284. <a href="https://doi.org/10.3390/molecules181114268">https://doi.org/10.3390/molecules181114268</a></div>
+</div>
+<div id="ref-hooseDNASynthesisTechnologies2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Hoose, A., Vellacott, R., Storch, M., Freemont, P. S., &amp; Ryadnov, M. G. (2023). <span>DNA</span> synthesis technologies to close the gene writing gap. <em>Nat. Rev. Chem.</em>, <em>7</em>(3), 144–161. <a href="https://doi.org/10.1038/s41570-022-00456-9">https://doi.org/10.1038/s41570-022-00456-9</a></div>
+</div>
+<div id="ref-seydelDNAWritingTechnologies2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Seydel, C. (2023). <span>DNA</span> writing technologies moving toward synthetic genomes. <em>Nat Biotechnol.</em>, <em>41</em>(11), 1504–1509. <a href="https://doi.org/10.1038/s41587-023-02006-0">https://doi.org/10.1038/s41587-023-02006-0</a></div>
+</div>
+<div id="ref-gibsonEnzymaticAssemblyDNA2009" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Gibson, D. G., Young, L., Chuang, R.-Y., Venter, J. C., Hutchison 3rd, C. A., &amp; Smith, H. O. (2009). Enzymatic assembly of <span>DNA</span> molecules up to several hundred kilobases. <em>Nat. Methods</em>, <em>6</em>(5), 343–345. <a href="https://doi.org/10.1038/nmeth.1318">https://doi.org/10.1038/nmeth.1318</a></div>
+</div>
+<div id="ref-greenMolecularCloningLaboratory2012" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Green, M. R., &amp; Sambrook, J. (2012). <em>Molecular <span>Cloning</span>: <span>A Laboratory Manual</span></em> (4th ed.). Cold Spring Harbor Press.</div>
+</div>
+</div>
+</section>
+<section id="problems" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problems">Problems</h2>
+<p>1. Identify whether the items below are proteins, oligonucleotides or small organic molecules. Explain their role in protein overexpression.</p>
+<p><em>lac</em>I gene product, T7 RNA polymerase, <em>lac</em> operator, ampicillin, IPTG, ribosome binding site, stop codon, T7 terminator, His-tag, mutagenic PCR primer, transcription start site</p>
+<p>2. a) Why does DNA transcription stop after the terminator, but mRNA translation stop at the stop codon? b) What problems could arise when using a T7–lac promoter on a high–copy number plasmid? c) Why do researchers put the gene encoding T7 RNA polymerase on the genome instead of on the expression plasmid?</p>
+<p>3. <em>Plain text files</em>. In computing, plain text files are files that contain only text characters including white spaces and punctuation. For example, a plain text file could contain the following FASTA-formatted amino acid sequence for subtilisin:</p>
+<pre><code>&gt;tr|M5B284|M5B284_BACIU Subtilisin OS=Bacillus subtilis OX=1423 GN=aprE
+MRNKKLWISLLFALTLIFTMAFSNMSAQAAGKSSTEKKYIVGFKQTMSAMSSAKKKDVIS
+EKGGKVQKQFKYVNAATATLDEKAVKELKQDPSVAYVEEDHIAHEYAQSVPYGISQIKAP
+ALHSQGYTGSNVKVAVIDSGIDSSHPDLNVRGGASFVPSETNPYQDGSSHGTHVAGTIAA
+LNNSIGVLGVAPSASLYAVKVLDSTGSGQYSWIINGIEWAISNNMDVINMSLGGPSGSTA
+LKTVVDKAVSSGIVVAAAAGNEGSSGSSSTVGYPAKYPSTIAVGAVNSSNQRASFSSAGS
+ELDVMAPGVSIQSTLPGGTYGAYNGTSMATPHVAGAAALILSKHPTWTNAQVRDRLESTA
+TYLGSSFYYGKGLINVEAAAQ</code></pre>
+<p>In contrast, formatted text files include additional characters within the text to indicate font, bold, line spacing, and other information. For example, <code>&lt;b&gt;</code> and <code>&lt;/b&gt;</code> indicate bold in the example below. The program that you use to open this file must know that these formatting characters are not part of the text, but indicate formatting commands. If not, it may misinterpret these characters as data. The same subtilisin sequence with HTML bold tags added to the first line:</p>
+<pre><code>&gt;tr|M5B284|M5B284_BACIU Subtilisin OS=Bacillus subtilis OX=1423 GN=aprE
+&lt;b&gt;MRNKKLWISLLFALTLIFTMAFSNMSAQAAGKSSTEKKYIVGFKQTMSAMSSAKKKDVIS&lt;/b&gt;
+EKGGKVQKQFKYVNAATATLDEKAVKELKQDPSVAYVEEDHIAHEYAQSVPYGISQIKAP
+ALHSQGYTGSNVKVAVIDSGIDSSHPDLNVRGGASFVPSETNPYQDGSSHGTHVAGTIAA
+LNNSIGVLGVAPSASLYAVKVLDSTGSGQYSWIINGIEWAISNNMDVINMSLGGPSGSTA
+LKTVVDKAVSSGIVVAAAAGNEGSSGSSSTVGYPAKYPSTIAVGAVNSSNQRASFSSAGS
+ELDVMAPGVSIQSTLPGGTYGAYNGTSMATPHVAGAAALILSKHPTWTNAQVRDRLESTA
+TYLGSSFYYGKGLINVEAAAQ</code></pre>
+<p>Bioinformatics and protein engineering often use plain text files to store information and commands. You can open plain text files using word processing programs like Word or Pages, but to keep them as plain text files, that is, not add formatting text to them, be sure to use a plain text format when you save them (usually ‘txt’ extension) and not a word processing format (e.g., ‘pages’ or ‘docx’ extension). More commonly researchers use text editor programs, which are programs intended to manipulate plain text files: Mac: TextEdit,<a href="#fn-sym-1" id="fnref-sym-1" class="footnote-ref" role="doc-noteref"><sup>*</sup></a> BBEdit; Windows: Notepad, Textpad; Linux: pico, vim, nano). The next question requires you to work with a plain text file similar to the example above, which is a FASTA format file. FASTA format files are plain text files used to store DNA or amino acid sequences.</p>
+<p><em>Practice:</em> The <code>&lt;b&gt;</code> and <code>&lt;/b&gt;</code> indicate bold in web pages, which use ‘html’ format files. Copy the second amino acid sequence text above into a text editor, save it with the extension ‘html,’ then open that file with a web browser. The <code>&lt;b&gt;</code> and <code>&lt;/b&gt;</code> characters should be hidden and the characters in between should be displayed as bold. Next, change the extension of this file from ‘html’ to ‘txt’ and open with the web browser again. The browser now displays all the characters in the file, but does not show anything in bold. A web browser can read both plain text files and web pages, which have the html format. The file extension tells the browser whether to interpret the characters as text or as formatting information. Most bioinformatics and computational chemistry programs expect text files as input. If the file contains formatting or other codes, they will change the meaning of the file and the program will not accept them.</p>
+<p>4. PCR exponentially amplifies DNA in a sample through repeated cycles of denaturation, primer annealing, and extension. In site-directed mutagenesis using PCR with a mutagenic primer, almost all newly synthesized DNA strands contain the mutation because they either incorporate the mutagenic primer sequence or copy a DNA strand that already contains the mutation (<a href="#fig-PCR_SDM_cycles" class="quarto-xref">Figure&nbsp;<span>2.11</span></a>). In the first cycle, extension from the mutagenic primer yields a daughter strand containing the mutation, while extension from the complementary primer produces a strand without the mutation. In subsequent cycles, the mutagenic primer can anneal to and extend from both wild-type and already-mutated template strands. Non-mutated strands increase only by copying the original wild-type template using the non-mutagenic primer. Each cycle increases the proportion of mutated strands. After approximately 25–35 cycles, nearly every amplified DNA molecule incorporates the mutagenic primer sequence and therefore contains the mutation. The original wild-type template remains as a small fraction of the total (it is not amplified, only diluted by the exponentially increasing mutated products).</p>
+<div id="fig-PCR_SDM_cycles" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Branching diagram tracking DNA strands through three PCR cycles, starting from one template strand with a mutagenic primer (marked x) and one non-mutagenic primer. After cycle 1: 1 mutated and 3 non-mutated strands; after cycle 2: 4 mutated and 4 non-mutated; after cycle 3: 11 mutated and 5 non-mutated, illustrating that mutation-containing strands increase exponentially while non-mutated strands increase only linearly.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-PCR_SDM_cycles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter2/PCR_SDM_cycles.svg" class="img-fluid figure-img" alt="Branching diagram tracking DNA strands through three PCR cycles, starting from one template strand with a mutagenic primer (marked x) and one non-mutagenic primer. After cycle 1: 1 mutated and 3 non-mutated strands; after cycle 2: 4 mutated and 4 non-mutated; after cycle 3: 11 mutated and 5 non-mutated, illustrating that mutation-containing strands increase exponentially while non-mutated strands increase only linearly." width="400">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-PCR_SDM_cycles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.11: Site-directed mutagenesis with the polymerase chain reaction using a mutagenic primer. The mutation is marked by an ‘x.’ Among the PCR-synthesized DNA strands (dark blue), mutation-containing strands increase exponentially (from 1 to 4 to 11), while non-mutated strands increase linearly (from 1 to 2 to 3). The exponential increase in mutated strands results from extending the mutagenic primer and copying existing mutated strands by extensions with the non-mutagenic primer. Non-mutated strands increase linearly because they arise only from copying one of the template strands. The exponential accumulation of mutation-containing strands dilutes the non-mutated strands to insignificance after the typical 30 cycles of PCR.
+</figcaption>
+</figure>
+</div>
+<p>As an exercise, show that the 32 strands after the next cycle (including both template and synthesized strands) would consist of 26 strands with the mutation and 6 strands without the mutation. Further show that 11 of the resulting 16 double-stranded DNA molecules would contain mutations on both strands.</p>
+<p>5. <em>Site-directed mutagenesis.</em> Gluten, a protein found in wheat, rye, and barley, contains a high proportion of proline and glutamine. Digestive proteases cleave gluten to oligopeptides enriched in the dipeptide sequence proline-glutamine because peptides containing this sequence are resistant to digestive proteases. In celiac disease patients, these oligopeptides are believed to trigger an autoimmune response, which causes diarrhea and other gastrointestinal problems. One potential solution is adding a protease that can degrade Pro-Gln containing peptide to the meals of celiac patients. Gordon and coworkers describe protein engineering to create such a protease, which they called KumaMAX.<a href="#fn-sym-2" id="fnref-sym-2" class="footnote-ref" role="doc-noteref"><sup>†</sup></a> You do not need to read that paper to answer this question. Some of the authors of that paper formed the company PvP Biologics to further improve KumaMAX. Recently this improved protease passed Phase I clinical trials and in 2020 Takeda Pharmaceutical Company acquired PvP Biologics. In the future (after 2025), it may be a treatment for celiac disease.</p>
+<p>KumaMAX contains seven amino acid substitutions as compared to KumaWT. This question focuses on the Gly319Ser substitution, which contributes to the switch in selectivity from Arg/Lys to Gln by decreasing the amount of space available and by adding a hydrogen bond partner for Gln.</p>
+<ol type="a">
+<li><p><em>Find the DNA sequence for KumaWT in GenBank.</em> GenBank is found at <a href="https://www.ncbi.nlm.nih.gov/nuccore/" class="uri">https://www.ncbi.nlm.nih.gov/nuccore/</a>. Search for kumamolisin; the sequence should be the first hit. The enzyme is synthesized as a 552 amino acid residue precursor, which corresponds to 552 <span class="math inline">\(\cdot\)</span> 3 = 1656 nucleotides. The DNA sequence contains 5841 nucleotides, so we must find the section that codes for the protein. In the search results, click on the text ‘GenBank’ below the name of the gene. This page contains the DNA sequence and information about the DNA sequence. In the ‘FEATURES’ section, it mentions that the coding region (CDS) corresponds to nucleotides 2940 to 4598. How many nucleotides does that correspond to? (Your answer should be a number.) Why does that number not match <span class="math inline">\(552 \cdot 3\)</span>? <em>Hint:</em> The length of an amino acid or nucleotide sequence is last_number – first_number + 1. The ‘+ 1’ is needed to include the starting amino acid or nucleotide. For example, a sequence of five nucleotides numbered 1 through 5 has a length of 5 - 1 + 1 = 5.</p></li>
+<li><p><em>Save the coding region as a FASTA-formatted file on your computer.</em> Click on the text ‘CDS’ in the features section to show the DNA sequence with the coding region highlighted. On this page, click on ‘FASTA’ at the bottom right (near the pop-up with the translation to amino acids) to view only the coding region in FASTA format. FASTA-formatted files are plain text files, often named using .txt or .fasta as the extension, but this extension is not required. The FASTA format requires at least two lines. The first line starts with ‘<code>&gt;</code>’ (greater than symbol) and contains a description of the sequence. This line is followed by one or more lines containing single-letter codes for the amino acid or nucleotide sequence. Copy and paste the FASTA file into an empty text file on your computer. Save the file with the name ‘KumaWT.fasta’. (Do not copy the entire page; only the FASTA part.) Your file should contain about 1660 nucleotides, not about 5800. It must be a text file.</p></li>
+<li><p>Design primers for site directed mutagenesis of Gly319 to Ser in KumaWT using the web tool NEBaseChanger (<a href="https://nebasechanger.neb.com" class="uri">https://nebasechanger.neb.com</a>). Upload the KumaWT.fasta file in the ‘enter your sequence’ section and G319S in the ‘select input mode and set mutations’ section. Keep the other entries at default values, then click ‘build primers’. What is the DNA sequence that codes for Gly318Gly319Pro320? What will be the new sequence that encodes Gly318Ser319Pro320?</p></li>
+<li><p>Sketch a diagram of how the primers will bind to a circular plasmid containing this gene; include the sequence of the primers in your diagram oriented correctly and indicate the direction of DNA synthesis.</p></li>
+</ol>
+</section>
+<section id="answers" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="answers">Answers</h2>
+<details><summary>Click to show answers</summary>
+<p>1. oligonucleotides: ribosome binding site (RNA), stop codon (RNA), <em>lac</em> operator (DNA), T7 terminator (DNA), transcription start site (DNA)</p>
+<p>proteins: <em>lac</em>I gene product, T7 RNA polymerase, His-tag (part of a protein)</p>
+<p>small molecules: ampicillin, IPTG</p>
+<p>2. a) In bacteria, transcription termination requires that the RNA polymerase transcribe through the terminator sequence to produce the RNA hairpin and poly-U tract. This RNA secondary structure destabilizes the RNA–DNA hybrid and causes polymerase dissociation. Because the RNA structure only forms after the terminator has been transcribed, transcription stops after the terminator. By contrast, in translation, a stop codon is not decoded into an amino acid but instead recruits release factors that trigger termination. Thus translation ends at the stop codon. b) The lac operator is leaky, so some transcription occurs even without IPTG induction. On a high–copy plasmid, many T7 promoters combined with leaky expression can produce enough toxic or burdensome protein to overwhelm host metabolism and inhibit growth. c) Placing the T7 RNA polymerase gene in the chromosome limits its copy number to one (two during replication). If it were carried on a plasmid, the multiple copies would amplify leaky expression from the T7–lac promoter, leading to uncontrolled polymerase production, runaway target gene expression, and severe metabolic stress.</p>
+<p>5. a) 4598 - 2940 + 1 = 1659. The extra three nucleotides in the DNA sequence encode the stop codon.</p>
+<ol start="2" type="a">
+<li>text file containing the text below</li>
+</ol>
+<pre><code>&gt;AB070740.2:2940-4598 Bacillus sp. MN-32 kscp gene for kuma ...
+ATGAGCGACATGGAGAAGCCTTGGAAGGAAGAGGAGAAGCGCGAGGTCCTCGCGGGACACGCTCGCAGGC
+AGGCGCCGCAGGCTGTCGATAAGGGACCGGTGACCGGGGACCAGCGGATTTCCGTTACGGTCGTGCTGCG
+CCGCCAACGAGGCGATGAACTCGAGGCGCATGTGGAACGCCAGGCCGCGCTCGCACCTCACGCGCGAGTG
+CATCTGGAGCGAGAAGCGTTTGCCGCTTCGCACGGCGCTTCGCTCGACGACTTTGCGGAGATTCGAAAGT
+TCGCGGAAGCGCACGGGCTCACGCTCGATCGCGCCCACGTGGCTGCGGGCACCGCGGTGCTGAGCGGCCC
+GGTGGACGCCGTTAACCAAGCGTTTGGGGTCGAGTTGCGCCATTTCGATCATCCAGACGGATCCTATCGA
+AGCTACGTCGGCGACGTGCGTGTGCCGGCTTCCATCGCGCCTCTGATTGAAGCGGTGTTTGGCCTGGACA
+CGCGCCCGGTGGCGCGGCCCCACTTTCGGCTGCGGAGGCGCGCCGAGGGCGAGTTTGAGGCGAGATCGCA
+GTCCGCGGCGCCGACTGCGTACACGCCGCTCGACGTCGCGCAGGCGTACCAATTTCCCGAGGGGCTCGAC</code></pre>
+<p>plus 15 more lines</p>
+<ol start="3" type="a">
+<li></li>
+</ol>
+<pre><code>GGTGGCCCT and GGTagcCCT
+GlyGlyPro      GlySerPro</code></pre>
+<ol start="4" type="a">
+<li>answer should also show a circular diagram.</li>
+</ol>
+<pre><code>&lt;-- cggcaggtagcacaggta
+5'- GCCGTCCATCGTGTCCATCAGCTGGGGTGGCCCTGAGGACA
+3'- CGGCAGGTAGCACAGGTAGTCGACCCCACCGGGACTCCTGT
+                      cagctggggtagccctgaggaca --&gt;</code></pre>
+</details>
+
+
+<hr>
+<div id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<div id="fn-sym-1" role="doc-endnote">
+<p><sup>*</sup> Unfortunately, the default settings use rich text formatting which includes formatting characters. Change the default by selecting Format → Make Plain Text option in the menu bar. This change will also set the extension of files saved in the future to ‘.txt’ from the default ‘.rtf’.<a href="#fnref-sym-1" class="footnote-back" role="doc-backlink">↩︎</a></p>
+</div>
+<div id="fn-sym-2" role="doc-endnote">
+<p><sup>†</sup> Gordon <em>et al.</em> (2012) Computational design of an α-gliadin peptidase. <em>J. Am. Chem. Soc.</em> <strong>134</strong>, 20513; <a href="https://doi.org/10.1021/ja3094795" class="uri">https://doi.org/10.1021/ja3094795</a><a href="#fnref-sym-2" class="footnote-back" role="doc-backlink">↩︎</a></p>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter1.html" class="pagination-link" aria-label="Setting Protein Engineering Goals">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setting Protein Engineering Goals</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter3.html" class="pagination-link" aria-label="The logic of protein engineering">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The logic of protein engineering</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

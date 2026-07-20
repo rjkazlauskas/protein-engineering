@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Engineering tighter binding – Protein Engineering</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter5.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-0efda3af7dc20caffb9f21a679dee48f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Engineering tighter binding</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Protein Engineering</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setting Protein Engineering Goals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Making Protein Variants</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The logic of protein engineering</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Protein Structure and Molecular Modeling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Engineering More Stable Proteins</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Engineering tighter binding</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">6.1</span> Introduction</a></li>
+  <li><a href="#measuring-binding" id="toc-measuring-binding" class="nav-link" data-scroll-target="#measuring-binding"><span class="header-section-number">6.2</span> Measuring binding</a></li>
+  <li><a href="#engineering-tighter-binding" id="toc-engineering-tighter-binding" class="nav-link" data-scroll-target="#engineering-tighter-binding"><span class="header-section-number">6.3</span> Engineering tighter binding</a></li>
+  <li><a href="#computational-design-of-tighter-binding" id="toc-computational-design-of-tighter-binding" class="nav-link" data-scroll-target="#computational-design-of-tighter-binding"><span class="header-section-number">6.4</span> Computational design of tighter binding</a></li>
+  <li><a href="#selective-binding" id="toc-selective-binding" class="nav-link" data-scroll-target="#selective-binding"><span class="header-section-number">6.5</span> Selective binding</a></li>
+  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#supporting-information" id="toc-supporting-information" class="nav-link" data-scroll-target="#supporting-information">Supporting Information</a></li>
+  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#answers" id="toc-answers" class="nav-link" data-scroll-target="#answers">Answers</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<style>
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+</style>
+<a href="#quarto-document-content" class="skip-link">Skip to main content</a>
+<div class="betterenzyme-header">
+  <div class="betterenzyme-header-inner">
+    <a class="betterenzyme-title" href="../">Protein Engineering</a>
+    <nav class="betterenzyme-nav">
+      <a href="../">Home</a>
+      <a href="../about/">About</a>
+      <a href="../scripts/">Scripts</a>
+    </nav>
+  </div>
+</div>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Engineering tighter binding</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>© 2023-2026 Romas Kazlauskas. All rights reserved. Last revised: March 2026.</p>
+<p><strong>Summary.</strong> Tighter binding of proteins like antibodies to their target can increase the therapeutic effectiveness of biopharmaceuticals and lower the detection limits of diagnostic tests. Engineering a tighter-binding protein involves increasing the complementarity between the protein binding site and target. Both the shapes of the interacting surfaces and non-covalent interactions between them should match.</p>
+<p><strong>Key learning goals</strong></p>
+<ul>
+<li>The relative stabilities of the bound state, where the protein and ligand interact with each other, and unbound state, where the protein and ligand interact with water, determine the strength of binding. Non-covalent interactions between the binding site and ligand favor the bound state, while solvation of the binding site and ligand favors the unbound state.</li>
+<li>Equilibrium dissociation constants, <span class="math inline">\(K_d\)</span>, which have units of molarity, reveal the binding strength. <span class="math inline">\(K_d\)</span> corresponds to the target concentration where half of the protein is bound to a ligand. Lower dissociation constants indicate tighter binding. Equilibrium dialysis is one technique to measure equilibrium dissociation constants.</li>
+<li>Increasing the affinity of a protein for a ligand requires increasing the shape and interaction complementarity between the two partners. Close contact between the surfaces creates non-covalent interactions including van der Waals interactions, hydrophobic interactions, electrostatic interactions, and hydrogen bonds. The high cost of desolvating polar groups often makes burying them at the binding-site-ligand interface unfavorable even when they make favorable interactions like hydrogen bonds.</li>
+<li>Binding selectivity is the ability of a protein, often an antibody or receptor, to distinguish between two ligands. Binding selectivity depends on the ratio of the equilibrium association constants for the two binding possibilities.</li>
+</ul>
+<blockquote class="blockquote">
+<p>I am always doing what I can’t do yet in order to learn how to do it. — Vincent van Gogh</p>
+</blockquote>
+<section id="introduction" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">6.1</span> Introduction</h2>
+<p>Tighter binding of a protein to its ligand is a common goal of protein engineering.<span class="citation" data-cites="bantaReplacingAntibodiesEngineering2013"><sup>[<a href="#ref-bantaReplacingAntibodiesEngineering2013" role="doc-biblioref">1</a>]</sup></span> A ligand is any species (usually a small organic molecule, an ion, a protein or an oligonucleotide) that binds selectively, stoichiometrically and reversibly to a protein. Increased binding of a diagnostic antibody to its antigen can lower detection limits (e.g., a pregnancy test could detect pregnancy earlier), while increased binding of a therapeutic antibody can decrease drug dosage or increase drug efficacy. Traditional methods to improve the binding of antibodies rely on the natural processes that generate antibodies. Mice are immunized with the antigen followed by screening for antibodies with higher affinity. These in vivo methods, called affinity maturation, reach a limit where affinity stops increasing due to biological limits of the innate immune system. A common protein engineering goal is improving the affinity of an antibody from good binding to great binding. Figure <a href="#fig-define_antibody" class="quarto-xref">Figure&nbsp;<span>6.1</span></a> defines the different parts of an antibody.</p>
+<div id="fig-define_antibody" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Y-shaped antibody diagram labeling two heavy chains and two light chains linked by disulfide bonds, with an antigen-binding site at each of the two upper tips. A dashed line marks where proteases cleave the antibody into two Fab fragments and one Fc fragment.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-define_antibody-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter6/define_antibody.svg" class="img-fluid figure-img" alt="Y-shaped antibody diagram labeling two heavy chains and two light chains linked by disulfide bonds, with an antigen-binding site at each of the two upper tips. A dashed line marks where proteases cleave the antibody into two Fab fragments and one Fc fragment." width="150">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-define_antibody-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: Antibodies consist of four protein chains: two identical heavy chains (<span class="math inline">\(\sim \! 440\)</span> aa each) and two identical light chains (<span class="math inline">\(\sim \! 220\)</span> aa each). Disulfide bonds connect the two heavy chains to each other and the light chains to their neighboring heavy chain. Antibodies contain two antigen-binding sites, each composed of the tips of the light and heavy chains. One of the two antigen binding sites is circled. Treatment with proteases cleaves both heavy chains as marked into three fragments: two Fab fragments (Fragment antigen-binding) and one Fc portion (Fragment crystallizable). The two protein chains that make up the Fab and Fc fragment remain linked to each other via disulfide cross links.
+</figcaption>
+</figure>
+</div>
+<p>The strength of binding a ligand to a protein depends on the equilibrium between the bound and unbound states, Figure <a href="#fig-binding_equilib" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>. In the bound state the protein and ligand interact with each other, while in the unbound state they interact with solvent. Stronger non-covalent interactions with each other as compared to solvent favors binding.</p>
+<div id="fig-binding_equilib" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Reaction scheme showing a site-ligand complex in equilibrium with free site and free ligand, with rate constants k_on and k_off labeling the forward and reverse arrows.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-binding_equilib-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter6/binding_equilib.svg" class="img-fluid figure-img" alt="Reaction scheme showing a site-ligand complex in equilibrium with free site and free ligand, with rate constants k_on and k_off labeling the forward and reverse arrows.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-binding_equilib-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.2: The bound state (ligand bound to the binding site) equilibrates with the unbound state (solvated ligand and site).
+</figcaption>
+</figure>
+</div>
+<p>Two features influence the interactions between protein and ligand. First, the size and shape of the binding site in the protein must match the size and shape of the ligand. This match creates strong van der Waals interactions between them. Second, the chemical properties of regions within the binding site match those of ligand. Hydrophobic regions match and electrostatic interactions in polar regions are favorable. X-ray structures of antibody-antigen complexes reveal that 15-20 amino acids from the complementarity determining region of the antibody contact the antigen. Most of the contacts are hydrophobic and both the antibody and antigen adjust their conformations slightly upon complex formation to maximize the strength of the interactions. In the perfect case, no adjustments would be necessary since the most stable conformations of both protein and antibody match each another exactly.</p>
+<p>The two comparison states that determine ligand-protein binding strength are the unbound state where water solvates the independently diffusing ligand and protein and the bound state where the ligand and protein interact with each other, Figure <a href="#fig-delG_binding" class="quarto-xref">Figure&nbsp;<span>6.3</span></a>. The solvation of polar and charged atoms at the surface stabilize the unbound state. In addition, the ability of the ligand and protein to diffuse independently in solution favors the unbound state. In contrast, the ordering of water at exposed hydrophobic regions of the protein and ligand destabilizes the unbound state as do unfavorable electrostatic interactions in high net charge regions.</p>
+<div id="fig-delG_binding" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Gibbs energy diagram showing the Ab·Ag complex at low energy and the dissociated Ab + Ag species at higher energy, separated by a barrier. The energy gap, ΔG°_d, equals −RT ln(K_d/1M); a smaller gap ΔΔG°_d indicates additional stabilization of the bound complex.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-delG_binding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter6/delG_binding.svg" class="img-fluid figure-img" alt="Gibbs energy diagram showing the Ab·Ag complex at low energy and the dissociated Ab + Ag species at higher energy, separated by a barrier. The energy gap, ΔG°_d, equals −RT ln(K_d/1M); a smaller gap ΔΔG°_d indicates additional stabilization of the bound complex.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-delG_binding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.3: Gibbs energy changes associated with binding an antigen (Ag) to an antibody (Ab). The complex, Ab·Ag, is lower in energy than the free species, Ab + Ag, indicating that binding is favorable. Stabilizing the Ab·Ag complex increases the binding strength by an amount <span class="math inline">\(\Delta\Delta G^{o}_{d}\)</span>.
+</figcaption>
+</figure>
+</div>
+<p>In contrast, the bound state is stabilized by van der Waals attraction between touching atoms of the ligand and protein due to shape complementarity, the release of ordered water from hydrophobic regions of ligand and protein, electrostatic interactions between oppositely-charged atoms, and hydrogen bond formation between protein and ligand. The bound state is destabilized by desolvation of buried polar and charged atoms, electrostatic interactions between like-charged atoms, and the loss of independent diffusion for ligand.</p>
+<p>Increasing binding requires increasing the energy difference between the bound and unbound states by stabilizing the bound state, destabilizing the unbound state or both. For example, one could destabilize the unbound state by adding exposed hydrophobic surface or high net charge regions within ligand-binding region. Ligand binding can alleviate this destabilization by binding a complementary hydrophobic surface or opposite charges. This alleviation of the destabilization when the ligand binds is critical to the success of this approach. If the destabilization persists in the bound state, then both states will have been destabilized and the binding strength will remain unchanged. Thus, the destabilizing changes must influence the ligand-binding region so that binding can alleviate the destabilization. One can stabilize the bound state relative to the unbound state by increasing the shape and charge complementarity between the protein and ligand stabilizes the bound state, while having little effect on the unbound state.</p>
+<p>In all cases one must consider the effect of change to both the bound and unbound states. For example, engineering a hydrogen bond between the ligand and protein comes at the cost of reduced solvation of the polar atoms involved in the hydrogen bond. If the hydrogen bond is solvent accessible, then it remains solvated in the bound state and is often stabilizing. In contrast, buried hydrogen bonds are usually destabilizing because the cost of desolvating the polar atoms exceeds the gain from the hydrogen bond.</p>
+</section>
+<section id="measuring-binding" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="measuring-binding"><span class="header-section-number">6.2</span> Measuring binding</h2>
+<p><strong>Defining binding strength.</strong> The strength of binding is measured by the equilibrium constant for the reverse reaction, the ligand dissociation equilibrium constant, <span class="math inline">\(K_d\)</span>, Figure <a href="#fig-binding_equilib" class="quarto-xref">Figure&nbsp;<span>6.2</span></a> and eq. <a href="#eq-define_Kd" class="quarto-xref">Equation&nbsp;<span>6.1</span></a>. For tighter binding, the dissociation equilibrium constant should be more unfavorable, so lower values of <span class="math inline">\(K_d\)</span> indicate tighter binding. <span class="math inline">\(K_d\)</span> has the units of molarity.</p>
+<p><span id="eq-define_Kd"><span class="math display">\[ K_d = \frac{k_{off}}{k_{on}}=\frac{[site]\cdot [ligand]}{[site\cdot ligand]} \tag{6.1}\]</span></span></p>
+<p>The value of <span class="math inline">\(K_d\)</span> corresponds to the free ligand concentration when half of the sites contain a bound ligand and the other half are empty, eq <a href="#eq-half_sites" class="quarto-xref">Equation&nbsp;<span>6.2</span></a>. Starting from eq. <a href="#eq-define_Kd" class="quarto-xref">Equation&nbsp;<span>6.1</span></a>, when concentration of empty sites, [site], equals the concentration of filled sites, [site·ligand], these two terms cancel in eq. <a href="#eq-define_Kd" class="quarto-xref">Equation&nbsp;<span>6.1</span></a> yielding eq. <a href="#eq-half_sites" class="quarto-xref">Equation&nbsp;<span>6.2</span></a>.</p>
+<p><span id="eq-half_sites"><span class="math display">\[K_d = [ligand] \text{ when } [site] = [site\cdot ligand] \tag{6.2}\]</span></span></p>
+<p>Antibody-antigen complexes are common cases of protein-ligand binding. For example, the mouse monoclonal antibody called 26-10 binds digoxin with high affinity. Digoxin, a hydrophobic steroid with an attached carbohydrate, is used to treat congestive heart failure. Anti-digoxin antibodies have been used to measure serum levels of digoxin and also to neutralize digoxin in cases of an overdose. Since antibody 26-10 contains two independently-acting binding sites for digoxin, the concentration of sites is twice the concentration of antibody. Antibody 26-10 binds digoxin very tightly (<span class="math inline">\(K_d = 10^{–10} M\)</span>) and is half-saturated with digoxin when the concentration of free digoxin is <span class="math inline">\(10^{–10} M\)</span> (only 100 picomolar).</p>
+<p>To convert the equilibrium constant in eq. <a href="#eq-define_Kd" class="quarto-xref">Equation&nbsp;<span>6.1</span></a> into a Gibbs energy, one introduces the notion of a reference state. The purpose of the reference state is to cancel out the molarity unit on the equilibrium constant since one can only apply the logarithm function to dimensionless quantities. The standard reference state is 1 <em>M</em> and the value of <span class="math inline">\(K_d\)</span> is divided by this reference yielding a dimensionless quantity, eq. <a href="#eq-define_Gibbs_diss" class="quarto-xref">Equation&nbsp;<span>6.3</span></a>.</p>
+<p><span id="eq-define_Gibbs_diss"><span class="math display">\[\Delta G^{o}_{d} = –RT\ln(K_d /1 M) \tag{6.3}\]</span></span></p>
+<p>The values of <span class="math inline">\(K_d\)</span> for stable protein-ligand binding interactions are always less than 1 M, so the ratio <span class="math inline">\(K_d/1 M\)</span> is always less than one. The logarithm of a value less than one is negative, so the Gibbs energy for dissociation, <span class="math inline">\(\Delta G^{o}_{d}\)</span>, eq. <a href="#eq-define_Gibbs_diss" class="quarto-xref">Equation&nbsp;<span>6.3</span></a>, is positive indicating that dissociation is unfavorable. The ‘o’ superscript on the <span class="math inline">\(\Delta G^{o}_{d}\)</span> indicates that the <span class="math inline">\(K_d\)</span> is compared to a reference state of 1 <em>M</em>. The free energy of dissociation of the digoxin-antibody 26-10 complex, <span class="math inline">\(\Delta G^{o}_{d}\)</span>, is +14.2 kcal/mol indicating that dissociation is highly unfavorable.</p>
+<p>The Gibbs energy diagram shows that dissociation of an antibody-antigen complex is unfavorable, Figure <a href="#fig-delG_binding" class="quarto-xref">Figure&nbsp;<span>6.3</span></a> above. To improve binding one seeks to make dissociation even more unfavorable. This approach is analogous to stabilizing a protein by makeing the unfavorable unfolding reaction even more unfavorable in the previous chapter.</p>
+<p><strong>Measuring <span class="math inline">\(K_d\)</span>.</strong> One method to measure the strength of binding between a protein like an antibody, and a ligand (or antigen) is equilibrium dialysis. The antigen equilibrates between two compartments separated by a dialysis membrane, Figure <a href="#fig-equilib_dialysis" class="quarto-xref">Figure&nbsp;<span>6.4</span></a>. The small pore diameter of the dialysis membrane allows the antigen to pass through, but not the antibody. At equilibrium, both compartments contain equal amounts of free antigen, but the antibody-containing compartment contains additional antigen as an antibody-antigen complex.</p>
+<div id="fig-equilib_dialysis" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Six-panel diagram of an equilibrium dialysis experiment. Top row (no antibody): a membrane separates two compartments; ligand added to one side (initial) diffuses freely until both compartments hold equal ligand concentrations (equilibrium), shown as converging concentration-versus-time curves. Bottom row (with antibody): the antibody, confined to one compartment by the membrane, binds some ligand, so at equilibrium free ligand concentration is equal on both sides but the antibody-containing compartment also holds bound ligand; the concentration-time plot shows the two curves converging to different plateaus, with the difference indicating the amount of ligand bound to antibody.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-equilib_dialysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter6/equilib_dialysis.svg" class="img-fluid figure-img" alt="Six-panel diagram of an equilibrium dialysis experiment. Top row (no antibody): a membrane separates two compartments; ligand added to one side (initial) diffuses freely until both compartments hold equal ligand concentrations (equilibrium), shown as converging concentration-versus-time curves. Bottom row (with antibody): the antibody, confined to one compartment by the membrane, binds some ligand, so at equilibrium free ligand concentration is equal on both sides but the antibody-containing compartment also holds bound ligand; the concentration-time plot shows the two curves converging to different plateaus, with the difference indicating the amount of ligand bound to antibody." width="500">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-equilib_dialysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.4: Measuring ligand (antigen) binding to an antibody by equilibrium dialysis. A dialysis membrane (dotted line) separates two compartments. Top row shows a control experiment without antibody. The ligand (twenty black circles) that is initially added to the right compartment distributes equally between both compartments (ten in each) because it passes freely through the membrane. Bottom row shows an experiment with antibody (Y-shapes) in left compartment. The dialysis membrane retains the antibody in its compartment. At equilibrium, both compartments contain the same concentration of free ligand (eight in each), but the antibody-containing compartment additionally contains antibody-bound ligand (four bound to the Y-shapes). The difference in the number of ligand molecules in the two compartments is the number of ligand molecules bound to antibody.
+</figcaption>
+</figure>
+</div>
+<p>Measuring the equilibrium dissociation constant involves a series of equilibration experiments with different antigen concentrations. At lower concentrations of Ag, less Ab·Ag complex will form. The molar amount of antigen is always in excess of antibody. Since the equilibrium dissociation constants are very low, these experiments may require detecting very low antigen concentrations. For example, measuring the affinity of antibody 26-10 for digoxin requires measuring digoxin concentrations in the range of 100 picomolar.</p>
+<p>Each equilibration experiment yields a ratio, Y, of sites complexed with ligand compared to the total number of sites. The concentration of sites complexed with ligand is the difference in the ligand concentrations between the antibody-containing and the antibody-free compartments, eq <a href="#eq-define_Y" class="quarto-xref">Equation&nbsp;<span>6.4</span></a>. The total concentration of sites is known from the amount of antibody added to the experiment. For the example in Figure <a href="#fig-equilib_dialysis" class="quarto-xref">Figure&nbsp;<span>6.4</span></a> above, four of the binding sites are occupied by ligand and the total number of sites is eight, so Y = 4/8 = 0.5.</p>
+<p><span id="eq-define_Y"><span class="math display">\[Y = \frac{\text{sites complexed with ligand}}{\text{total sites}} = \frac{[site \cdot ligand]}{[site]+[site \cdot ligand]}  \tag{6.4}\]</span></span></p>
+<p>Plotting the measured fraction saturation, Y at different concentrations of ligand as a function of free ligand on the x-axis yields a saturation binding curve, Figure <a href="#fig-bind_plot" class="quarto-xref">Figure&nbsp;<span>6.5</span></a>. The sites become saturated with ligand as the concentration of free ligand increases.</p>
+<div id="fig-bind_plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Scatter plot of fraction of antibody sites bound (Y) versus free ligand concentration (0–1 mM), following a hyperbolic saturation curve described by Y = [Ag]/(0.075 mM + [Ag]). Y reaches 0.5 at the dissociation constant, Kd = 0.075 mM, and approaches 1 at high ligand concentration.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bind_plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter6/bind_plot.svg" class="img-fluid figure-img" alt="Scatter plot of fraction of antibody sites bound (Y) versus free ligand concentration (0–1 mM), following a hyperbolic saturation curve described by Y = [Ag]/(0.075 mM + [Ag]). Y reaches 0.5 at the dissociation constant, Kd = 0.075 mM, and approaches 1 at high ligand concentration." width="200">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bind_plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.5: Fraction of antibody, Ab, bound to antigen, Ag, increases with increasing concentration of Ag until all of the antibody is saturated. Fitting equation <a href="#eq-binding_saturation" class="quarto-xref">Equation&nbsp;<span>6.5</span></a> to this data yields the equilibrium dissociation constant, <span class="math inline">\(K_d\)</span> = 0.075 mM. Inspection of the data table reveals that a bound antigen fraction of 0.5 occurs between 0.05 mM and 0.10 mM of free antigen, so the value of <span class="math inline">\(K_d\)</span> lies within this range.
+</figcaption>
+</figure>
+</div>
+<p>Equation <a href="#eq-binding_saturation" class="quarto-xref">Equation&nbsp;<span>6.5</span></a> defines the relationship between Y, the free ligand concentration and the equilibrium dissociation constant, <span class="math inline">\(K_d\)</span>. At half-saturation, Y = 0.5, the free ligand concentration equals the equilibrium dissociation constant, 0.075 mM for this example.</p>
+<p><span id="eq-binding_saturation"><span class="math display">\[ Y = \frac{[ligand]}{K_d + [ligand]} \tag{6.5}\]</span></span></p>
+<p>This equation is derived by rearranging eq <a href="#eq-define_Kd" class="quarto-xref">Equation&nbsp;<span>6.1</span></a> to define the concentration of free sites, eq <a href="#eq-rearrange_define_Kd" class="quarto-xref">Equation&nbsp;<span>6.6</span></a>, and substituting it into eq <a href="#eq-define_Y" class="quarto-xref">Equation&nbsp;<span>6.4</span></a> above.</p>
+<p><span id="eq-rearrange_define_Kd"><span class="math display">\[ [site] = \frac{K_d \cdot [site \cdot ligand]}{[ligand]} \tag{6.6}\]</span></span></p>
+<p>Finding <span class="math inline">\(K_d\)</span> from the data in Figure <a href="#fig-bind_plot" class="quarto-xref">Figure&nbsp;<span>6.5</span></a> involves adjusting the value of <span class="math inline">\(K_d\)</span> so that the eq <a href="#eq-binding_saturation" class="quarto-xref">Equation&nbsp;<span>6.5</span></a> best fits the experimental data.<a href="#fn-sym-1" id="fnref-sym-1" class="footnote-ref" role="doc-noteref"><sup>*</sup></a></p>
+<p>Another way to measure the binding of a ligand to a protein is fluorescence polarization.<span class="citation" data-cites="rossiAnalysisProteinligandInteractions2011"><sup>[<a href="#ref-rossiAnalysisProteinligandInteractions2011" role="doc-biblioref">2</a>]</sup></span> This method requires a fluorescent ligand, but does not require the two-compartment apparatus needed for equilibrium dialysis. The solution of ligand plus protein is irradiated with plane-polarized light to excite the fluorescent ligand. The emitted light (fluorescence) from the ligand is measured both parallel and perpendicular to the plane of the irradiated light. If the ligand does not turn during the few nanoseconds between the absorbtion and emission of light, then most of the light will be emitted parallel to the plane of the irradiated light. However, it the ligand turns during the few nanoseconds between the absorption and emission of light, then less of the light will be emitted parallel to the plane of the irradiating light. A ligand free in solution tumbles rapidly, but a ligand bound to a macromolecule tumbles more slowly. Fluoresence polarization detects whether a ligand is bound or not by measuring how much of the emitted light is parallel to the plane of irradiated light.</p>
+<p>One can extend this method to also measure the binding of non-fluorescent ligands by adding the fluorescent ligand and a competing non-fluorescent ligand simultaneously. The non-fluorescent ligand competes with the fluorescent ligand for the protein binding site. Measuring the decrease in binding of the fluorescent ligand a varying concentrations of the non-fluorescent ligand reveals the relative strength of the two ligands. Since the binding strength of the fluorescent ligand is known, the binding strength of the non-fluorescent ligand can be calculated.</p>
+<p>Practical details on binding measurements are available.<span class="citation" data-cites="pollardMBOCTechnicalPerspective2010"><sup>[<a href="#ref-pollardMBOCTechnicalPerspective2010" role="doc-biblioref">3</a>]</sup></span> Other ways to measure binding include surface plasmon resonance and isothermal titration calorimetry.</p>
+<p>Increasing binding strength requires increasing the difference in energy between the bound and unbound states. Engineering the antibody for tighter binding lowers the Gibbs energy of the Ag·Ab complex, raises the Gibbs energy of free Ag and Ab or both. The value of <span class="math inline">\(\Delta G^{o}_{d}\)</span> measures improvement of binding, Figure <a href="#fig-delG_binding" class="quarto-xref">Figure&nbsp;<span>6.3</span></a>. This value is the difference in the Gibbs energy change for the two dissociation reactions, eq <a href="#eq-improvement" class="quarto-xref">Equation&nbsp;<span>6.7</span></a>.</p>
+<p><span id="eq-improvement"><span class="math display">\[
+\begin{split}
+\Delta\Delta G^{o}_{d} &amp; = \Delta G^{o}_{d-new} - \Delta G^{o}_{d-original} \\
+&amp; = - RT\ln \left ( \frac{K_{d-new}}{K_{d-original}} \right ) = –RT\ln(improvement factor)
+\end{split}
+\tag{6.7}\]</span></span></p>
+<p>Tighter binding corresponds to a larger positive Gibbs energy of dissociation for the improved variant and thus a positive value of <span class="math inline">\(\Delta G^{o}_{d}\)</span>. The value of <span class="math inline">\(K_{d-new}\)</span> is a smaller (dissociation less favorable) than <span class="math inline">\(K_{d-original}\)</span>, so <span class="math inline">\(\left ( \frac{K_{d-new}}{K_{d-original}} \right )\)</span> is a value less than 1. For example, equilibrium dissociation constant may decrease from <span class="math inline">\(10^{-6} M\)</span> in the original to <span class="math inline">\(10^{-8} M\)</span> in the engineered case. The improvement factor is <span class="math inline">\(10^{–2}\)</span> and <span class="math inline">\(\ln \left ( \frac{K_{d-new}}{K_{d-original}} \right )\)</span> is –4.61. Then <span class="math inline">\(- RT\ln \left ( \frac{K_{d-new}}{K_{d-original}} \right )\)</span> is +2.73 kcal/mol at 298 °K.</p>
+</section>
+<section id="engineering-tighter-binding" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="engineering-tighter-binding"><span class="header-section-number">6.3</span> Engineering tighter binding</h2>
+<p>Engineering tighter binding involves modification of the antibody binding site to increase the complementarity between the antibody and antigen, Table <a href="#tbl-strategies_bind" class="quarto-xref">Table&nbsp;<span>6.1</span></a>. The first requirement of a binding site is that its size and shape must match the size and shape of the target ligand. This matching excludes solvent water by placing ligand atoms near binding-site atoms to create the opportunity for favorable interactions. The second criteria is that the binding site be preorganized for binding, that is, that the lowest energy conformation be the one that binds the ligand. The remaining criteria refer to optimizing different types of non-covalent interactions: hydrophobic interactions, hydrogen bonds and electrostatic interactions.</p>
+<div id="tbl-strategies_bind" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-strategies_bind-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.1: Strategies to increase non-covalent interactions between protein and ligand.
+</figcaption>
+<div aria-describedby="tbl-strategies_bind-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th scope="col">Strategy</th>
+<th scope="col">Reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>size and shape matching</td>
+<td>creates favorable van der Waals interactions<br>minimizes bumping<br>releases bound water<br>allows direct interactions</td>
+</tr>
+<tr class="even">
+<td>preorganization</td>
+<td>binding conformation favored even before binding<br>no rearrangement needed for binding</td>
+</tr>
+<tr class="odd">
+<td>hydrophobic matching</td>
+<td>increases hydrophobic effect</td>
+</tr>
+<tr class="even">
+<td>optimize H bonds</td>
+<td>compensates for loss of H bonds to solvent<br>avoids buried H bonds due to poor solvation</td>
+</tr>
+<tr class="odd">
+<td>optimize electrostatics</td>
+<td>minimizes interactions with like charges<br>maximizes interactions with unlike charges</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Size and shape matching.</strong> Matching the size and shape of the protein binding site to the target ligand maximizes their contact surface in order to maximize favorable non-covalent interactions, Figure <a href="#fig-size_shape_mismatch" class="quarto-xref">Figure&nbsp;<span>6.6</span></a>. Size matching ensures that all of the ligand interacts with the binding site. If the cavity is too large or too small, then part of the ligand remains exposed to solvent and the interaction between ligand and binding site will be less than the maximum possible. Shape matching refers to the surface contours of the ligand and binding site. Surface complementarity means the surfaces touch to create favorable van der Waals interactions. The close contact also makes additional non-covalent interactions between the ligand and binding site possible.</p>
+<div id="fig-size_shape_mismatch" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two diagrams illustrating binding-site mismatches with an isopropyl-containing ligand. a) Size mismatch: an oversized binding pocket leaves the ligand partly exposed to solvent water instead of fully enclosed. b) Shape mismatch: a binding site whose contours don't match the ligand creates a region of steric repulsion and a gap too far apart to interact favorably.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-size_shape_mismatch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter6/size_shape_mismatch.svg" class="img-fluid figure-img" alt="Two diagrams illustrating binding-site mismatches with an isopropyl-containing ligand. a) Size mismatch: an oversized binding pocket leaves the ligand partly exposed to solvent water instead of fully enclosed. b) Shape mismatch: a binding site whose contours don't match the ligand creates a region of steric repulsion and a gap too far apart to interact favorably." width="400">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-size_shape_mismatch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.6: To maximize interactions with the target ligand (isopropyl side chain) the binding site must be the same size as the ligand and the contours of the binding site must match the shape of the ligand. a) A binding site that is larger or smaller than the ligand leaves part of the ligand exposed to solvent, which misses opportunities for interactions between ligand and binding site. b) Shape mismatches between the target ligand and contours of the binding site create repulsive interactions in regions where the binding site is too small and an inability to make favorable interactions in regions where the binding site is to large to contact the ligand.
+</figcaption>
+</figure>
+</div>
+<p>The intricate shapes of molecules prevents most of the atoms in two contacting molecules to directly contact one another. The sphere representation of a molecule shows its van der Waals surface. The radius of each sphere is the van der Waals radius for the atom and the overlapping spheres show the van der Waals surface of the molecule, Fig <a href="#fig-dig_solvent_contact_surface" class="quarto-xref">Figure&nbsp;<span>6.7</span></a>. This surface is intricate and includes narrow crevices too small to fit a water molecule. A water molecule cannot touch the regions within these crevices and a larger molecule will be excluded from even more regions. The <em>solvent contact surface</em> is a hypothetical smoother surface that eliminates crevices that are inaccessible to water. The solvent contact surface is the surface mapped by the edge of sphere with a radius of 1.4 Å as it rolls on the van der Waals surface of a molecule. The radius of 1.4 Å corresponds to the van der Waals radius of a water molecule. This surface shows smooth areas where the water molecule rides over the van der Waals surface as well as regions of protruding atoms where the water can directly touch the molecule.<a href="#fn-sym-2" id="fnref-sym-2" class="footnote-ref" role="doc-noteref"><sup>†</sup></a></p>
+<div id="fig-dig_solvent_contact_surface" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Three representations of digoxin. Left: skeletal structure of the steroid (aglycone) with a trisaccharide of three sugar rings attached at O5, plus hydroxyl groups at C12 and C14. Middle: space-filling van der Waals model of the same molecule, colored by atom (gray carbon, red oxygen), with narrow crevices visible between overlapping spheres. Right: the smoothed solvent contact surface of the same molecule, colored red where oxygen atoms are close enough for a water molecule to touch them directly, showing that only a small fraction of the molecule's polar surface is actually solvent-accessible.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dig_solvent_contact_surface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter6/dig_solvent_contact_surface.svg" class="img-fluid figure-img" alt="Three representations of digoxin. Left: skeletal structure of the steroid (aglycone) with a trisaccharide of three sugar rings attached at O5, plus hydroxyl groups at C12 and C14. Middle: space-filling van der Waals model of the same molecule, colored by atom (gray carbon, red oxygen), with narrow crevices visible between overlapping spheres. Right: the smoothed solvent contact surface of the same molecule, colored red where oxygen atoms are close enough for a water molecule to touch them directly, showing that only a small fraction of the molecule's polar surface is actually solvent-accessible." width="400">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dig_solvent_contact_surface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.7: Structure of digoxin (digitalis), a cardiac glycoside.<a href="#fn-sym-3" id="fnref-sym-3" class="footnote-ref" role="doc-noteref"><sup>‡</sup></a> Left: The chemical structure of digoxin consists of a steroid (the aglycone) linked to a trisaccharide. The two sugar moieties in gray are not included in the two structures to the right. Middle: The overlapping van der Waals spheres of each atom create the van der Waals surface of digoxin. It contains numerous crevices that are too small to fit a water molecule. A water molecule would be slightly larger than one of the oxygen atoms shown as red spheres. Right: The solvent contact surface of digoxin is a hypothetical surface that shows the closest approach of a water molecule. Water can directly contact only a small fraction of the van der Waals surface.
+</figcaption>
+</figure>
+</div>
+<p>The majority of the surface atoms, even for highly complementary molecules, will not contact one another. The intricacy of molecular structures make complete direct contact geometrically impossible. Good complementary shapes will exclude solvent water from the interface and make many direct contacts.</p>
+<p>An example of high surface complementarity is the interaction between antibody fragment 26-10 complexed with digoxin,<span class="citation" data-cites="jeffrey2610FabdigoxinComplex1993"><sup>[<a href="#ref-jeffrey2610FabdigoxinComplex1993" role="doc-biblioref">4</a>]</sup></span> Figure <a href="#fig-26-10_digoxin" class="quarto-xref">Figure&nbsp;<span>6.8</span></a>. The structure of 26-10 shows a deep pocket that surrounds the hydrophobic steroid portion. The hydrophilic carbohydrate groups of digoxin remain exposed to solvent and do not contribute to binding. The complementarity between the solvent-accessible surface of the aglycone (compound without the glycoside moiety) of digoxin and 26-10 is imperfect, even in regions that are in contact. The shape complementary is close enough that there are no buried cavities in the complex that are large enough to contain a water molecule. This exclusion of water ensures a strong contribution of the hydrophobic effect to the binding. There are some regions exposed to the bulk water that are large enough to contain water molecules. The conformations of antibody and steroid remain the same in both unbound and bound states indicating that the low energy unbound shapes match each other.</p>
+<p>Fragment 26-10 binds digoxin tightly, <span class="math inline">\(K_d = 0.1\)</span> nM. The binding is entirely due to the hydrophobic effect and van der Waals interactions. No hydrogen bonds or salt bridges form between antibody fragment 26-10 and digoxin. One consequence of the lack of interactions with the hydroxyl groups at C12 and C14 is a lack of selectivity for analogs without these hydroxyl groups. For example, 26-10 binds digitoxigenin (which lacks the hydroxyl group at C12) with equal affinity to digoxigenin.<a href="#fn-sym-4" id="fnref-sym-4" class="footnote-ref" role="doc-noteref"><sup>§</sup></a></p>
+<div id="fig-26-10_digoxin" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two PyMOL views of antibody fragment 26-10 (cyan cartoon and mesh solvent-accessible surface) bound to digoxin (gray and red spheres). a) Wide view showing digoxin's steroid portion nested in a deep binding pocket formed by the antibody's complementarity-determining loops. b) Close-up showing the digoxin surface making close, complementary contact with the mesh-rendered binding-site surface, illustrating high shape complementarity between ligand and antibody.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-26-10_digoxin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter6/26-10_digoxin.svg" class="img-fluid figure-img" alt="Two PyMOL views of antibody fragment 26-10 (cyan cartoon and mesh solvent-accessible surface) bound to digoxin (gray and red spheres). a) Wide view showing digoxin's steroid portion nested in a deep binding pocket formed by the antibody's complementarity-determining loops. b) Close-up showing the digoxin surface making close, complementary contact with the mesh-rendered binding-site surface, illustrating high shape complementarity between ligand and antibody." width="400">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-26-10_digoxin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.8: The binding pocket of antibody fragment 26-10 (mesh surface, backbone shown as a cartoon) binds the steroid digoxin (spheres) by creating a complementary surface. a) The two terminal saccharides extend into solvent and were not resolved in this structure. b) A top view shows close contact between the 26-10 and the aglycone in several parts, but much of the 26-10 surface does not directly contact the aglyclone. The figure was created using PyMOL from the x-ray crystal structure of the complex (pdb id = 1igj<span class="citation" data-cites="jeffrey2610FabdigoxinComplex1993"><sup>[<a href="#ref-jeffrey2610FabdigoxinComplex1993" role="doc-biblioref">4</a>]</sup></span>). The surface of the antibody pocket was calculated using the web tool CASTp<span class="citation" data-cites="tianCASTpComputedAtlas2018"><sup>[<a href="#ref-tianCASTpComputedAtlas2018" role="doc-biblioref">5</a>]</sup></span>
+</figcaption>
+</figure>
+</div>
+<p>Sculpting a complementary surface will likely require multiple mutations and involve readjustment of the main chain and side chains. The smallest change that one can introduce by amino acid substitutions is the addition or removal of a methyl or hydroxyl group. This is a large change - about the size of a water molecule - and likely too large to precisely sculpt a surface. To make smaller changes one needs to make multiple substitutions including substitutions outside the surface being engineered so that a succession of adjusted positions make more subtle changes to the complementary surface. Precisely predicting the adjustments caused by multiple substitutions is more difficult making such sculpting difficult.</p>
+<p>Substitutions often introduce readjustments of the main chain and side chains. A larger side chain causes readjustments when it bumps into nearby atoms. A smaller side chain may also cause readjustments because enlarging a hydrophobic pocket is unfavorable. Replacing a large buried hydrophobic side chain with a smaller one destabilizes the protein because the smaller hydrophobic surface 1) reduces the contribution of the hydrophobic effect to protein folding and 2) reduces the favorable van der Waals contacts between the side chain and the rest of the protein. Structural readjustments often decrease the size of the created space to minimize these changes. The estimated decrease in stability due to removing one buried CH<span class="math inline">\(_2\)</span> group is 1.1 ± 0.5 kcal/mol.<span class="citation" data-cites="paceForcesStabilizingProteins2014"><sup>[<a href="#ref-paceForcesStabilizingProteins2014" role="doc-biblioref">6</a>]</sup></span> For example, a Leu to Ala substitution removes three carbon atoms from the protein, so this substitution decreases protein stability by an estimated 3.3 ± 1.5 kcal/mol. If the protein structure readjusts, the destabilization will be at the smaller end of the estimate range, while if the structure does not readjust, it will be at the larger end of the estimated range. For example, a Leu to Ala mutation in T4 lysozyme destabilized the protein by 5.0 kcal/mol at position 99, but by only 2.7 kcal/mol at position 46. The x-ray structures revealed that at position 99 the structure did not readjust upon substitution leading to a larger cavity and a larger loss in van der Waals interactions, while at position 46 the structure relaxed leading to a smaller increase in the cavity size and a smaller loss in the van der Waals interactions.<span class="citation" data-cites="erikssonResponseProteinStructure1992"><sup>[<a href="#ref-erikssonResponseProteinStructure1992" role="doc-biblioref">7</a>]</sup></span></p>
+<p>In a few cases, readjustments of the nearby residues reverse the intended change in size. For example, an ancestral hydroxynitrile lyase contains phenylalanines at positions 121 and 178 in the active site, while the corresponding modern enzyme from the rubber tree contains smaller leucines at these positions. One would expect that the substrate-binding site of the rubber tree enzyme would be larger, but the x-ray structures showed the opposite. In the rubber tree enzyme the side chain of Trp128 readjusts into the active site creating a smaller substrate binding site,<span class="citation" data-cites="jonesLargerActiveSite2020"><sup>[<a href="#ref-jonesLargerActiveSite2020" role="doc-biblioref">8</a>]</sup></span> which is the opposite of what might be expected from comparison of the sizes of phenylalanine and leucine.</p>
+<p><strong>Preorganization.</strong> Preorganization of a dynamic protein means creating a global energy minimum conformation where the atoms in the apo protein are already oriented to interact with the partner atoms in the ligand. In the ideal case, this conformation has the correct structure with a minimum of flexibility. It must have the correct structure to avoid the energy cost of moving the protein atoms from their most stable postions into the less stable interacting positions. This energy cost lowers the overall favorability of the binding. Flexibility of the apo protein also creates an energy cost. If protein flexibility decreases in the protein-ligand complex, then there is an entropy cost to binding, which also lowers the favorability of binding. Thus, the preorganized apo protein should be no more flexible than the protein-ligand structure.</p>
+<p>Binding sites exist as an equilibrium mixture of non-binding and binding conformations, eqs. <a href="#eq-preorg" class="quarto-xref">Equation&nbsp;<span>6.8</span></a> and <a href="#eq-preorg_Keq" class="quarto-xref">Equation&nbsp;<span>6.9</span></a>. The equilibrium constant (or the Gibbs energy) between the binding and not-binding conformations measures the propensity of the binding site to be preorganized for binding. It is convenient to express this equilibrium as the probability that the binding site is in a binding conformation, eq. <a href="#eq-preorg_probability" class="quarto-xref">Equation&nbsp;<span>6.10</span></a>, which is a value between 0 and 1. For example, if the equilibrium constant is 10 in favor of the binding conformations, then the probability that the binding site exists in a binding conformation is 10/11 = 91%. This probability is sometimes called the Boltzmann factor or Boltzmann weight.</p>
+<p><span id="eq-preorg"><span class="math display">\[\text{non-binding conf.} \xrightleftharpoons{K_{eq}} \text{binding conf.} \tag{6.8}\]</span></span></p>
+<p><span id="eq-preorg_Keq"><span class="math display">\[ K_{eq} = \frac{\text{[binding conf.]}}{\text{[non-binding conf.]}} \tag{6.9}\]</span></span></p>
+<p><span id="eq-preorg_probability"><span class="math display">\[ \text{probability} = \frac{\text{[binding conf.]}}{\text{[non-binding conf.]} + \text{[binding conf.]}} = \frac{K_{eq}}{1+K_{eq}}  \tag{6.10}\]</span></span></p>
+<p>Preorganization excludes stable non-binding conformations of the binding site, Figure <a href="#fig-preorg_bind" class="quarto-xref">Figure&nbsp;<span>6.9</span></a>. These conformations hinder binding because they trap the binding site into a non-binding conformation. The binding site must first escape the trap, then bind the ligand, which lowers the binding interaction by the amount needed to escape the trap. The non-binding, low energy conformation stabilizes the unbound state by <span class="math inline">\(\Delta \Delta G_{preorg}\)</span>, thereby reducing the Gibbs energy of dissociation for the complex.</p>
+<div id="fig-preorg_bind" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two Gibbs energy diagrams comparing a preorganized versus a non-preorganized protein binding site. a) Preorganized: the protein's lowest-energy free state already has the binding-competent conformation, so the full energy gap ΔG_d,preorg_case is available for binding. b) Not preorganized: the protein's lowest-energy free state is a non-binding conformation; reaching the binding-competent conformation costs extra energy ΔΔG_preorg, which subtracts from the binding energy, leaving a smaller net ΔG_d,non-preorg_case.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-preorg_bind-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter6/preorg_bind.svg" class="img-fluid figure-img" alt="Two Gibbs energy diagrams comparing a preorganized versus a non-preorganized protein binding site. a) Preorganized: the protein's lowest-energy free state already has the binding-competent conformation, so the full energy gap ΔG_d,preorg_case is available for binding. b) Not preorganized: the protein's lowest-energy free state is a non-binding conformation; reaching the binding-competent conformation costs extra energy ΔΔG_preorg, which subtracts from the binding energy, leaving a smaller net ΔG_d,non-preorg_case." width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-preorg_bind-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.9: Preorganization excludes stable, non-binding conformations of the protein. a) When a protein is preorganized for binding, the binding site conformation in the ligand-free state has the same conformation as in the ligand-bound state. b) When the protein is not preorganized for binding, the protein exists in lower energy conformations that cannot bind the ligand. Binding requires the protein to first shift to a higher energy binding conformation. The cost of shifting to the binding conformation lowers the overall binding energy by <span class="math inline">\(\Delta \Delta G_{preorg}\)</span>.
+</figcaption>
+</figure>
+</div>
+<p>Constraining a flexible ligand into the three-dimensional shape it adopts when bound to a receptor often strengthens the binding interaction. For example, the phosphotyrosine-containing pseudopeptide <strong>6.1</strong>, Figure <a href="#fig-less_flex_ligand" class="quarto-xref">Figure&nbsp;<span>6.10</span></a>, bound tightly to the SH2 domain of a growth receptor binding protein, <span class="math inline">\(K_D = 2.2 \: \mu M\)</span>. Introducing a cyclopropyl ring to create compound <strong>6.2</strong> restricted the flexibility of the ligand so that its structure matches the bound conformation. The binding interaction tightened to <span class="math inline">\(K_D = 0.36 \: \mu M\)</span>.<span class="citation" data-cites="delorbeThermodynamicStructuralEffects2009"><sup>[<a href="#ref-delorbeThermodynamicStructuralEffects2009" role="doc-biblioref">9</a>]</sup></span> Similar improvements are expected by restricting the flexibility of the binding site.</p>
+<div id="fig-less_flex_ligand" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Chemical structures of two phosphotyrosine-containing pseudopeptides that bind an SH2 domain. Compound 6.1 has an open-chain linker (KD = 2.2 μM); compound 6.2 has the same backbone constrained by a fused cyclopropane ring (KD = 0.36 μM), showing that restricting ligand flexibility improves binding affinity roughly six-fold.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-less_flex_ligand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter6/less_flex_ligand.svg" class="img-fluid figure-img" alt="Chemical structures of two phosphotyrosine-containing pseudopeptides that bind an SH2 domain. Compound 6.1 has an open-chain linker (KD = 2.2 μM); compound 6.2 has the same backbone constrained by a fused cyclopropane ring (KD = 0.36 μM), showing that restricting ligand flexibility improves binding affinity roughly six-fold." width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-less_flex_ligand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.10: Phosphotyrosine containing pseudopeptides bind tightly to the SH2 domain of a growth receptor binding protein. The cyclopropane ring in compound <strong>6.2</strong> restricted its flexibility and increased its affinity as compared to compound <strong>6.1</strong>.
+</figcaption>
+</figure>
+</div>
+<p>The preorganized protein structure for binding refers to both side chain and backbone orientations. The side chains must point in the correct direction to interact with the ligand, while the backbone must position these side chains at the correct distances. Incorrect backbone positions create binding sites that are too large or too small for the ligand. For example, a molecular dynamics simulation of digoxigenin-binding proteins found that favored conformation of the non-binding proteins was too large to interact with the entire digoxigenin surface due to incorrect backbone positions.<span class="citation" data-cites="barrosImprovingEfficiencyLigandbinding2019"><sup>[<a href="#ref-barrosImprovingEfficiencyLigandbinding2019" role="doc-biblioref">10</a>]</sup></span></p>
+<p><strong>Hydrophobic matching.</strong> Besides matching the shape of the ligand and binding site to maximize van der Waals interactions, matching additional non-covalent interactions further strengthens the interaction. For example, matching hydrophobic regions of the ligand and binding site avoids unsatisfied polar interactions. The structure of antibody fragment bound to methamphetamine showed a bound water molecule facing a hydrophobic region of the methamphetamine antigen.<span class="citation" data-cites="thakkarAffinityImprovementTherapeutic2014"><sup>[<a href="#ref-thakkarAffinityImprovementTherapeutic2014" role="doc-biblioref">11</a>]</sup></span> Researchers hypothesized that releasing this water molecule would increase the hydrophobic character of the binding pocket and increase binding. Replacement of SerH93, which formed a hydrogen bond to the water molecule, with the slightly larger residue threonine increased the binding affinity 3.1-fold from <span class="math inline">\(K_d\)</span> = 0.79 to 0.25 nM. A crystal structure of the improved variant confirmed that this substitution forced out the water molecule.</p>
+<p><strong>Optimize hydrogen bonds.</strong> Hydrogen bonds between the binding site and ligand come at the cost losing hydrogen bonds to solvent and desolvation of the hydrogen bonding partners. Buried hydrogen bonds are rarely favorable, but solvent-exposed hydrogen maintain solvation so are more likely to be favorable. Hydrogen bonds often contribute to selectivity of binding.</p>
+<p><strong>Electrostatic interactions.</strong> Electrostatic interactions can contribute to the tighter binding of the protein and ligand in two ways. One way is to directly stabilize the protein-ligand complex; the other way is to speed up the formation of this complex, Figure <a href="#fig-electrostatic_steer" class="quarto-xref">Figure&nbsp;<span>6.11</span></a>.</p>
+<div id="fig-electrostatic_steer" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two diagrams of electrostatic charge patterns at a protein surface and ligand. a) A binding partner with mixed, low net charge sits directly against a complementary charge pattern on the protein. b) A protein surface with net negative charge and a ligand with net positive charge are drawn together by long-range electrostatic attraction (gray arrows) before they make direct contact, illustrating electrostatic steering of the binding approach.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-electrostatic_steer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter6/electrostatic_steer.svg" class="img-fluid figure-img" alt="Two diagrams of electrostatic charge patterns at a protein surface and ligand. a) A binding partner with mixed, low net charge sits directly against a complementary charge pattern on the protein. b) A protein surface with net negative charge and a ligand with net positive charge are drawn together by long-range electrostatic attraction (gray arrows) before they make direct contact, illustrating electrostatic steering of the binding approach." width="250">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-electrostatic_steer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.11: Two types of electrostatic interactions strengthen binding between partners. a) Partners with low or zero net charge associate with one another. Electrostatic interactions within the complex strengthen binding. b) Partners have opposite net charges. Favorable, long-range electrostatic interactions steer these oppositely charged molecules toward each other (gray arrows). Uncharged molecules of the same size would likely miss each other because their motions are random.
+</figcaption>
+</figure>
+</div>
+<p>Direct stabilization of the protein-ligand complex refers to favorable interactions between oppositely charged atoms in the protein-ligand complex after it has formed. For example, improved electrostatic interactions increased the binding of monoclonal antibody hu3F8 (naxitamab) to the surface of cancer cells ~7-fold.<span class="citation" data-cites="zhaoAlterationElectrostaticSurface2015"><sup>[<a href="#ref-zhaoAlterationElectrostaticSurface2015" role="doc-biblioref">12</a>]</sup></span> The antibody binds to two negatively charged sialic acid groups on glycolipid ganglioside GD2. An Asp32His substitution replaced a negatively charged amino acid residue with a positively charged one just outside the binding site. Computer modeling predicted ~0.5 kcal/mol improvement in electrostatic interaction with the sialic acid groups in good agreement with the measured increase in binding. In another example, computer modeling predicted five substitutions that could strengthen electrostatic interactions between epidermal growth factor receptor and an antibody targeted to it (cetuximab, Erbitux®). Experiments confirmed that three of the five increased binding affinity. Substitutions Ser26Asp and Thr31Glu replaced polar residues with negatively charged residue, while Asn93Ala replaces a polar residue with an uncharged residue. All substitutions were in the antibody light chain. The combination of all three substitutions increased the binding 10-fold by decreasing <span class="math inline">\(K_d\)</span> decreased from 490 pM to 52 pM.<span class="citation" data-cites="lippowComputationalDesignAntibodyaffinity2007"><sup>[<a href="#ref-lippowComputationalDesignAntibodyaffinity2007" role="doc-biblioref">13</a>]</sup></span> The researchers noted that solvent-exposed electrostatic interactions and hydrogen bonds were more stabilizing than buried ones because they remain solvated. The loss of solvation energy made most buried electrostatic interactions and hydrogen bonds unfavorable.</p>
+<p>Electrostatic interactions can also strengthen binding by long-range interactions that occur before binding occurs. Electrostatic steering increases binding strength by increasing the collision frequency between oppositely charged proteins and ligands, Figure {<a href="#fig-electrostatic_steer" class="quarto-xref">Figure&nbsp;<span>6.11</span></a>}b above. Binding requires the protein and ligand to bump into one another as they randomly move through the solution. Electrostatic forces alter the collision rates between molecules because they act over long distances, that is, beyond van der Waals contact distances (see Chapter 2). This longer range of electrostatic interactions effectively makes charged molecules larger when they interact with other charged molecules. Nearby oppositely charged molecules can move toward each other to make van der Waals contact, while uncharged molecules must meet within their van der Waals radii. This increase in the number of collisions between oppositely charged molecules increases the rate of association of protein and ligand and thereby strengthens the binding interactions. Increasing the electrostatic interaction between separated partners as compared to the complex by 1 kcal/mol increases the association rate by a factor of 2.8.<span class="citation" data-cites="selzerRationalDesignFaster2000"><sup>[<a href="#ref-selzerRationalDesignFaster2000" role="doc-biblioref">14</a>]</sup></span> Charges that steer partners toward each other may also contribute to stronger binding after the complex forms. In contrast, partners with low net charge will not be steered even though they form favorable electrostatic interactions after binding.</p>
+<p>To engineer such an increase, one increases the charge difference between the protein and ligand. For example, Selzer and coworkers<span class="citation" data-cites="selzerRationalDesignFaster2000"><sup>[<a href="#ref-selzerRationalDesignFaster2000" role="doc-biblioref">14</a>]</sup></span> increased the affinity between β-lactamase (negative net charged) and its inhibitor (no net charge) 250-fold by giving the inhibitor a positive net charge. Four substitutions increased the positive charge by six units. A web tool predicts the increase in association rate upon mutagenesis: .</p>
+<p>The components of binding Gibbs energy, ΔH and −TΔS, do not map simply onto specific molecular events, making mechanistic interpretation challenging. Enthalpy (ΔH) reflects the balance of non-covalent interactions formed and broken during binding. Favorable contributions (−ΔH°) arise from hydrogen bonds, van der Waals contacts, and electrostatic interactions between protein and ligand. Unfavorable contributions (+ΔH°) result from desolvation penalties—breaking hydrogen bonds between the ligand and water, and between binding site residues and water. The observed ΔH° is the net sum of these competing effects.</p>
+<p>Entropy (-TΔS°) reflects changes in the number of accessible microstates of the system. Unfavorable contributions (−ΔS°) include loss of translational and rotational freedom when the ligand binds, and loss of conformational flexibility in both protein (side chain immobilization, induced fit) and ligand (freezing of rotatable bonds). Favorable contributions (+ΔS°) primarily arise from release of ordered water molecules from the binding site and ligand surface into bulk solvent—the hydrophobic effect. Additionally, protein conformational changes may sometimes increase local disorder.</p>
+<p>The observed Gibbs energy of binding represents the net balance of all these opposing entropic and enthalpic terms, complicating direct assignment to specific binding mechanisms.</p>
+</section>
+<section id="computational-design-of-tighter-binding" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="computational-design-of-tighter-binding"><span class="header-section-number">6.4</span> Computational design of tighter binding</h2>
+<p><strong>Docking models protein-ligand complexes.</strong> Designing improved binding interactions relies on computer modeling of the interactions. An accurate structure of the ligand complexed to the binding protein is the best starting point for computer modeling, but such structures are rarely available. Protein-ligand docking is a molecular modeling technique to create a model of a protein-ligand complex from a structure of the binding protein. SwissDock is a web tool for protein-ligand docking.<span class="citation" data-cites="bugnonSwissDock2024Major2024"><sup>[<a href="#ref-bugnonSwissDock2024Major2024" role="doc-biblioref">15</a>]</sup></span> The most common application of docking is drug design, but it is also useful for protein design. Docking predicts where the ligand binds to the protein, the geometry of the bound ligand and the strength of the binding interaction.</p>
+<p>As with all protein modeling, the two challenges are sampling and scoring. Sampling finds possible binding locations, orientations and conformations. Scoring evaluates and ranks these possibilities to identify the best ones. If the sampling does not generate the best-binding structure, then scoring cannot identify it.</p>
+<p>For sampling, SwissDock uses an approach called Attracting Cavities.<span class="citation" data-cites="zoeteAttractingCavitiesDocking2016"><sup>[<a href="#ref-zoeteAttractingCavitiesDocking2016" role="doc-biblioref">16</a>]</sup></span> It replaces the complex protein with a simplified set of points that represent attractive interactions with a protein cavity. This simplification eliminates bumping interactions from the protein atoms, which allows more efficient sampling of the conformations to find those that maximize the attractive interactions.</p>
+<p>For scoring, SwissDock restores the protein structure and calculates the energies using the CHARMM force field, which is similar to AMBER and intended for modeling biological molecules. Solvation calculations use an implicit solvent model, which lacks individual solvent molecules. The energy contributions to scoring are the ligand-protein interaction energy, the conformational energy of the ligand and protein and the desolvation energy of the protein and ligand. The calculated energies are estimates of the Gibbs energy of binding.</p>
+<p>SwissDock accurately reproduced the experimental structures (rmsd ≤2 Å) of 285 protein-ligand complexes in 73% of the cases.<span class="citation" data-cites="rohrigAttractingCavities202023"><sup>[<a href="#ref-rohrigAttractingCavities202023" role="doc-biblioref">17</a>]</sup></span> It performs best for ligands with limited numbers of possible conformations (≤10 rotatable bonds), and for binding orientations where most of the ligand surface (≥85%) interacts with protein. The conformations of large solvent-exposed regions of the ligand are difficult to predict accurately.</p>
+<p><strong>Computational design of binding proteins.</strong> Predicting substitutions that improve the affinity of a protein for a target ligand has shown some success, but remains challenging. Computational design using Rosetta predicted seventeen proteins that bind to the steroid portion of digoxin called digoxigenin.<span class="citation" data-cites="tinbergComputationalDesignLigandbinding2013"><sup>[<a href="#ref-tinbergComputationalDesignLigandbinding2013" role="doc-biblioref">18</a>]</sup></span> Two of these proteins showed micromolar affinity for the target, which is relatively weak affinity, but the ability to predict such proteins is an impressive accomplishment. Further optimization did not use computation, but directed evolution methods (see Chapters 6 and 7) and yielded proteins with picomolar affinity for digoxigenin. The designed protein included hydrogen bond interactions with the hydroxyl groups of digoxigenin, so it showed selectivity against analogs lacking these hydroxyl groups. Other computational design were even less successful. Morin et al.<span class="citation" data-cites="morinComputationalDesignEndo14betaxylanase2011"><sup>[<a href="#ref-morinComputationalDesignEndo14betaxylanase2011" role="doc-biblioref">19</a>]</sup></span> designed twelve possible binding sites in <em>endo</em>-1,4-β-xylanase for the antibiotic vancomycin, but none of the designs bound vancomycin. X-ray structure analysis of four designs showed the predicted conformation, but molecular dynamics showed that the designs were highly flexible. The authors suggest that the designed sites spent most of their time in conformations not suitable for binding.</p>
+</section>
+<section id="selective-binding" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="selective-binding"><span class="header-section-number">6.5</span> Selective binding</h2>
+<p><strong>Define selectivity.</strong> Selectivity, S, is the ability to distinguish between alternatives. Binding selectivity is the ability of a protein to bind one ligand more tightly than another one, Figure <a href="#fig-delG_selective_binding" class="quarto-xref">Figure&nbsp;<span>6.12</span></a>. The selectivity value, S, is the ratio of the affinities of the protein for the preferred and non-preferred ligands. This value depends on comparison molecules, so they should always be included with the number. For many proteins, their ability of proteins to favor binding one ligand in the presence of competing ligands is what makes them valuable. For example, the cardiovascular antibody drug abciximab selectively binds to a receptor involved in platelet aggregation to inhibit formation of blood clots.</p>
+<div id="fig-delG_selective_binding" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Gibbs energy diagram comparing an antibody's binding of two competing ligands. Ab·lig2 is lower in energy (more stable) than Ab·lig1, so ligand 2 dissociates less readily (larger ΔG_diss2 versus ΔG_diss1); the difference between the two dissociation energies, ΔΔG_diss2-diss1, quantifies the antibody's binding selectivity for ligand 2 over ligand 1.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-delG_selective_binding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter6/delG_selective_binding.svg" class="img-fluid figure-img" alt="Gibbs energy diagram comparing an antibody's binding of two competing ligands. Ab·lig2 is lower in energy (more stable) than Ab·lig1, so ligand 2 dissociates less readily (larger ΔG_diss2 versus ΔG_diss1); the difference between the two dissociation energies, ΔΔG_diss2-diss1, quantifies the antibody's binding selectivity for ligand 2 over ligand 1." width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-delG_selective_binding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.12: Gibbs energy diagram of selective binding of ligand 2 (lig<span class="math inline">\(_2\)</span>) over ligand 1 (lig<span class="math inline">\(_1\)</span>) to an antibody (Ab)
+</figcaption>
+</figure>
+</div>
+<p>The affinity of a protein for a ligand is given by the equilibrium association constant, <span class="math inline">\(K_{as}\)</span>, for the binding reaction, eq <a href="#eq-affinity_rxn" class="quarto-xref">Equation&nbsp;<span>6.11</span></a>. It is the inverse of the dissociation constant defined in Figure <a href="#fig-binding_equilib" class="quarto-xref">Figure&nbsp;<span>6.2</span></a> above.</p>
+<p><span id="eq-affinity_rxn"><span class="math display">\[ \text{Ab + ligand} \rightleftharpoons \text{Ab·ligand} \quad K_{as} = \frac{\text{[Ab·ligand]}}{\text{[Ab]·[ligand]}}  \tag{6.11}\]</span></span></p>
+<p>Binding selectivity, <span class="math inline">\(S_{bind}\)</span>, is the ratio of the affinities for the two protein-ligand complexes being compared, eq. <a href="#eq-def_bind_sel" class="quarto-xref">Equation&nbsp;<span>6.12</span></a>. By convention, the equilibrium association constant for the tighter-binding ligand, t, is in the numerator and that for the weaker-binding ligand, w, is in the denominator yielding binding selectivity values that are greater than one. The binding selectivity should also mention which ligands are being compared. A selectivity of ten corresponds to ten-fold tighter binding of one ligand as compared to the other ligand. A selectivity of one corresponds to no selectivity; that is, equal affinity for both.</p>
+<p><span id="eq-def_bind_sel"><span class="math display">\[S_{bind} = \frac{K_{as-t}}{K_{as-w}} = \frac{\frac{1}{K_{d-t}}}{\frac{1}{K_{d-w}}} = \frac{K_{d-w}}{K_{d-t}} \tag{6.12}\]</span></span></p>
+<p>Binding selectivity can also be expressed in terms of the equilibrium constants for dissociation, which are the inverse of the equilibrium constants for association. The dissociation constant for the weaker-binding ligand is in the numerator while that for the tighter-binding ligand is in the denominator.The selectivity of an protein for two competing ligands can be measured by measuring each binding affinity separately, then dividing the two values.</p>
+<p>The Gibbs energy change associated with binding selectivity, eq. <a href="#eq-ddg_sel" class="quarto-xref">Equation&nbsp;<span>6.13</span></a>, is the difference between the Gibbs energy changes of the two association reactions. The Gibbs energy change is negative since association of the tighter-binding ligand is more favorable.</p>
+<p><span id="eq-ddg_sel"><span class="math display">\[\Delta \Delta G_{S_{bind}} = \Delta G_{as-t} - \Delta G_{as-w} -RT \ln\left(\frac{K_{as-t}}{K_{as-w}}\right) = -RT \ln\left( S_{bind} \right)  \tag{6.13}\]</span></span></p>
+<p>To engineer a protein for increased selectivity between a preferred and a non-preferred ligand, one can either decrease the affinity of the protein for the non-preferred ligand (negative selection) or increase the affinity of the protein for the preferred ligand (positive selection). The best approach will depend on the details of the application.</p>
+</section>
+<section id="glossary" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="glossary">Glossary</h2>
+<dl>
+<dt>Boltzmann factor or weight</dt>
+<dd>
+is the probability that the binding site conformation when unbound is the same as that when it is bound. The Boltzmann factor is a way to measure the preorganization of a binding site for binding.
+</dd>
+</dl>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-bantaReplacingAntibodiesEngineering2013" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Banta, S., Dooley, K., &amp; Shur, O. (2013). Replacing antibodies: Engineering new binding proteins. <em>Annu. Rev. Biomed. Eng.</em>, <em>15</em>(1), 93–113. <a href="https://doi.org/10.1146/annurev-bioeng-071812-152412">https://doi.org/10.1146/annurev-bioeng-071812-152412</a></div>
+</div>
+<div id="ref-rossiAnalysisProteinligandInteractions2011" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Rossi, A. M., &amp; Taylor, C. W. (2011). Analysis of protein-ligand interactions by fluorescence polarization. <em>Nat Protoc</em>, <em>6</em>(3), 365–387. <a href="https://doi.org/10.1038/nprot.2011.305">https://doi.org/10.1038/nprot.2011.305</a></div>
+</div>
+<div id="ref-pollardMBOCTechnicalPerspective2010" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Pollard, T. D. (2010). <span>MBOC</span> technical perspective: <span>A</span> guide to simple and informative binding assays. <em>Mol. Biol. Cell</em>, <em>21</em>(23), 4061–4067. <a href="https://doi.org/10.1091/mbc.E10-08-0683">https://doi.org/10.1091/mbc.E10-08-0683</a></div>
+</div>
+<div id="ref-jeffrey2610FabdigoxinComplex1993" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Jeffrey, P. D., Strong, R. K., Sieker, L. C., Chang, C. Y. Y., Campbell, R. L., Petsko, G. A., Haber, E., Margolies, M. N., &amp; Sheriff, S. (1993). 26-10 <span class="nocase">Fab-digoxin</span> complex: <span>Affinity</span> and specificity due to surface complementarity. <em>Proc. Natl. Acad. Sci. U. S. A.</em>, <em>90</em>(21), 10310–10314. <a href="https://doi.org/10.1073/pnas.90.21.10310">https://doi.org/10.1073/pnas.90.21.10310</a></div>
+</div>
+<div id="ref-tianCASTpComputedAtlas2018" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Tian, W., Chen, C., Lei, X., Zhao, J., &amp; Liang, J. (2018). <span>CASTp</span> 3.0: Computed atlas of surface topography of proteins. <em>Nucleic Acids Res.</em>, <em>46</em>(W1), W363–W367. <a href="https://doi.org/10.1093/nar/gky473">https://doi.org/10.1093/nar/gky473</a></div>
+</div>
+<div id="ref-paceForcesStabilizingProteins2014" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Pace, C. N., Scholtz, J. M., &amp; Grimsley, G. R. (2014). Forces stabilizing proteins. <em>FEBS Lett.</em>, <em>588</em>(14), 2177–2184. <a href="https://doi.org/10.1016/j.febslet.2014.05.006">https://doi.org/10.1016/j.febslet.2014.05.006</a></div>
+</div>
+<div id="ref-erikssonResponseProteinStructure1992" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Eriksson, A. E., Baase, W. A., Zhang, X. J., Heinz, D. W., Blaber, M., Baldwin, E. P., &amp; Matthews, B. W. (1992). Response of a protein structure to cavity-creating mutations and its relation to the hydrophobic effect. <em>Science</em>, <em>255</em>(5041), 178–183. <a href="https://doi.org/10.1126/science.1553543">https://doi.org/10.1126/science.1553543</a></div>
+</div>
+<div id="ref-jonesLargerActiveSite2020" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Jones, B. J., Evans, R. L., Mylrea, N. J., Chaudhury, D., Luo, C., Guan, B., Pierce, C. T., Gordon, W. R., Wilmot, C. M., &amp; Kazlauskas, R. J. (2020). Larger active site in an ancestral hydroxynitrile lyase increases catalytically promiscuous esterase activity. <em>PLoS ONE</em>, <em>15</em>, e0235341. <a href="https://doi.org/10.1371/journal.pone.0235341">https://doi.org/10.1371/journal.pone.0235341</a></div>
+</div>
+<div id="ref-delorbeThermodynamicStructuralEffects2009" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">DeLorbe, J. E., Clements, J. H., Teresk, M. G., Benfield, A. P., Plake, H. R., Millspaugh, L. E., &amp; Martin, S. F. (2009). Thermodynamic and structural effects of conformational constraints in protein-ligand interactions. <span>Entropic</span> paradoxy associated with ligand preorganization. <em>J. Am. Chem. Soc.</em>, <em>131</em>(46), 16758–16770. <a href="https://doi.org/10.1021/ja904698q">https://doi.org/10.1021/ja904698q</a></div>
+</div>
+<div id="ref-barrosImprovingEfficiencyLigandbinding2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Barros, E. P., Schiffer, J. M., Vorobieva, A., Dou, J., Baker, D., &amp; Amaro, R. E. (2019). Improving the efficiency of ligand-binding protein design with molecular dynamics simulations. <em>J. Chem. Theory Comput.</em>, <em>15</em>(10), 5703–5715. <a href="https://doi.org/10.1021/acs.jctc.9b00483">https://doi.org/10.1021/acs.jctc.9b00483</a></div>
+</div>
+<div id="ref-thakkarAffinityImprovementTherapeutic2014" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Thakkar, S., Nanaware-Kharade, N., Celikel, R., Peterson, E. C., &amp; Varughese, K. I. (2014). Affinity improvement of a therapeutic antibody to methamphetamine and amphetamine through structure-based antibody engineering. <em>Sci. Rep.</em>, <em>4</em>, 3673. <a href="https://doi.org/10.1038/srep03673">https://doi.org/10.1038/srep03673</a></div>
+</div>
+<div id="ref-zhaoAlterationElectrostaticSurface2015" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Zhao, Q., Ahmed, M., Guo, H., Cheung, I. Y., &amp; Cheung, N.-K. V. (2015). Alteration of electrostatic surface potential enhances affinity and tumor killing properties of anti-ganglioside <span>GD2</span> monoclonal antibody <span class="nocase">hu3F8</span>. <em>J. Biol. Chem.</em>, <em>290</em>(21), 13017–13027. <a href="https://doi.org/10.1074/jbc.M115.650903">https://doi.org/10.1074/jbc.M115.650903</a></div>
+</div>
+<div id="ref-lippowComputationalDesignAntibodyaffinity2007" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Lippow, S. M., Wittrup, K. D., &amp; Tidor, B. (2007). Computational design of antibody-affinity improvement beyond in vivo maturation. <em>Nat. Biotechnol.</em>, <em>25</em>(10), 1171–1176. <a href="https://doi.org/10.1038/nbt1336">https://doi.org/10.1038/nbt1336</a></div>
+</div>
+<div id="ref-selzerRationalDesignFaster2000" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Selzer, T., Albeck, S., &amp; Schreiber, G. (2000). Rational design of faster associating and tighter binding protein complexes. <em>Nat. Struct. Biol.</em>, <em>7</em>(7), 537–541. <a href="https://doi.org/10.1038/76744">https://doi.org/10.1038/76744</a></div>
+</div>
+<div id="ref-bugnonSwissDock2024Major2024" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Bugnon, M., Röhrig, U. F., Goullieux, M., Perez, M. A. S., Daina, A., Michielin, O., &amp; Zoete, V. (2024). <span>SwissDock</span> 2024: Major enhancements for small-molecule docking with <span>Attracting Cavities</span> and <span>AutoDock Vina</span>. <em>Nucleic Acids Res</em>, <em>52</em>(W1), W324–W332. <a href="https://doi.org/10.1093/nar/gkae300">https://doi.org/10.1093/nar/gkae300</a></div>
+</div>
+<div id="ref-zoeteAttractingCavitiesDocking2016" class="csl-entry" role="listitem">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Zoete, V., Schuepbach, T., Bovigny, C., Chaskar, P., Daina, A., Röhrig, U. F., &amp; Michielin, O. (2016). Attracting cavities for docking. <span>Replacing</span> the rough energy landscape of the protein by a smooth attracting landscape. <em>J Comput Chem</em>, <em>37</em>(4), 437–447. <a href="https://doi.org/10.1002/jcc.24249">https://doi.org/10.1002/jcc.24249</a></div>
+</div>
+<div id="ref-rohrigAttractingCavities202023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">Röhrig, U. F., Goullieux, M., Bugnon, M., &amp; Zoete, V. (2023). Attracting <span>Cavities</span> 2.0: Improving the flexibility and robustness for small-molecule docking. <em>J. Chem. Inf. Model.</em>, <em>63</em>(12), 3925–3940. <a href="https://doi.org/10.1021/acs.jcim.3c00054">https://doi.org/10.1021/acs.jcim.3c00054</a></div>
+</div>
+<div id="ref-tinbergComputationalDesignLigandbinding2013" class="csl-entry" role="listitem">
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">Tinberg, C. E., Khare, S. D., Dou, J., Doyle, L., Nelson, J. W., Schena, A., Jankowski, W., Kalodimos, C. G., Johnsson, K., Stoddard, B. L., &amp; Baker, D. (2013). Computational design of ligand-binding proteins with high affinity and selectivity. <em>Nature</em>, <em>501</em>(7466), 212–216. <a href="https://doi.org/10.1038/nature12443">https://doi.org/10.1038/nature12443</a></div>
+</div>
+<div id="ref-morinComputationalDesignEndo14betaxylanase2011" class="csl-entry" role="listitem">
+<div class="csl-left-margin">19. </div><div class="csl-right-inline">Morin, A., Kaufmann, K. W., Fortenberry, C., Harp, J. M., Mizoue, L. S., &amp; Meiler, J. (2011). Computational design of an endo-1,4-beta-xylanase ligand binding site. <em>Protein Eng. Des. Sel.</em>, <em>24</em>(6), 503–516. <a href="https://doi.org/10.1093/protein/gzr006">https://doi.org/10.1093/protein/gzr006</a></div>
+</div>
+</div>
+</section>
+<section id="supporting-information" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="supporting-information">Supporting Information</h2>
+<p><strong>Code Block S4.1.</strong> Python script to fit data for an equilibrium dialysis experiment (Fig <a href="#fig-bind_plot" class="quarto-xref">Figure&nbsp;<span>6.5</span></a>)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#! /usr/bin/env python</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># coding: utf-8</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># also run the command below in terminal</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># sudo chmod +x file-name.py</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np               <span class="co">#import math functions to use arrays</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> optimize       <span class="co">#import non-linear fit function</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co">#import plotting function</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># enter your data here</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>freeAg <span class="op">=</span> np.array([<span class="fl">0.02</span>, <span class="fl">0.05</span>, <span class="fl">0.10</span>, <span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.6</span>, <span class="dv">1</span>])</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.array([<span class="fl">0.20</span>, <span class="fl">0.37</span>, <span class="fl">0.57</span>, <span class="fl">0.74</span>, <span class="fl">0.84</span>, <span class="fl">0.93</span>, <span class="fl">0.98</span>])</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Kd <span class="op">=</span> <span class="fl">0.1</span> <span class="co"># initial guess for Kd</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># define equation to be fit</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> satCurve(freeAg, Kd):</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> freeAg<span class="op">/</span>(freeAg <span class="op">+</span> Kd)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># fit the data to the equation using non-linear least squares with</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># default fit settings</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>popt, pcov <span class="op">=</span> optimize.curve_fit(satCurve, freeAg, Y, Kd)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Kd ="</span>, <span class="st">"</span><span class="sc">{0:.3f}</span><span class="st">"</span>.<span class="bu">format</span>(popt[<span class="dv">0</span>]))</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># plot data and best fit curve</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>plt.scatter(freeAg, Y)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>xfit <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>plt.plot(xfit, satCurve(xfit, popt[<span class="dv">0</span>]), <span class="st">'r-'</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'free antigen concentration'</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'fraction of antibody containing bound antigen'</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="problems" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problems">Problems</h2>
+<ol type="1">
+<li><p>The equilibrium dissociation constant, <span class="math inline">\(K_d\)</span>, of an antibody and its ligand (a peptide) is 5 <span class="math inline">\(\mu M\)</span> at pH 5.0 and 25 °C.</p>
+<ol type="a">
+<li><p>At what concentration of the ligand is half of the protein bound?</p></li>
+<li><p>What fraction of the protein is bound at ligand concentration of 1.25 <span class="math inline">\(\mu M\)</span>?</p></li>
+<li><p>When the pH was raised to 6.5, the <span class="math inline">\(K_d\)</span> increased to 20 <span class="math inline">\(\mu M\)</span>. Is the binding tighter or weaker at this pH compared to pH 5.0? Explain why.</p></li>
+<li><p>What functional groups/residues are most likely responsible for this change in the binding affinity with pH?</p></li>
+</ol></li>
+</ol>
+<p>The problems below use the experimental data from a paper reporting the design of a protein (DIG10.3) that tightly binds digoxigenin<span class="citation" data-cites="tinbergComputationalDesignLigandbinding2013"><sup>[<a href="#ref-tinbergComputationalDesignLigandbinding2013" role="doc-biblioref">18</a>]</sup></span> to test the ability of docking calculations, SwissDock <a href="#fn-sym-5" id="fnref-sym-5" class="footnote-ref" role="doc-noteref"><sup>¶</sup></a> to predict the affinity of a protein for a ligand.</p>
+<ol start="2" type="1">
+<li> The x-ray structure of DIG10.3 (pdb id = 4J9A) contains 9 monomers in the unit cell. For simplicity, we will delete eight of these leaving only chain A. The structure also contains bound digoxigenin, which we will remove so that SwissDock can predict the binding position. Finally, we will save the modified file. Download this structure from the Protein Data Bank. Open the file with a text editor and read the notes at the beginning. In particular, note whether any amino acids are missing from the structure of chain A. Next, open the file using PyMOL. Enter the following commands on the input line (ignore comments after #).</li>
+</ol>
+<pre><code>remove (not chain A) # deletes all chains except chain A
+remove (resn DOG) # deletes residue named 'DOG'
+save DIG103_A.pdb # saves your modified structure as a pdb file</code></pre>
+<p>The file is saved in your working directory, usually your home directory; mine is ‘/Users/romas’. Search to find the file, if needed. Next, create the Tyr34Phe variant using the instructions in Homework 1 (Wizard <span class="math inline">\(=&gt;\)</span> Mutagenesis <span class="math inline">\(=&gt;\)</span> Protein …). Use the suggested default rotamer of the Phe replacement. The following commands may be helpful.</p>
+<pre><code>show sticks, resi 34 # shows Tyr34 so that you can select it
+save DIG103_A_Y34F.pdb # saves file once you have made the substitution.</code></pre>
+<p>Additional troubleshooting: If SwissDock fails to verify your file of the mutated protein, check that your pdb file contains only the mutated protein. One student’s file contained three proteins, not one. Open your file in a text editor. Check to see that a line that reads ‘TER’ occurs only once in your file and that it is the penultimate line. If you find ‘TER’ more than once, you must delete both the extra ‘TER’ and the atoms associated with that extra protein. Your file should contain 905 atoms and the last four lines of your file should read:</p>
+<p>ATOM 904 O ARG A 123 0.634 -10.220 7.065 1.00 48.12 O</p>
+<p>ATOM 905 CB ARG A 123 3.588 -8.274 5.874 1.00 50.26 C</p>
+<p>TER</p>
+<p>END</p>
+<ol start="3" type="1">
+<li> Submit the calculation to dock digoxigenin to the wild-type protein and to the Tyr34Phe variant at . Leave the default ‘Docking with Attracting Cavities’ selected. In section 1 - Submit a ligand, click on advanced search and enter ‘digoxigenin’, then click on the digoxigenin structure and click apply. This brings you back to the starting page. Click on ‘Prepare ligand’. You should get a green check mark.</li>
+</ol>
+<p>In section 2 - Submit a target, click on choose file, then select the DIG103_A.pdb file that you created above to upload it. This brings you back to the starting page. Click on ‘Prepare target’. You should get a green check mark.</p>
+<p>In sections 3 &amp; 4, no changes are needed. Click on ‘Check parameters’. You should get a green check mark and an estimate of how long the calculation will take, about 10 min. It usually takes a bit longer than this estimate; be patient.</p>
+<p>In section 5 - Start docking, enter a docking name like DOG_DIG103_A, then click on ‘START DOCKING’.</p>
+<p>The result of the docking calculation is a set of ten clusters where each cluster contains a set of similar binding orientations. The tightest binding cluster is cluster 0 and usually contains eight binding orientations. We will compare the best binding orientations (most negative AC score in cluster 0) and assume that it is in kcal/mol.</p>
+<ol type="a">
+<li><p> Compare the AC score for the best binding orientation in cluster 0 of digoxigenin to the wt protein and to the Tyr34Phe variant. Assume the score corresponds the Gibbs energy of binding of the ligand to the target in kcal/mol. Calculate the predicted equilibrium dissociation constants, <span class="math inline">\(K_d\)</span>. Calculate the predicted difference in binding affinity of the two proteins. Assume the temperature is 25 <span class="math inline">\(^{\circ}\)</span>C. Recall that favorable binding corresponds to a positive dissociation energy. Remember to compare in Gibbs energies, but of dissociation constants. SwissDock yields negative numbers, which correspond to association energies. Reverse the sign on these values to convert them to dissociation energies.</p></li>
+<li><p> The experimental inhibition constants for DIG binding to DIG10.3 is 0.65±0.03 nM and to DIG10.3-Tyr34Phe is 59±6 nM (Figure 4, panels b &amp; d)<span class="citation" data-cites="tinbergComputationalDesignLigandbinding2013"><sup>[<a href="#ref-tinbergComputationalDesignLigandbinding2013" role="doc-biblioref">18</a>]</sup></span> The experiments involved displacement of DIG-PEG<span class="math inline">\(_{3}\)</span>-Alexa488 from the protein with DIG, so they are called inhibition constants, not binding constants. Assume these inhibition constants are accurate measures of <span class="math inline">\(K_d\)</span>. Calculate the same values as in 1a using these experimental values and comment on any differences.</p></li>
+<li><p>Compare the predicted and experimental difference in the affinities of the two proteins for DIG to the expected contribution of one hydrogen bond to the binding. Discuss the lack of agreement between the calculated and experimental values. Suggest two reasons that could contribute to the lack of agreement. </p></li>
+</ol>
+<ol start="4" type="1">
+<li> Repeat the calculation in question 1, but increase the number of random initial conditions (RIC) from the default of 1 to 3.</li>
+</ol>
+<ol type="a">
+<li><p>Compare the predicted values here with those in question 1. Rationalize any differences.</p></li>
+<li><p>Compare the predicted values here with the experimental values. Rationalize any differences.</p></li>
+<li><p>Discuss whether this docking web tool could be used in place of the Rosetta tool used by Tinberg <span class="citation" data-cites="tinbergComputationalDesignLigandbinding2013"><sup>[<a href="#ref-tinbergComputationalDesignLigandbinding2013" role="doc-biblioref">18</a>]</sup></span> to design a protein to that binds digoxigenin.</p></li>
+</ol>
+</section>
+<section id="answers" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="answers">Answers</h2>
+<details><summary>Click to show answers</summary>
+<ol type="1">
+<li><ol type="a">
+<li>5 <span class="math inline">\(\mu M\)</span> b) using equation 6.5, Y = 1.25/6.25 = 20% c) weaker because the <span class="math inline">\(K_d\)</span> has increased. d) A group with a p<span class="math inline">\(K_a\)</span> in the range of 5-6.5; aspartate, glutamate or histidine side chains are possible. Since the pKa of functional groups changes when embedded into a protein environment, other groups may also be responsible and one could make a better estimate if the structure of the protein were available.</li>
+</ol></li>
+<li><ol type="a">
+<li>WT AC scores: -13.96097, -13.91753, -12.76379, -12.47792, -7.96029, -5.14183, 13.89088, 14.30629; AC scores: -20.42112, -16.18831, -14.83161, -14.22944, -14.00921, -13.65794, -13.34280, -12.30052 b) experimental: wt (<span class="math inline">\(K_d = 0.653 * 10^{-9} M\)</span>); Tyr34Phe variant $<span class="math inline">\(100-fold less tightly (\)</span>K_d = 59 * 10^{-9} M$). A factor of 100 corresponds to 2.8 kcal/mol at 298 K. A hydrogen bond is expected to contribute 0-2 kcal/mol to binding (p 25 of text), which corresponds to a factor of 1-30, so a factor of 100 suggests that interactions beyond a hydrogen bond are involved. SwissDock calculations yield , that is the inverse a dissociation constant, so use +14 kcal/mol to calculate <span class="math inline">\(K_d = 5 * 10^{-11}M\)</span>, which is about 20-fold lower than the experimental value for wt. The value for Tyr34Phe, is <span class="math inline">\(K_d = 10^{-15}M\)</span>, which is off by a factor of 50 million. SwissDock using default settings incorrectly predicts that the Tyr34Phe variant binds more 50,000-fold more tightly wt.</li>
+</ol></li>
+</ol>
+<ol start="3" type="a">
+<li>The lack of agreement may be a sampling failure due to insufficient search of conformations such as those that may require movement of the protein. The lack of agreement could be due to the inability of the force field used by SwissDock to accurately calculate the binding energy (a scoring failure).</li>
+</ol>
+<ol start="4" type="1">
+<li><ol type="a">
+<li>increase the number of random initial conditions (RIC) from the default of 1 to 3 WT AC scores: -20.83291, -16.41948, -16.21564, -14.90450, -14.35758, -14.31006, -14.29569, -14.01725; Y34F AC scores: -16.303044, -14.243850, -14.050263, -13.886717, -13.784884, -13.460208, -12.810371, -12.024448</li>
+</ol></li>
+</ol>
+<ol start="2" type="a">
+<li><p>Now the ranking correctly predict that wt binds more tightly than Tyr34Phe, but numbers differ significantly from the experimental values. The SwissDock-predicted <span class="math inline">\(K_d^{wt} = 5.5*10^{-16}\)</span>, which is a million-fold too high; SwissDock <span class="math inline">\(K_d^{Y34F} = 1.1*10^{-12}\)</span>, which is 50,000-fold too high. The ratio of <span class="math inline">\(K_d\)</span>’s overestimates the experimental ratio by about a factor of 20. This difference could be due to sampling (SwissDock did not find a representative sample of the true binding orientations), perhaps because even more of the protein must move than the 5 Å permitted here or due to a scoring error, where the Gibbs energy of the interaction is not calculated correctly.</p></li>
+<li><p>Rosetta predicted an interaction energy of $$15.5 REU for DIG10 and the ligand (Figure 1, panel b). If we assume that REU’s (Rosetta energy units) correspond to kcal/mol, then this prediction corresponds to a <span class="math inline">\(K_d\)</span> of <span class="math inline">\(0.004*10^{-9}\)</span>, which is 3 million-fold stronger binding than the experimental value of <span class="math inline">\(12,000*10^{-9}\)</span>. Thus, neither Rosetta, nor SwissDock accurately predict the binding constant. SwissDock did rank the wt and Tyr34Phe variant correctly; the Tinberg paper did not calculate the relative binding strengths, they just measured them. Rosetta calculated two things that SwissDock did not: average H-bonding Boltzmann weight and the protein stability. Both of these are characteristics of the protein: is it preorganized for binding and is it stable. Both of these are important for design and missing from SwissDock. SwissDock assumes that the given structure is correct, while Rosetta predicts the structure. SwissDock cannot be used for protein design, but it may be helpful to predict small modifications.</p></li>
+</ol>
+</details>
+
+
+<hr>
+<div id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<div id="fn-sym-1" role="doc-endnote">
+<p><sup>*</sup> Non-linear least squares fitting of eq. <a href="#eq-binding_saturation" class="quarto-xref">Equation&nbsp;<span>6.5</span></a> to the data starts with an initial guess for the dissociation constrant followed by iteration to find the best value. The supporting information includes a Python function for this fit.<a href="#fnref-sym-1" class="footnote-back" role="doc-backlink">↩︎</a></p>
+</div>
+<div id="fn-sym-2" role="doc-endnote">
+<p><sup>†</sup> Another surface, the solvent accessible surface, or Connolly surface, lies 1.4 Å outside the solvent contact surface. This surface represents the center, not the edge, of a water molecule on the surface. The solvent accessible surface is more convenient in some cases because positions on this surface will match the x,y,z coordinates of the rolling water molecule.<a href="#fnref-sym-2" class="footnote-back" role="doc-backlink">↩︎</a></p>
+</div>
+<div id="fn-sym-3" role="doc-endnote">
+<p><sup>‡</sup> Charles Cullen, a nurse and serial killer convicted in 2003, used digitalis (and other drugs) to kill possibly forty hospital patients. This story and that of Amy Loughren, the ICU nurse who helped convict Cullen, is told in the book <em>The Good Nurse</em> (2013), and a 2022 movie by the same title currently on Netflix.<a href="#fnref-sym-3" class="footnote-back" role="doc-backlink">↩︎</a></p>
+</div>
+<div id="fn-sym-4" role="doc-endnote">
+<p><sup>§</sup> The -genin suffix on these two compounds indicates the aglycone only.<a href="#fnref-sym-4" class="footnote-back" role="doc-backlink">↩︎</a></p>
+</div>
+<div id="fn-sym-5" role="doc-endnote">
+<p><sup>¶</sup> Bugnon (2024) SwissDock 2024: Major enhancements for small-molecule docking with Attracting Cavities and AutoDock Vina. , W324-W332. <a href="#fnref-sym-5" class="footnote-back" role="doc-backlink">↩︎</a></p>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter5.html" class="pagination-link" aria-label="Engineering More Stable Proteins">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Engineering More Stable Proteins</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

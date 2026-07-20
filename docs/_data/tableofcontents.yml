@@ -1,32 +1,26 @@
 docs_list_title: Chapters
 docs:
 
-- title: 1. Setting Goals
-  url: /assets/Chp-1-Setting-Goals.pdf
+- title: Preface
+  url: /book/index.html
 
-- title: 2. Making Variant Proteins
-  url: /assets/Chp-2-Making-Variant-Proteins.pdf
+- title: 1. Setting Protein Engineering Goals
+  url: /book/chapter1.html
 
-- title: 3. Logic of Protein Engineering
-  url: /assets/Chp-3-Logic.pdf
-  
-- title: 4. Molecular Modeling
-  url: /assets/Chp-4-Molecular-Modeling.pdf
+- title: 2. Making Protein Variants
+  url: /book/chapter2.html
 
-- title: 5. Engineering Protein Stability
-  url: /assets/Chp-5-Stability.pdf
+- title: 3. The Logic of Protein Engineering
+  url: /book/chapter3.html
 
-- title: 6. Engineering Protein Binding
-  url: /assets/Chp-6-Binding.pdf
+- title: 4. Protein Structure and Molecular Modeling
+  url: /book/chapter4.html
 
-- title: 7. Engineering Faster Enzymes
-  url: /assets/Chp-7-Faster-Enzymes.pdf
-  
-- title: 8. Engineering Reaction Selectivity
-  url: /assets/Chp-8-Selective-rxns.pdf
+- title: 5. Engineering More Stable Proteins
+  url: /book/chapter5.html
 
-- title: 9. Introduction to Directed Evolution
-  url: /assets/Chp-9-Intro-directed-evolution.pdf
+- title: 6. Engineering Tighter Binding
+  url: /book/chapter6.html
 
-- title: 10. Directed Evolution with Multiple Substitutions
-  url: /assets/Chp-10-Dir-Evol-Mult-AA.pdf
+- title: Download the full book (PDF)
+  url: /book/Protein-Engineering.pdf

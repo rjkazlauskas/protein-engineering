@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1&nbsp; Setting Protein Engineering Goals – Protein Engineering</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter2.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-0efda3af7dc20caffb9f21a679dee48f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setting Protein Engineering Goals</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Protein Engineering</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setting Protein Engineering Goals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Making Protein Variants</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The logic of protein engineering</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Protein Structure and Molecular Modeling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Engineering More Stable Proteins</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Engineering tighter binding</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-proteins-need-to-be-engineered" id="toc-why-proteins-need-to-be-engineered" class="nav-link active" data-scroll-target="#why-proteins-need-to-be-engineered"><span class="header-section-number">1.1</span> Why proteins need to be engineered</a></li>
+  <li><a href="#four-molecular-level-protein-engineering-goals" id="toc-four-molecular-level-protein-engineering-goals" class="nav-link" data-scroll-target="#four-molecular-level-protein-engineering-goals"><span class="header-section-number">1.2</span> Four molecular-level protein engineering goals</a></li>
+  <li><a href="#application-areas-of-engineered-proteins" id="toc-application-areas-of-engineered-proteins" class="nav-link" data-scroll-target="#application-areas-of-engineered-proteins"><span class="header-section-number">1.3</span> Application areas of engineered proteins</a>
+  <ul class="collapse">
+  <li><a href="#engineering-proteins-for-medicine" id="toc-engineering-proteins-for-medicine" class="nav-link" data-scroll-target="#engineering-proteins-for-medicine"><span class="header-section-number">1.3.1</span> Engineering proteins for medicine</a></li>
+  <li><a href="#engineering-proteins-for-agriculture" id="toc-engineering-proteins-for-agriculture" class="nav-link" data-scroll-target="#engineering-proteins-for-agriculture"><span class="header-section-number">1.3.2</span> Engineering proteins for agriculture</a></li>
+  <li><a href="#engineering-proteins-for-industry" id="toc-engineering-proteins-for-industry" class="nav-link" data-scroll-target="#engineering-proteins-for-industry"><span class="header-section-number">1.3.3</span> Engineering proteins for industry</a></li>
+  </ul></li>
+  <li><a href="#a-look-ahead-two-main-strategies-of-protein-engineering" id="toc-a-look-ahead-two-main-strategies-of-protein-engineering" class="nav-link" data-scroll-target="#a-look-ahead-two-main-strategies-of-protein-engineering"><span class="header-section-number">1.4</span> A look ahead: two main strategies of protein engineering</a></li>
+  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#answers" id="toc-answers" class="nav-link" data-scroll-target="#answers">Answers</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<style>
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+</style>
+<a href="#quarto-document-content" class="skip-link">Skip to main content</a>
+<div class="betterenzyme-header">
+  <div class="betterenzyme-header-inner">
+    <a class="betterenzyme-title" href="../">Protein Engineering</a>
+    <nav class="betterenzyme-nav">
+      <a href="../">Home</a>
+      <a href="../about/">About</a>
+      <a href="../scripts/">Scripts</a>
+    </nav>
+  </div>
+</div>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setting Protein Engineering Goals</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>© 2023–2026 Romas Kazlauskas. All rights reserved. Last revised: March 2026.</p>
+<p><strong>Summary.</strong> Protein engineering is the modification of proteins to improve their properties, usually by replacing amino acid residues with other amino acids. Proteins evolved in nature for their biological role, but for other applications, they usually require improvements. The four molecular goals are improvements in stability, binding, reactivity and selectivity. Biotechnology uses engineered proteins in three main application areas: medicine, agriculture, and industry. Protein engineering in medicine has tuned the bioavailability of insulin and increased the potency and plasma half-life of monoclonal antibodies. Protein engineering in agriculture has increased the insect resistance of crops and stabilized enzymes for use as feed additives. Protein engineering for industrial applications include stabilizing detergent enzymes and engineering enzymes for pharmaceutical synthesis. Replacing chemical methods for pharmaceutical manufacture with biocatalysis usually yields a greener, more environmentally friendly process.</p>
+<p><strong>Learning goals</strong></p>
+<ul>
+<li>While evolution in nature improves proteins for their natural function, application of proteins to non-natural functions requires protein engineering.</li>
+<li>The four molecular protein engineering goals are improvements in stability, binding, reactivity and selectivity. Identifying the goal is a critical first step of any protein engineering project.</li>
+<li>Achieving these molecular goals leads to a broad range of user benefits including lower costs, safer drugs, greener chemistry, improved diagnostics, or accessible healthcare.</li>
+<li>Engineered proteins have applications in medicine, agriculture and industry. Your home likely contains engineered proteins.</li>
+</ul>
+<section id="why-proteins-need-to-be-engineered" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="why-proteins-need-to-be-engineered"><span class="header-section-number">1.1</span> Why proteins need to be engineered</h2>
+<p>Over millennia humans have domesticated crops and animals by breeding to select for desired traits. Current wheat produces more grain than wild wheat; dogs are better companions than wolves. The molecular understanding of biology in recent decades created more powerful approaches to improve biology for human applications. These applications of biology to make useful products in medicine, agriculture and industry are collectively called biotechnology. The worldwide sales of biotechnology were ~US$160 billion in 2017.<span class="citation" data-cites="morrisonPublicBiotech2017the2018"><sup>[<a href="#ref-morrisonPublicBiotech2017the2018" role="doc-biblioref">1</a>]</sup></span> The most significant application area is medicine, sometimes called red biotechnology, <a href="#fig-three_circles" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>. The next largest is agriculture, called green biotechnology and the smallest is industry, called white biotechnology.</p>
+<div id="fig-three_circles" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Three circles of different sizes representing relative worldwide biotechnology sales: a large red circle for medicine, a medium green circle for agriculture, and a small white circle for industry, illustrating that medicine is the dominant biotechnology sector by sales.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-three_circles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter1/three_circles.svg" class="img-fluid figure-img" alt="Three circles of different sizes representing relative worldwide biotechnology sales: a large red circle for medicine, a medium green circle for agriculture, and a small white circle for industry, illustrating that medicine is the dominant biotechnology sector by sales.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-three_circles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: Biotechnology includes applications in medicine (red), agriculture (green) and industry (white). The areas of the circles approximate the relative worldwide sales in each area.
+</figcaption>
+</figure>
+</div>
+<p>The two primary technologies within biotechnology are genetic engineering and protein engineering. Genetic engineering changes the genetic code of an organism. The most common genetic engineering is adding a gene from one organism to another organism so that it makes a protein that it did not make previously. Such recombinant organisms gain new abilities. For example, adding the gene encoding human insulin to <em>E. coli</em> bacteria allowed manufacture of this essential therapeutic protein. Adding genes for proteins toxic to insects into crop plants made them resistant to insects. Combining genes to degrade different hydrocarbons into one bacteria enabled it to degrade oil spills more effectively.</p>
+<p>Protein engineering is the modification of proteins to improve them for specific applications. Altering the gene that encodes the natural protein creates a new gene that encodes an improved variant protein. Changing the protein can improve its stability, binding, catalytic activity or even give it new functions.<span class="citation" data-cites="branniganProteinEngineering202002"><sup>[<a href="#ref-branniganProteinEngineering202002" role="doc-biblioref">2</a>]</sup></span> The modifications are typically substitution of one amino acid residue with another one, but sometimes include adding or removing amino acid residues, even entire domains of a protein. For example, engineering of subtilisin, a detergent protease, replaced an easily oxidized amino acid with one less easily oxidized, thereby increasing its stability to bleach during washing,<span class="citation" data-cites="estellEngineeringEnzymeSitedirected1985"><sup>[<a href="#ref-estellEngineeringEnzymeSitedirected1985" role="doc-biblioref">3</a>]</sup></span> <a href="#fig-subtilisincoloredbyaatype" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>.</p>
+<div id="fig-subtilisincoloredbyaatype" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Molecular surface model of the enzyme subtilisin, colored in patches by amino acid type across the protein surface, with the engineered residue Met222 labeled near the center of the structure.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-subtilisincoloredbyaatype-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter1/subtilisincoloredbyaatype.svg" class="img-fluid figure-img" alt="Molecular surface model of the enzyme subtilisin, colored in patches by amino acid type across the protein surface, with the engineered residue Met222 labeled near the center of the structure.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-subtilisincoloredbyaatype-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: Surface representation of the protease subtilisin where the twenty amino acids are colored in one of twelve different colors according to traditional amino acid properties. Protein engineering increased the stability of this protease to bleach by replacing methionine 222 (labelled yellow patch near the center) with alanine.
+</figcaption>
+</figure>
+</div>
+<p>Applications that differ from the natural function usually require protein engineering. Proteins have evolved in nature for specific natural functions. When proteins are used for another function or in a different way, they will likely be not good enough. Natural selection chooses proteins that improve fitness in nature, not for various applications that humans identify. Natural proteins may be accidentally suitable for these applications, but won’t be optimized for them. For example, nature has not evolved proteins tolerant to organics solvents since no organisms live in organic solvents, but some proteins evolved to tolerate high temperatures often also tolerate organic solvents. In some cases, the different requirements are obvious. For example, an enzyme-catalyzed manufacture of a pharmaceutical intermediate may involve an unnatural substrate, organic cosolvents, elevated temperatures and high concentrations of substrates and products. In these cases, protein engineering can adjust the active site to fit the new substrate to increase reaction rate and stabilize the protein to organic solvents, elevated temperatures and high substrate and product concentrations.</p>
+<p>In other cases, the differences between the natural protein function and application may be subtle. For example, human insulin regulates the glucose levels in the blood. Patients with type I diabetes cannot make insulin and require injections of human insulin. Although the goal is the same - to maintain glucose levels, the dosing method differs. Patients inject insulin several times per day in contrast to the pancreas continuously secreting varying amounts of insulin. This difference in dosing required engineering fast-acting variants of human insulin for injection before meals and slow-acting variants to maintain glucose levels overnight.</p>
+<p>Evolution does not maximize the properties of a protein, but only maintains the minimum necessary. Natural selection cannot distinguish between a protein that is improved just enough so that another protein limits function and a protein that is much better. Selection favors both equally since the much better property does not contribute to fitness. A hammer made from extra-hard steel does not drive nails any better than a hammer with steel just hard enough. Since most random mutations are detrimental, a much-better protein will eventually lose its extra abilities and return to just good enough.</p>
+<p>An example of ‘just enough’ is that most proteins are just stable enough for their natural function.<span class="citation" data-cites="paceStabilityGlobularProteins1975 tavernaWhyAreProteins2002"><sup>[<a href="#ref-paceStabilityGlobularProteins1975" role="doc-biblioref">4</a>,<a href="#ref-tavernaWhyAreProteins2002" role="doc-biblioref">5</a>]</sup></span> Proteins from mesophiles (organisms that grow at moderate temperatures) are not stable at high temperatures. In contrast, homologous proteins from thermophiles (organisms that grow at high temperatures) are stable a high temperatures. This stability shows that proteins from mesophiles could be more stable if needed.<span class="citation" data-cites="fershtPrinciplesProteinStability1993"><sup>[<a href="#ref-fershtPrinciplesProteinStability1993" role="doc-biblioref">6</a>]</sup></span> The reason for the marginal stability is that evolution cannot select for more than the minimum needed stability.<span class="citation" data-cites="bloomEvolutionFavorsProtein2007"><sup>[<a href="#ref-bloomEvolutionFavorsProtein2007" role="doc-biblioref">7</a>]</sup></span> An extra-stable protein in a mesophile does not give it any selective advantage, so this extra stability is slowly lost through genetic drift. One can also generalize this ‘just enough’ quality to other protein properties. Enzymes are just fast enough for their function, they bind their substrates just tightly enough and discriminate between substrates just as much as needed.</p>
+</section>
+<section id="four-molecular-level-protein-engineering-goals" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="four-molecular-level-protein-engineering-goals"><span class="header-section-number">1.2</span> Four molecular-level protein engineering goals</h2>
+<blockquote class="blockquote">
+<p>To the person who does not know where he wants to go there is no favorable wind. — Seneca</p>
+</blockquote>
+<p>The application improvements enabled by engineered proteins vary widely because they depend on the function of the protein being engineered. As described below, some improvements make vaccines more effective, others improve the synthesis of pharmaceutical, still others enable plants to grow faster under heat stress. Despite this wide range of applications, the improvements themselves stem from only four types of protein property changes: stability, binding, reactivity or selectivity, <a href="#tbl-eng_goals" class="quarto-xref">Table&nbsp;<span>1.1</span></a>. Later tables in this chapter list a wide range of applications, but also classify each application according to one of these four protein property changes.</p>
+<div id="tbl-eng_goals" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-eng_goals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.1: Four molecular-level goals in protein engineering.
+</figcaption>
+<div aria-describedby="tbl-eng_goals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
+<thead>
+<tr class="header">
+<th scope="col"><strong>Goal</strong></th>
+<th scope="col"><strong>Examples of changes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>stability</td>
+<td>tolerate heat, organic solvents, extremes of pH or other harsh conditions; tolerate storage or use for a long time at normal conditions; tolerate destabilizing substitutions; longer plasma lifetime; resistant to digestive proteases</td>
+</tr>
+<tr class="even">
+<td>binding</td>
+<td>bind target ligand more tightly or less tightly; avoid binding to antibodies to avoid allergic reaction</td>
+</tr>
+<tr class="odd">
+<td>catalytic activity</td>
+<td>faster catalysis of existing substrates; expand catalysis to new substrates; inactivate undesired catalytic activity; enable catalysis of a new chemical reaction</td>
+</tr>
+<tr class="even">
+<td>selectivity</td>
+<td>favor binding one ligand over another in the same solution; favor reaction of one of several competing substrates; favor formation of one of several possible products</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Stability refers to the ability of a protein to maintain its function, usually binding to a target or catalyzing a reaction. Increasing protein stability allows it to tolerate harsh conditions such as high temperatures or the presence of bleach as in the detergent protease example above. It may make the protein last longer under normal application or storage conditions. For biopharmaceuticals, stability may also refer to extending the plasma lifetime of the protein. Most proteins are rapidly removed from the blood thus limiting their therapeutic benefit. Increasing the plasma lifetime enhances the therapeutic benefit.</p>
+<p>Binding refers to the affinity of the protein for a target molecule. Increases in the affinity of a protein for its target can lower the effective dose of a biopharmaceutical or lower the detection limit of a diagnostic test. For biopharmaceuticals, <em>decreases</em> in binding can also be important. Biopharmaceuticals should not bind to human antibodies to avoid causing an allergic reaction. Humanization of proteins engineers them so that they do not bind to human antibodies.</p>
+<p>Reactivity refers to the ability of an enzyme to catalyze chemical reactions. Increases in reaction rates lowers the amount of enzyme needed for the chemical transformation. Increases in reactivity may improve reactions for existing substrates or may create new catalytic abilities by expanding reactivity to new substrates. Improvements in reactivity may enable an enzyme to catalyze new reaction types of chemical reaction, even those that enzymes in nature do not catalyze.</p>
+<p>Selectivity refers to the relative binding or relative reactivity of two or more competing molecules in the solution. Selectivity may refer to the ability of a protein to bind one of several ligands or to catalyze the reaction of one of several substrates. It can also refer to the selective formation of one of several possible products from a single substrate. A common type of selectivity exhibited by enzymes is enantioselectivity where one enantiomer reacts faster than the other.</p>
+<p>Identifying the protein engineering goal is a critical first step in any protein engineering project because it defines the approaches that one can use. Typically the target protein already has some desirable properties, but needs improvement on one of them. One seeks to improve this one property (stability, binding, reactivity or selectivity) while not degrading the already desirable properties. To fully define that goal one should also state the amount of change needed (e.g., a two-fold increase in stability) because it reveals how difficult the engineering will be.</p>
+<p>Sometimes protein engineering changes several protein properties so that it can be hard to identify which property is the true protein engineering goal. The true goal is the one property that <em>must</em> change to improve the protein for the application. The other changes are side effects of engineering to achieve this goal.</p>
+<p>For example, researchers wanted to engineer a protease that could degrade the protein gluten in the human digestive track so they could add it to the diet of gluten-intolerant patients.<span class="citation" data-cites="gordonComputationalDesignAgliadin2012"><sup>[<a href="#ref-gordonComputationalDesignAgliadin2012" role="doc-biblioref">8</a>]</sup></span> The researchers started with the protease KumaWT, which favored hydrolysis after a ProArg or ProLys sequence and wanted to change it to favor hydrolysis after a ProGln sequence since gluten contains many ProGln amino acid pairs in its sequence. The engineered protein showed changes in three properties: KumaWT was more reactive toward ProGln-containing peptides, more selective for ProGln versus ProArg sequences and bound the ProGln sequence more tightly to the protease binding site.</p>
+<p>Which of these properties was the true goal? Imagine if the catalytic activity toward the ProGln sequence increased, but there was no change in the selectivity (the ProLys sequence also reacted) and no change in the binding (the increase in reactivity was not associated with better binding). The engineered protein would still be improved because it would degrade the ProGln containing peptides. Increasing reactivity is the true goal. In contrast, imagine if selectivity improved without changing the catalytic activity. (A decrease in the activity toward the ProLys sequence could increase the selectivity for the ProGln sequence without increasing the activity toward the ProGln sequence.) No more ProGln would be cleaved than with the starting enzyme. Thus, selectivity is not the true goal and the increase is selectivity is a side effect of increased reactivity. Finally, consider the case where the binding improved, but not the selectivity or reactivity. Again, without an increase in reactivity, no more ProGln sequences would be cleaved. The authors hypothesized that the reason for the poor reactivity was that the ProGln sequence binds poorly. Thus, increasing binding was an approach to increase reactivity. If they achieved increased binding without a concomitant increase in reactivity, they would have failed and tried another approach to increase reactivity. Increased binding alone would not have yielded a better enzyme. Thus, protein engineering can simultaneously change several protein properties. The true protein engineering goal is the property that <em>must</em> change in order to see an improvement in the proposed application.</p>
+</section>
+<section id="application-areas-of-engineered-proteins" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="application-areas-of-engineered-proteins"><span class="header-section-number">1.3</span> Application areas of engineered proteins</h2>
+<p>Examples from different application areas show how changes in protein stability, binding, reactivity and selectivity can improve proteins in widely different applications.</p>
+<section id="engineering-proteins-for-medicine" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="engineering-proteins-for-medicine"><span class="header-section-number">1.3.1</span> Engineering proteins for medicine</h3>
+<p>Biopharmaceuticals are biomolecules used as drugs. They can be proteins such as antibodies or enzymes; they can also be nucleic acids such as micro RNAs and even complete microbes such as attenuated live vaccines. This text considers only protein biopharmaceuticals.</p>
+<p>The first protein biopharmaceuticals were recombinant equivalents of the natural protein where the biotechnology advantage was the ability to produce large amounts of protein. For example, blood factors that were isolated from donated blood could now be produced in cell cultures due to genetic engineering. The subsequent generations of blood factors were improved engineered variants. For example, engineering increased the potency of the blood coagulation protein, Factor VII used to treat hemophilia, so that each dose required less protein,<span class="citation" data-cites="harveyMutagenesisGcarboxyglutamicAcid2003"><sup>[<a href="#ref-harveyMutagenesisGcarboxyglutamicAcid2003" role="doc-biblioref">9</a>]</sup></span> <a href="#tbl-eng_biopharm" class="quarto-xref">Table&nbsp;<span>1.2</span></a>. The action of this blood coagulation protein depends on its binding to a membrane surface containing acidic phospholipids, which is characteristic of damaged vascular cells or of platelets that adhere to the damage as the clot forms. Mutagenesis of the membrane-binding domain of Factor VII yielded variants that bound more tightly to the membrane and therefore were more potent. The best variant contained five substitutions and was 149-296 fold better than wild-type Factor VII. Other researchers increased its potency with three amino acid substitutions that increased its catalytic activity 30-fold.<span class="citation" data-cites="perssonVatreptacogAlfaConception2012"><sup>[<a href="#ref-perssonVatreptacogAlfaConception2012" role="doc-biblioref">10</a>]</sup></span> Proteolytic activity of Factor VII activates the next factor in the coagulation cascade.</p>
+<div id="tbl-eng_biopharm" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-eng_biopharm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.2: Examples of protein engineering to improve biopharmaceuticals.
+</figcaption>
+<div aria-describedby="tbl-eng_biopharm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 37%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th scope="col"><strong>Category</strong></th>
+<th scope="col"><strong>Example of improvement</strong></th>
+<th scope="col"><strong>Property change</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>blood factors</td>
+<td>more potent coagulation factor VII</td>
+<td>increase <strong>binding</strong> to damaged cells; increased <strong>reactivity</strong> (proteolysis)</td>
+</tr>
+<tr class="even">
+<td>thrombolytics &amp; anticoagulants</td>
+<td>more potent and longer plasma half-life of tissue plasminogen activator</td>
+<td>increase <strong>binding</strong> to fibrin; reduce <strong>binding</strong> to receptor that removes proteins from blood</td>
+</tr>
+<tr class="odd">
+<td>hormones</td>
+<td>fast-acting or long-lasting insulins</td>
+<td>alter <strong>binding</strong> with other monomers</td>
+</tr>
+<tr class="even">
+<td>monoclonal antibodies</td>
+<td>reduced immunogenicity of mouse-derived antibody</td>
+<td>reduce <strong>binding</strong> to immune response proteins</td>
+</tr>
+<tr class="odd">
+<td>growth factors</td>
+<td>longer serum half-life of granulocyte colony-stimulating factor</td>
+<td>increase <strong>binding</strong> to receptors that recycle proteins to blood stream</td>
+</tr>
+<tr class="even">
+<td>vaccines</td>
+<td>less toxic pertussis (whooping cough) vaccine</td>
+<td>inactivate <strong>reactivity</strong> that causes toxicity</td>
+</tr>
+<tr class="odd">
+<td>other</td>
+<td>less immunogenic asparaginase</td>
+<td>reduce <strong>binding</strong> to immune response proteins</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Insulin variants engineered for altered bioavailability are even better than human insulin at controlling blood sugar levels. The engineering relied on the fact that monomeric insulin is the active form, while multimeric forms are inactive. Insulin lispro is a fast-acting insulin analog for injections before meals because it favors the monomeric form.<span class="citation" data-cites="bolliInsulinAnaloguesTheir1999"><sup>[<a href="#ref-bolliInsulinAnaloguesTheir1999" role="doc-biblioref">11</a>]</sup></span> The amino acid sequence of lispro differs only in the reversal of the penultimate lysine and proline residues on the C-terminal end of the B-chain. (Insulin consists of 51 amino acids arranged as a dimer of an A-chain and a B-chain linked by disulfide bonds.) This residue change blocks the formation of insulin dimers and hexamers and increases the amount of monomeric insulin (the active form), thereby creating a faster-acting variant. In contrast, substitutions to create a slow-acting insulin analog, glargine, promote the association of the monomers into an insoluble precipitate, which then slowly releases monomeric insulin to maintain basal levels of insulin for an extended time.</p>
+<p>An essential class of therapeutic proteins is monoclonal antibodies and monoclonal antibody drug conjugates. Common goals of antibody engineering are increasing binding to the target and minimizing immunogenicity.<span class="citation" data-cites="ryuCurrentStatusPerspectives2012"><sup>[<a href="#ref-ryuCurrentStatusPerspectives2012" role="doc-biblioref">12</a>]</sup></span> One example of a therapeutic monoclonal antibody is trastuzumab (Herceptin®) used to treat breast cancer. This antibody interferes with the HER2 receptor (human ErbB2 receptor tyrosine kinase), which signals cell proliferation. Cancer cells, usually breast cancer, overexpress the HER2 receptor causing the cancer cells to grow uncontrollably. Interfering with the receptor stops uncontrolled growth.</p>
+<p>Trastuzumab is a humanized version of a mouse antibody, <a href="#fig-trastuzumab" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>. Humanization prevents an allergic reaction to a mouse antibody. This humanization involved first, the transplantation of the complementarity-determining regions from the mouse antibody into a human IgG antibody and second, an optimization of the surrounding regions, called framework regions.<span class="citation" data-cites="carterHumanizationAntip185HER2Antibody1992"><sup>[<a href="#ref-carterHumanizationAntip185HER2Antibody1992" role="doc-biblioref">13</a>]</sup></span> The transplantation of the complementarity-determining regions changed 24 amino acids in the light chain and 32 in the heavy chain. This substitution did not yield a useful antibody. The engineered version bound less tightly than the mouse antibody and did not block cancer cell proliferation upon binding. Next, an additional seven substitutions in the surrounding (framework) regions increased the binding to the target 100-fold making it three-fold tighter than the mouse antibody. This tighter binding restored the ability of the antibody to block cell proliferation. Trastuzumab was approved in the USA in 1998 to treat metastatic breast cancer.</p>
+<div id="fig-trastuzumab" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Simplified Y-shaped diagram of the antibody trastuzumab, with the two antigen-binding arm tips shown in orange (mouse-derived complementarity-determining regions) outlined by small green patches (additional stabilizing substitutions), and the rest of the antibody in lavender (human IgG framework).">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-trastuzumab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter1/trastuzumab.svg" class="img-fluid figure-img" alt="Simplified Y-shaped diagram of the antibody trastuzumab, with the two antigen-binding arm tips shown in orange (mouse-derived complementarity-determining regions) outlined by small green patches (additional stabilizing substitutions), and the rest of the antibody in lavender (human IgG framework).">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trastuzumab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.3: To engineer trastuzumab, researchers combined the complementarity-determining regions from a mouse antibody (orange; 56 amino acids) with a human IgG antibody (lavender). Full activity required seven additional substitutions (green) outside the binding region.
+</figcaption>
+</figure>
+</div>
+<p>Growth factors and cytokines, such as vascular endothelial growth factor, epidermal growth factor and granulocyte colony-stimulating factor, stimulate cell recruitment, proliferation, morphogenesis, and differentiation. Inhibitors of these growth factors act as anticancer drugs, while enhanced growth factors promote wound repair. Natural growth factors lack stability and specificity; they are prone to degradation in serum and have multiple activities. In one example of protein engineering of a cytokine, Sarkar and coworkers increased the half-life and potency of granulocyte colony-stimulating factor by modifications that increased its recycling back to the bloodstream.<span class="citation" data-cites="sarkarRationalCytokineDesign2002"><sup>[<a href="#ref-sarkarRationalCytokineDesign2002" role="doc-biblioref">14</a>]</sup></span></p>
+<p>Cantor and coworkers engineered asparaginase, an enzyme for leukemia treatment, to be less immunogenic.<span class="citation" data-cites="cantorTherapeuticEnzymeDeimmunization2011"><sup>[<a href="#ref-cantorTherapeuticEnzymeDeimmunization2011" role="doc-biblioref">15</a>]</sup></span> Treatment of childhood acute lymphoblastic leukemia involves injections of asparaginase, which cleaves asparagine to aspartate, thereby depriving the cancerous cells of asparagine. Healthy cells can make asparagine, but these cancer cells cannot. Humans do not have an asparaginase enzyme, so the treatment uses enzyme from the bacteria <em>Escherichia coli</em>. One limitation is that some patients’ immune systems recognize this enzyme as a non-human protein and inhibit it by binding it with an antibody or even inducing a severe allergic reaction. Cantor and coworkers identified amino acid sequences on the surface of <em>E. coli</em> asparaginase that are likely to be recognized by human T-cells and replaced them with non-recognized amino acid sequences. The replacements maintained the catalytic activity of the asparaginase.</p>
+<p>Vaccines against pertussis (whooping cough) contain engineered proteins. The bacteria that causes pertussis, Bordetella pertussis, secrete pertussis toxin protein, which consists of five subunits. Immunization with the pertussis toxin or just its S1 subunit protects against disease. However, the S1 subunit is an enzyme that catalyzes the ADP-ribosylation of GTP-binding proteins. This catalytic activity is the origin of the toxicity of the pertussis toxin. Two amino acid substitutions in the S1 subunit - Glu129Gly, Arg9Lys - deactivate its catalytic activity. This inactivated version of the S1 subunit is the vaccine against pertussis.<span class="citation" data-cites="loosmoreEngineeringGeneticallyDetoxified1990"><sup>[<a href="#ref-loosmoreEngineeringGeneticallyDetoxified1990" role="doc-biblioref">16</a>]</sup></span></p>
+<p>The mRNA vaccines against the SARS-CoV-2 virus encode the spike protein, which sits on the virus surface and binds to cell-surface proteins during infection. Upon binding to the target cell, the spike protein changes conformation. Researchers reasoned that the spike protein in the pre-binding conformation would make a better vaccine than the spike protein in the post-binding conformation. Binding antibodies to the spike protein before it binds to the cell could prevent infection. To stabilize the pre-binding conformation, researchers replaced six residues in the spike protein with proline.<span class="citation" data-cites="hsiehStructurebasedDesignPrefusionstabilized2020"><sup>[<a href="#ref-hsiehStructurebasedDesignPrefusionstabilized2020" role="doc-biblioref">17</a>]</sup></span> Proline limits the flexibility at those sites due to its ring structure and keeps the spike protein in the pre-binding conformation. This stabilization of the protein in the pre-binding conformation improved the vaccine.</p>
+</section>
+<section id="engineering-proteins-for-agriculture" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="engineering-proteins-for-agriculture"><span class="header-section-number">1.3.2</span> Engineering proteins for agriculture</h3>
+<p>Agricultural biotechnology aims mainly to improve productivity of crops and animals. Some products, like bovine somatotrophin (a growth hormone), are copies of the natural protein produced in recombinant <em>E. coli</em> bacteria. The pituitary gland produces small amounts of somatotrophin, but production in bacteria increases the availability and lowers the cost. Treating cows with somatotrophin increases milk production. In other cases, natural proteins are improved by engineering, <a href="#tbl-eng_agric" class="quarto-xref">Table&nbsp;<span>1.3</span></a>.</p>
+<div id="tbl-eng_agric" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-eng_agric-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.3: Examples of protein engineering to improve agriculture.
+</figcaption>
+<div aria-describedby="tbl-eng_agric-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 36%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th scope="col"><strong>Category</strong></th>
+<th scope="col"><strong>Example of improvement</strong></th>
+<th scope="col"><strong>Property change</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>herbicide-resistant crops</td>
+<td>glyphosate-resistant soybeans</td>
+<td>add new <strong>reactivity</strong> (glyphosate oxidase)</td>
+</tr>
+<tr class="even">
+<td>insect-resistant crops</td>
+<td>cotton resistant to bollworm</td>
+<td>increase <strong>binding</strong> of <em>Bt</em> toxins to target proteins in insect gut</td>
+</tr>
+<tr class="odd">
+<td>enhanced photosynthesis</td>
+<td>faster growth of <em>Arabidopsis</em> at higher temperatures</td>
+<td>increase <strong>stability</strong> of rubisco activase</td>
+</tr>
+<tr class="even">
+<td>modified products</td>
+<td>algae producing an increased fraction of medium-chain fatty acids</td>
+<td>increased <strong>reactivity</strong> toward medium-chain fatty acid precursors</td>
+</tr>
+<tr class="odd">
+<td>feed additives</td>
+<td>animal feed with higher phosphorus availability</td>
+<td>increase <strong>stability</strong> of phytase</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Glyphosate is a broad-spectrum, systemic herbicide that acts by inhibiting the enzyme EPSP synthase in aromatic amino acid biosynthesis. Farmers can control weeds by spraying glyphosate on fields, but only if the crops are insensitive to glyphosate. Adding a glyphosate-insensitive variant of EPSP synthase from <em>Agrobacterium</em> sp. created the first glyphosate-resistant soybean plants.<span class="citation" data-cites="padgetteDevelopmentIdentificationCharacterization1995"><sup>[<a href="#ref-padgetteDevelopmentIdentificationCharacterization1995" role="doc-biblioref">18</a>]</sup></span> The next generation of glyphosate-resistant crops contain enzymes such as oxidases or acetyl transferases, which inactivate glyphosate. Protein engineering to increase the catalytic activity of these enzymes is an important goal.<span class="citation" data-cites="castleDiscoveryDirectedEvolution2004"><sup>[<a href="#ref-castleDiscoveryDirectedEvolution2004" role="doc-biblioref">19</a>]</sup></span></p>
+<p>Genetic modification of crops such as cotton, corn, and rice to express insecticidal crystal proteins produced by <em>Bacillus thuringiensis</em> protects the crops against insect pests. The toxicity of these proteins varies toward different insects, and some insects develop resistance to these toxins. Enhancing the toxicity of these proteins by increasing the their binding to target proteins in the insect gut is an essential goal in agricultural biotechnology.<span class="citation" data-cites="bravoHowCopeInsect2008"><sup>[<a href="#ref-bravoHowCopeInsect2008" role="doc-biblioref">20</a>]</sup></span></p>
+<p>Heat stress hinders plant growth and lowers crop yields mainly due to reduced photosynthesis. This reduction is mainly due to an inactivation of a thermolabile ATPase, Rubisco activase, whose role is to maintain ribulose-1,5-bisphosphate carboxylase/oxygenase (rubisco) in its active state. Kurek and coworkers engineered a thermostable rubisco activase, which improved the growth of <em>Arabidopsis</em> plants at higher temperatures.<span class="citation" data-cites="kurekEnhancedThermostabilityArabidopsis2007"><sup>[<a href="#ref-kurekEnhancedThermostabilityArabidopsis2007" role="doc-biblioref">21</a>]</sup></span> The leaf area increased approximately 20% during moderate heat stress as compared to wild-type plants.</p>
+<p>Engineering the selectivity of fatty acid synthesis enzymes changes the composition of the lipids that accummulate in plants. Whittle and Shanklin altered the chain length selectivity of a plant fatty acid desaturase to accept a 16-carbon instead of an 18-carbon substrate.<span class="citation" data-cites="whittleEngineeringD9160acyl2001"><sup>[<a href="#ref-whittleEngineeringD9160acyl2001" role="doc-biblioref">22</a>]</sup></span> Lin and Lee engineered algae to produce more medium chain length fatty acids relative to long-chain-length fatty acids for use in biodiesel production.<span class="citation" data-cites="linGeneticEngineeringMediumchainlength2017"><sup>[<a href="#ref-linGeneticEngineeringMediumchainlength2017" role="doc-biblioref">23</a>]</sup></span></p>
+<p>Engineering a more stable phytase, a feed additive enzyme, increased the nutritional value of feed and reduced pollution. Phosphorus in grains and oilseeds often occurs as phytic acid (<em>myo</em>-inositol hexakisphosphate). Non-ruminants such as pigs and chicken digest phytic acid incompletely leading to high phosphorus in wastewater. The enzyme phytase in animal feed aids digestion of phytic acid by catalyzing its hydrolysis. Forming animal feed pellets requires pressing at high temperatures, so the phytases have been engineered for higher thermal stability to withstand this step.<span class="citation" data-cites="yaoPhytasesCrystalStructures2012"><sup>[<a href="#ref-yaoPhytasesCrystalStructures2012" role="doc-biblioref">24</a>]</sup></span></p>
+</section>
+<section id="engineering-proteins-for-industry" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="engineering-proteins-for-industry"><span class="header-section-number">1.3.3</span> Engineering proteins for industry</h3>
+<p>Industry uses enzymes for manufacturing and similar non-natural applications, <a href="#tbl-eng_industry" class="quarto-xref">Table&nbsp;<span>1.4</span></a>. The three main application areas are detergents, food and beverage, and other, which includes enzymes for the synthesis of biofuels, fine chemicals and pharmaceuticals. The advantages of using enzymes over chemical reagents or catalysts are that they are faster, greener and more selective. The primary engineering goals are stability and faster catalysis, both of which lower the cost of the enzyme.</p>
+<div id="tbl-eng_industry" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-eng_industry-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.4: Examples of protein engineering to improve industrial enzymes.
+</figcaption>
+<div aria-describedby="tbl-eng_industry-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 36%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th scope="col"><strong>Category</strong></th>
+<th scope="col"><strong>Example of improvement</strong></th>
+<th scope="col"><strong>Property change</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>detergents</td>
+<td>bleach-tolerant protease</td>
+<td><strong>stabilize</strong> subtilisin to oxidation</td>
+</tr>
+<tr class="even">
+<td>food and beverage</td>
+<td>simplify starch hydrolysis to maltodextrins and glucose</td>
+<td><strong>stabilize</strong> <span class="math inline">\(\alpha\)</span>-amylase to low pH</td>
+</tr>
+<tr class="odd">
+<td>other (e.g., biofuels, pharmaceuticals)</td>
+<td>engineer transaminase for manufacture of diabetes drug</td>
+<td>increase <strong>reactivity</strong> toward target substrate; increase <strong>stability</strong> to reaction conditions</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Detergent enzymes such as proteases speed removal of food, blood and other stains on clothing. Subtilisin was the first industrial enzyme to be engineered.<span class="citation" data-cites="estellEngineeringEnzymeSitedirected1985"><sup>[<a href="#ref-estellEngineeringEnzymeSitedirected1985" role="doc-biblioref">3</a>]</sup></span> Subtilisin tolerated hot water and surfactants, but bleach rapidly inactivated it, which limited its usefulness. Replacement of an oxidation-sensitive methionine 222 in the active site (<a href="#fig-subtilisincoloredbyaatype" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>) by alanine stabilized subtilisin while maintaining high activity. The cost of these industrial proteins are typically $100/kg. In contrast, proteins for medical applications can cost <span class="math inline">\(10^5\)</span>-fold more, $10,000/g, because their manufacture and regulatory approval are more complex.</p>
+<p>The largest volume application in food and beverages is the conversion of cornstarch to glucose catalyzed by <span class="math inline">\(\alpha\)</span>-amylase and glucoamylase. Glucose isomerase can isomerize the resulting glucose to high fructose corn syrup, which tastes sweeter than glucose. This process uses high temperatures to prevent microbial growth and high concentrations to minimize reactor size. Both <span class="math inline">\(\alpha\)</span>-amylase<span class="citation" data-cites="richardsonNovelHighPerformance2002"><sup>[<a href="#ref-richardsonNovelHighPerformance2002" role="doc-biblioref">25</a>]</sup></span> and glucose isomerase<span class="citation" data-cites="quaxEnhancingThermostabilityGlucoseisomerase1991"><sup>[<a href="#ref-quaxEnhancingThermostabilityGlucoseisomerase1991" role="doc-biblioref">26</a>]</sup></span> have been engineered to tolerate high temperatures and high glucose concentration. Glucose isomerase has a half-life = 50-100 d at the operating temperature of 55 °C. More than 500 tons of glucose isomerase produce millions of tons of high fructose corn syrup each year, corresponding to productivities of &gt;10,000 kg corn syrup per kg enzyme.</p>
+<p>The use of enzymes for chemical synthesis is known as biocatalysis.<span class="citation" data-cites="bellBiocatalysis2021"><sup>[<a href="#ref-bellBiocatalysis2021" role="doc-biblioref">27</a>]</sup></span> In pharmaceutical manufacture, the most significant application is the penicillin G amidase-catalyzed manufacture of penicillin and cephalosporin antibiotics. This process yields more than 10,000 tons of antibiotics annually with a productivity of &gt;600 kgs product/kg enzyme.<span class="citation" data-cites="vanderwielenProcessTechnologyProcess2001"><sup>[<a href="#ref-vanderwielenProcessTechnologyProcess2001" role="doc-biblioref">28</a>]</sup></span> These antibiotics are natural products, so they are the natural substrates for this enzymes. However, many other pharmaceuticals are not natural products, so the ability of enzymes to act on them is accidental. Engineering of enzymes to improve their ability to act on unnatural substrates and tolerate the harsh conditions of a chemical reactor is a common goal.</p>
+<p>Engineered enzymes can also create new biochemical pathways within cells, and the whole cells can be used for synthesis. For example, Ran and Frost expanded the substrate range of an aldolase to create a new metabolic pathway to make shikimic acid for an influenza drug synthesis.<span class="citation" data-cites="ranDirectedEvolution2keto3deoxy6phosphogalactonate2007"><sup>[<a href="#ref-ranDirectedEvolution2keto3deoxy6phosphogalactonate2007" role="doc-biblioref">29</a>]</sup></span> Keasling and coworkers combined enzymes from different organisms and biochemical pathways to create a new biochemical pathway for the synthesis of artemisinin, an anti-malarial.<span class="citation" data-cites="paddonHighlevelSemisyntheticProduction2013"><sup>[<a href="#ref-paddonHighlevelSemisyntheticProduction2013" role="doc-biblioref">30</a>]</sup></span></p>
+<section id="green-chemistry" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="green-chemistry">Green chemistry</h4>
+<p>One reason to use enzymes for manufacture of pharmaceuticals is to decrease the environmental impact of the process. The risk associated with a chemical depends both on how dangerous it is (hazard) and on one’s contact with it (exposure), <a href="#eq-risk" class="quarto-xref">Equation&nbsp;<span>1.1</span></a>.</p>
+<p><span id="eq-risk"><span class="math display">\[risk = hazard \cdot exposure \tag{1.1}\]</span></span></p>
+<p>In the past, governments and industry focused on reducing risk by minimizing exposure. Lab coats, safety glasses, and other chemical handling rules limit the exposure of workers to hazardous chemicals. Green chemistry instead focuses on the hazard and tries to minimize it instead of exposure.<span class="citation" data-cites="AnastasPaulT.2000Gc:t"><sup>[<a href="#ref-AnastasPaulT.2000Gc:t" role="doc-biblioref">31</a>]</sup></span>. Preventing problems is inevitably easier and less expensive than contending with difficulties after they occur. Green chemistry is the design of chemical products and processes that reduce or eliminate hazardous substances. Replacing chemical manufacturing steps with enzyme-catalyzed steps is an essential tool in green chemistry. Enzyme-catalyzed steps often replace hazardous solvents with water and hazardous catalysts with biodegradable enzymes. One example of greener pharmaceutical manufacture is the improved synthesis of sitagliptin, the active ingredient in an oral type 2 diabetes drug. The difficult step is the addition of the amino group with the correct orientation, <a href="#fig-tworoutestositagliptin" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>.</p>
+<div id="fig-tworoutestositagliptin" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Reaction scheme showing two synthetic routes converging on the same ketone intermediate (circled), which is converted to the drug sitagliptin either by a rhodium-catalyzed asymmetric hydrogenation (top arrow) or by an enzymatic transamination (bottom arrow), both installing the same stereocenter bearing the amino group.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tworoutestositagliptin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter1/tworoutestositagliptin.svg" class="img-fluid figure-img" alt="Reaction scheme showing two synthetic routes converging on the same ketone intermediate (circled), which is converted to the drug sitagliptin either by a rhodium-catalyzed asymmetric hydrogenation (top arrow) or by an enzymatic transamination (bottom arrow), both installing the same stereocenter bearing the amino group.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tworoutestositagliptin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.4: Two improved routes to sitagliptin showing the difficult step of inserting the amino group with the correct configuration. Improvements in the chemocatalytic process (rhodium catalyst) won a Green Chemistry award in 2006. Further improvements by switching to a biocatalytic process (transaminase) won a second Green Chemistry award in 2010.
+</figcaption>
+</figure>
+</div>
+<p>Researchers at Merck &amp; Co.&nbsp;had already dramatically improved the original synthesis of sitagliptin by using a catalytic asymmetric hydrogenation with a rhodium catalyst. This improved synthesis won a Green Chemistry award in 2006. Biocatalysis further improved this synthesis. Researchers at Codexis and Merck &amp; Co.&nbsp;used a transaminase-catalyzed formation of an amine, which eliminated four steps including one that required a high pressure reactor.<span class="citation" data-cites="savileBiocatalyticAsymmetricSynthesis2010"><sup>[<a href="#ref-savileBiocatalyticAsymmetricSynthesis2010" role="doc-biblioref">32</a>]</sup></span> The biocatalysis approach resulted in a 10-13% higher overall yield and 19% less total waste. This improved synthesis won a second Green Chemistry award in 2010. Enabling this synthesis required extensive protein engineering of the transaminase. The starting transaminase did not react at all with the required substrate and was unstable under the reaction conditions. The engineering replaced 27 amino acids creating a highly active, highly selective and stable enzyme.</p>
+</section>
+</section>
+</section>
+<section id="a-look-ahead-two-main-strategies-of-protein-engineering" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="a-look-ahead-two-main-strategies-of-protein-engineering"><span class="header-section-number">1.4</span> A look ahead: two main strategies of protein engineering</h2>
+<p>Protein engineering typically begins with proteins that already possess some, but not all, of the properties required for a particular application. These starting points are often natural proteins, but they may also be proteins proposed through computational design, although computational methods do not yet reliably generate proteins with all the properties needed for most applications.</p>
+<p>The next chapter introduces the experimental methods used in protein engineering. Genetic modification of microorganisms enables the production of desired proteins in large quantities. Molecular biology techniques can then be used to alter the DNA encoding these proteins and create variants with improved properties.</p>
+<p>Chapter 3 introduces the logic of protein engineering: protein states, defined as particular structural and functional conditions of proteins, determine protein properties, and changes in the relative Gibbs energies of these states alter those properties. Chapter 4 introduces protein structure and the molecular modeling of protein states.</p>
+<p>The remaining chapters focus on the two principal strategies of protein engineering: rational design and directed evolution. Rational design seeks beneficial changes on the basis of protein structure, molecular mechanism, and computational modeling. Chapters 5–8 examine the rational design of protein stability, binding, reactivity, and selectivity, explaining both how these properties are measured and how they can be improved. Chapters 9–11 cover directed evolution, in which protein variants are generated, screened for improved properties, and subjected to repeated cycles of optimization.</p>
+</section>
+<section id="glossary" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="glossary">Glossary</h2>
+<dl>
+<dt>Binding</dt>
+<dd>
+is the ability of a protein to associate with a target molecule.
+</dd>
+<dt>Protein engineering goal</dt>
+<dd>
+is the protein property that <em>must</em> change in order to reach the desired application improvement. Most protein engineering goals are one of these four: stability, binding, reactivity or selectivity. The specific application improvement depends on the function of the protein being improved.
+</dd>
+<dt>Reactivity</dt>
+<dd>
+is the ability of an enzyme to catalyze a chemical transformation.
+</dd>
+<dt>Selectivity</dt>
+<dd>
+is the ability of a protein to discriminate between competing molecules in solution. This discrimination can involve selectivity in binding the competing molecules or selectivity in reacting with the competing molecules. Selectivity can also refer to the favored formation of one of several competing products from a single substrate.
+</dd>
+<dt>Stability</dt>
+<dd>
+is the ability of a protein to remain folded and functional. The function can be binding to a target or catalyzing a reaction. Stability can also refer to the ability of a biopharmaceutical to persist in plasma.
+</dd>
+</dl>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-morrisonPublicBiotech2017the2018" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Morrison, C., &amp; Lähteenmäki, R. (2018). Public biotech in 2017-the numbers. <em>Nat. Biotechnol.</em>, <em>36</em>(7), 576–584. <a href="https://doi.org/10.1038/nbt.4175">https://doi.org/10.1038/nbt.4175</a></div>
+</div>
+<div id="ref-branniganProteinEngineering202002" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Brannigan, J. A., &amp; Wilkinson, A. J. (2002). Protein engineering 20 years on. <em>Nat. Rev. Mol. Cell Biol.</em>, <em>3</em>(12), 964–970. <a href="https://doi.org/10.1038/nrm975">https://doi.org/10.1038/nrm975</a></div>
+</div>
+<div id="ref-estellEngineeringEnzymeSitedirected1985" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Estell, D. A., Graycar, T. P., &amp; Wells, J. A. (1985). Engineering an enzyme by site-directed mutagenesis to be resistant to chemical oxidation. <em>J. Biol. Chem.</em>, <em>260</em>(11), 6518–6521. <a href="https://doi.org/10.1016/S0021-9258(18)88811-1">https://doi.org/10.1016/S0021-9258(18)88811-1</a></div>
+</div>
+<div id="ref-paceStabilityGlobularProteins1975" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Pace, C. N., &amp; Hermans, J. (1975). The stability of globular proteins. <em>CRC Crit. Rev. Biochem.</em>, <em>3</em>(1), 1–43. <a href="https://doi.org/10.3109/10409237509102551">https://doi.org/10.3109/10409237509102551</a></div>
+</div>
+<div id="ref-tavernaWhyAreProteins2002" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Taverna, D. M., &amp; Goldstein, R. A. (2002). Why are proteins marginally stable? <em>Proteins</em>, <em>46</em>(1), 105–109. <a href="https://doi.org/10.1002/prot.10016">https://doi.org/10.1002/prot.10016</a></div>
+</div>
+<div id="ref-fershtPrinciplesProteinStability1993" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Fersht, A. R., &amp; Serrano, L. (1993). Principles of protein stability derived from protein engineering experiments. <em>Curr. Opin. Struct. Biol.</em>, <em>3</em>(1), 75–83. <a href="https://doi.org/10.1016/0959-440X(93)90205-Y">https://doi.org/10.1016/0959-440X(93)90205-Y</a></div>
+</div>
+<div id="ref-bloomEvolutionFavorsProtein2007" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Bloom, J. D., Lu, Z., Chen, D., Raval, A., Venturelli, O. S., &amp; Arnold, F. H. (2007). Evolution favors protein mutational robustness in sufficiently large populations. <em>BMC Biol.</em>, <em>5</em>(1), 97–21. <a href="https://doi.org/10.1186/1741-7007-5-29">https://doi.org/10.1186/1741-7007-5-29</a></div>
+</div>
+<div id="ref-gordonComputationalDesignAgliadin2012" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Gordon, S. R., Stanley, E. J., Wolf, S., Toland, A., Wu, S. J., Hadidi, D., Mills, J. H., Baker, D., Pultz, I. S., &amp; Siegel, J. B. (2012). Computational design of an <span><span class="math inline">\(\alpha\)</span></span>-gliadin peptidase. <em>J. Am. Chem. Soc.</em>, <em>134</em>(50), 20513–20520. <a href="https://doi.org/10.1021/ja3094795">https://doi.org/10.1021/ja3094795</a></div>
+</div>
+<div id="ref-harveyMutagenesisGcarboxyglutamicAcid2003" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Harvey, S. B., Stone, M. D., Martinez, M. B., &amp; Nelsestuen, G. L. (2003). Mutagenesis of the <span><span class="math inline">\(\gamma\)</span></span>-carboxyglutamic acid domain of human factor <span>VII</span> to generate maximum enhancement of the membrane contact site. <em>J. Biol. Chem.</em>, <em>278</em>(10), 8363–8369. <a href="https://doi.org/10.1074/jbc.M211629200">https://doi.org/10.1074/jbc.M211629200</a></div>
+</div>
+<div id="ref-perssonVatreptacogAlfaConception2012" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Persson, E., Olsen, O. H., Bjørn, S. E., &amp; Ezban, M. (2012). Vatreptacog alfa from conception to clinical proof of concept. <em>Semin. Thromb. Hemost.</em>, <em>38</em>(3), 274–281. <a href="https://doi.org/10.1055/s-0032-1302442">https://doi.org/10.1055/s-0032-1302442</a></div>
+</div>
+<div id="ref-bolliInsulinAnaloguesTheir1999" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Bolli, G. B., Di Marchi, R. D., Park, G. D., Pramming, S., &amp; Koivisto, V. A. (1999). Insulin analogues and their potential in the management of diabetes mellitus. <em>Diabetologia</em>, <em>42</em>(10), 1151–1167. <a href="https://doi.org/10.1007/s001250051286">https://doi.org/10.1007/s001250051286</a></div>
+</div>
+<div id="ref-ryuCurrentStatusPerspectives2012" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Ryu, J. K., Kim, H. S., &amp; Nam, D. H. (2012). Current status and perspectives of biopharmaceutical drugs. <em>Biotechnol. Bioprocess Eng.</em>, <em>17</em>(5), 900–911. <a href="https://doi.org/10.1007/s12257-012-0095-1">https://doi.org/10.1007/s12257-012-0095-1</a></div>
+</div>
+<div id="ref-carterHumanizationAntip185HER2Antibody1992" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Carter, P., Presta, L., Gorman, C. M., Ridgway, J. B. B., Henner, D., Wong, W. L. T., Rowland, A. M., Kotts, C., Carver, M. E., &amp; Shepard, H. M. (1992). Humanization of an anti-p185<span><sup>HER2</sup></span> antibody for human cancer therapy. <em>Proc. Natl. Acad. Sci. U. S. A.</em>, <em>89</em>(10), 4285–4289. <a href="https://doi.org/10.1073/pnas.89.10.4285">https://doi.org/10.1073/pnas.89.10.4285</a></div>
+</div>
+<div id="ref-sarkarRationalCytokineDesign2002" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Sarkar, C. A., Lowenhaupt, K., Horan, T., Boone, T. C., Tidor, B., &amp; Lauffenburger, D. A. (2002). Rational cytokine design for increased lifetime and enhanced potency using <span class="nocase">pH-activated</span> "histidine switching". <em>Nat. Biotechnol.</em>, <em>20</em>(9), 908–913. <a href="https://doi.org/10.1038/nbt725">https://doi.org/10.1038/nbt725</a></div>
+</div>
+<div id="ref-cantorTherapeuticEnzymeDeimmunization2011" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Cantor, J. R., Yoo, T. H., Dixit, A., Iverson, B. L., Forsthuber, T. G., &amp; Georgiou, G. (2011). Therapeutic enzyme deimmunization by combinatorial <span class="nocase">T-cell</span> epitope removal using neutral drift. <em>Proc. Natl. Acad. Sci. U. S. A.</em>, <em>108</em>(4), 1272–1277. <a href="https://doi.org/10.1073/pnas.1014739108">https://doi.org/10.1073/pnas.1014739108</a></div>
+</div>
+<div id="ref-loosmoreEngineeringGeneticallyDetoxified1990" class="csl-entry" role="listitem">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Loosmore, S. M., Zealey, G. R., Boux, H. A., Cockle, S. A., Radika, K., Fahim, R. E., Zobrist, G. J., Yacoob, R. K., Chong, P. C., &amp; Yao, F. L. (1990). Engineering of genetically detoxified pertussis toxin analogs for development of a recombinant whooping cough vaccine. <em>Infect. Immun.</em>, <em>58</em>(11), 3653–3662. <a href="https://doi.org/10.1128/iai.58.11.3653-3662.1990">https://doi.org/10.1128/iai.58.11.3653-3662.1990</a></div>
+</div>
+<div id="ref-hsiehStructurebasedDesignPrefusionstabilized2020" class="csl-entry" role="listitem">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">Hsieh, C.-L., Goldsmith, J. A., Schaub, J. M., DiVenere, A. M., Kuo, H.-C., Javanmardi, K., Le, K. C., Wrapp, D., Lee, A. G., Liu, Y., Chou, C.-W., Byrne, P. O., Hjorth, C. K., Johnson, N. V., Ludes-Meyers, J., Nguyen, A. W., Park, J., Wang, N., Amengor, D., … McLellan, J. S. (2020). Structure-based design of prefusion-stabilized <span>SARS-CoV-2</span> spikes. <em>Science</em>, <em>369</em>(6510), 1501–1505. <a href="https://doi.org/10.1126/science.abd0826">https://doi.org/10.1126/science.abd0826</a></div>
+</div>
+<div id="ref-padgetteDevelopmentIdentificationCharacterization1995" class="csl-entry" role="listitem">
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">Padgette, S. R., Kolacz, K. H., Delannay, X., Re, D. B., Tinius, C. N., Rhodes, W. K., Otero, Y. I., Barry, G. F., Eichholtz, D. A., Peschke, V. M., Nida, D. L., Taylor, N. B., &amp; Kishore, G. M. (1995). Development, identification, and characterization of a glyphosate-tolerant soybean line. <em>Crop Sci.</em>, <em>35</em>(5), 1451–1461. <a href="https://doi.org/10.2135/cropsci1995.0011183x003500050032x">https://doi.org/10.2135/cropsci1995.0011183x003500050032x</a></div>
+</div>
+<div id="ref-castleDiscoveryDirectedEvolution2004" class="csl-entry" role="listitem">
+<div class="csl-left-margin">19. </div><div class="csl-right-inline">Castle, L. A., Siehl, D. L., Gorton, R., Patten, P. A., Chen, Y. H., Bertain, S., Cho, H.-J., Duck, N., Wong, J., Liu, D., &amp; Lassner, M. W. (2004). Discovery and directed evolution of a glyphosate tolerance gene. <em>Science</em>, <em>304</em>(5674), 1151–1154. <a href="https://doi.org/10.1126/science.1096770">https://doi.org/10.1126/science.1096770</a></div>
+</div>
+<div id="ref-bravoHowCopeInsect2008" class="csl-entry" role="listitem">
+<div class="csl-left-margin">20. </div><div class="csl-right-inline">Bravo, A., &amp; Soberon, M. (2008). How to cope with insect resistance to <span>Bt</span> toxins? <em>Trends Biotechnol.</em>, <em>26</em>(10), 573–579. <a href="https://doi.org/10.1016/j.tibtech.2008.06.005">https://doi.org/10.1016/j.tibtech.2008.06.005</a></div>
+</div>
+<div id="ref-kurekEnhancedThermostabilityArabidopsis2007" class="csl-entry" role="listitem">
+<div class="csl-left-margin">21. </div><div class="csl-right-inline">Kurek, I., Chang, T. K., Bertain, S. M., Madrigal, A., Liu, L., Lassner, M. W., &amp; Zhu, G. (2007). Enhanced thermostability of <span><em>Arabidopsis</em></span> rubisco activase improves photosynthesis and growth rates under moderate heat stress. <em>Plant Cell</em>, <em>19</em>(10), 3230–3241. <a href="https://doi.org/10.1105/tpc.107.054171">https://doi.org/10.1105/tpc.107.054171</a></div>
+</div>
+<div id="ref-whittleEngineeringD9160acyl2001" class="csl-entry" role="listitem">
+<div class="csl-left-margin">22. </div><div class="csl-right-inline">Whittle, E., &amp; Shanklin, J. (2001). Engineering <span><span class="math inline">\(\Delta\)</span></span><span><sup>9</sup></span>-16:0-acyl carrier protein (<span>ACP</span>) desaturase specificity based on combinatorial saturation mutagenesis and logical redesign of the castor <span><span class="math inline">\(\Delta\)</span></span><span><sup>9</sup></span>-18:0-<span>ACP</span> desaturase. <em>J. Biol. Chem.</em>, <em>276</em>(24), 21500–21505. <a href="https://doi.org/10.1074/jbc.M102129200">https://doi.org/10.1074/jbc.M102129200</a></div>
+</div>
+<div id="ref-linGeneticEngineeringMediumchainlength2017" class="csl-entry" role="listitem">
+<div class="csl-left-margin">23. </div><div class="csl-right-inline">Lin, H., &amp; Lee, Y. K. (2017). Genetic engineering of medium-chain-length fatty acid synthesis in <span><em>Dunaliella tertiolecta</em></span> for improved biodiesel production. <em>J. Appl. Phycol.</em>, <em>29</em>(6), 2811–2819. <a href="https://doi.org/10.1007/s10811-017-1210-7">https://doi.org/10.1007/s10811-017-1210-7</a></div>
+</div>
+<div id="ref-yaoPhytasesCrystalStructures2012" class="csl-entry" role="listitem">
+<div class="csl-left-margin">24. </div><div class="csl-right-inline">Yao, M. Z., Zhang, Y. H., Lu, W. L., Hu, M. Q., Wang, W., &amp; Liang, A. H. (2012). Phytases: Crystal structures, protein engineering and potential biotechnological applications. <em>J. Appl. Microbiol.</em>, <em>112</em>(1), 1–14. <a href="https://doi.org/10.1111/j.1365-2672.2011.05181.x">https://doi.org/10.1111/j.1365-2672.2011.05181.x</a></div>
+</div>
+<div id="ref-richardsonNovelHighPerformance2002" class="csl-entry" role="listitem">
+<div class="csl-left-margin">25. </div><div class="csl-right-inline">Richardson, T. H., Tan, X., Frey, G., Callen, W., Cabell, M., Lam, D., Macomber, J., Short, J. M., Robertson, D. E., &amp; Miller, C. (2002). A novel, high performance enzyme for starch liquefaction. <span>Discovery</span> and optimization of a low <span class="nocase">pH</span>, thermostable <span><span class="math inline">\(\alpha\)</span></span>-amylase. <em>J. Biol. Chem.</em>, <em>277</em>(29), 26501–26507. <a href="https://doi.org/10.1074/jbc.M203183200">https://doi.org/10.1074/jbc.M203183200</a></div>
+</div>
+<div id="ref-quaxEnhancingThermostabilityGlucoseisomerase1991" class="csl-entry" role="listitem">
+<div class="csl-left-margin">26. </div><div class="csl-right-inline">Quax, W. J., Mrabet, N. T., Luiten, R. G. M., Schuurhuizen, P. W., Stanssens, P., &amp; Lasters, I. (1991). Enhancing the thermostability of glucose-isomerase by protein engineering. <em>Bio/Technology</em>, <em>9</em>(8), 738–742. <a href="https://doi.org/10.1038/nbt0891-738">https://doi.org/10.1038/nbt0891-738</a></div>
+</div>
+<div id="ref-bellBiocatalysis2021" class="csl-entry" role="listitem">
+<div class="csl-left-margin">27. </div><div class="csl-right-inline">Bell, E. L., Finnigan, W., France, S. P., Green, A. P., Hayes, M. A., Hepworth, L. J., Lovelock, S. L., Niikura, H., Osuna, S., Romero, E., Ryan, K. S., Turner, N. J., &amp; Flitsch, S. L. (2021). Biocatalysis. <em>Nat. Rev. Methods Primers</em>, <em>1</em>(1), 46. <a href="https://doi.org/10.1038/s43586-021-00044-z">https://doi.org/10.1038/s43586-021-00044-z</a></div>
+</div>
+<div id="ref-vanderwielenProcessTechnologyProcess2001" class="csl-entry" role="listitem">
+<div class="csl-left-margin">28. </div><div class="csl-right-inline">van der Wielen, L. A. M., Ottens, M., &amp; Straathof, A. J. J. (2001). Process <span>Technology</span> and <span>Process Integration</span> in the <span>Preparation</span> of <span>Penicillins</span>. In A. Bruggink (Ed.), <em>Synthesis of <span><span class="math inline">\(\beta\)</span></span>-<span>Lactam</span> antibiotics: <span>Chemistry</span>, biocatalysis &amp; process integration</em> (pp. 150–205). Springer Netherlands.</div>
+</div>
+<div id="ref-ranDirectedEvolution2keto3deoxy6phosphogalactonate2007" class="csl-entry" role="listitem">
+<div class="csl-left-margin">29. </div><div class="csl-right-inline">Ran, N., &amp; Frost, J. W. (2007). Directed evolution of 2-keto-3-deoxy-6-phosphogalactonate aldolase to replace 3-deoxy-<span><span class="smallcaps">d</span></span>-arabino-heptulosonic acid 7-phosphate synthase. <em>J. Am. Chem. Soc.</em>, <em>129</em>(19), 6130–6139. <a href="https://doi.org/10.1021/ja067330p">https://doi.org/10.1021/ja067330p</a></div>
+</div>
+<div id="ref-paddonHighlevelSemisyntheticProduction2013" class="csl-entry" role="listitem">
+<div class="csl-left-margin">30. </div><div class="csl-right-inline">Paddon, C. J., Westfall, P. J., Pitera, D. J., Benjamin, K., Fisher, K., McPhee, D., Leavell, M. D., Tai, A., Main, A., Eng, D., Polichuk, D. R., Teoh, K. H., Reed, D. W., Treynor, T., Lenihan, J., Fleck, M., Bajad, S., Dang, G., Dengrove, D., … Newman, J. D. (2013). High-level semi-synthetic production of the potent antimalarial artemisinin. <em>Nature</em>, <em>496</em>(7446), 528–532. <a href="https://doi.org/10.1038/nature12051">https://doi.org/10.1038/nature12051</a></div>
+</div>
+<div id="ref-AnastasPaulT.2000Gc:t" class="csl-entry" role="listitem">
+<div class="csl-left-margin">31. </div><div class="csl-right-inline">Anastas, P. T., &amp; Warner, J. C. (2000). <em>Green chemistry : Theory and practice</em>. Oxford University Press.</div>
+</div>
+<div id="ref-savileBiocatalyticAsymmetricSynthesis2010" class="csl-entry" role="listitem">
+<div class="csl-left-margin">32. </div><div class="csl-right-inline">Savile, C. K., Janey, J. M., Mundorff, E. C., Moore, J. C., Tam, S., Jarvis, W. R., Colbeck, J. C., Krebber, A., Fleitz, F. J., Brands, J., Devine, P. N., Huisman, G. W., &amp; Hughes, G. J. (2010). Biocatalytic asymmetric synthesis of chiral amines from ketones applied to sitagliptin manufacture. <em>Science</em>, <em>329</em>(5989), 305–309. <a href="https://doi.org/10.1126/science.1188934">https://doi.org/10.1126/science.1188934</a></div>
+</div>
+<div id="ref-stoneNovoEngineeringHuman2012" class="csl-entry" role="listitem">
+<div class="csl-left-margin">33. </div><div class="csl-right-inline">Stone, E. M., Paley, O., Hu, J., Ekerdt, B., Cheung, N.-K., &amp; Georgiou, G. (2012). De novo engineering of a human cystathionine-<span><span class="math inline">\(\gamma\)</span></span>-lyase for systemic <span><span class="smallcaps">l</span></span>-methionine depletion cancer therapy. <em>ACS Chem. Biol.</em>, <em>7</em>(11), 1822–1829. <a href="https://doi.org/10.1021/cb300335j">https://doi.org/10.1021/cb300335j</a></div>
+</div>
+</div>
+</section>
+<section id="problems" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problems">Problems</h2>
+<p>1. <em>The application benefits depend on the function of the target protein.</em> Three examples of improvements achieved by engineering a more stable protein mentioned in this chapter were rubisco activase, Covid-19 vaccine and subtilisin. For each of these three target proteins: a) identify the function of this protein in the application, b) describe the type of stability that was improved by the engineering, and c) how this increased stability improved the function of the target protein in the application.</p>
+<p>2. <em>Proteins in nature are just good enough for the natural function.</em> Proteins acquire point mutations through mistakes in DNA replication. Natural selection selects against deleterious mutations - those that hinder the function of a protein. Although mutations can also yield improvements in protein properties, these improvements are lost if they do not contribute to the fitness of the organism. For example, imagine a metabolic enzyme that acquires a substitution that makes it ten-fold faster. The organism does not grow ten-fold faster, but only two-fold faster because a second enzyme in the pathway now limits the rate. What will happen as these two protein accumulate additional substitutions? Keep in mind that beneficial substitutions are rare, while detrimental substitutions are common.</p>
+<p>3. <em>Distinguish between binding as a goal and as a hypothesis for how to increase reactivity.</em> Tumors derived from the nervous system such as glioblastomas are more sensitive than normal tissues to <span class="smallcaps">l</span>-methionine starvation. Injections of bacterial methionine-<span class="math inline">\(\gamma\)</span>-lyase can deplete methionine and inhibit tumor growth. Researchers sought to avoid using a bacterial enzyme by engineering human cystathionine-<span class="math inline">\(\gamma\)</span>-lyase (hCGL) to accept a new substrate, <span class="smallcaps">l</span>-methionine,<span class="citation" data-cites="stoneNovoEngineeringHuman2012"><sup>[<a href="#ref-stoneNovoEngineeringHuman2012" role="doc-biblioref">33</a>]</sup></span> <a href="#fig-cystathionine_methionine" class="quarto-xref">Figure&nbsp;<span>1.5</span></a>. hCGL showed no detectable activity with <span class="smallcaps">l</span>-methionine. The researchers hypothesized that <span class="smallcaps">l</span>-methionine does not react because it does not bind to the active site of hCGL. Three substitutions in the active site of hCGL (E59N, R119L, E339V) created variant hCGL-NLV with a more hydrophobic binding site. This variant protein improved both binding and catalysis; it could both bind <span class="smallcaps">l</span>-methionine and catalyze its cleavage. Although the protein engineering changed two properties only one of these was the true goal. Identify the true goal by considering the possibility that the researchers changed only one of these properties: improved binding with no change in catalysis or improved catalysis with no change in binding. Which of these hypothetical improvements would yield an enzyme that could be useful as a cancer treatment?</p>
+<div id="fig-cystathionine_methionine" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Skeletal structures of L-cystathionine and L-methionine drawn side by side; a wavy red line marks the C–S bond in each molecule that is cleaved by the respective lyase enzyme, showing that methionine is a smaller, simpler thioether than cystathionine.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cystathionine_methionine-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter1/cystathionine_methionine.svg" class="img-fluid figure-img" alt="Skeletal structures of L-cystathionine and L-methionine drawn side by side; a wavy red line marks the C–S bond in each molecule that is cleaved by the respective lyase enzyme, showing that methionine is a smaller, simpler thioether than cystathionine." width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cystathionine_methionine-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.5: Cystathionine-<span class="math inline">\(\gamma\)</span>-lyase catalyzes the cleavage of cystathionine at the bond marked with a wavy red line. <span class="smallcaps">l</span>-Methionine is smaller and more hydrophobic than cystathionine. Methionine-<span class="math inline">\(\gamma\)</span>-lyase catalyzes the cleavage of <span class="smallcaps">l</span>-methionine at the bond marked with a wavy red line.
+</figcaption>
+</figure>
+</div>
+<p>4. <em>Industrial enzymes in your kitchen</em> Automatic dishwasher detergents contain mixtures of enzymes. Suggest three enzymes that catalyze different reactions that may be useful to include in dishwasher detergents and explain their potential role. Suggest improvements in two different types of stability that may be required for each enzyme to be useful in dishwasher detergents.</p>
+</section>
+<section id="answers" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="answers">Answers</h2>
+<details><summary>Click to show answers</summary>
+<p>1. Rubisco activase: a) Function: An enzyme that remodels Rubisco active sites to maintain CO₂ fixation in photosynthesis. b) Stability improved: Thermal stability — resistance to inactivation at elevated leaf temperatures. c) Benefit: Plants engineered with heat-stable rubisco activase maintain photosynthetic efficiency under heat stress, improving crop productivity in warmer climates. COVID-19 vaccine antigen (spike protein) a) Function: Viral surface glycoprotein used as the immunogen to elicit protective antibodies. b) Stability improved: Conformational stability — spike engineered into a prefusion-stabilized form. c) Benefit: The stabilized antigen better mimics the native viral surface structure, increasing neutralizing antibody responses and vaccine effectiveness. Subtilisin a) Function: A protease used in industrial applications, especially as an active ingredient in laundry detergents. b) Stability improved: Chemical stability — resistance to autolysis, oxidation, and inactivation by surfactants or high pH. The requirements are broader than just oxidative stability. c) Benefit: The stabilized enzyme retains activity longer in harsh detergent conditions, improving cleaning performance and extending product shelf life.</p>
+<p>2. As mutations accumulate, most substitutions will be neutral or deleterious rather than beneficial. The initially improved enzyme will gradually lose its advantage because destabilizing or activity-reducing mutations are much more frequent than further rare beneficial ones. Since the organism’s growth is constrained by other steps in the pathway, selection pressure to maintain the extra efficiency of the faster enzyme is weak. Thus, the first enzyme will tend to drift back toward “good enough” performance, while the newly rate-limiting enzyme may now experience stronger selection for stabilizing or activity-enhancing mutations. Overall, proteins converge on the minimum performance sufficient for organismal fitness, rather than maximizing their possible catalytic or stability potential.</p>
+<p>3. The true goal was improved catalysis, not just binding. Binding alone, without catalytic turnover, would not deplete methionine and thus would be useless as a cancer treatment. In contrast, if catalysis improved while binding affinity remained unchanged, the enzyme could still process L-methionine effectively at physiological concentrations. Therefore, binding was a hypothesis for how to enable catalysis, but the actual engineering goal was to create an enzyme that catalyzes methionine cleavage.</p>
+<p>4. Protease (e.g., subtilisin): Cleaves peptide bonds in food residues such as egg or meat; Amylase (e.g., α-amylase): Hydrolyzes starch from foods like potatoes or pasta into soluble sugars; Lipase: Breaks down triglycerides and fat residues into glycerol and fatty acids; Cellulase: Hydrolyzes cellulose and microfibrils from plant-based food soils (e.g., vegetable fibers). Also helps prevent redeposition of small particles on dishes; Mannanase (β-mannanase): Degrades galactomannans found in thickeners like guar gum, common in sauces and ice cream residues. All enzymes require alkaline stability (stable and active at detergent pH of 9–11), oxidative stability (some contain bleach or other oxidants to remove stains), thermal stability (hot wash cycles), surfactant stability (resistance to denaturation by detergent surfactants), shelf-life stability (resistance to long storage in formulated detergent powders/liquids).</p>
+</details>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter2.html" class="pagination-link" aria-label="Making Protein Variants">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Making Protein Variants</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
