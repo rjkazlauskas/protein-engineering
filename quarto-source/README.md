@@ -18,9 +18,14 @@ next section before doing anything else.**
 - **The copyright line must be copied verbatim from the source markdown — word for word, never composed, paraphrased, or assumed from memory or from what an earlier session's copy said.** The wording after "All rights reserved." varies (some chapters say "Last revised: <Month Year>", chapter 9's has said both "Last revised: March 2026." and, after the source was edited later, "Last updated July 2026." — these are genuinely different strings, not equivalent phrasings) and it changes over time as the author edits the source. Whatever the *current* source file literally says is what belongs in the qmd and in the rendered output, in both HTML and PDF — nothing more, nothing less, nothing reworded. This has actually broken once already: chapter 9's qmd went stale after the source was updated post-conversion and the copyright line wasn't re-synced. Every session that touches a chapter — not just new conversions — must re-check this line against the current source with:
   ```bash
   for n in 1 2 3 4 5 6 9; do
-    diff <(grep -m1 '^©' ../../Prot_Eng_${n}_*/*.md) <(grep -m1 '^©' chapter${n}.qmd) && echo "chapter $n: OK"
+    diff <(grep -m1 '^©' ../../../Prot_Eng_${n}_*/*.md) <(grep -m1 '^©' chapter${n}.qmd) && echo "chapter $n: OK"
   done
   ```
+  (Run from inside `quarto-source/` — three levels up reaches
+  `Prot_Eng_Textbook/`, where the sibling `Prot_Eng_N_*` source folders live.
+  This path changed when `quarto-source/` was added as a subfolder during the
+  chapter 9 session — check it's still right if this project ever moves
+  again.)
   Any diff output means the qmd is stale and must be updated to match the source exactly, not edited to something that "looks right."
 - **Check for stray literal `$` in the rendered HTML/PDF text.** All math is written in markdown enclosed in `$...$`/`$$...$$`; correctly-processed math never leaves a literal `$` in the output — any `$` that survives into rendered text/PDF means a math-mode escaping error (unmatched `$`, a `$` meant literally but not escaped as `\$`, etc.) and must be flagged for correction, not silently fixed by guessing. Check with (adjust the file list to whatever was just built):
   ```bash
@@ -28,6 +33,7 @@ next section before doing anything else.**
   pdftotext -layout _book/Protein-Engineering.pdf - | grep -n '\$'
   ```
   A hit doesn't automatically mean an error — a legitimate use would be a literal dollar amount (e.g. "$50") — but every hit needs to be looked at and reported.
+- **Rendering this project does not update the live site by itself.** `quarto render` only writes to `_book/` here. Getting changes onto `www.betterenzyme.com` is a separate, manual step — see "Updating the live GitHub Pages site" below — and always needs an explicit go-ahead from the user before the actual `git push`, same as any other push to shared/remote state.
 
 ## Adding a new chapter
 
@@ -283,28 +289,68 @@ figures/chapter1/ .. figures/chapter9/   Figures split by chapter, in web+PDF co
 layout.tex                     LaTeX header, trimmed for book use
 rjk_refs.bib                   Bibliography — re-sync from /Users/romas/Zotero/rjk_refs.bib before each new chapter
 apa-numeric-superscript-brackets.csl   Citation style, saved locally
-.github/workflows/publish.yml  Auto-builds and publishes to GitHub Pages on every push
+.github/workflows/publish.yml  Present but NOT what actually deploys the site — see
+                                 "Updating the live GitHub Pages site" below.
 ```
 
-## Steps to try this yourself
+## Where this folder fits in the real repo
 
-1. Unzip this folder into your book's GitHub repository (or into a fresh
-   repository if you want to test in isolation first).
-2. From Terminal, in that folder:
-   ```
-   git add .
-   git commit -m "Add Quarto book chapter"
-   git push
-   ```
-3. On GitHub, go to your repo → **Settings → Actions → General → Workflow
-   permissions** → select **Read and write permissions** → Save. (One-time
-   setup.)
-4. Push triggers the build automatically. Watch progress under the
-   **Actions** tab of your repo. When it finishes, your book is live at
-   `https://<your-username>.github.io/<repo-name>/`.
+This folder (`quarto-source/`) is one part of the `rjkazlauskas/protein-engineering`
+GitHub repo (`git@github.com:rjkazlauskas/protein-engineering.git`, SSH already
+set up). The repo root looks like:
 
-If you want to preview locally on your Mac first (recommended), install
-Quarto from quarto.org, then in this folder run `quarto preview`.
+```
+docs/                  The actual published site — a Jekyll site that GitHub Pages
+                        builds and serves directly from this folder on `main`.
+                        Custom domain: www.betterenzyme.com (docs/CNAME).
+  book/                 The Quarto book's RENDERED OUTPUT, copied in by hand (this
+                         is a plain copy of quarto-source/_book/*, not a symlink or
+                         build artifact — see below).
+  _data/tableofcontents.yml   The chapter list shown in the site's sidebar/nav.
+quarto-source/         This folder — the editable Quarto book SOURCE. Was never
+                        version-controlled at all until the chapter 9 session
+                        (2026-07); before that, only rendered output had ever been
+                        committed anywhere.
+```
+
+**If you're working from a fresh clone**, `quarto-source/` is exactly what you
+`cd` into to do chapter work — everything else in this README (rendering,
+conversion, verification) happens inside it, same as always.
+
+## Updating the live GitHub Pages site
+
+**There is no CI/build-on-push for the Quarto side.** `.github/workflows/publish.yml`
+exists in this folder but isn't wired up to anything — the actual, currently-used
+process is entirely manual:
+
+1. Do your chapter work in `quarto-source/` as described elsewhere in this
+   README, and render both formats: `quarto render` (no `--to` flag, so HTML
+   and PDF land in `_book/` together — see "Verifying before calling it done").
+2. Copy the rendered output into the published site, overwriting what's there:
+   ```bash
+   rm -rf ../docs/book
+   cp -R _book ../docs/book
+   ```
+3. If you added, removed, or retitled a chapter, update
+   `../docs/_data/tableofcontents.yml` to match — this file is hand-maintained,
+   it does not regenerate from anything.
+4. From the repo root (one level up from `quarto-source/`), review before
+   committing — `_book/` and `.quarto/` inside `quarto-source/` are gitignored,
+   so they won't get staged, but always check `git status` before `git add`:
+   ```bash
+   cd ..
+   git status
+   git add -A
+   git commit -m "..."
+   git push origin main
+   ```
+5. GitHub Pages rebuilds the Jekyll site from `docs/` automatically after the
+   push (this part *is* automatic — it's GitHub's own Pages deployment, not a
+   custom Action). Give it a minute or two, then check
+   `https://www.betterenzyme.com` to confirm it looks right live.
+
+If you want to preview the Quarto book locally before touching `docs/` at all
+(recommended), run `quarto preview` from inside `quarto-source/`.
 
 ## Conversion history
 
