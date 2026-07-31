@@ -62,7 +62,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0efda3af7dc20caffb9f21a679dee48f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-15cf6495c4f9ac8a910b4d65ae11dea8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -178,7 +178,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The logic of protein engineering</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Logic of Protein Engineering</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -196,7 +196,25 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Engineering tighter binding</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Engineering Tighter Binding</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">In revision</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">In revision</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to Directed Evolution</span></span></a>
   </div>
 </li>
     </ul>
@@ -430,51 +448,52 @@ Table&nbsp;4.1: Comparison of a force field for small organic molecules (MM3) wi
 <div aria-describedby="tbl-compare_MM3_to_AMBER-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 12%">
-<col style="width: 10%">
-<col style="width: 15%">
-<col style="width: 12%">
-<col style="width: 12%">
 <col style="width: 14%">
-<col style="width: 16%">
-<col style="width: 0%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
-<th scope="col"><strong>Force</strong> <strong>field</strong></th>
-<th colspan="2" scope="col"><strong>Number</strong>| <strong>Application</strong> <strong>of atom</strong>| <strong>types</strong> |</th>
-<th scope="col"><strong>Stretch</strong></th>
-<th scope="col"><strong>Bend</strong></th>
-<th scope="col"><strong>vdW</strong></th>
-<th scope="col"><strong>Electrostatic</strong></th>
-<th scope="col"></th>
+<th style="text-align: center;" scope="col"><strong>Force field</strong></th>
+<th style="text-align: center;" scope="col"><strong>Number of atom types</strong></th>
+<th style="text-align: center;" scope="col"><strong>Application</strong></th>
+<th style="text-align: center;" scope="col"><strong>Stretch</strong></th>
+<th style="text-align: center;" scope="col"><strong>Bend</strong></th>
+<th style="text-align: center;" scope="col"><strong>vdW</strong></th>
+<th style="text-align: center;" scope="col"><strong>Electrostatic</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>MM3</td>
-<td>153</td>
-<td>general, organic molecules</td>
-<td><span class="math inline">\(r^2,\ r^3,\)</span> <span class="math inline">\(r^4\)</span></td>
-<td>6 terms</td>
-<td colspan="3"><span class="math inline">\(e^r,\ r^2\)</span> | dipole or | | charge | | |</td>
+<td style="text-align: center;">MM3</td>
+<td style="text-align: center;">153</td>
+<td style="text-align: center;">general, organic molecules</td>
+<td style="text-align: center;"><span class="math inline">\(r^2,\ r^3,\ r^4\)</span></td>
+<td style="text-align: center;">6 terms</td>
+<td style="text-align: center;"><span class="math inline">\(e^r,\ r^2\)</span></td>
+<td style="text-align: center;">dipole or charge</td>
 </tr>
 <tr class="even">
-<td>AMBER</td>
-<td>41</td>
-<td>biopolymers</td>
-<td><span class="math inline">\(r^2\)</span></td>
-<td>2 terms</td>
-<td colspan="2"><span class="math inline">\(r^{12},\ r^6\)</span>,| charge <span class="math inline">\(r^{12},\ r^{10}\)</span>|</td>
-<td>charge | $| |</td>
+<td style="text-align: center;">AMBER</td>
+<td style="text-align: center;">41</td>
+<td style="text-align: center;">biopolymers</td>
+<td style="text-align: center;"><span class="math inline">\(r^2\)</span></td>
+<td style="text-align: center;">2 terms</td>
+<td style="text-align: center;"><span class="math inline">\(r^{12},\ r^6\)</span>, <span class="math inline">\(r^{12},\ r^{10}\)</span></td>
+<td style="text-align: center;">charge</td>
 </tr>
 <tr class="odd">
-<td>Rosetta</td>
-<td>59</td>
-<td>biopolymers</td>
-<td>statistical potential</td>
-<td>statistical potential</td>
-<td colspan="3"><span class="math inline">\(r^{12},\ r^6\)</span> | charge | with | with modifications | modifications</td>
+<td style="text-align: center;">Rosetta</td>
+<td style="text-align: center;">59</td>
+<td style="text-align: center;">biopolymers</td>
+<td style="text-align: center;">statistical potential</td>
+<td style="text-align: center;">statistical potential</td>
+<td style="text-align: center;"><span class="math inline">\(r^{12},\ r^6\)</span> with modifications</td>
+<td style="text-align: center;">charge with modifications</td>
 </tr>
 </tbody>
 </table>
@@ -759,7 +778,7 @@ is a computational modeling approach that include electrons explicitly in the ca
 <div class="csl-left-margin">7. </div><div class="csl-right-inline">Alford, R. F., Leaver-Fay, A., Jeliazkov, J. R., O’Meara, M. J., DiMaio, F. P., Park, H., Shapovalov, M. V., Renfrew, P. D., Mulligan, V. K., Kappel, K., Labonte, J. W., Pacella, M. S., Bonneau, R., Bradley, P., Dunbrack, R. L., Das, R., Baker, D., Kuhlman, B., Kortemme, T., &amp; Gray, J. J. (2017). The <span>Rosetta</span> all-atom energy function for macromolecular modeling and design. <em>J. Chem\@. Theory Comput.</em>, <em>13</em>(6), 3031–3048. <a href="https://doi.org/10.1021/acs.jctc.7b00125">https://doi.org/10.1021/acs.jctc.7b00125</a></div>
 </div>
 <div id="ref-homeyerFreeEnergyCalculations2012" class="csl-entry" role="listitem">
-<div class="csl-left-margin">8. </div><div class="csl-right-inline">Homeyer, N., &amp; Gohlke, H. (2012). Free energy calculations by the molecular mechanics <span>Poisson</span>-<span>Boltzmann</span> surface area method. <em>Mol. Inf.</em>, <em>31</em>(2), 114–122. <a href="https://doi.org/10.1002/minf.201100135">https://doi.org/10.1002/minf.201100135</a></div>
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Homeyer, N., &amp; Gohlke, H. (2012). Free energy calculations by the molecular mechanics <span>Poisson</span>−<span>Boltzmann</span> surface area method. <em>Mol. Inf.</em>, <em>31</em>(2), 114–122. <a href="https://doi.org/10.1002/minf.201100135">https://doi.org/10.1002/minf.201100135</a></div>
 </div>
 <div id="ref-baeIdentifyingEngineeringIon2005" class="csl-entry" role="listitem">
 <div class="csl-left-margin">9. </div><div class="csl-right-inline">Bae, E., &amp; Phillips Jr, G. N. (2005). Identifying and engineering ion pairs in adenylate kinases. <em>J. Biol. Chem.</em>, <em>280</em>(35), 30943–30948. <a href="https://doi.org/10.1074/jbc.M504216200">https://doi.org/10.1074/jbc.M504216200</a></div>
@@ -884,6 +903,29 @@ Figure&nbsp;4.15: New listing of coordinates for His64 in pdb file 1s01 specifie
 </section>
 
 </main> <!-- /main -->
+<script>
+// Bold the "Figure X.X:"/"Table X.X:" label at the start of every figure and
+// table caption. Quarto fills in the crossref number as plain text directly
+// inside the <figcaption> with no wrapping element around just the label, and
+// that substitution happens after Lua filters run (the number isn't even
+// resolved yet when a `post-quarto` Lua filter would see it), so a Lua filter
+// can't target this -- this runs client-side, after the page (and the
+// numbers) are fully rendered. Equation/section captions don't exist in this
+// book, so no extra type-filtering is needed here (unlike the CSS rule for
+// in-text crossref links, which does have to distinguish by href prefix).
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".quarto-float-caption").forEach(function (caption) {
+    var first = caption.firstChild;
+    if (!first || first.nodeType !== Node.TEXT_NODE) return;
+    var match = first.textContent.match(/^(Figure|Table) [0-9.]+:/);
+    if (!match) return;
+    var strong = document.createElement("strong");
+    strong.textContent = match[0];
+    first.textContent = first.textContent.slice(match[0].length);
+    caption.insertBefore(strong, first);
+  });
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -1286,8 +1328,8 @@ Figure&nbsp;4.15: New listing of coordinates for His64 in pdb file 1s01 specifie
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter3.html" class="pagination-link" aria-label="The logic of protein engineering">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The logic of protein engineering</span></span>
+      <a href="./chapter3.html" class="pagination-link" aria-label="The Logic of Protein Engineering">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Logic of Protein Engineering</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

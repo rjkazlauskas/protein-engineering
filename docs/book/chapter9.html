@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; Introduction to Directed Evolution – Protein Engineering</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter8.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-15cf6495c4f9ac8a910b4d65ae11dea8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter9.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to Directed Evolution</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Protein Engineering</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setting Protein Engineering Goals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Making Protein Variants</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Logic of Protein Engineering</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Protein Structure and Molecular Modeling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Engineering More Stable Proteins</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Engineering Tighter Binding</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">In revision</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">In revision</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter9.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to Directed Evolution</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-introduction" id="toc-sec-introduction" class="nav-link active" data-scroll-target="#sec-introduction"><span class="header-section-number">9.1</span> Introduction</a></li>
+  <li><a href="#error-prone-pcr" id="toc-error-prone-pcr" class="nav-link" data-scroll-target="#error-prone-pcr"><span class="header-section-number">9.2</span> Error-prone PCR</a>
+  <ul class="collapse">
+  <li><a href="#error-rates-of-dna-polymerases" id="toc-error-rates-of-dna-polymerases" class="nav-link" data-scroll-target="#error-rates-of-dna-polymerases"><span class="header-section-number">9.2.1</span> Error rates of DNA polymerases</a></li>
+  <li><a href="#error-rates-in-the-pcr-product" id="toc-error-rates-in-the-pcr-product" class="nav-link" data-scroll-target="#error-rates-in-the-pcr-product"><span class="header-section-number">9.2.2</span> Error rates in the PCR product</a></li>
+  <li><a href="#biases-that-limit-the-randomness" id="toc-biases-that-limit-the-randomness" class="nav-link" data-scroll-target="#biases-that-limit-the-randomness"><span class="header-section-number">9.2.3</span> Biases that limit the randomness</a></li>
+  <li><a href="#sec-optimumrate" id="toc-sec-optimumrate" class="nav-link" data-scroll-target="#sec-optimumrate"><span class="header-section-number">9.2.4</span> Optimal mutation rate</a></li>
+  <li><a href="#mutator-strains" id="toc-mutator-strains" class="nav-link" data-scroll-target="#mutator-strains"><span class="header-section-number">9.2.5</span> Mutator strains</a></li>
+  </ul></li>
+  <li><a href="#site-saturation-mutagenesis" id="toc-site-saturation-mutagenesis" class="nav-link" data-scroll-target="#site-saturation-mutagenesis"><span class="header-section-number">9.3</span> Site-saturation mutagenesis</a>
+  <ul class="collapse">
+  <li><a href="#ambiguity-codons" id="toc-ambiguity-codons" class="nav-link" data-scroll-target="#ambiguity-codons"><span class="header-section-number">9.3.1</span> Ambiguity codons</a></li>
+  <li><a href="#sec-oversampling" id="toc-sec-oversampling" class="nav-link" data-scroll-target="#sec-oversampling"><span class="header-section-number">9.3.2</span> Oversampling</a></li>
+  <li><a href="#library-quality" id="toc-library-quality" class="nav-link" data-scroll-target="#library-quality"><span class="header-section-number">9.3.3</span> Library quality</a></li>
+  </ul></li>
+  <li><a href="#sec-numvariants" id="toc-sec-numvariants" class="nav-link" data-scroll-target="#sec-numvariants"><span class="header-section-number">9.4</span> Number of possible substitution variants</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">9.5</span> Conclusions</a></li>
+  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#supporting-information" id="toc-supporting-information" class="nav-link" data-scroll-target="#supporting-information">Supporting Information</a></li>
+  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#answers" id="toc-answers" class="nav-link" data-scroll-target="#answers">Answers</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<style>
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+</style>
+<a href="#quarto-document-content" class="skip-link">Skip to main content</a>
+<div class="betterenzyme-header">
+  <div class="betterenzyme-header-inner">
+    <a class="betterenzyme-title" href="../">Protein Engineering</a>
+    <nav class="betterenzyme-nav">
+      <a href="../">Home</a>
+      <a href="../about/">About</a>
+      <a href="../scripts/">Scripts</a>
+    </nav>
+  </div>
+</div>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to Directed Evolution</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>© 2023-2026 Romas Kazlauskas. All rights reserved. Last updated July 2026.</p>
+<p><strong>Summary.</strong> Directed evolution improves a protein by making many variants and then identifying the better ones, usually over several rounds. When it is not known which residue to change, error-prone PCR spreads substitutions across the whole protein by copying the gene with a deliberately error-prone polymerase. Its reach is limited: because each codon usually changes by only one nucleotide, error-prone PCR samples an average of only 5.7 of the 19 possible replacement amino acids at a position. The genetic code adds further bias: Trp and Met are encoded by a single codon while Leu, Ser, and Arg have six. The polymerase itself favors changes at A·T sites and favors transitions over transversions. Most substitutions also land far from the active site simply because most of the protein is far from the active site. Too few mutations per gene wastes effort on unchanged clones; too many disable the protein, so an intermediate mutation rate works best. Despite being incomplete, these libraries routinely contain useful changes, which makes error-prone PCR well suited to finding stabilizing substitutions that can occur anywhere. When the useful region is known, site-saturation mutagenesis is preferred: mixed-base (ambiguity) codons, which are codons synthesized as mixtures of bases, let a single position encode some or all twenty amino acids, and the resulting variants are screened. It is the better tool for reshaping the active site to expand substrate range or change selectivity. No method can build every possible variant because the number is astronomically large, so both are strategies for sampling sequence space efficiently.</p>
+<p><strong>Key learning goals</strong></p>
+<ul>
+<li>Explain how DNA polymerase bias and the single-nucleotide-change limit make error-prone PCR libraries incomplete, and predict which amino acid substitutions are accessible from a given wild-type codon.</li>
+<li>Design a site-saturation mutagenesis experiment at a chosen codon, and explain why testing the nineteen alternative amino acids at a substrate-binding residue is an efficient route to altered substrate range or selectivity.</li>
+<li>Interpret IUPAC ambiguity codon notation (e.g., NNK, NDT) and select an appropriate codon scheme for a target set of amino acids.</li>
+<li>Calculate the oversampling required to screen a saturation library to a stated coverage, and explain why codon redundancy makes the number of clones exceed the number of variants.</li>
+<li>Compare error-prone PCR with saturation mutagenesis, and justify which method suits a given engineering goal.</li>
+<li>Calculate the number of possible variants for a given number of positions, replacement amino acids, and protein length, and use the result to argue why exhaustive sampling is impossible.</li>
+</ul>
+<section id="sec-introduction" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="sec-introduction"><span class="header-section-number">9.1</span> Introduction</h2>
+<p>Directed evolution is the recursive generation of random variations and identification of improved variants, usually by screening or selection. It mimics natural protein evolution, but differs in that it can improve a protein for abilities that do not occur in nature, such as reactivity toward pharmaceutical precursors or tolerance to organic cosolvents. The idea is simple enough to write as a short program. Over forty years ago, Eigen &amp; Gardiner<span class="citation" data-cites="eigenEvolutionaryMolecularEngineering1984"><sup>[<a href="#ref-eigenEvolutionaryMolecularEngineering1984" role="doc-biblioref">1</a>]</sup></span> suggested this set of computer instructions:</p>
+<pre><code>10 PRODUCE A MUTANT SPECTRUM OF SELF-REPRODUCING TEMPLATES
+20 SEPARATE AND CLONE INDIVIDUAL MUTANTS
+30 AMPLIFY CLONES
+40 EXPRESS CLONES
+50 TEST FOR OPTIMAL PHENOTYPES
+60 IDENTIFY OPTIMAL GENOTYPES
+70 RETURN TO 10 WITH A SAMPLE OF OPTIMAL GENOTYPES</code></pre>
+<p>The instructions are straightforward, but line 70 carries the weight. Without it, the procedure is a single round of mutagenesis and screening; with it, the enriched genotypes become the templates for the next cycle, and small improvements accumulate over successive rounds. Recursion is what makes the process evolution rather than screening.</p>
+<p>Eigen &amp; Gardiner wrote these instructions before the methods to carry them out existed. One difficulty in practice is not the logic but line 10: a mutant spectrum is easy to produce and hard to produce well, since the number of possible variants vastly exceeds the number that can be tested. Most of this chapter concerns how to bias that spectrum toward variants worth screening. The next chapter will cover accumulating or combining mutations.</p>
+<p>An early example shows the whole scheme in operation. Chen and Arnold set out to make the protease subtilisin E catalytically useful in high concentrations of dimethylformamide (DMF), an environment no natural subtilisin encounters.<span class="citation" data-cites="chenTuningActivityEnzyme1993"><sup>[<a href="#ref-chenTuningActivityEnzyme1993" role="doc-biblioref">2</a>]</sup></span> They began with a variant carrying four substitutions (D60N, D97G, Q103R, N218S) that had been identified separately in earlier screens and combined by site-directed mutagenesis. This variant then served as the parent for three sequential cycles of random mutagenesis by error-prone PCR. Screening was done on plates: secreted subtilisin hydrolyzes casein to give a visible halo, so colonies were lifted onto nitrocellulose, transferred to DMF-containing casein plates, and the clone with the largest halo became the template for the next cycle — line 70 of Eigen and Gardiner’s program. After three cycles and roughly 4000 colonies screened, PC3 carried six new substitutions (ten in total). These six directed-evolution substitutions improved catalytic efficiency about 3-fold over the 4M parent in 40% DMF.</p>
+</section>
+<section id="error-prone-pcr" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="error-prone-pcr"><span class="header-section-number">9.2</span> Error-prone PCR</h2>
+<section id="error-rates-of-dna-polymerases" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="error-rates-of-dna-polymerases"><span class="header-section-number">9.2.1</span> Error rates of DNA polymerases</h3>
+<p>DNA polymerases occasionally insert an incorrect nucleotide. The polymerase from <em>Thermus aquaticus</em> (Taq) makes about 4 × <span class="math inline">\(10^{-5}\)</span> errors per nucleotide added — one error per 25,000 nucleotides — and this value ranges from (1–20) × <span class="math inline">\(10^{-5}\)</span> depending on reaction conditions.<span class="citation" data-cites="mcinerneyErrorRateComparison2014 eckertDNAPolymeraseFidelity1991"><sup>[<a href="#ref-mcinerneyErrorRateComparison2014" role="doc-biblioref">3</a>,<a href="#ref-eckertDNAPolymeraseFidelity1991" role="doc-biblioref">4</a>]</sup></span> Taq lacks a <span class="math inline">\(3' \to 5'\)</span> exonuclease, so it cannot correct these mistakes. The polymerases from the archaea <em>Pyrococcus furiosus</em> and <em>Thermococcus kodakarensis</em> do proofread, lowering their error rates by one to two orders of magnitude. High-fidelity polymerases are the right choice for routine cloning, but the wrong choice for mutagenesis.</p>
+<p>The polymerase chain reaction (PCR) copies DNA, and the copying introduces errors. Error-prone PCR (epPCR) increases the error rate enough to generate a library of variants from a long stretch of DNA — an entire gene, or several genes at once. The procedure is simple, requires no structural information, and distributes substitutions throughout the target sequence. Screening the resulting library identifies the variants with improved properties.</p>
+<p>To increase the error rate, error-prone PCR uses an unbalanced pool of dNTPs, elevated free magnesium, and added manganese to raise the Taq error rate about tenfold.<span class="citation" data-cites="cadwellRandomizationGenesPCR1992"><sup>[<a href="#ref-cadwellRandomizationGenesPCR1992" role="doc-biblioref">5</a>]</sup></span> These conditions also slow the polymerase and shorten its useful lifetime, so the amplification is inefficient and a fresh aliquot of Taq is often added after the fifteenth cycle. Pushing the conditions further degrades the amplification, making a tenfold increase in error rate a practical ceiling.</p>
+</section>
+<section id="error-rates-in-the-pcr-product" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="error-rates-in-the-pcr-product"><span class="header-section-number">9.2.2</span> Error rates in the PCR product</h3>
+<p>The error frequency in the PCR product is higher than the per pass error rate of the polymerase because the errors accumulate in a PCR amplification. Cadwell and Joyce found 6.6 × <span class="math inline">\(10^{-3}\)</span> substitutions per position in the product of such a reaction — 6.6 changes per thousand base pairs, or roughly an order of magnitude above Taq’s per-pass error rate under error-prone conditions.<span class="citation" data-cites="cadwellRandomizationGenesPCR1992"><sup>[<a href="#ref-cadwellRandomizationGenesPCR1992" role="doc-biblioref">5</a>]</sup></span> Each cycle of PCR uses the products of the previous cycle as templates. Once an error is acquired, it is copied faithfully into all descendants of that molecule. The error frequency in the final product therefore depends on how much the DNA was amplified as well as on the polymerase and the buffer.</p>
+<p>Amplification is most conveniently expressed as the number of doublings: a reaction that yields a <span class="math inline">\(10^5\)</span>-fold increase over the input template has gone through <span class="math inline">\(\log_2(10^5)\)</span> ≈ 17 doublings. A perfect PCR would give one doubling per cycle, but real amplifications — especially under error-prone conditions — are less efficient, so the number of doublings is smaller than the number of cycles. Code Block S9.1 in the supporting information calculates the number of doublings for a given number of cycles when the efficiency is known.</p>
+<p>Each doubling gives every position another chance to acquire an error, so substitutions accumulate roughly in proportion to the number of doublings. The mutation frequency per position in the final product is approximately <em>f</em> × <em>d</em>, where <em>f</em> is the per-pass error rate and <em>d</em> the number of doublings. Taking <em>f</em> ≈ 4 × <span class="math inline">\(10^{-4}\)</span> errors per position for Taq under mutagenic conditions and <em>d</em> ≈ 17 gives 7 × <span class="math inline">\(10^{-3}\)</span> substitutions per position, close to the measured value above. For a gene of 1000 bp, this amounts to about seven nucleotide changes per molecule — an average, since the changes are distributed randomly among molecules and individual clones will carry more or fewer. Note that short sections of DNA, e.g., 10 nucleotides, are unlikely to contain substitutions. Error-prone PCR is suitable for gene-length sections of DNA or longer, but not for short sections because the error rate is not high enough.</p>
+</section>
+<section id="biases-that-limit-the-randomness" class="level3" data-number="9.2.3">
+<h3 data-number="9.2.3" class="anchored" data-anchor-id="biases-that-limit-the-randomness"><span class="header-section-number">9.2.3</span> Biases that limit the randomness</h3>
+<p>Four independent factors restrict which amino acid substitutions a random-mutagenesis library can contain (<a href="#tbl-biastypes" class="quarto-xref">Table&nbsp;<span>9.1</span></a>). Two arise from the genetic code (codon accessibility and unequal codon degeneracy), one from the chemistry of the polymerase (preferences for some nucleotide replacements over others), and one from the structure of the protein itself. Codon accessibility makes some amino acid replacements highly unlikely with error prone PCR while the additional biases make some substitutions less common than a random distribution would predict, so finding those substitutions requires more screening.</p>
+<div id="tbl-biastypes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-biastypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9.1: Four independent factors bias the amino acid substitutions produced by error-prone PCR.
+</figcaption>
+<div aria-describedby="tbl-biastypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;" scope="col">Source of bias</th>
+<th style="text-align: left;" scope="col">Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Codon accessibility</td>
+<td style="text-align: left;">One nucleotide change reaches only 5.7 of 19 alternative amino acids; the other 13.3 need two changes in one codon, which are ~100-fold rarer.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Unequal codon degeneracy</td>
+<td style="text-align: left;">Trp and Met have one codon each, Leu, Ser and Arg have six, so amino acids are not sampled with equal frequency</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Polymerase chemistry</td>
+<td style="text-align: left;">Taq favors substitutions at A·T over G·C sites and transitions over transversion.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Protein architecture</td>
+<td style="text-align: left;">Only a handful of residues line the substrate-binding site, so random substitutions rarely land there.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Codon accessibility.</strong> Although there are 64 codons, error-prone PCR can only create a subset of them because it changes only one nucleotide in a codon. At a mutation frequency of 0.7% per position, a substitution somewhere in a given codon has probability 3 × 0.7% = 2.1%, while two substitutions in the same codon have probability 3 × (0.7%)² = 0.015%, more than a hundredfold lower. Three substitutions are rarer still. If only one nucleotide changes in a codon, then only nine new codons are accessible, (<a href="#fig-codon_bias" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>). In the glycine codon GGA, single nucleotide substitutions encode only four new amino acids. Averaged over all sense codons, 24% of single-nucleotide substitutions are synonymous, 4% create a stop codon, and 71% are missense. Seven nucleotide changes therefore yield about five amino acid substitutions (<span class="math inline">\(7 \times 0.71 = 5\)</span>) and at any one position, only 5.7 of the nineteen alternative amino acids are reachable at all.</p>
+<div id="fig-codon_bias" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Diagram showing single-nucleotide substitutions of the glycine codon GGA. Mutating the first position gives CGA (Arg), AGA (stop), or TGA (Arg); mutating the second position gives GCA (Ala), GAA (Glu), or GTA (Val); mutating the third position gives GGG, GGC, or GGT, all still encoding Gly. Each row highlights the one substituted base in red alongside the resulting codon and amino acid.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-codon_bias-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter9/codon_bias.png" class="img-fluid figure-img" alt="Diagram showing single-nucleotide substitutions of the glycine codon GGA. Mutating the first position gives CGA (Arg), AGA (stop), or TGA (Arg); mutating the second position gives GCA (Ala), GAA (Glu), or GTA (Val); mutating the third position gives GGG, GGC, or GGT, all still encoding Gly. Each row highlights the one substituted base in red alongside the resulting codon and amino acid." width="216">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-codon_bias-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: Replacement of one nucleotide in the glycine codon GGA yields nine new codons. The three new codons created by replacement of the third nucleotide, A, also code for glycine, so 33% of the single nucleotide substitutions for this codon are synonymous. Five of the nine new codons (56%) are missense codons that introduce a new amino acid. Of these five, arginine occurs twice, so only four new amino acids of the nineteen possible (21%) are encoded. On average, single substitutions in a codon yield missense codons encoding only 5.7 new amino acids.
+</figcaption>
+</figure>
+</div>
+<p><strong>Unequal codon degeneracy.</strong> The genetic code does not assign codons evenly. Trp and Met have one codon each, while Leu, Ser, and Arg have six. Even perfectly random nucleotide substitution would therefore not sample the twenty amino acids with equal frequency: amino acids specified by one or two codons are harder to reach than those specified by four or six.</p>
+<p><strong>Polymerase chemistry.</strong> Nucleotide misincorporation is not random. If misincorporation were random, then mutations would occur at AT sites at the same frequency as at GC sites. Sequencing of DNA from an error-prone PCR using Taq DNA polymerase shows that the sites of substitution are non-random,<span class="citation" data-cites="shafikhaniGenerationLargeLibraries1997"><sup>[<a href="#ref-shafikhaniGenerationLargeLibraries1997" role="doc-biblioref">6</a>]</sup></span> <a href="#tbl-subtypes" class="quarto-xref">Table&nbsp;<span>9.2</span></a>. Most of the errors (&gt;95%) were substitutions rather than frame shifts. Substitutions at AT sites (40.9 + 7.3 + 23.7 = 71.9%) are 3.9 times as common as substitutions at GC sites (1.4 + 4.5 + 13.6 = 19.5%). Random substitutions would correspond to the GC content of the DNA, equal preference occurs when the GC content is 50%; for this example, the GC content was ~49%.</p>
+<div id="tbl-subtypes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-subtypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9.2: Fraction of each substitution type expected for random substitutions and observed in error-prone PCR using Taq DNA polymerase or Mutazyme II for DNA sequence encoding <em>B. lentus</em> subtilisin.
+</figcaption>
+<div aria-describedby="tbl-subtypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;" scope="col">substitution</th>
+<th style="text-align: center;" scope="col">fraction expected for random substitutions, %</th>
+<th style="text-align: center;" scope="col">fraction observed, <em>Taq</em> polymerase, %<sup>a</sup></th>
+<th style="text-align: center;" scope="col">fraction observed, Mutazyme II, %<span class="citation" data-cites="agilentGeneMorphII"><sup>[<a href="#ref-agilentGeneMorphII" role="doc-biblioref">7</a>]</sup></span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A→T and T→A</td>
+<td style="text-align: center;">16.7</td>
+<td style="text-align: center;">40.9</td>
+<td style="text-align: center;">28.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A→C and T→G</td>
+<td style="text-align: center;">16.7</td>
+<td style="text-align: center;">7.3</td>
+<td style="text-align: center;">4.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A→G and T→C</td>
+<td style="text-align: center;">16.7</td>
+<td style="text-align: center;">27.6</td>
+<td style="text-align: center;">17.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">G→C and C→G</td>
+<td style="text-align: center;">16.7</td>
+<td style="text-align: center;">1.4</td>
+<td style="text-align: center;">4.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">G→T and C→A</td>
+<td style="text-align: center;">16.7</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">14.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">G→A and C→T</td>
+<td style="text-align: center;">16.7</td>
+<td style="text-align: center;">13.6</td>
+<td style="text-align: center;">25.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="tblnote">
+<p><sup>a</sup> Data from DNA sequencing of 9800 nucleotides, which identified 286 errors (<span class="math inline">\(\varepsilon_{nt} = 2.9\%\)</span>).<span class="citation" data-cites="shafikhaniGenerationLargeLibraries1997"><sup>[<a href="#ref-shafikhaniGenerationLargeLibraries1997" role="doc-biblioref">6</a>]</sup></span> The sum of the substitution errors is 95.3%. The remaining errors were frame shifts: insertions 0.3%, deletions 4.2%; the missing 0.2% is rounding. This mutation frequency is roughly fourfold higher than the 0.66% discussed earlier in this chapter; these authors used more aggressive conditions to accumulate enough errors for a reliable count of substitution types.</p>
+</div>
+<p>Another measure of randomness is whether the replacement nucleotides are random. Again, the measured values differ from those expected for random replacements. There are two measures for this randomness of replacement. First, transitions, which exchange bases of similar size (purine for purine, pyrimidine for pyrimidine) are more common than transversions, which exchange bases of different size (<a href="#fig-transitions_transversions" class="quarto-xref">Figure&nbsp;<span>9.2</span></a>). Four transitions and eight transversions are possible, so random substitution gives a transition/transversion ratio of 0.5. The measured ratio for Taq is higher, 0.76 ((27.6 + 13.6)/(40.9 + 7.3 + 1.4 + 4.5)).</p>
+<div id="fig-transitions_transversions" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Diagram of the four DNA bases, with the purines adenine (A) and guanine (G) on top and the pyrimidines cytosine (C) and thymine (T) on bottom. Double-headed arrows connect A to G and C to T, each labeled 'transition'; diagonal dashed double-headed arrows cross-connect the purine and pyrimidine pairs, labeled 'transversions'.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-transitions_transversions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter9/transitions_transversions.png" class="img-fluid figure-img" alt="Diagram of the four DNA bases, with the purines adenine (A) and guanine (G) on top and the pyrimidines cytosine (C) and thymine (T) on bottom. Double-headed arrows connect A to G and C to T, each labeled 'transition'; diagonal dashed double-headed arrows cross-connect the purine and pyrimidine pairs, labeled 'transversions'." width="186">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-transitions_transversions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.2: Transitions substitute a purine with a purine (A with G and vice versa) or a pyrimidine with a pyrimidine (C with T and vice versa), while transversions substitute a purine with a pyrimidine (A or G with C or T) or a pyrimidine with a purine (C or T with A or G). There are four possible transitions and eight possible transversions.
+</figcaption>
+</figure>
+</div>
+<p>The second criterion for randomness of the replacement nucleotides is that AT→GC replacements should equal GC→AT replacements, leaving the GC content of the DNA unchanged. The measured AT→GC replacements 34.9 (7.3 + 27.6) 1.9-fold more common than GC→AT replacements 18.1 (4.5 + 13.6), showing that the GC content of the sequence increased during mutagenesis. Other researchers using different reaction conditions reported also reported non-random distributions.<span class="citation" data-cites="lin-goerkePCRbasedRandomMutagenesis1997"><sup>[<a href="#ref-lin-goerkePCRbasedRandomMutagenesis1997" role="doc-biblioref">8</a>]</sup></span>,<span class="citation" data-cites="rasilaCriticalEvaluationRandom2009"><sup>[<a href="#ref-rasilaCriticalEvaluationRandom2009" role="doc-biblioref">9</a>]</sup></span></p>
+<p>Mutazyme II DNA polymerase, a blend of two error-prone polymerases with complementary preferences, reduces some of this bias.<span class="citation" data-cites="agilentGeneMorphII"><sup>[<a href="#ref-agilentGeneMorphII" role="doc-biblioref">7</a>]</sup></span> The site preference improves substantially, from 3.9 to 1.2 (50.7/43.7). The GC drift reverses rather than disappears, from 1.9 to 0.56 (22.2/39.6) — the library now loses GC content instead of gaining it. The transition bias increases slightly and remains the largest deviation: 0.84 (43.0/51.4) against a random value of 0.5. No available polymerase makes the substitutions random; the choice is which bias to accept.</p>
+<p><strong>Protein architecture.</strong> The first three restrictions are properties of the method, this last one comes from the target. Random mutagenesis methods target all amino acid positions equally. Counterintuitively, this random process favors mutations far from the active site.<span class="citation" data-cites="morleyImprovingEnzymeProperties2005"><sup>[<a href="#ref-morleyImprovingEnzymeProperties2005" role="doc-biblioref">10</a>]</sup></span> Only a few residues (&lt;10%) form the substrate-binding site and most lie far away, so most mutations land far from the active site. This inherent preference is known as location bias.</p>
+<p>Imagine a spherical enzyme with the active site at the center and the residues arranged in concentric shells around it. Each shell farther out is larger and therefore contains greater numbers of amino acids. The number of amino acids <em>n</em> in a 1-Å-thick shell of outer radius <em>r</em> is the volume of the shell divided by the average volume occupied by a residue, 141 Å³ (<a href="#fig-location_bias" class="quarto-xref">Figure&nbsp;<span>9.3</span></a>). The prediction fits a typical 30 kDa protein well out to about 15 Å; beyond that, the observed number falls below the prediction because the shells start to extend past the edge of the protein.</p>
+<div id="fig-location_bias" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Line and scatter plot of the number of amino acids in 1-Å-thick spherical shells versus the shell's outer radius. The predicted curve (blue line, from n = 4/3π(r³−(r−1)³)/141 Å³) rises smoothly from 0 to about 80 amino acids as radius increases from 0 to 35 Å. Observed values for a 30 kDa protein (orange circles) closely track the prediction out to about 15 Å, then fall increasingly below it as the shells begin to extend past the edge of the protein.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-location_bias-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter9/location_bias.png" class="img-fluid figure-img" alt="Line and scatter plot of the number of amino acids in 1-Å-thick spherical shells versus the shell's outer radius. The predicted curve (blue line, from n = 4/3π(r³−(r−1)³)/141 Å³) rises smoothly from 0 to about 80 amino acids as radius increases from 0 to 35 Å. Observed values for a 30 kDa protein (orange circles) closely track the prediction out to about 15 Å, then fall increasingly below it as the shells begin to extend past the edge of the protein." width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-location_bias-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.3: The number of amino acids within concentric, spherical shells increases as one moves outward from the center of a protein. The shells are 1 Å thick with outer radius <em>r</em>. The blue line plots the values predicted by the equation shown; the orange circles are observed values for a typical 30 kDa protein (esterase, PDB 1VA4). Agreement is good out to ~15 Å, beyond which the shells reach the outside edge of the protein and contain fewer amino acids than predicted.
+</figcaption>
+</figure>
+</div>
+<p>More than half the residues in this protein lie 13–22 Å from the active site and fewer than 10% lie within 10 Å of it. Larger proteins push the edge farther out, so the imbalance grows with size. Because substitutions anywhere in the protein can contribute to stability, the bias toward distant substitutions is no disadvantage when stability is the target. Substitutions near the active site are far more effective at changing substrate specificity and selectivity, however, and for those goals the location bias is a real limitation.</p>
+<p>The subtilisin work described earlier may look like a counterexample, since the six effective substitutions in PC3 clustered near the active site. It is not. The library contained substitutions throughout the gene; screening recovered the small minority that happened to fall in useful positions. What a library contains and what screening returns are different things, and the distinction matters whenever one reasons backward from a set of hits to the diversity that produced them.</p>
+<p>These limitations and biases mean that no error-prone PCR library approaches completeness. That is not fatal. As the subtilisin work showed, useful substitutions were common enough that a few thousand colonies sufficed. The practical question is not whether the library is complete — it never is — but whether the improvements sought are frequent enough to to be discovered by sampling.</p>
+</section>
+<section id="sec-optimumrate" class="level3" data-number="9.2.4">
+<h3 data-number="9.2.4" class="anchored" data-anchor-id="sec-optimumrate"><span class="header-section-number">9.2.4</span> Optimal mutation rate</h3>
+<p>At a low mutation rate, most of the epPCR library is unmutated wild-type sequence. Screening these wastes effort because they cannot be improved variants. The mutated fraction is dominated by single-substitution variants, and because mutations generated early in the amplification are copied into all their descendants, the same single substitution often turns up in more than one colony. These duplicates likewise waste screening effort: testing a duplicate contributes no new information. For example, a mutation rate, <span class="math inline">\(m\)</span>, of 0.3% in a 1000-bp PCR product is estimated to contain ~25% wild-type or single substitutions. Recall that short sections of DNA are not suitable targets for error-prone PCR because the mutation rate is too low and most of the PCR product contains no substitutions.</p>
+<p>At higher mutation rates, the accumulation of strongly detrimental substitutions limits the ability to find improved variants. Detrimental or inactivating substitutions are those that so strongly hinder protein performance that it cannot be detected. Destabilizing substitutions that hinder protein folding are an example of detrimental substitutions. An improved variant must contain at least one beneficial mutation and, at the same time, no detrimental ones. Assume that mutations are either beneficial, detrimental, or neutral, with fixed fractions <span class="math inline">\(F_{ben}\)</span>, <span class="math inline">\(F_{det}\)</span>, and <span class="math inline">\(F_{neu}\)</span> summing to one, and that they act independently. For a single substitution, the chance of avoiding a detrimental mutation is <span class="math inline">\((1-F_{det})\)</span>; over <em>m</em> substitutions it is <span class="math inline">\((1-F_{det})^m\)</span>. By the same reasoning, the fraction containing at least one beneficial substitution is <span class="math inline">\(1-(1-F_{ben})^m\)</span>. The fraction of improved variants is therefore</p>
+<p><span id="eq-Fbetter"><span class="math display">\[F_{better} = (1-F_{det})^m \left[1-(1-F_{ben})^m\right] \tag{9.1}\]</span></span></p>
+<p>When <span class="math inline">\(F_{ben} \ll 1\)</span>, the second term is approximately <span class="math inline">\(m \cdot F_{ben}\)</span>, so</p>
+<p><span id="eq-Fbetter_approx"><span class="math display">\[F_{better} = (1-F_{det})^m \cdot m \cdot F_{ben} \tag{9.2}\]</span></span></p>
+<p>The first term decreases exponentially with <em>m</em> while the second increases linearly, so <span class="math inline">\(F_{better}\)</span> passes through a maximum. Differentiating <a href="#eq-Fbetter_approx" class="quarto-xref">Equation&nbsp;<span>9.2</span></a> locates it at</p>
+<p><span id="eq-mopt"><span class="math display">\[m_{opt} = \frac{-1}{\ln(1-F_{det})} \tag{9.3}\]</span></span></p>
+<p>Note what is absent: <span class="math inline">\(F_{ben}\)</span> does not appear. The optimal number of mutations depends only on how well the starting protein tolerates substitution. The frequency of beneficial mutations sets the <em>height</em> of the peak, not its position. This is why a rule of thumb of a few substitutions per gene transfers across systems whose hit rates differ by orders of magnitude. For a protein in which 30% of substitutions are strongly detrimental (<span class="math inline">\(F_{det} = 0.30\)</span>), the optimum is at <em>m</em> = 2.8, and if 1% of substitutions are beneficial the peak value of <span class="math inline">\(F_{better}\)</span> is 1% (<a href="#fig-opt_mut_rate" class="quarto-xref">Figure&nbsp;<span>9.4</span></a>).</p>
+<div id="fig-opt_mut_rate" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Plot of the fraction of improved variants, F_better, versus mutation rate m, showing a single peak at m = 2.8 where F_better = 1%. The curve rises from zero at low m, peaks, then declines toward zero at high m, with the equations F_better = (1-F_det)^m × m × F_ben and its evaluated form F_better = (1-0.30)^m × m × 0.01 shown alongside.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-opt_mut_rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter9/opt_mut_rate.png" class="img-fluid figure-img" alt="Plot of the fraction of improved variants, F_better, versus mutation rate m, showing a single peak at m = 2.8 where F_better = 1%. The curve rises from zero at low m, peaks, then declines toward zero at high m, with the equations F_better = (1-F_det)^m × m × F_ben and its evaluated form F_better = (1-0.30)^m × m × 0.01 shown alongside." width="212">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-opt_mut_rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.4: Both beneficial and strongly detrimental mutations accumulate with increasing numbers of mutations. An improved variant must be both stable (contain no detrimental mutation) and contain at least one beneficial mutation. If 1% of single substitutions are beneficial and 30% are detrimental, the maximum fraction of improved variants, <span class="math inline">\(F_{better}\)</span>, is 1%, occurring at 2.8 mutations per gene.
+</figcaption>
+</figure>
+</div>
+<p>Chodorge and coworkers<span class="citation" data-cites="chodorgeRationalStrategiesDirected2005"><sup>[<a href="#ref-chodorgeRationalStrategiesDirected2005" role="doc-biblioref">11</a>]</sup></span> tested this idea using green fluorescent protein. Their model differs slightly from the one above but yields similar curves. Converting GFP to a blue fluorescent variant requires one specific nucleotide substitution out of the 2151 possible in the 717-bp gene (3 × 717), so <span class="math inline">\(F_{ben} = 0.00046\)</span>. They estimated <span class="math inline">\(F_{det} = 0.20\)</span> from the loss of fluorescence in wild type at different mutation rates, which by <a href="#eq-mopt" class="quarto-xref">Equation&nbsp;<span>9.3</span></a> predicts an optimum at <em>m</em> = 4.5. Testing a range of error-prone PCR conditions, they found the highest fraction of blue fluorescent variants at about 5 nucleotide substitutions per gene — close agreement on the position of the optimum. The observed peak height (1.3%) exceeded the predicted 0.08% by more than an order of magnitude, a reminder that the model captures the shape of the trade-off better than its magnitude. (The predicted peak height of 0.08% comes from evaluating <a href="#eq-Fbetter_approx" class="quarto-xref">Equation&nbsp;<span>9.2</span></a> at <em>m</em> = 4.48: (0.8)^4.48 × 4.48 × 0.00046. Worth checking against Chodorge’s own model, since theirs differs slightly and may predict a different height.)</p>
+<p>Quantitative use of <a href="#eq-Fbetter_approx" class="quarto-xref">Equation&nbsp;<span>9.2</span></a> is not expected for real problems, since the probability of a beneficial and detrimental mutations is rarely known in advance. The useful result is that an optimum exists, and that its location is set by the mutational tolerance of the starting protein. Indeed several researchers demonstrated that starting with a more stable protein allows discovery of a greater number of beneficial substitutions.<span class="citation" data-cites="bloomLightDirectedEvolution2009"><sup>[<a href="#ref-bloomLightDirectedEvolution2009" role="doc-biblioref">12</a>]</sup></span>,<span class="citation" data-cites="tokurikiStabilityEffectsMutations2009"><sup>[<a href="#ref-tokurikiStabilityEffectsMutations2009" role="doc-biblioref">13</a>]</sup></span></p>
+</section>
+<section id="mutator-strains" class="level3" data-number="9.2.5">
+<h3 data-number="9.2.5" class="anchored" data-anchor-id="mutator-strains"><span class="header-section-number">9.2.5</span> Mutator strains</h3>
+<p>Another approach to random mutagenesis uses mutator strains of <em>E. coli</em>, which carry defects in DNA repair and proofreading that raise the spontaneous mutation rate. The XL1-Red strain, for example, carries mutations in three genes required for accurate replication (nucleotide sanitization, replication fidelity, and post-replicative repair), raising the mutation rate about 5000-fold over wild type, but ~10-fold lower than error-prone PCR.<span class="citation" data-cites="rasilaCriticalEvaluationRandom2009"><sup>[<a href="#ref-rasilaCriticalEvaluationRandom2009" role="doc-biblioref">9</a>]</sup></span> Random point mutations accumulate as the bacteria replicate. The advantage is that variants are generated <em>in vivo</em>, without designing primers or optimizing error-prone PCR conditions. The disadvantage is that mutations are not confined to the gene of interest but occur genome-wide, causing growth defects, changes in expression or copy number, and genetic instability.</p>
+<p>To narrow the target, researchers have engineered microorganisms and mammalian cells that replicate plasmid DNA and genomic DNA with separate polymerases.<span class="citation" data-cites="campsTargetedGeneEvolution2003 wangEvolutionNewNonantibody2004 yiPlasmidHypermutationUsing2021"><sup>[<a href="#ref-campsTargetedGeneEvolution2003" role="doc-biblioref">14</a>–<a href="#ref-yiPlasmidHypermutationUsing2021" role="doc-biblioref">16</a>]</sup></span> An error-prone polymerase copies the plasmid while an accurate proofreading polymerase copies the genome. These strains are more stable than the mutator strains above.</p>
+<p>These <em>in vivo</em> mutagenesis methods generate many variants in a background of many wild type due to the low mutation rate. Screening would be inefficient, so researchers use selection: the experiment is designed so that improved variants survive or grow faster, and the population itself does the sorting. To evolve resistance to an antibiotic, for instance, one grows the organisms in progressively higher concentrations so that only improved variants persist. Sequencing the survivors then reveals the changes responsible.</p>
+</section>
+</section>
+<section id="site-saturation-mutagenesis" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="site-saturation-mutagenesis"><span class="header-section-number">9.3</span> Site-saturation mutagenesis</h2>
+<p>In some cases, researchers know where they want to target mutations, so site-saturation mutagenesis is a better option. Site-saturation mutagenesis is similar to site-directed mutagenesis in that a specific site is targeted, but differs in the use of ambiguity codons. Ambiguity codons are mixtures of codons that code for multiple amino acids, so mutagenesis using ambiguity codons yields a mixture of protein variants. A common application of site-saturation mutagenesis is targeting the substrate-binding site to expand the substrate range or increase the selectivity, <a href="#tbl-SSM_examples" class="quarto-xref">Table&nbsp;<span>9.3</span></a>. Another application is targeting flexible surface residues to create interactions between nearby amino acids to increase protein stability. Increasing reactivity may require reshaping the substrate binding region, but it can also require changes in more distant loops or tunnels. Several examples of targeted site-saturation mutagenesis are below.</p>
+<div id="tbl-SSM_examples" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-SSM_examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9.3: Selected examples of site-saturation mutagenesis to create variants.
+</figcaption>
+<div aria-describedby="tbl-SSM_examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;" scope="col">protein</th>
+<th style="text-align: center;" scope="col">region targeted</th>
+<th style="text-align: center;" scope="col">improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="smallcaps">d</span>-hydantoinase</td>
+<td style="text-align: center;">substrate-binding site</td>
+<td style="text-align: center;">11-fold increase in activity toward new substrate</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">nitrilase</td>
+<td style="text-align: center;">all positions<sup>a</sup></td>
+<td style="text-align: center;">increase enantioselectivity from ~15 to &gt;100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">lysine tRNA synthase</td>
+<td style="text-align: center;">substrate-binding site</td>
+<td style="text-align: center;">27.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">phenylacetone monooxygenase</td>
+<td style="text-align: center;">hinge region between domains</td>
+<td style="text-align: center;">expand substrate range</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">lipase</td>
+<td style="text-align: center;">flexible surface loops</td>
+<td style="text-align: center;">increase stability temperature by 45 °C</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="tblnote">
+<p><sup>a</sup> The researchers did not have a structure of the nitrilase, so they tested all 6,270 single substitutions (19 replacements at 330 positions). Later a model of the nitrilase revealed that the beneficial substitutions were all in the substrate-binding site.</p>
+</div>
+<p>Cheon et al.<span class="citation" data-cites="cheonManipulationActiveSite2004"><sup>[<a href="#ref-cheonManipulationActiveSite2004" role="doc-biblioref">17</a>]</sup></span> expanded the substrate range of <span class="smallcaps">d</span>-hydantoinase to include hydroxyphenylhydantoin, a precursor for antibiotic synthesis. Site saturation mutagenesis Phe159 in a loop forming the substrate binding pocket followed by screening of variants identified the Phe159Ala variant with ~6-fold enhanced catalytic activity (<span class="math inline">\(k_{cat}\)</span>) toward this substrate. Subsequent site saturation mutagenesis at Leu65, located on a loop on the other side of the substrate binding pocket, followed by screening identified the Leu65Phe/Phe159Ala variant with a further ~2-fold increase in catalytic activity for a total of an 11-fold increase over the wild-type enzyme.</p>
+<p>To introduce the non-canonical amino acid <span class="smallcaps">l</span>-homoglutamine into proteins, Anderson and coworkers<span class="citation" data-cites="andersonExpandedGeneticCode2004"><sup>[<a href="#ref-andersonExpandedGeneticCode2004" role="doc-biblioref">18</a>]</sup></span> altered the selectivity of a lysine tRNA synthase to favor <span class="smallcaps">l</span>-homoglutamine instead of lysine or any of the other nineteen canonical amino acids. They identified two amino acid residues that interact with the ε-amino group of lysine in the active site of the lysine tRNA synthase and varied these residues using site-saturation mutagenesis (NNK codons). Screening identified the Glu41Ile-Tyr268Ser variant as one with the desired activity and selectivity. Subsequent experiments showed that <span class="smallcaps">l</span>-homoglutamine was incorporated into the target protein.</p>
+<p>To expand the substrate range of phenylacetone monooxygenase (PAMO, from <em>Thermobifida fusca</em>), Reetz and coworkers<span class="citation" data-cites="reetzInducedAllosteryDirected2010"><sup>[<a href="#ref-reetzInducedAllosteryDirected2010" role="doc-biblioref">19</a>]</sup></span> used a different approach - they targeted substitutions at two sites distant from the substrate binding site. Previous research identified open and closed conformations of PAMO and a hinge between the FAD- and NADP-binding domains that allows the domains to move. The researchers hypothesized that substitutions near the hinge could reshape the substrate-binding site through altered domain motion. Structure analysis identified Gln93/Pro94 in a helical segment at the hinge region and those positions were randomized using NDT codons, which encoded twelve amino acids at each site. Screening identified the Gln93Asn/Pro94Asp variant which reacted with a wide range of previously unreactive substrates and with high enantioselectivity for most of them.</p>
+<p>DeSantis and coworkers<span class="citation" data-cites="desantisCreationProductiveHighly2003"><sup>[<a href="#ref-desantisCreationProductiveHighly2003" role="doc-biblioref">20</a>]</sup></span> used site-saturation mutagenesis to increase the enantioselectivity of a nitrilase for the synthesis of a cholesterol-lowering drug, atorvastatin (Lipitor®), <a href="#fig-nitrilase" class="quarto-xref">Figure&nbsp;<span>9.5</span></a>. The starting nitrilase showed an enantioselectivity of only ~15. Their experiments identified the Ala190His variant, which showed an enantioselectivity of &gt;100. This early application of site-saturation mutagenesis differs from modern ones in that the researchers did not have a structure of the enzyme to guide their choice of locations. Instead they exhaustively applied site-saturation mutagenesis to all 330 positions of the nitrilase (330 × 19 = 6270 possible single-amino-acid substitution variants) to find the Ala190His variant. Indeed, the AlphaFold 3 structure reveals that residue 190 lies in the substrate-binding region, ~10 Å from the catalytic Cys162 Sγ. If this experiment were repeated today, one would likely use the predicted AlphaFold 3 structure to focus site-saturation mutagenesis into the substrate binding region.</p>
+<div id="fig-nitrilase" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Reaction scheme showing hydrolysis of a prochiral dinitrile bearing one natural-abundance (14N) and one 15N-labeled nitrile group. Hydrolysis of the 14N nitrile (left) yields the (S)-enantiomer (130 g/mol) with the 15N nitrile retained; hydrolysis of the 15N nitrile (right) yields the (R)-enantiomer (129 g/mol, the atorvastatin precursor) with a free carboxylic acid. The mass difference between the two hydrolysis products lets mass spectrometry measure the enantiomeric ratio.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nitrilase-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter9/nitrilase.png" class="img-fluid figure-img" alt="Reaction scheme showing hydrolysis of a prochiral dinitrile bearing one natural-abundance (14N) and one 15N-labeled nitrile group. Hydrolysis of the 14N nitrile (left) yields the (S)-enantiomer (130 g/mol) with the 15N nitrile retained; hydrolysis of the 15N nitrile (right) yields the (R)-enantiomer (129 g/mol, the atorvastatin precursor) with a free carboxylic acid. The mass difference between the two hydrolysis products lets mass spectrometry measure the enantiomeric ratio." width="432">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nitrilase-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.5: A nitrilase catalyzes the hydrolysis of either nitrile in the dinitrile shown in the center. Hydrolysis of the nitrile on the left yields the (<em>S</em>)-enantiomer, while hydrolysis of the nitrile on the right yields the (<em>R</em>)-enantiomer. To find variants with higher enantioselectivity for the (<em>R</em>)-enantiomer, DeSantis and coworkers<span class="citation" data-cites="desantisCreationProductiveHighly2003"><sup>[<a href="#ref-desantisCreationProductiveHighly2003" role="doc-biblioref">20</a>]</sup></span> used the isotopically labelled dinitrile shown. The two hydrolysis products differed in mass, so mass spectrometry revealed the ratio of the (<em>R</em>)- and (<em>S</em>)-products.
+</figcaption>
+</figure>
+</div>
+<p>One advantage of site-saturation mutagenesis is completeness. For example, libraries of single nucleotide substitution variants created by error-prone PCR would likely not include the Ala190His variant. Converting a codon for alanine into a codon for histidine requires two nucleotide substitutions, which makes this substitution unlikely using error-prone PCR.</p>
+<p>Targeting site-saturation mutagenesis to several flexible surface loops of a lipase identified stabilizing substitutions increased stability. Combining five stabilizing substitutions raised the temperature that halves the catalytic activity by up to 45 °C. The stabilization was presumed to arise through new interactions with neighboring amino acids (e.g., salt bridges, hydrogen bonds, and hydrophobic contacts).<span class="citation" data-cites="reetzIterativeSaturationMutagenesis2006"><sup>[<a href="#ref-reetzIterativeSaturationMutagenesis2006" role="doc-biblioref">21</a>]</sup></span></p>
+<section id="ambiguity-codons" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="ambiguity-codons"><span class="header-section-number">9.3.1</span> Ambiguity codons</h3>
+<p>Site-directed mutagenesis is the replacement of one amino acid with another at a particular location. This replacement involves synthesis of new DNA strands, typically with a DNA polymerase to extend mutagenic DNA primers. Details of one site-directed mutagenesis method were in Chapter 1. These mutagenic primers are made by chemical synthesis, usually by a DNA synthesis company. These primers encode the replacement amino acid instead of the original amino acid, <a href="#fig-sitesatprimers" class="quarto-xref">Figure&nbsp;<span>9.6</span></a>. Site-saturation mutagenesis makes all nineteen possible amino-acid substitutions at a particular location. One approach is nineteen separate site-directed mutagenesis experiments at each amino acid position. This solution is tedious and rarely used.</p>
+<div id="fig-sitesatprimers" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Diagram comparing three DNA sequences at codon 103 of a gene. The wild-type sequence contains the codon CAC (histidine). A site-directed mutagenesis primer replaces this codon with GTG (valine). A site-saturation mutagenesis primer mixture replaces it with the ambiguity codon NNK, representing all 32 possible codons at that position.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sitesatprimers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter9/His103_Site-Sat_Mut.svg" class="img-fluid figure-img" alt="Diagram comparing three DNA sequences at codon 103 of a gene. The wild-type sequence contains the codon CAC (histidine). A site-directed mutagenesis primer replaces this codon with GTG (valine). A site-saturation mutagenesis primer mixture replaces it with the ambiguity codon NNK, representing all 32 possible codons at that position." width="350">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sitesatprimers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.6: Example of primers for site-directed and site-saturation mutagenesis at the underlined codon. The wild type codon is CAC, which encodes histidine. In the primer for site-directed mutagenesis, this codon is replaced by GTC, which encodes valine. The mixture of primers for site-saturation mutagenesis contains thirty-two different primers as represented here by the ambiguity codon NNK.
+</figcaption>
+</figure>
+</div>
+<p>More commonly, researchers use mixtures of primers that encode multiple amino acids. These primers contain ambiguity codons, which are mixtures of codons prepared by DNA synthesis, <a href="#tbl-ambiguitycodes" class="quarto-xref">Table&nbsp;<span>9.4</span></a>. For example, the NNK codon represents a mixture of 32 different codons. N represents any of the four nucleotides (A, T, G, C), while K represents the two nucleotides containing a ketone group (G or T), <a href="#fig-define_NNK" class="quarto-xref">Figure&nbsp;<span>9.7</span></a>. This approach saves time because only one site-directed mutagenesis procedure is needed to create plasmids encoding all twenty amino acids.</p>
+<div id="fig-define_NNK" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Diagram defining the NNK ambiguity codon: each of the two N positions can be A, T, G, or C, shown as a column of four stacked letters, while the K position is limited to G or T, shown as a column of two letters, illustrating the 4 × 4 × 2 = 32 possible codons in the NNK mixture.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-define_NNK-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/chapter9/define_NNK.png" class="img-fluid figure-img" alt="Diagram defining the NNK ambiguity codon: each of the two N positions can be A, T, G, or C, shown as a column of four stacked letters, while the K position is limited to G or T, shown as a column of two letters, illustrating the 4 × 4 × 2 = 32 possible codons in the NNK mixture." width="100">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-define_NNK-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.7: The NNK ambiguity codon is a mixture containing 32 individual codons. N (any of the four nucleotides) occupies the first two positions of the codon, while K (G or T) occupies the third position, giving 4 × 4 × 2 = 32 individual codons.
+</figcaption>
+</figure>
+</div>
+<p>The disadvantage of site-directed mutagenesis using ambiguity codons is that it creates a mixture of protein variants. Transfer of the mixture of DNA into bacteria yields a mixture of bacteria, each one producing one variation at the targeted location. This approach saves time by requiring only one site-directed mutagenesis experiment, but increases the amount of screening since it yields a mixture of variants.</p>
+<div id="tbl-ambiguitycodes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ambiguitycodes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9.4: One-letter ambiguity codes indicate mixtures of several nucleotides.
+</figcaption>
+<div aria-describedby="tbl-ambiguitycodes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;" scope="col">one-letter code</th>
+<th style="text-align: center;" scope="col">nucleotides</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">N (any)</td>
+<td style="text-align: center;">A, T, G, C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B (not A)</td>
+<td style="text-align: center;">T, G, C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D (not C)</td>
+<td style="text-align: center;">A, T, G</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H (not G)</td>
+<td style="text-align: center;">A, T, C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">V (not T)</td>
+<td style="text-align: center;">A, G, C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">K (keto)</td>
+<td style="text-align: center;">G, T</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">M (amino)</td>
+<td style="text-align: center;">A, C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">R (purine)</td>
+<td style="text-align: center;">A, G</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">S (strong)</td>
+<td style="text-align: center;">G, C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">W (weak)</td>
+<td style="text-align: center;">A, T</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Y (pyrimidine)</td>
+<td style="text-align: center;">C, T</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>An example nucleotide sequence containing a ambiguity codon is 5’-NNKATG, which contains the ambiguity codon NNK. Chemists make this nucleotide mixture by adding mixtures of nucleotide precursors at the appropriate step. Chemical DNA synthesis starts at the 3’-end. For this example, the chemist adds the phosphoramidite precursor for G, then the precursor for T, then the precursor for A. At the next step, the chemist adds an equimolar mixture of G and T precursors and in the last two steps the chemist adds an equimolar mixture of A, T, G and C. The result is a mixture of 32 DNA sequences which differ at the NNK locations. Besides the twenty codons encoding the twenty amino acids, it also contains eleven redundant codons and one stop codon, <a href="#tbl-nnknns" class="quarto-xref">Table&nbsp;<span>9.7</span></a> in the supporting information.<span class="citation" data-cites="zhangLowusageCodonsEscherichia1991"><sup>[<a href="#ref-zhangLowusageCodonsEscherichia1991" role="doc-biblioref">22</a>]</sup></span> Twelve amino acids are encoded once: Asn, Asp, Cys, Gln, Glu, His, Ile, Lys, Met, Phe, Trp, Tyr; five amino acids are encoded twice: Ala, Gly, Pro, Thr, Val and three amino acids are encoded three times: Arg, Leu, Ser.</p>
+<p>An alternative to the NNK ambiguity codon is the NNS ambiguity codon, which also encodes all the amino acids, but changes sixteen of the thirty-two codons. K represents G or T, while S represents G or C. The sixteen codons that contain G in the last position are identical in both choices of ambiguity codon. The remaining sixteen codons are NNT for the NNK ambiguity codon, but are NNC for the NNS ambiguity codon. The NNT codons encode the same amino acids as the NNC codons, but using NNS in place of NNK increases the GC content. Higher GC content increases the melting temperature of the primers and, depending on the rest of sequence, may alter the secondary structure of the primers.</p>
+<p>The twelve extra codons in the NNK or NNS ambiguity codons beyond the twenty codons needed to encode the twenty amino acids increase the amount of screening needed, see <a href="#sec-oversampling" class="quarto-xref"><span>Section 9.3.2</span></a>. An alternative to this extra screening is to replace the NNK or NNS mutagenic primer with a mixture of four primers: two with ambiguity codons and two with specific codons, <a href="#tbl-codon20" class="quarto-xref">Table&nbsp;<span>9.5</span></a>. The NDT ambiguity primer encodes twelve amino acids: N, S, I, H, R, L, Y. C, F, D, G, V (N = A, T, C, or G and D = A, T, or G). The VMA ambiguity primer encodes six amino acids: E, A, Q, P, K, T (V = A, C, or G and M = A or C). Finally, the ATG codon encodes M and the TGG codon encodes W. Adding the primers in a 12: 6: 1: 1 ratio encodes all twenty amino acids, with no stop codons, no rare codons, and no synonymous codons.<span class="citation" data-cites="tangConstructionSmallintelligentFocused2012"><sup>[<a href="#ref-tangConstructionSmallintelligentFocused2012" role="doc-biblioref">23</a>]</sup></span></p>
+<div id="tbl-codon20" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-codon20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9.5: A 20-codon mixture of two ambiguity codons (NDT encodes twelve amino acids; VMA encodes six amino acids) and two specific codons (ATG and TGG) efficiently randomizes the encoded amino acid. A 12:6:1:1 mixture of primers containing these four codons encodes all 20 amino acids, no stop codons and includes no redundant codons and no rare codon for yeast or E. coli.
+</figcaption>
+<div aria-describedby="tbl-codon20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;" scope="col">codon</th>
+<th style="text-align: center;" scope="col">nucleotide mixture</th>
+<th style="text-align: center;" scope="col">encoded amino acid</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">NDT</td>
+<td style="text-align: center;">AAT</td>
+<td style="text-align: center;">Asn</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">AGT</td>
+<td style="text-align: center;">Ser</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">ATT</td>
+<td style="text-align: center;">Ile</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">TAT</td>
+<td style="text-align: center;">Tyr</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">TGT</td>
+<td style="text-align: center;">Cys</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">TTT</td>
+<td style="text-align: center;">Phe</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">GAT</td>
+<td style="text-align: center;">Asp</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">GGT</td>
+<td style="text-align: center;">Gly</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">GTT</td>
+<td style="text-align: center;">Val</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">CAT</td>
+<td style="text-align: center;">His</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">CGT</td>
+<td style="text-align: center;">Arg</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">CTT</td>
+<td style="text-align: center;">Leu</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VMA</td>
+<td style="text-align: center;">AAA</td>
+<td style="text-align: center;">Lys</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">ACA</td>
+<td style="text-align: center;">Thr</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">GAA</td>
+<td style="text-align: center;">Glu</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">GCA</td>
+<td style="text-align: center;">Ala</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">CAA</td>
+<td style="text-align: center;">Gln</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">CCA</td>
+<td style="text-align: center;">Pro</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">ATG</td>
+<td style="text-align: center;">ATG</td>
+<td style="text-align: center;">Met</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">TGG</td>
+<td style="text-align: center;">TGG</td>
+<td style="text-align: center;">Trp</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The disadvantage of this approach is the requirement of four mutagenic primers for each location randomized instead of one mutagenic primer for the NNK or NNS approach. For randomization of a single site, the NNK/NNS approach is simpler, but for randomization of multiple sites the time savings of less screening tips the balance toward the four mutagenic primer approach.</p>
+</section>
+<section id="sec-oversampling" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="sec-oversampling"><span class="header-section-number">9.3.2</span> Oversampling</h3>
+<p>Site-saturation mutagenesis using ambiguity codons yields a mixture of bacteria, each producing a different protein. Spreading the mixture on an agar plate and allowing them to grow yields individual colonies where each colony is derived from a single bacterium. The bacterial colonies are picked and each tested separately. Randomly picking colonies results in picking some duplicate variants, so one needs to test more colonies than the number of possibilities to have a high probability of testing each possible variant. This section explain how much oversampling is required. The conclusion will be that for saturation mutagenesis of a single position using an NNK codon, sampling 94 colonies ensures that the rarest codon in the mixture has a 95% probability of being included in the sample. Thus, one can expect that an amino acid encoded only once (e.g., Met or Trp) is represented, but not that all 20 amino acids (32-codons) are included. To ensure that at least one of each codon was tested requires sampling 200 colonies for a 95% probability.</p>
+<p><strong>Including the rarest variant, three-fold oversampling.</strong> To derive a general equation, consider the probability to pick a blue ball from an equal and infinite mixture of red, white &amp; blue balls. The probability is 1/3, which is the frequency of the blue balls in the mixture. Lets call this frequency <span class="math inline">\(F_{blue}\)</span>. Similarly, the probability to NOT pick a blue ball from this mixture is <span class="math inline">\(1-F_{blue}\)</span> or 1 – 1/3 or 2/3.</p>
+<p>If we pick a second ball, the probability to pick a second blue ball is 1/3, the same as for the first ball since it is an infinite mixture. The probability for both balls to be blue is <span class="math inline">\((1/3)^2\)</span> or 1/9. Similarly, the probability for neither ball to be blue after two picks is <span class="math inline">\((2/3)^2\)</span> or <span class="math inline">\((1-1/3)^2 = 0.436\)</span>. In the general case, the probability NOT to pick a blue ball after <span class="math inline">\(T\)</span> picks would be <span class="math inline">\((1-F_{blue})^T\)</span>. Therefore, the probability of having a least one blue ball is <span class="math inline">\(1-(1-F_{blue})^T\)</span>. The probability of picking a least one blue ball after two picks from an equal mixture of red, white &amp; blue is <span class="math inline">\(1-(1-1/3)^2 = 0.564\)</span>. In the general case, the probability of picking object i from an infinite mixture, <span class="math inline">\(P_i\)</span>, is <span class="math inline">\(1-(1-F_i)^T\)</span> where <span class="math inline">\(F_i\)</span> is the frequency of object <span class="math inline">\(i\)</span> in the mixture and <span class="math inline">\(T\)</span> is the number of times an object is selected from the mixture.</p>
+<p>In the context of protein engineering, the probability <span class="math inline">\(P_i\)</span>, that a particular variant, <span class="math inline">\(i\)</span>, is among <span class="math inline">\(T\)</span> tested transformants (colonies) is given by:</p>
+<p><span id="eq-Pi_general"><span class="math display">\[P_i = 1-(1-F_i)^{T_{rarest}} \tag{9.4}\]</span></span></p>
+<p>where <span class="math inline">\(F_i\)</span> is the frequency at which sequence <span class="math inline">\(i\)</span> is present in the library. This frequency can be replaced by <span class="math inline">\(1/N\)</span> where <span class="math inline">\(N\)</span> is the number of replacement codons. These equations assume the variants form independently according to a Poisson distribution.</p>
+<p><span id="eq-Pi_N"><span class="math display">\[P_i = 1-\left[1-\left(\dfrac{1}{N}\right)\right]^{T_{rarest}} \tag{9.5}\]</span></span></p>
+<p>A common situation is a site-saturation mutagenesis created using an NNK ambiguity codon. The number of different codons, <span class="math inline">\(N\)</span>, is 32, so the frequency <span class="math inline">\(F_i\)</span> is 0.03125. While some amino acids are encoded by two or even three codons in this mixture and their frequency is higher, one is normally concerned about the rarest members, those amino acids encoded by a single codon.</p>
+<p>Rearranging <a href="#eq-Pi_N" class="quarto-xref">Equation&nbsp;<span>9.5</span></a> yields the number of transformants that needed to be tested.</p>
+<p><span id="eq-Trarest"><span class="math display">\[T_{rarest} = \dfrac{\ln(1-P_i)}{\ln\left(1-\dfrac{1}{N}\right)} \tag{9.6}\]</span></span></p>
+<p>For a 95% probability of including a particular variant in a saturation mutagenesis experiment using an NNK codon, one needs to test 94 colonies, <a href="#eq-Trarest_NNK" class="quarto-xref">Equation&nbsp;<span>9.7</span></a>.</p>
+<p><span id="eq-Trarest_NNK"><span class="math display">\[T_{rarest} = \dfrac{\ln(1-0.95)}{\ln\left(1-\dfrac{1}{32}\right)} = 94 \tag{9.7}\]</span></span></p>
+<p>Researchers typically screen <span class="math inline">\(3\cdot N\)</span> transformants with the expectation that they have included the rarest member of the library. This guideline comes from <a href="#eq-Pi_N" class="quarto-xref">Equation&nbsp;<span>9.5</span></a> above with a probability of 0.95.</p>
+<p><span class="math display">\[0.95 = 1-\left[1-\left(\dfrac{1}{N}\right)\right]^{T_{rarest}}\]</span> <span class="math display">\[0.05 = \left[1-\left(\dfrac{1}{N}\right)\right]^{T_{rarest}}\]</span> <span class="math display">\[\ln(0.05) = T_{rarest}\ln\left[1-\left(\dfrac{1}{N}\right)\right]\]</span></p>
+<p>Using the approximation that <span class="math inline">\(\ln(1-x) = -x\)</span> when <span class="math inline">\(x\)</span> is small, yields:</p>
+<p><span class="math display">\[\ln(0.05) = T_{rarest}\left(-\dfrac{1}{N}\right)\]</span> <span id="eq-threefold"><span class="math display">\[T_{rarest} = -N\cdot\ln(0.05) \;\Rightarrow\; T_{rarest} = 3\cdot N \tag{9.8}\]</span></span></p>
+<p>Thus, three-fold oversampling, or testing three times the number of expected variants, gives a 95% probability that any individual variant has been tested. This three-fold oversampling does not mean that the library has a 95% chance of being 100% complete. To ensure with a 95% probability that ALL variants have been tested requires even more oversampling.</p>
+<p><strong>Including all the variants.</strong> What is the probability of picking at least one of each object? If you pick 9 balls, the probability to have at least one blue ball is <span class="math inline">\(1-(2/3)^9\)</span> or <span class="math inline">\(1-(1-1/3)^9 = 0.976\)</span>. Similarly the probability to have a least one red ball among the nine is 0.976 and the same for the white ball. The probability of having at least one of each color is <span class="math inline">\((0.976)^3\)</span> or 0.93. In the general case, the probability of having all possibilities, <span class="math inline">\(P_i = \left[1-\left(1-\dfrac{1}{N}\right)^{T_{all}}\right]^{N}\)</span> where N is the number of objects in the mixture. Rearranging this equation yields <a href="#eq-Tall" class="quarto-xref">Equation&nbsp;<span>9.9</span></a>.</p>
+<p><span id="eq-Tall"><span class="math display">\[T_{all} = \dfrac{\ln\left(1-(P_i)^{1/N}\right)}{\ln\left(1-\dfrac{1}{N}\right)} \tag{9.9}\]</span></span></p>
+<p>While <a href="#eq-Trarest" class="quarto-xref">Equation&nbsp;<span>9.6</span></a> could be simplified to the three-fold oversampling rule in <a href="#eq-threefold" class="quarto-xref">Equation&nbsp;<span>9.8</span></a>, no similar simplification is possible for <a href="#eq-Tall" class="quarto-xref">Equation&nbsp;<span>9.9</span></a>. For typical cases, including all variants requires six- to ten-fold oversampling. Code Block S9.2 in the supporting information calculates <span class="math inline">\(T_{rarest}\)</span> and <span class="math inline">\(T_{all}\)</span> using <a href="#eq-Trarest" class="quarto-xref">Equation&nbsp;<span>9.6</span></a> and <a href="#eq-Tall" class="quarto-xref">Equation&nbsp;<span>9.9</span></a> for different numbers of variants and probabilities.</p>
+</section>
+<section id="library-quality" class="level3" data-number="9.3.3">
+<h3 data-number="9.3.3" class="anchored" data-anchor-id="library-quality"><span class="header-section-number">9.3.3</span> Library quality</h3>
+<p>For this discussion, a library is a collection of DNA or protein sequences. Two features define Q, the quality of this library: completeness, C, and uniqueness, U.<span class="citation" data-cites="patrickUserfriendlyAlgorithmsEstimating2003"><sup>[<a href="#ref-patrickUserfriendlyAlgorithmsEstimating2003" role="doc-biblioref">24</a>]</sup></span> Completeness ensures that one does not miss a possible beneficial variant, while uniqueness avoids testing the same variant multiple times. Library quality, defined by <a href="#eq-libqualityQ" class="quarto-xref">Equation&nbsp;<span>9.10</span></a>, has a maximum value of one for a library that contains all possible variants without any duplicates.</p>
+<p><span id="eq-libqualityQ"><span class="math display">\[Q = C \cdot U \tag{9.10}\]</span></span></p>
+<p>The goal of saturation mutagenesis is to test all possible substitutions at the selected locations. An NNK library is complete (<span class="math inline">\(C = 1\)</span>) since it encodes all twenty amino acids, but only 20 of the 32 codons (62.5%) supply this information and the twelve extra codons are duplicates or an unwanted stop codon. The uniqueness is 0.625, so <span class="math inline">\(Q = 0.625\)</span>, reflecting the disadvantage that extra screening effort will be needed to find all the amino acids. The quality of an NDT library is similar, <span class="math inline">\(Q = 0.6\)</span>. It encodes only twelve amino acids, so <span class="math inline">\(C = 12/20 = 0.60\)</span>, but <span class="math inline">\(U = 1\)</span> since all twelve encoded amino acid are unique. The disadvantage is that one will miss eight amino acids. The highest quality library is the 20-codon library from <a href="#tbl-codon20" class="quarto-xref">Table&nbsp;<span>9.5</span></a>, where <span class="math inline">\(Q = 1\)</span> since the library is both unique and complete.</p>
+<p>If two locations are targeted for saturation mutagenesis, then the quality of both the NNK and NDT libraries decreases, but the quality of 20-codon library stays a <span class="math inline">\(Q = 1\)</span>. The maximum possible number of proteins is <span class="math inline">\(20 \times 20 = 400\)</span> and the 20-codon library encodes all of them with no extras. Saturation mutagenesis using an NNK codon is complete (<span class="math inline">\(C = 1\)</span>) since this library encodes all 400 of the possible 400 proteins, but only 39% unique (<span class="math inline">\(U (20 \times 20)/(32 \times 32) = 0.39\)</span>), so <span class="math inline">\(Q = 0.39\)</span>. Saturation mutagenesis with an NDT codon is only 36% complete (<span class="math inline">\(C = 0.36\)</span>) since it encodes only <span class="math inline">\(12 \times 12 = 144\)</span> of the possible 400 proteins, but 100% unique (<span class="math inline">\(U = 1\)</span>), so <span class="math inline">\(Q = 0.36%\)</span>. As the number of targeted locations increases, the quality of the libraries decreases further. The quality of the NNK library decreases because it contains increasing numbers of duplicates, while the quality of the NDT library decreases because it is increasingly incomplete. The 20-codon library maintains its high quality even when multiple locations are targeted.</p>
+</section>
+</section>
+<section id="sec-numvariants" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="sec-numvariants"><span class="header-section-number">9.4</span> Number of possible substitution variants</h2>
+<p>The most common change in a protein is substitution of one amino acid with another. An important question is how many substitutions are possible. The answer depends on 1) the number of substitutions (<span class="math inline">\(k\)</span>), the number of replacement amino acids (<span class="math inline">\(n\)</span>), and number of amino acids in the chain (<span class="math inline">\(L\)</span>). It is useful to break the problem into two parts: how many replacements are possible and how many locations are possible. The number of possible protein variants with <span class="math inline">\(k\)</span> substitutions, <span class="math inline">\(V_k\)</span>, depends on the product of the number of location possibilities and the number of replacement possibilities, <a href="#eq-Vk_general" class="quarto-xref">Equation&nbsp;<span>9.11</span></a>.</p>
+<p><span id="eq-Vk_general"><span class="math display">\[V_k = \text{location possibilities} \times \text{replacement possibilities} \tag{9.11}\]</span></span></p>
+<p><strong>Review: permutations and combinations</strong></p>
+<p>Permutations relate to the order of the elements, while combinations refer to selecting elements from a group. Situations where order matters are permutations, while situations where the order does not matter are combinations. A lock sequence such as 5-27-37 is a permutation because the numbers must be entered in that order. (Confusingly, these locks are called combination locks, while permutation locks would be more accurate.) The other thing to consider in the calculating the number of possibilities is whether items can repeat or not. In the lock sequence, the numbers can repeat.<span class="citation" data-cites="zotero-item-11839"><sup>[<a href="#ref-zotero-item-11839" role="doc-biblioref">25</a>]</sup></span></p>
+<p><strong>Permutations with repetition.</strong> The lock sequence example is a permutation where repetition is possible. To determine the number of possible lock sequences, there are say, 39 numbers to choose for the first number, then 39 again for the second number and again 39 for the third. The total number of choices is <span class="math inline">\(39 \times 39 \times 39 = 59,319\)</span>. In general, for a permutation with repetition, there are <span class="math inline">\(n\)</span> things to choose from and <span class="math inline">\(k\)</span> choices each time so there are <span class="math inline">\(n^k\)</span> possibilities. In protein engineering, the number of possible amino acid replacements at specified locations is a permutation with repetition. For two locations, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, an alanine at position <span class="math inline">\(x\)</span> is different from an alanine at position y. Since order is important (substitution at x differs from substitution at <span class="math inline">\(y\)</span>), it is a permutation. It is further a permutation with repetition since both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> may contain an alanine.</p>
+<p><span class="math display">\[\text{number of possibilities} = n^k\]</span></p>
+<p>For example, number of possible double-substitution variants of a dipeptide is <span class="math inline">\(19^2 = 361\)</span> because there are nineteen possible replacement amino acids and two positions that require a choice.</p>
+<p><strong>Permutations without repetition.</strong> When choices are used up upon being chosen, then repetition is not possible. For example, choosing an order for sixteen billiard balls is an example of a permutation without repetition. The there are 16 choices at first, then 15 remaining balls and so on. There are 16! different orders that these balls could be chosen (16! <span class="math inline">\(\approx 2.1\times10^{12}\)</span>). In general, there are <span class="math inline">\(n\)</span> things to choose from the first time, <span class="math inline">\(n-1\)</span> the second time, etc. so there are <span class="math inline">\(n!\)</span> choices in total. In some cases, one may choose fewer than the maximum possible. Then the choices are:</p>
+<p><span class="math display">\[\text{number of possibilities} = \dfrac{\text{total number}}{\text{number not used}} = \dfrac{n!}{(n-k)!}\]</span></p>
+<p>where <span class="math inline">\(k\)</span> is the number choices made.</p>
+<p>For example, one could choose only three billiard balls from the sixteen possible. In this case, <span class="math inline">\(k = 3\)</span> and <span class="math inline">\(n = 16\)</span>, so the number of possibilities is <span class="math inline">\(16!/13! = 16 \times 15 \times 14 = 3,360\)</span>.</p>
+<p><strong>Combinations without repetition.</strong> In protein engineering, the number of locations in a protein is a combination without repetition. It does not matter what order they are chosen, but once chosen, they cannot be chosen again. The choice <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is the same as the choice <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span>, but the choice <span class="math inline">\(x\)</span> and <span class="math inline">\(x\)</span> is impossible. Here the order does not matter, but choices cannot be repeated. For example, one could choose billiard balls again, but without regard to the order in which they were chosen. We already have the equation above for the case were order does matter, we just need to reduce it by the number of ways the objects could be in ordered. <span class="math inline">\(k\)</span> objects can be ordered in <span class="math inline">\(k!\)</span> (<span class="math inline">\(k\)</span> for the first choice, <span class="math inline">\(k-1\)</span> for the second choice, etc.), So the number of combinations without repetition when choosing <span class="math inline">\(k\)</span> objects from a total of <span class="math inline">\(n\)</span> is:</p>
+<p><span id="eq-combinations"><span class="math display">\[\text{number of possibilities} = \dfrac{\text{total number}}{\text{order does not matter} \times \text{number not used}} = \dfrac{n!}{k!(n-k)!} \tag{9.12}\]</span></span></p>
+<p>We will not consider the fourth possibility, combinations with repetition since it does not occur in the context of protein engineering.</p>
+<p><strong>Replacement possibilities = <span class="math inline">\(n^k\)</span></strong></p>
+<p>The number of replacement possibilities at <span class="math inline">\(k\)</span> locations with <span class="math inline">\(n\)</span> replacements is <span class="math inline">\(n^k\)</span>. In the general case, <span class="math inline">\(n\)</span> is the number of objects to choose from (amino acids in this case) and <span class="math inline">\(k\)</span> is the number of choices to be made (positions mutated in this case). For example, replacing the amino acids at positions <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> with new amino acids creates <span class="math inline">\(19^2 = 361\)</span> variants. If you include the original amino acids, then number of possibilities is <span class="math inline">\(20^2 = 400\)</span>. This value includes the 361 two-substitution variants, 38 single-substitution variants and one wild-type enzyme. In two more examples, the number of nucleotide sequences of length 6 (<span class="math inline">\(k = 6\)</span>) are possible from a set of 4 nucleotides (<span class="math inline">\(n = 4\)</span>) is <span class="math inline">\(4^6\)</span> or 4,096 and the number of possible amino acid sequences of length 300 (<span class="math inline">\(k = 300; n = 20\)</span>) is <span class="math inline">\(20^{300}\)</span> or <span class="math inline">\(\approx 2\times10^{390}\)</span>. These values include single substitution variants, double substitution variants, triple, etc. This simple calculation firmly establishes that you can never make all the variants of a protein. There are only <span class="math inline">\(\approx 10^{70}\)</span> particles in the universe, so <span class="math inline">\(2\times10^{390}\)</span> is an impossibly large number. One will never be able to test all possibilities.</p>
+<p><strong>Location possibilities = <span class="math inline">\(L!/(k!(L-k)!)\)</span></strong></p>
+<p>The number of location possibilities is given by <a href="#eq-locationpossibilities" class="quarto-xref">Equation&nbsp;<span>9.13</span></a>, which is the same as <a href="#eq-combinations" class="quarto-xref">Equation&nbsp;<span>9.12</span></a>, except <span class="math inline">\(n\)</span> has been replaced by L to indicate sequence length.</p>
+<p><span id="eq-locationpossibilities"><span class="math display">\[\text{location possibilities} = \dfrac{L!}{k!(L-k)!} = \dfrac{\text{total number of permutations}}{\text{order not important} \times \text{number of permutations not used}} \tag{9.13}\]</span></span></p>
+<p>For example, to choose two locations in a 300 amino acid protein, there are 300 places to put the first substitution, but only 299 places to put the second substitution. The total number of permutations is 300 × 299 or 89,700. Since order is not important, we divide by 2! or 2.</p>
+<p><span class="math display">\[\dfrac{300!}{2!(300-2)!} = \dfrac{300!}{2!\times298!} = \dfrac{300\times299}{2} = 44{,}850\]</span></p>
+<p><em>Hint:</em> Large factorials are too large for many calculators. For example, <span class="math inline">\(300! \approx 3\times10^{614}\)</span>. Simplify the ratio <span class="math inline">\(L!/(L-k)!\)</span> to <span class="math inline">\(L \times (L-1) \times (L-2) \times ...(L-k-1)\)</span> as shown above to avoid calculating large factorials.</p>
+<p><strong>Number of possible variants</strong></p>
+<p>Combining the expression for the number of replacements possible with the number of locations possible yields an expression for the number of possible protein variants with <span class="math inline">\(k\)</span> substitutions, <span class="math inline">\(V_k\)</span>:</p>
+<p><span id="eq-Vk"><span class="math display">\[V_k = \dfrac{L!}{k!(L-k)!}\,19^k \tag{9.14}\]</span></span></p>
+<p>Code Block S9.3 in the supporting information calculates values of <span class="math inline">\(V_k\)</span>. For example, for one substitution anywhere in a 300-aa protein: <span class="math inline">\(V_1 = 300\times19 = 5{,}700\)</span>. For two substitutions anywhere in a 300-aa protein: <span class="math inline">\(V_2 = 44{,}850\times361 = 16{,}190{,}850\)</span></p>
+</section>
+<section id="conclusions" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="conclusions"><span class="header-section-number">9.5</span> Conclusions</h2>
+<p>No mutagenesis method comes close to making all variants, and none needs to. The practical question is never whether a library is complete but whether the improvements sought are frequent enough to appear in the sample actually screened — as the subtilisin work showed, a few thousand colonies can suffice. The two methods in this chapter answer that question under two different assumptions. If many beneficial substitutions exist and are scattered through the structure — the usual situation for stability — error-prone PCR’s broad, biased, incomplete sampling of the whole gene is enough to catch some of them, <a href="#tbl-recommended" class="quarto-xref">Table&nbsp;<span>9.6</span></a>. If the useful substitutions are rare and concentrated near the active site, which is the usual situation for substrate range and selectivity, then site-saturation mutagenesis at chosen positions is the efficient choice. Two ideas underlie both. First, the optimal mutation rate is set by how well the starting protein tolerates substitution, not by how common good substitutions are, which is why “a few substitutions per gene” transfers across systems with very different hit rates. Second, what a library <em>contains</em> and what screening <em>returns</em> are different things: hits recovered near the active site do not mean the diversity was concentrated there.</p>
+<div id="tbl-recommended" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-recommended-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9.6: Recommended approaches to make single-substitution variants for different protein engineering goals.
+</figcaption>
+<div aria-describedby="tbl-recommended-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;" scope="col">goal</th>
+<th style="text-align: left;" scope="col">approach</th>
+<th style="text-align: left;" scope="col">rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">increase stability</td>
+<td style="text-align: left;">epPCR</td>
+<td style="text-align: left;">many solutions likely distributed throughout the protein</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">expand substrate range</td>
+<td style="text-align: left;">saturation mutagenesis of residues in substrate-binding site</td>
+<td style="text-align: left;">solutions may be rare and most likely within or close to the substrate binding site</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">increase selectivity</td>
+<td style="text-align: left;">saturation mutagenesis of residues in substrate-binding site</td>
+<td style="text-align: left;">solutions may be rare and most likely within or close to the substrate binding site</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">increase reactivity</td>
+<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">after optimizing binding, distant residues may also contribute to catalysis</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>This chapter treated the single substitution as the unit of improvement. Real directed evolution rarely stops there. Line 70 of Eigen and Gardiner’s program, which feeds the best variants back as templates, is what turns screening into evolution, and it raises questions a single round cannot: how substitutions accumulate over successive rounds, whether their individual effects add up when combined, and how to recombine beneficial changes found separately. Those questions, and the interactions between substitutions that complicate them, are the subject of the next chapter.</p>
+</section>
+<section id="glossary" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="glossary">Glossary</h2>
+<dl>
+<dt>Ambiguity codon</dt>
+<dd>
+is a mixture of codons that encode different amino acids. A ambiguity codon is indicated by one-letter ambiguity codes that denote mixtures of several nucleotides. For example, the codon NAT in a DNA sequence means that the DNA sequence contains a mixture of AAT, TAT, GAT, and CAT at that position.
+</dd>
+<dt>Codon accessibility</dt>
+<dd>
+is the restriction that, because epPCR usually changes only one nucleotide per codon, only ~5.7 of the 19 alternative amino acids are reachable at a given position; the other ~13.3 require two or three changes in one codon and are much rarer.
+</dd>
+<dt>Directed evolution</dt>
+<dd>
+is the recursive generation of random sequence variation followed by identification of improved variants by screening or selection, iterated over several rounds. The recursion (feeding enriched genotypes back as templates) distinguishes it from a single round of screening.
+</dd>
+<dt>Error-prone PCR</dt>
+<dd>
+is PCR performed with a non-proofreading polymerase under conditions (unbalanced dNTPs, added Mn²⁺, elevated Mg²⁺) that raise the misincorporation rate, distributing substitutions throughout a target sequence.
+</dd>
+<dt>Library quality, <span class="math inline">\(Q = C \times U\)</span></dt>
+<dd>
+is the product of completeness (<span class="math inline">\(C\)</span>, fraction of intended variants encoded) and uniqueness (<span class="math inline">\(U\)</span>, fraction of codons that are non-redundant) and has a maximal value of one for a library encoding all target variants with no duplicates or stop codons.
+</dd>
+<dt>Location bias</dt>
+<dd>
+is the tendency of random mutagenesis to place most substitutions far from the active site, because only a small fraction of residues (&lt;10%) line the substrate-binding site while the bulk of the protein lies in larger, more distant shells.
+</dd>
+<dt>Mutator strain</dt>
+<dd>
+is a strain (e.g.&nbsp;<em>E. coli</em> XL1-Red) carrying defects in DNA repair and proofreading that raise the spontaneous mutation rate, generating variants in vivo but genome-wide, causing growth defects and instability.
+</dd>
+<dt>Oversampling</dt>
+<dd>
+is screening more colonies than there are variants to raise the probability that the rarest variant is present. Oversampling is needed because random picking produces duplicates. Three-fold oversampling (3·N) gives ~95% probability that any individual variant is sampled; ensuring all variants requires six- to ten-fold.
+</dd>
+<dt>Site-saturation mutagenesis</dt>
+<dd>
+is the targeted replacement of a chosen residue with some or all twenty amino acids using ambiguity (mixed-base) codons, yielding a mixture of variants; used to reshape the active site for altered substrate range or selectivity.
+</dd>
+<dt>Transition / transversion</dt>
+<dd>
+are the two categories of single-base substitution. A transition exchanges bases of the same size (purine <span class="math inline">\(\leftrightarrow\)</span> purine or pyrimidine <span class="math inline">\(\leftrightarrow\)</span> pyrimidine); a transversion exchanges bases of different size. Four transitions and eight transversions are possible, so random substitution gives a transition/transversion ratio of 0.5, but polymerases favor transitions above this.
+</dd>
+</dl>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-eigenEvolutionaryMolecularEngineering1984" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Eigen, M., &amp; Gardiner, W. (1984). Evolutionary molecular engineering based on <span>RNA</span> replication. <em>Pure Appl. Chem.</em>, <em>56</em>(8), 967–978. <a href="https://doi.org/10.1351/pac198456080967">https://doi.org/10.1351/pac198456080967</a></div>
+</div>
+<div id="ref-chenTuningActivityEnzyme1993" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Chen, K., &amp; Arnold, F. H. (1993). Tuning the activity of an enzyme for unusual environments: Sequential random mutagenesis of subtilisin <span>E</span> for catalysis in dimethylformamide. <em>Proc. Natl. Acad. Sci. U. S. A.</em>, <em>90</em>(12), 5618–5622. <a href="https://doi.org/10.1073/pnas.90.12.5618">https://doi.org/10.1073/pnas.90.12.5618</a></div>
+</div>
+<div id="ref-mcinerneyErrorRateComparison2014" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">McInerney, P., Adams, P., &amp; Hadi, M. Z. (2014). Error rate comparison during polymerase chain reaction by <span>DNA</span> polymerase. <em>Mol. Biol. Int.</em>, <em>2014</em>, 287430. <a href="https://doi.org/10.1155/2014/287430">https://doi.org/10.1155/2014/287430</a></div>
+</div>
+<div id="ref-eckertDNAPolymeraseFidelity1991" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Eckert, K. A., &amp; Kunkel, T. A. (1991). <span>DNA</span> polymerase fidelity and the polymerase chain reaction. <em>PCR Methods Appl.</em>, <em>1</em>(1), 17–24. <a href="https://doi.org/10.1101/gr.1.1.17">https://doi.org/10.1101/gr.1.1.17</a></div>
+</div>
+<div id="ref-cadwellRandomizationGenesPCR1992" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Cadwell, R. C., &amp; Joyce, G. F. (1992). Randomization of genes by <span>PCR</span> mutagenesis. <em>Genome Research</em>, <em>2</em>(1), 28–33. <a href="https://doi.org/10.1101/gr.2.1.28">https://doi.org/10.1101/gr.2.1.28</a></div>
+</div>
+<div id="ref-shafikhaniGenerationLargeLibraries1997" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Shafikhani, S., Siegel, R. A., Ferrari, E., &amp; Schellenberger, V. (1997). Generation of large libraries of random mutants in <span><em>Bacillus subtilis</em></span> by <span class="nocase">PCR-based</span> plasmid multimerization. <em>Biotechniques</em>, <em>23</em>(2), 304–310. <a href="https://doi.org/10.2144/97232rr01">https://doi.org/10.2144/97232rr01</a></div>
+</div>
+<div id="ref-agilentGeneMorphII" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Agilent Technologies. (2022). <em><span>GeneMorph II</span> random mutagenesis kit instruction manual</em> (Catalog #200550, Revision D0). Agilent Technologies.</div>
+</div>
+<div id="ref-lin-goerkePCRbasedRandomMutagenesis1997" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Lin-Goerke, J. L., Robbins, D. J., &amp; Burczak, J. D. (1997). <span class="nocase">PCR-based</span> random mutagenesis using manganese and reduced <span class="nocase">dNTP</span> concentration. <em>Biotechniques</em>, <em>23</em>(3), 409–412. <a href="https://doi.org/10.2144/97233bm12">https://doi.org/10.2144/97233bm12</a></div>
+</div>
+<div id="ref-rasilaCriticalEvaluationRandom2009" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Rasila, T. S., Pajunen, M. I., &amp; Savilahti, H. (2009). Critical evaluation of random mutagenesis by error-prone polymerase chain reaction protocols, <span><em>Escherichia coli</em></span> mutator strain, and hydroxylamine treatment. <em>Anal. Biochem.</em>, <em>388</em>(1), 71–80. <a href="https://doi.org/10.1016/j.ab.2009.02.008">https://doi.org/10.1016/j.ab.2009.02.008</a></div>
+</div>
+<div id="ref-morleyImprovingEnzymeProperties2005" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Morley, K. L., &amp; Kazlauskas, R. J. (2005). Improving enzyme properties: When are closer mutations better? <em>Trends Biotechnol.</em>, <em>23</em>(5), 231–237. <a href="https://doi.org/10.1016/j.tibtech.2005.03.005">https://doi.org/10.1016/j.tibtech.2005.03.005</a></div>
+</div>
+<div id="ref-chodorgeRationalStrategiesDirected2005" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Chodorge, M., Fourage, L., Ullmann, C., Duvivier, V., Masson, J.-M., &amp; Lefèvre, F. (2005). Rational strategies for directed evolution of biocatalysts - application to <span><em>Candida antarctica</em></span> lipase <span>B</span> (<span>CALB</span>). <em>Adv. Synth. Catal.</em>, <em>347</em>(7-8), 1022–1026. <a href="https://doi.org/10.1002/adsc.200505055">https://doi.org/10.1002/adsc.200505055</a></div>
+</div>
+<div id="ref-bloomLightDirectedEvolution2009" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Bloom, J. D., &amp; Arnold, F. H. (2009). In the light of directed evolution: Pathways of adaptive protein evolution. <em>Proc. Natl. Acad. Sci. U. S. A.</em>, <em>106 Suppl 1</em>(Supplement_1), 9995–10000. <a href="https://doi.org/10.1073/pnas.0901522106">https://doi.org/10.1073/pnas.0901522106</a></div>
+</div>
+<div id="ref-tokurikiStabilityEffectsMutations2009" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Tokuriki, N., &amp; Tawfik, D. S. (2009). Stability effects of mutations and protein evolvability. <em>Curr Opin Struct Biol</em>, <em>19</em>(5), 596–604. <a href="https://doi.org/10.1016/j.sbi.2009.08.003">https://doi.org/10.1016/j.sbi.2009.08.003</a></div>
+</div>
+<div id="ref-campsTargetedGeneEvolution2003" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Camps, M., Naukkarinen, J., Johnson, B. P., &amp; Loeb, L. A. (2003). Targeted gene evolution in <span><em>Escherichia coli</em></span> using a highly error-prone <span>DNA</span> polymerase <span>I</span>. <em>Proc Natl Acad Sci USA</em>, <em>100</em>(17), 9727–9732. <a href="https://doi.org/10.1073/pnas.1333928100">https://doi.org/10.1073/pnas.1333928100</a></div>
+</div>
+<div id="ref-wangEvolutionNewNonantibody2004" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Wang, L., Jackson, W. C., Steinbach, P. A., &amp; Tsien, R. Y. (2004). Evolution of new nonantibody proteins via iterative somatic hypermutation. <em>Proc. Natl. Acad. Sci. U.S.A.</em>, <em>101</em>(48), 16745–16749. <a href="https://doi.org/10.1073/pnas.0407752101">https://doi.org/10.1073/pnas.0407752101</a></div>
+</div>
+<div id="ref-yiPlasmidHypermutationUsing2021" class="csl-entry" role="listitem">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Yi, X., Khey, J., Kazlauskas, R. J., &amp; Travisano, M. (2021). Plasmid hypermutation using a targeted artificial <span>DNA</span> replisome. <em>Sci. Adv.</em>, <em>7</em>(29), eabg8712. <a href="https://doi.org/10.1126/sciadv.abg8712">https://doi.org/10.1126/sciadv.abg8712</a></div>
+</div>
+<div id="ref-cheonManipulationActiveSite2004" class="csl-entry" role="listitem">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">Cheon, Y.-H., Park, H.-S., Kim, J. H., Kim, Y., &amp; Kim, H. S. (2004). Manipulation of the active site loops of <span class="nocase">D-hydantoinase</span>, a (β/α)<span><sub>8</sub></span>-barrel protein, for modulation of the substrate specificity. <em>Biochemistry</em>, <em>43</em>(23), 7413–7420. <a href="https://doi.org/10.1021/bi036330o">https://doi.org/10.1021/bi036330o</a></div>
+</div>
+<div id="ref-andersonExpandedGeneticCode2004" class="csl-entry" role="listitem">
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">Anderson, J. C., Wu, N., Santoro, S. W., Lakshman, V., King, D. S., &amp; Schultz, P. G. (2004). An expanded genetic code with a functional quadruplet codon. <em>Proc. Natl. Acad. Sci. U.S.A.</em>, <em>101</em>(20), 7566–7571. <a href="https://doi.org/10.1073/pnas.0401517101">https://doi.org/10.1073/pnas.0401517101</a></div>
+</div>
+<div id="ref-reetzInducedAllosteryDirected2010" class="csl-entry" role="listitem">
+<div class="csl-left-margin">19. </div><div class="csl-right-inline">Wu, S., Acevedo, J. P., &amp; Reetz, M. T. (2010). Induced allostery in the directed evolution of an enantioselective <span>Baeyer</span>–<span>Villiger</span> monooxygenase. <em>Proc. Natl. Acad. Sci. U. S. A.</em>, <em>107</em>(7), 2775–2780. <a href="https://doi.org/10.1073/pnas.0911656107">https://doi.org/10.1073/pnas.0911656107</a></div>
+</div>
+<div id="ref-desantisCreationProductiveHighly2003" class="csl-entry" role="listitem">
+<div class="csl-left-margin">20. </div><div class="csl-right-inline">DeSantis, G., Wong, K., Farwell, B., Chatman, K., Zhu, Z., Tomlinson, G., Huang, H., Tan, X., Bibbs, L., Chen, P., Kretz, K., &amp; Burk, M. J. (2003). Creation of a productive, highly enantioselective nitrilase through gene site saturation mutagenesis (<span>GSSM</span>). <em>J. Am. Chem. Soc.</em>, <em>125</em>(38), 11476–11477. <a href="https://doi.org/10.1021/ja035742h">https://doi.org/10.1021/ja035742h</a></div>
+</div>
+<div id="ref-reetzIterativeSaturationMutagenesis2006" class="csl-entry" role="listitem">
+<div class="csl-left-margin">21. </div><div class="csl-right-inline">Reetz, M. T., Carballeira, J. D., &amp; Vogel, A. (2006). Iterative saturation mutagenesis on the basis of <span>B</span> factors as a strategy for increasing protein thermostability. <em>Angew. Chem. Int. Ed. Engl.</em>, <em>45</em>(46), 7745–7751. <a href="https://doi.org/10.1002/anie.200602795">https://doi.org/10.1002/anie.200602795</a></div>
+</div>
+<div id="ref-zhangLowusageCodonsEscherichia1991" class="csl-entry" role="listitem">
+<div class="csl-left-margin">22. </div><div class="csl-right-inline">Zhang, S., Zubay, G., &amp; Goldman, E. (1991). Low-usage codons in <span><em>Escherichia coli</em></span>, yeast, fruit fly and primates. <em>Gene</em>, <em>105</em>(1), 61–72. <a href="https://doi.org/10.1016/0378-1119(91)90514-c">https://doi.org/10.1016/0378-1119(91)90514-c</a></div>
+</div>
+<div id="ref-tangConstructionSmallintelligentFocused2012" class="csl-entry" role="listitem">
+<div class="csl-left-margin">23. </div><div class="csl-right-inline">Tang, L., Gao, H., Zhu, X., Wang, X., Zhou, M., &amp; Jiang, R. (2012). Construction of "small-intelligent" focused mutagenesis libraries using well-designed combinatorial degenerate primers. <em>Biotechniques</em>, <em>52</em>(3), 149–158. <a href="https://doi.org/10.2144/000113820">https://doi.org/10.2144/000113820</a></div>
+</div>
+<div id="ref-patrickUserfriendlyAlgorithmsEstimating2003" class="csl-entry" role="listitem">
+<div class="csl-left-margin">24. </div><div class="csl-right-inline">Patrick, W. M., Firth, A. E., &amp; Blackburn, J. M. (2003). User-friendly algorithms for estimating completeness and diversity in randomized protein-encoding libraries. <em>Protein Eng.</em>, <em>16</em>(6), 451–457. <a href="https://doi.org/10.1093/protein/gzg057">https://doi.org/10.1093/protein/gzg057</a></div>
+</div>
+<div id="ref-zotero-item-11839" class="csl-entry" role="listitem">
+<div class="csl-left-margin">25. </div><div class="csl-right-inline">Kreyszig, E. (2020). Section 24.4 <span>Permuations</span> and <span>Combinations</span>. In <em>Advanced <span>Engineering Mathematics</span></em> (10th ed.). Wiley.</div>
+</div>
+</div>
+</section>
+<section id="supporting-information" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="supporting-information">Supporting Information</h2>
+<p><strong>Code Block S9.1.</strong> Python script to calculate the number of doublings, or 100% efficient cycles, for a known number of inefficient cycles when the efficiency is known.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculates D, the number of doublings</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2^D = (1+EF)^cycles or D = cycles * log2(1+EF)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># EF = efficiency of PCR (ranges from 0 to 1)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># cycles = number of inefficient PCR cycles</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> log</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>EF <span class="op">=</span> <span class="fl">0.7</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>cycles <span class="op">=</span> <span class="fl">30.0</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> cycles <span class="op">*</span> log(<span class="fl">1.0</span><span class="op">+</span>EF,<span class="dv">2</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">format</span>(cycles,<span class="st">'.0f'</span>),<span class="st">' PCR cycles with an efficiency of '</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      <span class="bu">format</span>(<span class="dv">100</span><span class="op">*</span>EF,<span class="st">'.0f'</span>),<span class="st">'% yields '</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>      <span class="bu">format</span>(D,<span class="st">'.1f'</span>),<span class="st">' doublings.'</span>, sep <span class="op">=</span><span class="st">''</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>With EF = 0.7 and cycles = 30.0, this prints: “30 PCR cycles with an efficiency of 70% yields 23.0 doublings.”</p>
+<p><strong>Code Block S9.2.</strong> Python function to calculate the number of transformants, T, needed to have tested the rarest one in a collection of N variations with a probability of P. T = ln(1-P)/ln(1-(1/N)). In the example, N = 32.0 corresponds to site-saturation mutagenesis of a single site using an NNK or NNS ambiguity codon and P = 0.95 corresponds to a 95% probability. Adjust values for N and P as needed.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> log         <span class="co"># log = natural logarithm</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> numTransformants(N, P):  <span class="co"># N = number of codon variations</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                             <span class="co"># P = probability</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    T_rarest <span class="op">=</span> log(<span class="dv">1</span><span class="op">-</span>P)<span class="op">/</span>log(<span class="dv">1</span><span class="op">-</span>(<span class="dv">1</span><span class="op">/</span>N))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Testing'</span>,<span class="bu">round</span>(T_rarest),<span class="st">'colonies gives a'</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>          <span class="st">'</span><span class="sc">{:.0f}</span><span class="st">'</span>.<span class="bu">format</span>(<span class="dv">100</span><span class="op">*</span>P)<span class="op">+</span><span class="st">'% probability that any individual variant'</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>          <span class="st">'in a collection of'</span>,<span class="st">'</span><span class="sc">{:.0f}</span><span class="st">'</span>.<span class="bu">format</span>(N),<span class="st">'variants has been tested.'</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    T_all <span class="op">=</span> log(<span class="dv">1</span><span class="op">-</span>(P<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span>N)))<span class="op">/</span>log(<span class="dv">1</span><span class="op">-</span>(<span class="dv">1</span><span class="op">/</span>N))</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Testing'</span>,<span class="bu">round</span>(T_all),<span class="st">'colonies gives a'</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>          <span class="st">'</span><span class="sc">{:.0f}</span><span class="st">'</span>.<span class="bu">format</span>(<span class="dv">100</span><span class="op">*</span>P)<span class="op">+</span><span class="st">'% probability that every variant'</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>          <span class="st">'in a collection of'</span>,<span class="st">'</span><span class="sc">{:.0f}</span><span class="st">'</span>.<span class="bu">format</span>(N),<span class="st">'variants has been tested.'</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># example</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>numTransformants(<span class="dv">32</span><span class="op">*</span><span class="dv">32</span>, <span class="fl">0.95</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Calling <code>numTransformants(32*32, 0.95)</code> prints: “Testing 3066 colonies gives a 95% probability that any individual variant in a collection of 1024 variants has been tested.” and “Testing 10134 colonies gives a 95% probability that every variant in a collection of 1024 variants has been tested.”</p>
+<p><strong>Code Block S9.3.</strong> Python script to calculate <span class="math inline">\(V_k\)</span>, the number of variants with k substitutions. <span class="math inline">\(V_k\)</span> = number of location possibilities * number of substitution possibilities. <span class="math inline">\(nlp = L!/[k!*(L-k)!]\)</span> and <span class="math inline">\(nsp = n^k\)</span>) where L = length of sequence, k = number of substitutions and n = the number of replacements, usually 19 for proteins and 3 for nucleotides. Adjust these values as needed. The loop runs from i = 0 to i = k-1 and calculates the ratio <span class="math inline">\(= L!/(L-k)! = L*(L-1)*(L-2)*…(L-k-1)\)</span>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> factorial</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Vk(L, n, k):             <span class="co"># L = length of sequence</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                             <span class="co"># n = 19 for proteins, 3 for nucleotides</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                             <span class="co"># k = number of substitutions</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Loop calculates L!/(L-k)! = L*(L-1)*(L-2)*...(L-k-1)</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    ratio <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,k):</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        ratio <span class="op">=</span> ratio<span class="op">*</span>(L<span class="op">-</span>i) <span class="co"># runs from i = 0 to i = k-1</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># number of location possibilities = L!/[k!*(L-k)!]</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    nlp <span class="op">=</span> ratio<span class="op">/</span>factorial(k)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># number of substitution possibilities = n^k</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    nsp <span class="op">=</span> n<span class="op">**</span>k</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    Vk <span class="op">=</span> (nlp<span class="op">*</span>nsp)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span> (<span class="st">'The number of possible variants for'</span>,k,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>           <span class="st">'substitutions using'</span>,n,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>           <span class="st">'replacements anywhere in a sequence of length'</span>,L,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>           <span class="st">'is'</span>,<span class="st">'</span><span class="sc">{:.3G}</span><span class="st">'</span>.<span class="bu">format</span>(Vk))</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># example</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>Vk(<span class="dv">4000</span>, <span class="dv">3</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>With <code>Vk(4000, 3, 3)</code>, this prints: “The number of possible variants for 3 substitutions using 3 replacements anywhere in a sequence of length 4000 is 2.88E+11”</p>
+<div id="tbl-nnknns" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-nnknns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9.7: The mixtures of thirty-two codons represented by NNK or NNS both contain the sixteen NNG codons, but differ in the remaining sixteen. NNK contains the sixteen NNT codons, while NNS contains the sixteen NNC codons. In each case, the thirty-two codons encode the same amino acids, which includes all twenty amino acids, one stop codon and eleven redundant codons.
+</figcaption>
+<div aria-describedby="tbl-nnknns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;" scope="col">sequence NNK</th>
+<th style="text-align: center;" scope="col">sequence NNS</th>
+<th style="text-align: center;" scope="col">encoded amino acid</th>
+<th style="text-align: left;" scope="col">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">AAG</td>
+<td style="text-align: center;">Lys</td>
+<td style="text-align: left;">only codon for this amino acid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">AAT</td>
+<td style="text-align: center;">AAC</td>
+<td style="text-align: center;">Asn</td>
+<td style="text-align: left;">only codon for this amino acid</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">ACG</td>
+<td style="text-align: center;">Thr</td>
+<td style="text-align: left;">rare codon for yeast</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ACT</td>
+<td style="text-align: center;">ACC</td>
+<td style="text-align: center;">Thr</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">AGG</td>
+<td style="text-align: center;">Arg</td>
+<td style="text-align: left;">rare codon for <em>E. coli</em> &amp; yeast</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">AGT</td>
+<td style="text-align: center;">AGC</td>
+<td style="text-align: center;">Ser</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">ATG</td>
+<td style="text-align: center;">Met</td>
+<td style="text-align: left;">only codon for this amino acid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ATT</td>
+<td style="text-align: center;">ATC</td>
+<td style="text-align: center;">Ile</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">CAG</td>
+<td style="text-align: center;">Gln</td>
+<td style="text-align: left;">only codon for this amino acid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CAT</td>
+<td style="text-align: center;">CAC</td>
+<td style="text-align: center;">His</td>
+<td style="text-align: left;">only codon for this amino acid</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">CCG</td>
+<td style="text-align: center;">Pro</td>
+<td style="text-align: left;">rare codon for yeast</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CCT</td>
+<td style="text-align: center;">CCC</td>
+<td style="text-align: center;">Pro</td>
+<td style="text-align: left;">CCC is a rare codon for <em>E. coli</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">CGG</td>
+<td style="text-align: center;">Arg</td>
+<td style="text-align: left;">rare codon for <em>E. coli</em> &amp; yeast</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CGT</td>
+<td style="text-align: center;">CGC</td>
+<td style="text-align: center;">Arg</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">CTG</td>
+<td style="text-align: center;">Leu</td>
+<td style="text-align: left;">only codon for this amino acid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CTT</td>
+<td style="text-align: center;">CTC</td>
+<td style="text-align: center;">Leu</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">GAG</td>
+<td style="text-align: center;">Glu</td>
+<td style="text-align: left;">only codon for this amino acid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">GAT</td>
+<td style="text-align: center;">GAC</td>
+<td style="text-align: center;">Asp</td>
+<td style="text-align: left;">only codon for this amino acid</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">GCG</td>
+<td style="text-align: center;">Ala</td>
+<td style="text-align: left;">rare codon for yeast</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">GCT</td>
+<td style="text-align: center;">GCC</td>
+<td style="text-align: center;">Ala</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">GGG</td>
+<td style="text-align: center;">Gly</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">GGT</td>
+<td style="text-align: center;">GGC</td>
+<td style="text-align: center;">Gly</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">GTG</td>
+<td style="text-align: center;">Val</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">GTT</td>
+<td style="text-align: center;">GTC</td>
+<td style="text-align: center;">Val</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">TAG</td>
+<td style="text-align: center;">stop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">TAT</td>
+<td style="text-align: center;">TAC</td>
+<td style="text-align: center;">Tyr</td>
+<td style="text-align: left;">only codon for this amino acid</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">TCG</td>
+<td style="text-align: center;">Ser</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">TCT</td>
+<td style="text-align: center;">TCC</td>
+<td style="text-align: center;">Ser</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">TGG</td>
+<td style="text-align: center;">Trp</td>
+<td style="text-align: left;">only codon for this amino acid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">TGT</td>
+<td style="text-align: center;">TGC</td>
+<td style="text-align: center;">Cys</td>
+<td style="text-align: left;">only codon for this amino acid</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">TTG</td>
+<td style="text-align: center;">Leu</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">TTT</td>
+<td style="text-align: center;">TTC</td>
+<td style="text-align: center;">Phe</td>
+<td style="text-align: left;">only codon for this amino acid</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Rarely-used codons can create protein expression problems, but NNK largely avoids this problem, and NNS avoids it in <em>E. coli</em> but not in yeast. There are eight rare codons in <em>E. coli</em>: CGA, CGG, AGA, AGG for Arg; CTA for Leu; ATA for Ile; GGA for Gly; CCC for Pro.<span class="citation" data-cites="zhangLowusageCodonsEscherichia1991"><sup>[<a href="#ref-zhangLowusageCodonsEscherichia1991" role="doc-biblioref">22</a>]</sup></span> The tRNAs that recognize rare codons are also present in low amounts. Normally, this low abundance has no effect, but over expressed proteins may deplete the existing pool of charged tRNAs and cause premature termination or misincorporation of amino acids. Two rare codons occur in the NNK library and both code for Arg. However, the NNK library includes a third codon for Arg (CGT), which is not a rare codon. There are eight rare codons in yeast: AGG, CGA, CGG, CGC for Arg; CCG for Pro, CTC for Leu, GCG for Ala; ACG for Thr.<span class="citation" data-cites="zhangLowusageCodonsEscherichia1991"><sup>[<a href="#ref-zhangLowusageCodonsEscherichia1991" role="doc-biblioref">22</a>]</sup></span> The five rare codons appear in the NNK library, but, like the <em>E. coli</em> case, the NNK library also includes synonymous non-rare codons for each of the amino acids. The same analysis gives a different result for NNS. Because NNS replaces the T of NNK with C in the third position, it loses access to the NNT codons (CGT, CCT, GCT, ACT) that supply the common synonyms above. For <em>E. coli</em> this causes no problem — every amino acid still retains a non-rare codon under NNS. In yeast, however, the only arginine codons available under NNS are CGC, CGG, and AGG, all three of which are rare; NNS therefore provides no common arginine codon in yeast. For this reason NNK is generally preferable to NNS, particularly for expression in yeast.</p>
+</section>
+<section id="problems" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problems">Problems</h2>
+<p>9.1. <strong>PCR cycles, doublings, and mutation frequency.</strong></p>
+<ol type="a">
+<li><p>How many PCR cycles are required for 17 doublings if the amplification efficiency <span class="math inline">\(E\)</span> is 1.0 (perfect), 0.8 (typical for a well-optimized PCR), or 0.47 (typical for an error-prone PCR)? Amplification efficiency is defined by <span class="math inline">\((1+E)^n = A\)</span> for <span class="math inline">\(n\)</span> cycles and <span class="math inline">\(A\)</span>-fold amplification. Efficiency also falls as the reaction approaches plateau, so this is an average over the run rather than a per-cycle constant.</p></li>
+<li><p>Using <span class="math inline">\(d \approx 17\)</span> doublings and a per-pass error rate <span class="math inline">\(f \approx 4\times10^{-4}\)</span>, estimate the mutation frequency per position in the product. Does running more cycles at the lower error-prone efficiency raise this frequency? Explain.</p></li>
+</ol>
+<p>9.2. <strong>Oversampling an NNK library.</strong> Show that screening 203 colonies gives a 95% probability that <em>every</em> codon of a single-site saturation library made with an NNK ambiguity codon has been sampled. Section 9.3.2 shows that only 94 colonies are needed for the same 95% probability of sampling any <em>one</em> chosen variant. In one sentence, state what each number guarantees and why they differ.</p>
+<p>9.3. <strong>Number of possible dipeptides.</strong></p>
+<ol type="a">
+<li>How many possible dipeptides are there?</li>
+<li>Starting from the dipeptide Asp-Phe, how many single-substitution variants are possible?</li>
+<li>How many double-substitution variants are possible?</li>
+<li>Show that the sum of wild-type, single-, and double-substitution variants equals the total.</li>
+</ol>
+<p>9.4. <strong>Transitions versus transversions.</strong> Write out all possible base substitutions to show that random mutagenesis should yield twice as many transversions as transitions. Taq’s measured transition/transversion ratio is 0.76 (Table 9.2). Compared with the random expectation, does Taq favor or disfavor transitions, and by how much?</p>
+<p>9.5. <strong>The impossibility of exhaustive sampling.</strong> Consider a small protein of 50 amino acids. How many variants are possible if all 20 amino acids are allowed at every position? If the average molecular weight is 5,500 g/mol, what is the mass, in grams, of a collection containing one molecule of each variant? Compare this with the mass of the earth, <span class="math inline">\(\approx 6\times10^{27}\)</span> g.</p>
+<p>9.6. <strong>Codon accessibility from a wild-type codon.</strong> A position carries wild-type Phe (codon TTT).</p>
+<ol type="a">
+<li>List every amino acid reachable by a single nucleotide change.</li>
+<li>Of the other hydrophobic residues (Leu, Ile, Val, Met, Trp), which are reachable by one change and which are not?</li>
+<li>Explain why an error-prone PCR library screening for Phe→Trp or Phe→Met is likely to fail, and what method you would use instead.</li>
+</ol>
+<p>9.7. <strong>Interpreting the NDT ambiguity codon.</strong></p>
+<ol type="a">
+<li>How many distinct codons does NDT represent, and which amino acids does it encode?</li>
+<li>Explain why NDT produces no stop codon and no synonymous duplicates, unlike NNK.</li>
+<li>Using <span class="math inline">\(Q = C \cdot U\)</span>, compare NNK and NDT for a two-site library. Which requires less screening, and what is the trade-off?</li>
+</ol>
+<p>9.8. <strong>Choosing a mutagenesis strategy.</strong> For each goal, state whether error-prone PCR or site-saturation mutagenesis is the better first approach and give a one-sentence rationale:</p>
+<ol type="a">
+<li>raise the melting temperature by 8 °C</li>
+<li>accept a bulkier substrate at the active site</li>
+<li>invert enantioselectivity toward the (<span class="math inline">\(R\)</span>)-product</li>
+<li>improve activity when no structure and no homology model is available</li>
+</ol>
+</section>
+<section id="answers" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="answers">Answers</h2>
+<details><summary>Click to show answers</summary>
+<p>9.1. a) With <span class="math inline">\((1+E)^n = 2^{17}\)</span>, <span class="math inline">\(n = 17/\log_2(1+E)\)</span>: at <span class="math inline">\(E=1.0\)</span>, <span class="math inline">\(n = 17\)</span> cycles; at <span class="math inline">\(E=0.8\)</span>, <span class="math inline">\(n \approx 20\)</span> cycles; at <span class="math inline">\(E=0.47\)</span>, <span class="math inline">\(n \approx 31\)</span> cycles. Lower efficiency needs more cycles to reach the same amplification. b) Mutation frequency <span class="math inline">\(\approx f \cdot d = 4\times10^{-4} \times 17 = 6.8\times10^{-3}\)</span>, about 0.7% per position (~7 changes per 1000 bp). It depends on the number of <em>doublings</em>, not the number of cycles: because errors accumulate per doubling, a low-efficiency reaction that reaches the same fold-amplification gives the same mutation frequency — it just takes more cycles to get there.</p>
+<p>9.2. Using <span class="math inline">\(P_i = [1-(1-1/N)^{T}]^{N}\)</span> with <span class="math inline">\(N=32\)</span>: <span class="math display">\[T_{all} = \frac{\ln\!\left(1-(0.95)^{1/32}\right)}{\ln\!\left(1-\tfrac{1}{32}\right)} = \frac{-6.437}{-0.03175} = 203.\]</span> The 94-colony figure guarantees a 95% chance that <em>one particular</em> codon (e.g., the single codon for Met) appears; the 203-colony figure guarantees a 95% chance that <em>all 32</em> codons appear. Covering every codon is stricter, so it requires more than twice the sampling.</p>
+<p>9.3. a) <span class="math inline">\(20^2 = 400\)</span>. b) <span class="math inline">\(2\times19 = 38\)</span>. c) <span class="math inline">\(19^2 = 361\)</span>. d) <span class="math inline">\(1 + 38 + 361 = 400 = 20^2\)</span>.</p>
+<p>9.4. Transitions (4): A→G, G→A, C→T, T→C. Transversions (8): A→C, A→T, G→C, G→T, C→A, C→G, T→A, T→G. Random substitution therefore gives 8 transversions to 4 transitions, a ratio of 0.5. Taq’s measured ratio of 0.76 is <span class="math inline">\(0.76/0.5 = 1.5\)</span> times the random value, so Taq favors transitions about 1.5-fold over a random polymerase.</p>
+<p>9.5. Variants <span class="math inline">\(= 20^{50} \approx 1.1\times10^{65}\)</span>. Mass <span class="math inline">\(= (1.1\times10^{65} \times 5{,}500)/(6.02\times10^{23}) \approx 1\times10^{45}\)</span> g, which is <span class="math inline">\(\approx 1\times10^{45}/(6\times10^{27}) \approx 2\times10^{17}\)</span> earths. Exhaustive sampling of even a small protein is physically impossible.</p>
+<p>9.6. a) Single changes to TTT reach nine new codons encoding six new amino acids: Ile (ATT), Val (GTT), Leu (CTT, TTA, TTG), Tyr (TAT), Cys (TGT), Ser (TCT); TTC is a synonymous Phe. No stop codon is one change away. b) Reachable in one change: Leu, Ile, Val. <strong>Not reachable: Met (ATG) and Trp (TGG)</strong> — each needs two nucleotide changes from TTT. c) Phe→Trp and Phe→Met each require two simultaneous changes in one codon, which error-prone PCR produces ~100-fold less often than single changes, so these substitutions are rarely present in an epPCR library. Use site-saturation mutagenesis, which installs any target amino acid regardless of codon distance.</p>
+<p>9.7. a) NDT = (A/T/G/C)(A/T/G)(T) = <span class="math inline">\(4\times3\times1 = 12\)</span> codons, encoding twelve amino acids, one each: Asn, Ser, Ile, Tyr, Cys, Phe, Asp, Gly, Val, His, Arg, Leu. b) Fixing the third position as T excludes the stop codons TAA, TAG, and TGA (all end in A or G), and the twelve codons were chosen so that each specifies a different amino acid — hence no synonymous duplicates. c) For two sites: NNK is complete (<span class="math inline">\(C=1\)</span>) but only <span class="math inline">\(U = 400/1024 = 0.39\)</span> unique, so <span class="math inline">\(Q = 0.39\)</span>; NDT is fully unique (<span class="math inline">\(U=1\)</span>) but only <span class="math inline">\(C = 144/400 = 0.36\)</span> complete, so <span class="math inline">\(Q = 0.36\)</span>. NDT requires far less screening (12 codons per site versus 32, and no duplicates or stop codons), at the cost of sampling only 12 of the 20 amino acids at each position.</p>
+<p>9.8. a) <strong>Error-prone PCR</strong> — stabilizing substitutions are common and distributed throughout the structure, so whole-gene sampling is efficient. b) <strong>Site-saturation mutagenesis</strong> of substrate-binding residues — a bulkier substrate needs reshaping of the pocket, where useful substitutions are rare and localized. c) <strong>Site-saturation mutagenesis</strong> of substrate-binding residues — selectivity changes cluster near the active site (cf.&nbsp;the nitrilase Ala190His and PAMO examples). d) <strong>Error-prone PCR</strong> — with no structure or homology model there is no way to localize the search, so whole-protein sampling is the practical starting point.</p>
+</details>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+// Bold the "Figure X.X:"/"Table X.X:" label at the start of every figure and
+// table caption. Quarto fills in the crossref number as plain text directly
+// inside the <figcaption> with no wrapping element around just the label, and
+// that substitution happens after Lua filters run (the number isn't even
+// resolved yet when a `post-quarto` Lua filter would see it), so a Lua filter
+// can't target this -- this runs client-side, after the page (and the
+// numbers) are fully rendered. Equation/section captions don't exist in this
+// book, so no extra type-filtering is needed here (unlike the CSS rule for
+// in-text crossref links, which does have to distinguish by href prefix).
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".quarto-float-caption").forEach(function (caption) {
+    var first = caption.firstChild;
+    if (!first || first.nodeType !== Node.TEXT_NODE) return;
+    var match = first.textContent.match(/^(Figure|Table) [0-9.]+:/);
+    if (!match) return;
+    var strong = document.createElement("strong");
+    strong.textContent = match[0];
+    first.textContent = first.textContent.slice(match[0].length);
+    caption.insertBefore(strong, first);
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter8.html" class="pagination-link" aria-label="In revision">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">In revision</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

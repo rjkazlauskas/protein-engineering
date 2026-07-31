@@ -1,0 +1,62 @@
+% package for arrows
+\usepackage{mathtools}
+
+% packages and settings for tables
+\usepackage{array}
+\usepackage{multirow}
+\renewcommand{\arraystretch}{1.2}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}m{#1}} %allow centering
+\usepackage{booktabs}
+\setlength{\heavyrulewidth}{1.5pt}
+\newcommand{\head}[1]{\textnormal{\textbf{#1}}}
+
+% packages and settings for captions
+% you can ignore warnings like 'pandoc-tablenos: Bad reference: @tbl:xxxxx.'
+\usepackage[font=small,labelfont=bf,margin=1cm]{caption}
+\captionsetup[figure]{labelsep=period}
+\captionsetup[table]{labelsep=period}
+
+% packages and settings for colored code listing
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\lstdefinestyle{mystyle}{
+   % backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+   % numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\normalsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+   % numbers=left,                    
+    % numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+% use symbols to refer to footnotes
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% to add links
+\usepackage{hyperref}
+
+% to remove 'Contents' heading from table of contents
+\renewcommand\contentsname{\vspace*{-20pt}}
+
+% package for insertion of movies
+\usepackage{movie15}
+
+% for figure inclusion
+\usepackage{graphicx}
+
+% for landscape-oriented wide tables
+\usepackage{lscape}

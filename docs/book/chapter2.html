@@ -62,7 +62,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0efda3af7dc20caffb9f21a679dee48f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-15cf6495c4f9ac8a910b4d65ae11dea8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -178,7 +178,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The logic of protein engineering</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Logic of Protein Engineering</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -196,7 +196,25 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Engineering tighter binding</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Engineering Tighter Binding</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">In revision</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">In revision</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to Directed Evolution</span></span></a>
   </div>
 </li>
     </ul>
@@ -654,6 +672,29 @@ GlyGlyPro      GlySerPro</code></pre>
 </section>
 
 </main> <!-- /main -->
+<script>
+// Bold the "Figure X.X:"/"Table X.X:" label at the start of every figure and
+// table caption. Quarto fills in the crossref number as plain text directly
+// inside the <figcaption> with no wrapping element around just the label, and
+// that substitution happens after Lua filters run (the number isn't even
+// resolved yet when a `post-quarto` Lua filter would see it), so a Lua filter
+// can't target this -- this runs client-side, after the page (and the
+// numbers) are fully rendered. Equation/section captions don't exist in this
+// book, so no extra type-filtering is needed here (unlike the CSS rule for
+// in-text crossref links, which does have to distinguish by href prefix).
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".quarto-float-caption").forEach(function (caption) {
+    var first = caption.firstChild;
+    if (!first || first.nodeType !== Node.TEXT_NODE) return;
+    var match = first.textContent.match(/^(Figure|Table) [0-9.]+:/);
+    if (!match) return;
+    var strong = document.createElement("strong");
+    strong.textContent = match[0];
+    first.textContent = first.textContent.slice(match[0].length);
+    caption.insertBefore(strong, first);
+  });
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -1061,8 +1102,8 @@ GlyGlyPro      GlySerPro</code></pre>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter3.html" class="pagination-link" aria-label="The logic of protein engineering">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The logic of protein engineering</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter3.html" class="pagination-link" aria-label="The Logic of Protein Engineering">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Logic of Protein Engineering</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

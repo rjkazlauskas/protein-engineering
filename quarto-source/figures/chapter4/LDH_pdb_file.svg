@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="1193.3333"
+   height="826.66669"
+   viewBox="0 0 1193.3333 826.66669"
+   sodipodi:docname="LDH_pdb_file.pdf"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <color-profile
+       inkscape:label="Ghostscript Internal Profile"
+       name="Ghostscript Internal Profile"
+       xlink:href="data:application/vnd.iccprofile;base64,AAACKAAAAAACIAAAc2NuckdSQVlMYWIgAAAAAAAAAAAAAAAAYWNzcEFQUEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEZGVzYwAAALQAAAC0Y3BydAAAAWgAAAAwd3RwdAAAAZgAAAAUQTJCMAAAAawAAAB6ZGVzYwAAAAAAAAAdR2hvc3RzY3JpcHQgSW50ZXJuYWwgUHJvZmlsZQAAAAAAAAAAHQBHAGgAbwBzAHQAcwBjAHIAaQBwAHQAIABJAG4AdABlAHIAbgBhAGwAIABQAHIAbwBmAGkAbABlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdGV4dAAAAABDb3B5cmlnaHQgQXJ0aWZleCBTb2Z0d2FyZSAyMDA5LTIwMjMAAAAAWFlaIAAAAAAAAPbVAAEAAAAA0yxtZnQyAAAAAAEDCQAAAQAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAgACAAD//wAAgACAABpxgACAAEQogACAAGbsgACAAIeBgACAAKbFgACAAMVDgACAAOKKgACAAP8Af/+AAAAA//8AAP//AAD//wAA"
+       id="color-profile1" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       inkscape:label="1"
+       id="page1"
+       width="1193.3333"
+       height="826.66669"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     id="g1"
+     inkscape:groupmode="layer"
+     inkscape:label="1">
+    <path
+       id="path1"
+       d="M -60,-10 H 9080 V 6200 H -60 Z"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <path
+       id="path2"
+       d="M -12066.7,-10328.3 H 23846.6 V 14625 h -35913.3 z"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <text
+       id="text2"
+       xml:space="preserve"
+       transform="matrix(1.3333333,0,0,1.3333333,54.666667,24.666667)"><tspan
+         id="tspan2"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0 0.01054688"
+         y="0">HEADER    OXIDOREDUCTASE                          30-JAN-01   1I0Z              </tspan><tspan
+         id="tspan3"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0 0 0.01054688 0 0 -0.0070312498 0.01054688 0 0 0 0 0 -0.0070312498 0.01054688 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0 0.01054688 0 0 0 0 0 0 -0.0070312498 0.01089836 -0.0070312498 0.01054688 0 0 0 0 -0.0070312498 0 0.01054688"
+         y="20.5">TITLE     HUMAN HEART L-LACTATE DEHYDROGENASE H CHAIN, TERNARY                  </tspan><tspan
+         id="tspan4"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 0 0 0 0 -0.0070312498 0.01054688 0 0 0 -0.0070312498 0 0.01054688 0 0 -0.0070312498 0 0.01054688 0 0 0 -0.0070312498 0 0 0.01054688"
+         y="41">TITLE    2 COMPLEX WITH NADH AND OXAMATE                                        </tspan><tspan
+         id="tspan5"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         y="61.5">.</tspan><tspan
+         id="tspan6"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 -0.0070312498 0.01054688 0 0 -0.0070312498 0.01054688 0 -0.0070312498 0.01054688 0 0 -0.0070312498 0.01054688 -0.0070312498 0.01054688 0 0 0 0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688"
+         y="82">JRNL        AUTH   J.A.READ,V.J.WINTER,C.M.ESZES,R.B.SESSIONS,                  </tspan><tspan
+         id="tspan7"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688"
+         y="102.5">JRNL        AUTH 2 R.L.BRADY                                                    </tspan><tspan
+         id="tspan8"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 -0.0070312498 0.01054688 0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 -0.0070312498 0.01054688 0 -0.0070312498 0 0.01054688"
+         y="123">JRNL        TITL   STRUCTURAL BASIS FOR ALTERED ACTIVITY OF M- AND              </tspan><tspan
+         id="tspan9"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 0 0 0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 -0.0070312498 0 0 0.01054688 0 -0.0070312498 0.01054688 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0 0.01054688"
+         y="143.5">JRNL        TITL 2 H-ISOZYME FORMS OF HUMAN LACTATE DEHYDROGENASE.              </tspan><tspan
+         id="tspan10"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688"
+         y="164">JRNL        REF    PROTEINS                      V.  43   175 2001       </tspan><tspan
+         id="tspan11"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         y="184.5">.</tspan><tspan
+         id="tspan12"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.0087890597"
+         dx="0 0.01054688 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 0 0 -0.0070312498 0.01054688 -0.0070312498 0.01054688 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688"
+         y="205">ATOM      1  N   ALA A   1      10.019  82.794  38.679  1.00 55.58           N  </tspan><tspan
+         id="tspan13"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.0087890597"
+         dx="0 0.01054688 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 0 -0.0070312498 0.01054688 -0.0070312498 0.01054688 -0.0070312498 0.01054688"
+         y="225.5">ATOM      2  CA  ALA A   1       8.866  82.324  37.874  1.00 54.98           C  </tspan><tspan
+         id="tspan14"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.0087890597"
+         dx="0 0.01054688 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 -0.0070312498 0.01054688 -0.0070312498 0.01054688"
+         y="246">ATOM      3  C   ALA A   1       8.975  80.832  37.653  1.00 54.13           C  </tspan><tspan
+         id="tspan15"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.0087890597"
+         dx="0 0.01054688 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 -0.0070312498 0.01054688 -0.0070312498 0.01054688"
+         y="266.5">ATOM      4  O   ALA A   1       8.581  80.342  36.603  1.00 54.75           O  </tspan><tspan
+         id="tspan16"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.0087890597"
+         dx="0 0.01054688 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 -0.0070312498 0.01054688 -0.0070312498 0.01054688"
+         y="287">ATOM      5  CB  ALA A   1       8.811  83.066  36.530  1.00 55.52           C  </tspan><tspan
+         id="tspan17"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.0087890597"
+         dx="0 0.01054688 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688"
+         y="307.5">ATOM      6  N   THR A   2       9.510  80.122  38.643  1.00 52.88           N  </tspan><tspan
+         id="tspan18"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.0087890597"
+         dx="0 0.01054688 0 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 0 0 0 0 0 -0.0070312498 0.01054688"
+         y="328">ATOM      7  CA  THR A   2       9.707  78.670  38.572  1.00 51.63           C  </tspan><tspan
+         id="tspan19"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.00078906002"
+         y="348.5">.</tspan><tspan
+         id="tspan20"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.00078906002"
+         y="369">.</tspan><tspan
+         id="tspan21"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.00078906002"
+         dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688"
+         y="389.5">TER    5106      ASP B 332                                                      </tspan><tspan
+         id="tspan22"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.00078906002"
+         dx="0 0 0 -0.0070312498 0.01054688 -0.0070312498 0.01054688 0 0 0 0 0 0 0 -0.0070312498 0.01054688 0 -0.0070312498 0 0.01054688 0 -0.0070312498 0.01054688"
+         y="410">HETATM 5107  PA  NAI A 401      15.594  42.646  59.976  1.00 13.36           P  </tspan><tspan
+         id="tspan23"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.00078906002"
+         dx="0 0 0 -0.0070312498 0.01054688 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 -0.0070312498 0 0.01054688 0 -0.0070312498 0.01054688"
+         y="430.5">HETATM 5108  O1A NAI A 401      15.067  42.558  61.345  1.00 14.33           O  </tspan><tspan
+         id="tspan24"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.00078906002"
+         dx="0 0 0 -0.0070312498 0.01054688 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 -0.0070312498 0.01054688 -0.0070312498 0 0.01054688 0 -0.0070312498 0.01054688"
+         y="451">HETATM 5109  O2A NAI A 401      16.899  43.424  59.848  1.00 14.62           O  </tspan><tspan
+         id="tspan25"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.00078906002"
+         dx="0 0 0 -0.0070312498 0.01054688 -0.0070312498 0.01054688 0 0 0 0 0 0 0 0 0 0 -0.0070312498 0 0.01054688 0 -0.0070312498 0.01054688"
+         y="471.5">HETATM 5110  O5B NAI A 401      14.531  43.286  58.976  1.00 12.18           O  </tspan><tspan
+         id="tspan26"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.00078906002"
+         y="492">.      </tspan><tspan
+         id="tspan27"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.00078906002"
+         y="512.5">.</tspan><tspan
+         id="tspan28"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.00078906002"
+         dx="0 0 -0.0070312498 0.01054688"
+         y="533">CONECT 5205 5204                                                                </tspan><tspan
+         id="tspan29"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.00078906002"
+         dx="0 0 -0.0070312498 0.01054688"
+         y="553.5">CONECT 5206 5204                                                                </tspan><tspan
+         id="tspan30"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.00078906002"
+         y="574">.</tspan><tspan
+         id="tspan31"
+         style="font-variant:normal;font-weight:700;font-size:18px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-0.00078906002"
+         dx="0 -0.0070312498 0.01054688"
+         y="594.5">END                                                                             </tspan></text>
+    <path
+       id="path31"
+       d="m 384.91,6188.13 c -2.445,0 -73.414,39.05 -78.308,-239.26 -4.895,-278.32 4.894,-649.41 -9.789,-688.47 C 282.129,5221.34 265,5231.1 265,5231.1 c 0,0 41.438,-8.01 46.496,58.6 5.059,66.6 2.293,555.93 14.531,741.47 12.235,185.54 61.332,156.96 58.883,156.96 z"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#b10019;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <path
+       id="path32"
+       d="m 384.91,4271.88 c -2.445,0 -73.414,-39.06 -78.308,239.25 -4.895,278.32 4.894,649.41 -9.789,688.47 -14.684,39.06 -31.813,29.3 -31.813,29.3 0,0 41.438,8.01 46.496,-58.6 5.059,-66.6 2.293,-555.92 14.531,-741.47 12.235,-185.54 61.332,-156.95 58.883,-156.95 z"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#b10019;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <path
+       id="path33"
+       d="m 352.941,4172.98 c -2.445,0 -73.414,42.11 -78.308,-257.95 -4.895,-300.06 4.894,-700.14 -9.789,-742.26 -14.684,-42.11 -31.813,-31.58 -31.813,-31.58 0,0 41.438,-8.64 46.496,63.17 5.059,71.8 2.293,599.36 14.528,799.4 12.238,200.04 61.336,169.22 58.886,169.22 z"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#b10019;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <path
+       id="path34"
+       d="m 352.941,2107.02 c -2.445,0 -73.414,-42.11 -78.308,257.95 -4.895,300.06 4.894,700.14 -9.789,742.26 -14.684,42.11 -31.813,31.58 -31.813,31.58 0,0 41.438,8.64 46.496,-63.17 5.059,-71.8 2.293,-599.36 14.528,-799.4 12.238,-200.04 61.336,-169.22 58.886,-169.22 z"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#b10019;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <path
+       id="path35"
+       d="m 352.941,2033.02 c -2.445,0 -73.414,41.2 -78.308,-252.34 -4.895,-293.54 4.894,-684.92 -9.789,-726.12 -14.684,-41.2 -31.813,-30.9 -31.813,-30.9 0,0 41.438,-8.45 46.496,61.8 5.059,70.24 2.293,586.33 14.528,782.02 12.238,195.7 61.336,165.54 58.886,165.54 z"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#b10019;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <path
+       id="path36"
+       d="m 352.941,11.9805 c -2.445,0 -73.414,-41.1993 -78.308,252.3355 -4.895,293.539 4.894,684.922 -9.789,726.122 -14.684,41.202 -31.813,30.902 -31.813,30.902 0,0 41.438,8.45 46.496,-61.801 5.059,-70.242 2.293,-586.332 14.528,-782.023 12.238,-195.6918 61.336,-165.5355 58.886,-165.5355 z"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <path
+       id="path37"
+       d="m 352.941,11.9805 c -2.445,0 -73.414,-41.1993 -78.308,252.3355 -4.895,293.539 4.894,684.926 -9.789,726.122 -14.684,41.202 -31.813,30.902 -31.813,30.902 0,0 41.438,8.45 46.496,-61.801 5.059,-70.242 2.293,-586.332 14.528,-782.023 12.238,-195.6918 61.336,-165.5355 58.886,-165.5355 z"
+       style="fill:none;stroke:#b10019;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <text
+       id="text37"
+       xml:space="preserve"
+       transform="matrix(0,-1.3333333,1.3333333,0,18.2224,196.70667)"><tspan
+         id="tspan37"
+         style="font-variant:normal;font-weight:normal;font-size:18px;font-family:'Helvetica Neue';writing-mode:lr-tb;fill:#b10019;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 0 0 -0.3240234"
+         y="0">introduction</tspan></text>
+    <text
+       id="text38"
+       xml:space="preserve"
+       transform="matrix(0,-1.3333333,1.3333333,0,18.2224,511.8)"><tspan
+         id="tspan38"
+         style="font-variant:normal;font-weight:normal;font-size:18px;font-family:'Helvetica Neue';writing-mode:lr-tb;fill:#b10019;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 -0.324 0 0 0 0 0 0 0 0 0 -0.324 0 0 0 0 0 0 -384.81479 0 0 0 0 0 -0.324 0 0 0 0 0 0 0 0 0 -0.324"
+         y="0">protein coordinatesnon-protein coordinates</tspan></text>
+    <text
+       id="text39"
+       xml:space="preserve"
+       transform="matrix(1.3333333,0,0,1.3333333,592,260)"><tspan
+         id="tspan39"
+         style="font-variant:normal;font-weight:normal;font-size:18px;font-family:'Helvetica Neue';writing-mode:lr-tb;fill:#b10019;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 0 0 -1.332 0 0 0 0 0 0 0 -0.32397479"
+         y="0">x, y, z coordinates</tspan></text>
+    <path
+       id="path39"
+       d="m 6245.98,4100.09 c 0,2.45 48.93,73.41 -299.69,78.31 -348.62,4.89 -813.45,-4.9 -862.38,9.79 -48.93,14.68 -36.7,31.81 -36.7,31.81 0,0 -10.03,-41.44 73.4,-46.5 83.42,-5.05 696.36,-2.29 928.77,-14.53 232.42,-12.23 196.6,-61.33 196.6,-58.88 z"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#b10019;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <path
+       id="path40"
+       d="m 3845.68,4100.09 c 0,2.45 -48.93,73.41 299.7,78.31 348.62,4.89 813.45,-4.9 862.37,9.79 48.93,14.68 36.7,31.81 36.7,31.81 0,0 10.04,-41.44 -73.39,-46.5 -83.42,-5.05 -696.36,-2.29 -928.77,-14.53 -232.42,-12.23 -196.61,-61.33 -196.61,-58.88 z"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#b10019;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <path
+       id="path41"
+       d="m 6383.92,2735.95 c 0,-2.45 -12.21,-73.41 74.77,-78.31 86.97,-4.89 202.94,4.9 215.14,-9.79 12.21,-14.68 9.16,-31.81 9.16,-31.81 0,0 2.5,41.44 -18.31,46.5 -20.81,5.06 -173.73,2.29 -231.71,14.53 -57.99,12.23 -49.05,61.33 -49.05,58.88 z"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#b10019;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <path
+       id="path42"
+       d="m 6982.75,2735.95 c 0,-2.45 12.2,-73.41 -74.77,-78.31 -86.98,-4.89 -202.94,4.9 -215.15,-9.79 -12.2,-14.68 -9.15,-31.81 -9.15,-31.81 0,0 -2.5,41.44 18.31,46.5 20.81,5.06 173.72,2.29 231.71,14.53 57.98,12.23 49.05,61.33 49.05,58.88 z"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#b10019;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <path
+       id="path43"
+       d="m 7569.41,4055.09 c 0,2.45 12.21,73.41 -74.76,78.31 -86.98,4.89 -202.94,-4.9 -215.15,9.79 -12.21,14.68 -9.16,31.81 -9.16,31.81 0,0 -2.5,-41.44 18.32,-46.5 20.81,-5.05 173.72,-2.29 231.71,-14.53 57.98,-12.23 49.04,-61.33 49.04,-58.88 z"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#b10019;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <path
+       id="path44"
+       d="m 6970.59,4055.09 c 0,2.45 -12.21,73.41 74.77,78.31 86.97,4.89 202.93,-4.9 215.14,9.79 12.21,14.68 9.16,31.81 9.16,31.81 0,0 2.5,-41.44 -18.32,-46.5 -20.81,-5.05 -173.72,-2.29 -231.7,-14.53 -57.99,-12.23 -49.05,-61.33 -49.05,-58.88 z"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#b10019;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <text
+       id="text44"
+       xml:space="preserve"
+       transform="matrix(1.3333333,0,0,1.3333333,1025.3333,242.66667)"><tspan
+         id="tspan44"
+         style="font-variant:normal;font-weight:normal;font-size:18px;font-family:'Helvetica Neue';writing-mode:lr-tb;fill:#b10019;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 0 0 0 0 0 0 0 0 -0.3240234"
+         y="0">temperature</tspan><tspan
+         id="tspan45"
+         style="font-variant:normal;font-weight:normal;font-size:18px;font-family:'Helvetica Neue';writing-mode:lr-tb;fill:#b10019;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="25.5238"
+         y="21.503901">factor</tspan><tspan
+         id="tspan46"
+         style="font-variant:normal;font-weight:normal;font-size:18px;font-family:'Helvetica Neue';writing-mode:lr-tb;fill:#b10019;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-142.0002"
+         y="197.3459">occupancy</tspan></text>
+    <path
+       id="path46"
+       d="m 7665,4285 -263.78,-67.77"
+       style="fill:none;stroke:#b10019;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+    <path
+       id="path47"
+       d="m 7346.98,4203.3 59.47,-6.41 -10.46,40.68 z"
+       style="fill:#b10019;fill-opacity:1;fill-rule:nonzero;stroke:#b10019;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,826.66667)" />
+  </g>
+</svg>

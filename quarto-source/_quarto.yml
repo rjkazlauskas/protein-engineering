@@ -1,0 +1,84 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Protein Engineering"
+  author: "Romas Kazlauskas"
+  date: today
+  chapters:
+    - index.qmd
+    - chapter1.qmd
+    - chapter2.qmd
+    - chapter3.qmd
+    - chapter4.qmd
+    - chapter5.qmd
+    - chapter6.qmd
+    - chapter7.qmd
+    - chapter8.qmd
+    - chapter9.qmd
+  page-navigation: true
+
+bibliography: rjk_refs.bib
+csl: "apa-numeric-superscript-brackets.csl"
+link-citations: true
+
+crossref:
+  fig-title: Figure
+  tbl-title: Table
+  chapters: true
+
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    toc: true
+    number-sections: true
+    linkcolor: blue
+    urlcolor: blue
+    citeproc: false   # citation processing is done per-chapter by chapter-refs.lua instead
+    include-before-body:
+      - skip-link.html
+      - site-header.html
+    include-after-body:
+      - bold-caption-labels.html
+    filters:
+      - at: post-quarto
+        path: chapter-refs.lua
+      - symbol-footnotes.lua
+      - table-note.lua
+      - at: post-quarto
+        path: table-header-scope.lua
+  pdf:
+    documentclass: scrbook
+    pdf-engine: xelatex
+    number-sections: true
+    toc: true
+    toc-depth: 3
+    citeproc: false   # citation processing is done per-chapter by chapter-refs.lua instead
+    filters:
+      - at: post-quarto
+        path: chapter-refs.lua
+      - table-note.lua
+      - at: post-quarto
+        path: bold-figtbl-xref.lua
+    include-in-header: layout.tex
+    # Source Serif 4 is open source (SIL OFL). The upstream distribution only
+    # ships variable fonts (one file covers all weights via a wght axis), and
+    # xelatex/fontspec cannot select a named instance (e.g. "Bold") out of a
+    # variable font automatically -- it silently falls back to the regular
+    # weight for \textbf everywhere with only a log warning
+    # ("Font shape .../b/n undefined, using .../m/n instead"), so no bold text
+    # rendered anywhere in the PDF. Fixed by instantiating true static
+    # Regular/Bold/Italic/BoldItalic weights from the variable fonts with
+    # fonttools (varLib.instancer) and pointing fontspec at those exact files
+    # directly via Path/UprightFont/BoldFont/etc, bypassing font-name lookup
+    # entirely so this doesn't depend on how the build machine resolves the
+    # variable font's named instances.
+    mainfont: "SourceSerif4"
+    mainfontoptions:
+      - "Extension=.ttf"
+      - "Path=fonts/SourceSerif4/"
+      - "UprightFont=*-Regular-static"
+      - "BoldFont=*-Bold-static"
+      - "ItalicFont=*-Italic-static"
+      - "BoldItalicFont=*-BoldItalic-static"

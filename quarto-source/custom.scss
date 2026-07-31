@@ -1,0 +1,76 @@
+/*-- scss:defaults --*/
+$body-bg: #fdfdfd;
+$body-color: #111111;
+$link-color: #2a7ae2;
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-serif: $font-family-sans-serif;
+
+/*-- scss:rules --*/
+body {
+  font-family: $font-family-sans-serif;
+}
+
+.betterenzyme-header {
+  border-top: 5px solid #424242;
+  border-bottom: 1px solid #e8e8e8;
+  background-color: $body-bg;
+}
+
+.betterenzyme-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 55.95px;
+  font-family: $font-family-sans-serif;
+}
+
+.betterenzyme-title {
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  color: #424242 !important;
+  text-decoration: none;
+}
+
+.betterenzyme-nav a {
+  color: #111111 !important;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.betterenzyme-nav a:hover {
+  color: $link-color !important;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .betterenzyme-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 1rem;
+  }
+  .betterenzyme-nav a {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+}
+
+.tblnote {
+  font-size: .85em;
+  margin-top: -0.8em;
+}
+
+// Bold in-text "Figure X.X"/"Table X.X" cross-reference links (e.g. "see
+// Figure 9.1"). Quarto renders every crossref -- figure, table, equation,
+// section -- as `<a class="quarto-xref">`, with no other class or attribute
+// distinguishing the type, so the href's "#fig-"/"#tbl-" prefix is the only
+// way to target just figure/table crossrefs and leave equation/section ones
+// alone (only Figure/Table were asked to be bold).
+a.quarto-xref[href^="#fig-"],
+a.quarto-xref[href^="#tbl-"] {
+  font-weight: bold;
+}

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="932.46838"
+   height="70.454399"
+   viewBox="0 0 932.46838 70.454399"
+   sodipodi:docname="primers_met_to_ala.pdf"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <color-profile
+       inkscape:label="sRGB IEC61966-2.1"
+       name="sRGB IEC61966-2.1"
+       xlink:href="data:application/vnd.iccprofile;base64,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"
+       id="color-profile1" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath2">
+      <path
+         d="M 0,0 H 792.00002 V 612.00002 H 0 Z"
+         id="path2" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3">
+      <path
+         d="M -2.6191401,460.12261 H 722.61918 V -10.4965 H -2.6191401 Z"
+         id="path3" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4">
+      <path
+         d="M -40.85336,723.78 H 1015.1466 v -816 H -40.85336 Z"
+         id="path4" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       inkscape:label="1"
+       id="page1"
+       width="932.46838"
+       height="70.454399"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     id="g1"
+     inkscape:groupmode="layer"
+     inkscape:label="1">
+    <path
+       id="path1"
+       d="M 0,612 H 792 V 0 H 0 Z"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(1.3333333,0,0,-1.3333333,-40.85336,723.78)"
+       clip-path="url(#clipPath2)" />
+    <g
+       id="g2">
+      <g
+         id="g3"
+         clip-path="url(#clipPath4)">
+        <text
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,7.14664,14.2832)"
+           clip-path="url(#clipPath3)"
+           id="text3"><tspan
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"
+             id="tspan3">DNA synthesis &lt;-  3' - G TTT ATG CCC CGC ATG TT </tspan></text>
+      </g>
+      <g
+         id="g4">
+        <text
+           id="text4"
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,353.92784,14.2832)"><tspan
+             id="tspan4"
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"> </tspan></text>
+      </g>
+      <g
+         id="g5">
+        <text
+           id="text5"
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,391.14664,14.2832)"><tspan
+             id="tspan5"
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"> </tspan></text>
+      </g>
+      <text
+         id="text6"
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,439.14664,14.2832)"><tspan
+           id="tspan6"
+           style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"> Met</tspan></text>
+      <g
+         id="g6">
+        <text
+           id="text7"
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,468.04504,14.2832)"><tspan
+             id="tspan7"
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"> </tspan></text>
+      </g>
+      <g
+         id="g7">
+        <text
+           id="text8"
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,487.14664,14.2832)"><tspan
+             id="tspan8"
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"> </tspan></text>
+      </g>
+      <g
+         id="g8">
+        <text
+           id="text9"
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,535.14664,14.2832)"><tspan
+             id="tspan9"
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"> </tspan></text>
+      </g>
+      <g
+         id="g9">
+        <text
+           id="text10"
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,583.14664,14.2832)"><tspan
+             id="tspan10"
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"> </tspan></text>
+      </g>
+      <g
+         id="g10">
+        <text
+           id="text11"
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,631.14664,14.2832)"><tspan
+             id="tspan11"
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"> </tspan></text>
+      </g>
+      <g
+         id="g11">
+        <text
+           id="text12"
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,679.14664,14.2832)"><tspan
+             id="tspan12"
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"> </tspan></text>
+      </g>
+      <text
+         id="text13"
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,727.14664,14.2832)"><tspan
+           id="tspan13"
+           style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">reverse primer, orignal aa </tspan></text>
+    </g>
+    <g
+       id="g13">
+      <text
+         id="text14"
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,7.14664,27.616533)"><tspan
+           id="tspan14"
+           style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">      5' - ... T GGA AAC AAA TAC GGG GCG TAC AAC GGT ACG TCA ATG GCA TCT CCG CAC GTT ...    </tspan></text>
+      <g
+         id="g14">
+        <text
+           id="text15"
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,671.81064,27.616533)"><tspan
+             id="tspan15"
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"> </tspan></text>
+      </g>
+      <g
+         id="g15">
+        <text
+           id="text16"
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,679.14664,27.616533)"><tspan
+             id="tspan16"
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"> </tspan></text>
+      </g>
+      <text
+         id="text17"
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,727.14664,27.616533)"><tspan
+           id="tspan17"
+           style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">forward strand </tspan></text>
+    </g>
+    <g
+       id="g17">
+      <text
+         id="text18"
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,7.14664,40.949867)"><tspan
+           id="tspan18"
+           style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">      3' - ... A CCT TTG TTT ATG CCC CGC ATG TTG CCA TGC AGT TAC CGT AGA GGC GTG CAA ...   </tspan></text>
+      <g
+         id="g18">
+        <text
+           id="text19"
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,664.58611,40.949867)"><tspan
+             id="tspan19"
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"> </tspan></text>
+      </g>
+      <g
+         id="g19">
+        <text
+           id="text20"
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,679.14664,40.949867)"><tspan
+             id="tspan20"
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"> </tspan></text>
+      </g>
+      <text
+         id="text21"
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,727.14664,40.949867)"><tspan
+           id="tspan21"
+           style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">reverse strand </tspan></text>
+    </g>
+    <g
+       id="g21">
+      <text
+         id="text22"
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,7.14664,54.2832)"><tspan
+           id="tspan22"
+           style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">                                          5' - C GGT ACG TCA gcG GCA TCT CCG -&gt; DNA synthesis  </tspan></text>
+      <g
+         id="g22">
+        <text
+           id="text23"
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,693.48451,54.2832)"><tspan
+             id="tspan23"
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"> </tspan></text>
+      </g>
+      <text
+         id="text24"
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,727.14664,54.2832)"><tspan
+           id="tspan24"
+           style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">forward primer with mutation </tspan></text>
+    </g>
+    <g
+       id="g24">
+      <text
+         id="text25"
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,7.14664,67.616533)"><tspan
+           id="tspan25"
+           style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">                                                             Ala                               </tspan></text>
+      <g
+         id="g25">
+        <text
+           id="text26"
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,693.48451,67.616533)"><tspan
+             id="tspan26"
+             style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"> </tspan></text>
+      </g>
+      <text
+         id="text27"
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,727.14664,67.616533)"><tspan
+           id="tspan27"
+           style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Menlo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">new amino acid</tspan></text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="624"
+   height="142.66667"
+   viewBox="0 0 624 142.66667"
+   sodipodi:docname="1s01_His64_old.pdf"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <color-profile
+       inkscape:label="sRGB IEC61966-2.1"
+       name="sRGB IEC61966-2.1"
+       xlink:href="data:application/vnd.iccprofile;base64,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"
+       id="color-profile1" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1">
+      <path
+         d="M 0,2.5000001e-6 H 792.00002 V 612.00002 H 0 Z"
+         id="path1" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath2">
+      <path
+         d="M -96,718.66667 H 960 V -97.333333 H -96 Z"
+         id="path2" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3">
+      <path
+         d="M -2.8320301,460.00291 H 650.83209 V -10.8291 H -2.8320301 Z"
+         id="path3" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4">
+      <path
+         d="M -96,718.66667 H 960 V -97.333333 H -96 Z"
+         id="path4" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5">
+      <path
+         d="M -552.07811,532.00291 H 239.92191 V -79.997102 h -792.00002 z"
+         id="path5" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6">
+      <path
+         d="M -72.000002,521.00291 H 720.00002 V -90.997102 H -72.000002 Z"
+         id="path6" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath7">
+      <path
+         d="M -552.07811,521.00291 H 239.92191 V -90.997102 h -792.00002 z"
+         id="path7" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath8">
+      <path
+         d="M -72.000002,510.00291 H 720.00002 V -101.9971 H -72.000002 Z"
+         id="path8" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath9">
+      <path
+         d="M -552.07811,510.00291 H 239.92191 V -101.9971 h -792.00002 z"
+         id="path9" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath10">
+      <path
+         d="M -72.000002,499.00291 H 720.00002 V -112.9971 H -72.000002 Z"
+         id="path10" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath11">
+      <path
+         d="M -552.07811,499.00291 H 239.92191 V -112.9971 h -792.00002 z"
+         id="path11" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath12">
+      <path
+         d="M -72.000002,488.00291 H 720.00002 V -123.9971 H -72.000002 Z"
+         id="path12" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath13">
+      <path
+         d="M -552.07811,488.00291 H 239.92191 V -123.9971 h -792.00002 z"
+         id="path13" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath14">
+      <path
+         d="M -72.000002,477.00291 H 720.00002 V -134.9971 H -72.000002 Z"
+         id="path14" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath15">
+      <path
+         d="M -552.07811,477.00291 H 239.92191 V -134.9971 h -792.00002 z"
+         id="path15" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath16">
+      <path
+         d="M -72.000002,466.00291 H 720.00002 V -145.9971 H -72.000002 Z"
+         id="path16" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath17">
+      <path
+         d="M -552.07811,466.00291 H 239.92191 V -145.9971 h -792.00002 z"
+         id="path17" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath18">
+      <path
+         d="M -72.000002,455.00291 H 720.00002 V -156.9971 H -72.000002 Z"
+         id="path18" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath19">
+      <path
+         d="M -552.07811,455.00291 H 239.92191 V -156.9971 h -792.00002 z"
+         id="path19" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath20">
+      <path
+         d="M -72.000002,444.00291 H 720.00002 V -167.9971 H -72.000002 Z"
+         id="path20" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath21">
+      <path
+         d="M -552.07811,444.00291 H 239.92191 V -167.9971 h -792.00002 z"
+         id="path21" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath22">
+      <path
+         d="M -72.000002,433.00291 H 720.00002 V -178.99711 H -72.000002 Z"
+         id="path22" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath23">
+      <path
+         d="M -552.07811,433.00291 H 239.92191 V -178.99711 H -552.07811 Z"
+         id="path23" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath24">
+      <path
+         d="M -72.000002,378.00291 H 720.00002 V -233.99711 H -72.000002 Z"
+         id="path24" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath25">
+      <path
+         d="M -552.07811,378.00291 H 239.92191 V -233.99711 H -552.07811 Z"
+         id="path25" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath26">
+      <path
+         d="M -72.000002,367.00291 H 720.00002 V -244.99711 H -72.000002 Z"
+         id="path26" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath27">
+      <path
+         d="M -552.07811,367.00291 H 239.92191 V -244.99711 H -552.07811 Z"
+         id="path27" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath28">
+      <path
+         d="M -72.000002,356.00291 H 720.00002 V -255.9971 H -72.000002 Z"
+         id="path28" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath29">
+      <path
+         d="M -552.07811,356.00291 H 239.92191 V -255.9971 h -792.00002 z"
+         id="path29" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath30">
+      <path
+         d="M -72.000002,345.00291 H 720.00002 V -266.99711 H -72.000002 Z"
+         id="path30" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath31">
+      <path
+         d="M -552.07811,345.00291 H 239.92191 V -266.99711 H -552.07811 Z"
+         id="path31" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath32">
+      <path
+         d="M -72.000002,334.00291 H 720.00002 V -277.99711 H -72.000002 Z"
+         id="path32" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath33">
+      <path
+         d="M -552.07811,334.00291 H 239.92191 V -277.99711 H -552.07811 Z"
+         id="path33" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath34">
+      <path
+         d="M -72.000002,323.00291 H 720.00002 V -288.9971 H -72.000002 Z"
+         id="path34" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath35">
+      <path
+         d="M -552.07811,323.00291 H 239.92191 V -288.9971 h -792.00002 z"
+         id="path35" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath36">
+      <path
+         d="M -72.000002,312.00291 H 720.00002 V -299.99711 H -72.000002 Z"
+         id="path36" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath37">
+      <path
+         d="M -552.07811,312.00291 H 239.92191 V -299.99711 H -552.07811 Z"
+         id="path37" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath38">
+      <path
+         d="M -72.000002,301.00291 H 720.00002 V -310.99711 H -72.000002 Z"
+         id="path38" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath39">
+      <path
+         d="M -552.07811,301.00291 H 239.92191 V -310.99711 H -552.07811 Z"
+         id="path39" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath40">
+      <path
+         d="M -72.000002,290.00291 H 720.00002 V -321.99711 H -72.000002 Z"
+         id="path40" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath41">
+      <path
+         d="M -552.07811,290.00291 H 239.92191 V -321.99711 H -552.07811 Z"
+         id="path41" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath42">
+      <path
+         d="M -72.000002,279.00291 H 720.00002 V -332.99711 H -72.000002 Z"
+         id="path42" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath43">
+      <path
+         d="M -552.07811,279.00291 H 239.92191 V -332.99711 H -552.07811 Z"
+         id="path43" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       inkscape:label="1"
+       id="page1"
+       width="624"
+       height="142.66667"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     id="g1"
+     inkscape:groupmode="layer"
+     inkscape:label="1">
+    <g
+       id="g83">
+      <g
+         clip-path="url(#clipPath2)"
+         id="g44">
+        <path
+           d="M 0,612 H 792 V 0 H 0 Z"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           transform="matrix(1.3333333,0,0,-1.3333333,-96,718.66667)"
+           clip-path="url(#clipPath1)"
+           id="path44" />
+      </g>
+      <g
+         clip-path="url(#clipPath4)"
+         id="g45">
+        <text
+           xml:space="preserve"
+           transform="matrix(1.3333333,0,0,1.3333333,0,9.3294667)"
+           clip-path="url(#clipPath3)"
+           id="text44"><tspan
+             style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             x="0"
+             y="0"
+             id="tspan44">ATOM    455  N   HIS A  64      -1.852  38.475  29.575  1.00  6.26           N  </tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,9.3294667)"
+         clip-path="url(#clipPath5)"
+         id="text45"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan45"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,23.996133)"
+         clip-path="url(#clipPath6)"
+         id="text46"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan46">ATOM    456  CA  HIS A  64      -0.431  38.903  29.664  1.00  5.63           C  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,23.996133)"
+         clip-path="url(#clipPath7)"
+         id="text47"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan47"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,38.6628)"
+         clip-path="url(#clipPath8)"
+         id="text48"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan48">ATOM    457  C   HIS A  64      -0.018  39.823  28.532  1.00  4.99           C  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,38.6628)"
+         clip-path="url(#clipPath9)"
+         id="text49"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan49"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,53.329467)"
+         clip-path="url(#clipPath10)"
+         id="text50"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan50">ATOM    458  O   HIS A  64       0.508  40.917  28.774  1.00  4.27           O  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,53.329467)"
+         clip-path="url(#clipPath11)"
+         id="text51"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan51"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,67.996133)"
+         clip-path="url(#clipPath12)"
+         id="text52"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan52">ATOM    459  CB  HIS A  64       0.462  37.666  29.791  1.00  7.00           C  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,67.996133)"
+         clip-path="url(#clipPath13)"
+         id="text53"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan53"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,82.6628)"
+         clip-path="url(#clipPath14)"
+         id="text54"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan54">ATOM    460  CG  HIS A  64       1.882  37.897  30.144  1.00  5.95           C  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,82.6628)"
+         clip-path="url(#clipPath15)"
+         id="text55"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan55"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,97.329467)"
+         clip-path="url(#clipPath16)"
+         id="text56"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan56">ATOM    461  ND1 HIS A  64       2.883  38.035  29.195  1.00  6.43           N  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,97.329467)"
+         clip-path="url(#clipPath17)"
+         id="text57"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan57"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,111.99613)"
+         clip-path="url(#clipPath18)"
+         id="text58"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan58">ATOM    462  CD2 HIS A  64       2.491  37.967  31.341  1.00  6.26           C  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,111.99613)"
+         clip-path="url(#clipPath19)"
+         id="text59"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan59"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,126.6628)"
+         clip-path="url(#clipPath20)"
+         id="text60"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan60">ATOM    463  CE1 HIS A  64       4.038  38.217  29.803  1.00  6.84           C  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,126.6628)"
+         clip-path="url(#clipPath21)"
+         id="text61"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan61"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,141.32947)"
+         clip-path="url(#clipPath22)"
+         id="text62"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan62">ATOM    464  NE2 HIS A  64       3.834  38.154  31.126  1.00  6.08           N  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,141.32947)"
+         clip-path="url(#clipPath23)"
+         id="text63"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan63"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,214.6628)"
+         clip-path="url(#clipPath24)"
+         id="text64"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan64">ATOM    455  N   HID A  64      -1.852  38.475  29.575  1.00  6.26           N  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,214.6628)"
+         clip-path="url(#clipPath25)"
+         id="text65"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan65"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,229.32947)"
+         clip-path="url(#clipPath26)"
+         id="text66"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan66">ATOM    456  CA  HID A  64      -0.431  38.903  29.664  1.00  5.63           C  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,229.32947)"
+         clip-path="url(#clipPath27)"
+         id="text67"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan67"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,243.99613)"
+         clip-path="url(#clipPath28)"
+         id="text68"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan68">ATOM    457  C   HID A  64      -0.018  39.823  28.532  1.00  4.99           C  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,243.99613)"
+         clip-path="url(#clipPath29)"
+         id="text69"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan69"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,258.6628)"
+         clip-path="url(#clipPath30)"
+         id="text70"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan70">ATOM    458  O   HID A  64       0.508  40.917  28.774  1.00  4.27           O  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,258.6628)"
+         clip-path="url(#clipPath31)"
+         id="text71"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan71"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,273.32947)"
+         clip-path="url(#clipPath32)"
+         id="text72"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan72">ATOM    459  CB  HID A  64       0.462  37.666  29.791  1.00  7.00           C  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,273.32947)"
+         clip-path="url(#clipPath33)"
+         id="text73"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan73"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,287.99613)"
+         clip-path="url(#clipPath34)"
+         id="text74"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan74">ATOM    460  CG  HID A  64       1.882  37.897  30.144  1.00  5.95           C  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,287.99613)"
+         clip-path="url(#clipPath35)"
+         id="text75"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan75"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,302.6628)"
+         clip-path="url(#clipPath36)"
+         id="text76"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan76">ATOM    461  ND1 HID A  64       2.883  38.035  29.195  1.00  6.43           N  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,302.6628)"
+         clip-path="url(#clipPath37)"
+         id="text77"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan77"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,317.32947)"
+         clip-path="url(#clipPath38)"
+         id="text78"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan78">ATOM    462  CD2 HID A  64       2.491  37.967  31.341  1.00  6.26           C  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,317.32947)"
+         clip-path="url(#clipPath39)"
+         id="text79"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan79"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,331.99613)"
+         clip-path="url(#clipPath40)"
+         id="text80"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan80">ATOM    463  CE1 HID A  64       4.038  38.217  29.803  1.00  6.84           C  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,331.99613)"
+         clip-path="url(#clipPath41)"
+         id="text81"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan81"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,0,346.6628)"
+         clip-path="url(#clipPath42)"
+         id="text82"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan82">ATOM    464  NE2 HID A  64       3.834  38.154  31.126  1.00  6.08           N  </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1.3333333,0,0,1.3333333,640.10413,346.6628)"
+         clip-path="url(#clipPath43)"
+         id="text83"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:10px;font-family:'Courier New';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0"
+           id="tspan83"> </tspan></text>
+    </g>
+  </g>
+</svg>

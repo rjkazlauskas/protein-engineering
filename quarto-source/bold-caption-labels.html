@@ -1,0 +1,23 @@
+<script>
+// Bold the "Figure X.X:"/"Table X.X:" label at the start of every figure and
+// table caption. Quarto fills in the crossref number as plain text directly
+// inside the <figcaption> with no wrapping element around just the label, and
+// that substitution happens after Lua filters run (the number isn't even
+// resolved yet when a `post-quarto` Lua filter would see it), so a Lua filter
+// can't target this -- this runs client-side, after the page (and the
+// numbers) are fully rendered. Equation/section captions don't exist in this
+// book, so no extra type-filtering is needed here (unlike the CSS rule for
+// in-text crossref links, which does have to distinguish by href prefix).
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".quarto-float-caption").forEach(function (caption) {
+    var first = caption.firstChild;
+    if (!first || first.nodeType !== Node.TEXT_NODE) return;
+    var match = first.textContent.match(/^(Figure|Table) [0-9.]+:/);
+    if (!match) return;
+    var strong = document.createElement("strong");
+    strong.textContent = match[0];
+    first.textContent = first.textContent.slice(match[0].length);
+    caption.insertBefore(strong, first);
+  });
+});
+</script>

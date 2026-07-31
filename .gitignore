@@ -1,1 +1,7 @@
 _site
+/quarto-source/_book/
+/quarto-source/.quarto/
+.DS_Store
+.Rhistory
+
+**/*.quarto_ipynb

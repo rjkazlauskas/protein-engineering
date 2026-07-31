@@ -1,0 +1,42 @@
+name: Quarto Publish
+
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
+
+      # Needed so Quarto can convert the .svg figures to .pdf for the
+      # PDF/LaTeX output (rsvg-convert). Ubuntu runners don't have this
+      # by default.
+      - name: Install SVG-to-PDF converter
+        run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
+
+      # Source Serif 4 (open source, SIL OFL license) is bundled in
+      # fonts/SourceSerif4/ so the PDF build doesn't depend on whatever
+      # fonts happen to be preinstalled on the runner.
+      - name: Install Source Serif 4 font
+        run: |
+          mkdir -p ~/.local/share/fonts
+          cp fonts/SourceSerif4/*.ttf ~/.local/share/fonts/
+          fc-cache -f
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
