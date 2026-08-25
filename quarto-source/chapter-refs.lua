@@ -8,12 +8,37 @@
 -- bibliography div with the complete book-wide reference list, rather
 -- than that chapter's own list starting at 1.
 --
--- This filter splits the document into chapters (each top-level Header)
--- and runs `pandoc.utils.citeproc()` on each chapter's blocks
--- independently, so each chapter gets its own citation numbering and its
--- own scoped bibliography. Quarto's automatic citeproc pass must be
--- disabled (`citeproc: false` in _quarto.yml) so it doesn't run a second,
+-- This filter splits the document into chapters and runs
+-- `pandoc.utils.citeproc()` on each chapter's blocks independently, so
+-- each chapter gets its own citation numbering and its own scoped
+-- bibliography. Quarto's automatic citeproc pass must be disabled
+-- (`citeproc: false` in _quarto.yml) so it doesn't run a second,
 -- whole-document pass afterward and undo this.
+--
+-- Chapter boundaries are detected from the `quarto-file-metadata` HTML
+-- comment Quarto inserts as a RawBlock at the start of every source
+-- file's content when it merges the book into one document for PDF
+-- rendering (one marker per qmd file, e.g.
+-- `<!-- quarto-file-metadata: <base64 JSON with bookItemFile> -->`).
+-- This filter used to split on each chapter's top-level `# Title` Header
+-- (level == 1) instead, which was reliable in older Quarto versions.
+-- The current Quarto (checked with 1.8.26) no longer represents a
+-- chapter's title as a level-1 Header by the time `post-quarto` filters
+-- run for a book's PDF/LaTeX target — every Header left in the merged
+-- document sits at level 2 or deeper (chapter titles become raw LaTeX
+-- `\chapter{}`-equivalent content instead), so the level==1 check never
+-- matched anything, `split_into_chapters` silently returned the entire
+-- 1000+-block book as a single "chapter", and the one resulting
+-- citeproc() call filled every chapter's renamed `refs` div with the
+-- complete, book-wide bibliography (240 citations / 211 unique entries
+-- for this book) instead of that chapter's own. HTML output was
+-- unaffected because Quarto's HTML book renderer runs pandoc separately
+-- per chapter file, so this filter's `Pandoc(doc)` only ever saw one
+-- chapter's own blocks there regardless of this bug. If a future Quarto
+-- version changes how file boundaries are marked in the merged PDF
+-- document, re-diagnose by dumping block types/content right after this
+-- filter's `Pandoc(doc)` entry point (as was done to find this) rather
+-- than assuming the fix above still matches.
 --
 -- Must run `at: post-quarto` (see _quarto.yml): `@fig-x`/`@tbl-x`/
 -- `@eq-x`/`@sec-x` crossref labels parse as ordinary Cite nodes until
@@ -24,7 +49,10 @@
 -- each one (harmless — the crossref itself still resolves correctly
 -- afterward — but it drowns out real warnings in the render log).
 -- Running after Quarto's own filters means only genuine `[@citekey]`
--- citations are still Cite nodes by the time this runs.
+-- citations are still Cite nodes by the time this runs. The
+-- quarto-file-metadata markers used for chapter splitting survive this
+-- ordering unchanged either way, since Quarto inserts them before any
+-- filters run.
 --
 -- Each chapter's qmd file marks where its bibliography goes with
 -- `::: {#chapter-bibliography} :::` rather than pandoc's usual
@@ -41,11 +69,16 @@
 -- recognizes that exact id) just before calling citeproc, so citeproc
 -- still finds and fills it.
 
+local function is_file_boundary(b)
+  return b.t == "RawBlock" and b.format == "html"
+    and b.text:match("^<!%-%- quarto%-file%-metadata:")
+end
+
 local function split_into_chapters(blocks)
   local chapters = {}
   local current = {}
   for _, b in ipairs(blocks) do
-    if b.t == "Header" and b.level == 1 and #current > 0 then
+    if is_file_boundary(b) and #current > 0 then
       table.insert(chapters, current)
       current = {}
     end
