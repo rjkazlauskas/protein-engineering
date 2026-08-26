@@ -240,6 +240,19 @@ the reasoning):
 - **`table-header-scope.lua`** and **`symbol-footnotes.lua`** (HTML-only)
   need no per-chapter action — they apply automatically to every table and
   footnote in the book.
+- **In-text links (citations, crossrefs, URLs) have no underline by
+  default, only on hover/keyboard focus** (`#quarto-document-content a`
+  rule in `custom.scss`). This was a deliberate accessibility-aware
+  decision, not just a style preference: the underline was previously just
+  the unstyled Bootstrap/browser default, and removing it outright would
+  leave links distinguished by color alone (colorblind readers may not
+  perceive the blue), unless the color contrast is high enough and there's
+  still *some* non-color cue on interaction — WCAG's technique G183 for
+  satisfying SC 1.4.1 "Use of Color". The link blue (`$link-color:
+  #2a7ae2`) has ~4.5:1 contrast against body text (`#111111`), above
+  G183's 3:1 threshold, so the hover/focus underline is what keeps this
+  compliant. If you ever change `$link-color` or `$body-color`, recheck
+  that contrast ratio holds before considering the underline optional.
 
 ### Verifying before calling it done
 
@@ -751,10 +764,25 @@ being made accessible (see the scope decision above).
   before Problems in the qmd, and restructured the source `.md` the same
   way (real heading, no HTML comment) rather than just deleting the
   comment markers, so the source stays the reference copy for future syncs.
-  **Not yet resolved**: the script itself (which calculates E from a known
-  conversion and product ee) doesn't match what the surrounding prose
-  describes needing ("solving iteratively... yields c = 0.295," the
-  reverse calculation) — see "Two things that need your input" below.
+  The originally shipped script (which calculates E from a known conversion
+  and product ee) didn't match what the surrounding prose describes
+  needing — "solving iteratively... yields c = 0.295" is the reverse
+  calculation (c from E and a target ee). You asked for a script that
+  actually does that; wrote one (bisection on `E = ln(1-c(1+ee_p)) /
+  ln(1-c(1-ee_p))`, since it can't be rearranged to solve for c directly),
+  verified it reproduces both worked examples in the text (c = 0.295 for
+  E=35/92% ee; correctly reports E=35/95% ee as unreachable), and replaced
+  the old script with it as the sole `Code Block S8.1` in both files —
+  the old E-from-c-and-eep script is gone; that's a different, no-longer
+  needed calculation, not an error correction. Also rewrote the script
+  itself: the original used interactive `input()` prompts while the prose
+  described "calling" it with arguments, which don't match (you can't just
+  call a function with arguments when it's about to block on `input()`) —
+  you flagged this as confusing. Fixed by dropping the prompts in favor of
+  a plain function plus a hardcoded example call at the bottom (matching
+  chapter 9's script convention), and added a sentence explaining exactly
+  how to run it and what "calling `c_from_E_eep(35, 92)`" means in that
+  context.
 - Found and fixed **the book-wide PDF bibliography-scoping bug** described
   under "Known book-wide fixes" above (`chapter-refs.lua`'s chapter
   boundary detection no longer matched anything in the current Quarto).
@@ -869,35 +897,3 @@ TeX Live install and should already have all three, so this is unlikely
 to affect the GitHub Actions build, but flagging it in case you hit a
 "file not found" error for any of them when building locally.
 
-**3. Chapter 8's Supporting Information script doesn't match the prose
-around it.** The body text (in the section on iteratively solving for
-conversion given a target enantiomeric excess) says a script "in the
-supporting information" solves *iteratively for c* given E and $ee_p$,
-citing the result $c = 0.295$. The actual `Code Block S8.1` script
-(`E_from_eep.py`) calculates the reverse: E from a known conversion and
-$ee_p$. Not something to guess-fix — either the prose needs to describe
-what the script actually does, or a different (iterative) script needs to
-replace it.
-
-**4. Note for a future revision: in-text link underlining.** You asked
-whether the underline on blue in-text links is an accessibility feature.
-It isn't a deliberate one — there's no CSS rule anywhere in this project
-that sets `text-decoration: underline` on body/in-text links; the only
-explicit `text-decoration` rules in `custom.scss` are scoped to the site
-header nav bar. The underline you're seeing on citation/URL links is
-purely the unmodified Bootstrap/browser default for `<a>` elements.
-
-That said, it isn't free to remove either. The link blue (`$link-color:
-#2a7ae2`) has a contrast ratio of roughly 4.5:1 against the body text
-color (`#111111`) — above the 3:1 threshold that WCAG's technique G183
-uses to justify distinguishing links by color alone instead of an
-underline, which is the relevant consideration here (SC 1.4.1, "Use of
-Color": links inside a paragraph of differently-colored text need *some*
-non-color cue, since colorblind readers may not perceive the blue at all).
-But G183 also requires an *additional* visual change on hover/keyboard
-focus, and no such rule exists for in-text links today (only the header
-nav has an explicit `:hover` style). So: if you remove the underline in a
-future revision, add a hover/focus indicator for in-text links at the same
-time (e.g. underline-on-hover) to keep the "more than color alone"
-guarantee intact — don't just delete the default and leave links as
-color-only.

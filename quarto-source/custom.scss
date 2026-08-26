@@ -64,6 +64,25 @@ body {
   margin-top: -0.8em;
 }
 
+// In-text links (citations, crossrefs, URLs) get no underline by default,
+// but gain one on hover/keyboard focus. The link blue ($link-color) has
+// ~4.5:1 contrast against body text ($body-color), above the 3:1 WCAG
+// technique G183 uses to justify distinguishing links by color alone
+// instead of a permanent underline -- but G183 also requires an
+// additional visual change on hover/focus, which is what this adds.
+// Scoped to #quarto-document-content so it only touches chapter body
+// content (citations, crossrefs, footnotes, references, glossary, table
+// cells) and not the site header nav, which already has its own
+// underline-on-hover rule above.
+#quarto-document-content a {
+  text-decoration: none;
+}
+
+#quarto-document-content a:hover,
+#quarto-document-content a:focus {
+  text-decoration: underline;
+}
+
 // Bold in-text "Figure X.X"/"Table X.X" cross-reference links (e.g. "see
 // Figure 9.1"). Quarto renders every crossref -- figure, table, equation,
 // section -- as `<a class="quarto-xref">`, with no other class or attribute

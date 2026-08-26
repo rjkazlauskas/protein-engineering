@@ -144,7 +144,7 @@ However, if you already know the enantioselectivity and would like to calculate 
 
 $$35 =\frac{\ln[1-c(1.92)]}{\ln[1-c(0.08)]} $$ {#eq-req_iterate}
 
-Solving this equation iteratively using a Python script in the supporting information yields _c_ = 0.295. (Less elegantly, one can also try different values of $c$ with $ee_p = 92\%$ in the web tool cited above until the calculated enantioselectivity matches 35.) If you try to solve @eq-req_iterate for _c_ when $ee_p$ is a higher value of 95\% ee, you get a negative value for _c_ indicating that is it impossible. An enantioselectivity of 35 is too low to ever yield product with 95% ee.
+Solving this equation iteratively using the Python script in the supporting information (Code Block S8.1) yields _c_ = 0.295. (Less elegantly, one can also try different values of $c$ with $ee_p = 92\%$ in the web tool cited above until the calculated enantioselectivity matches 35.) If you try to solve @eq-req_iterate for _c_ when $ee_p$ is a higher value of 95\% ee, you get a negative value for _c_ indicating that is it impossible. An enantioselectivity of 35 is too low to ever yield product with 95% ee.
 
 Equation @eq-E_eep and the discussion above apply to effectively irreversible reactions like the ester hydrolysis examples given. If the resolution reaction is reversible, it will be less efficient and follow another equation[@chenQuantitativeAnalysesBiochemical1987] that takes reversibility and the equilibrium constant into account. An example of such a reversible reaction is the hydrolase-catalyzed ester formation from an acid and alcohol in organic solvents. 
 
@@ -367,35 +367,63 @@ Stereoselectivity
 
 ## Supporting Information {-}
 
-**Code Block S8.1.** Python script to calculate the enantioselectivity of a reaction using @eq-E_eep.
+**Code Block S8.1.** Python script to calculate the conversion, _c_, needed to reach a target enantiomeric excess of product, $ee_p$, for a known enantioselectivity, _E_ (@eq-req_iterate). This equation cannot be rearranged to solve for _c_ directly, so the script finds it by bisection. To run it, save the code below as `c_from_E_eep.py` and run `python3 c_from_E_eep.py` in a terminal — as written, this executes the "example" line at the bottom, `c_from_E_eep(35, 92)`, which calls the function with E = 35 and a target $ee_p$ of 92% and prints the result shown below. To try different numbers, edit that line and re-run the script.
 
 ```python
 #! /usr/bin/env python
 # coding: utf-8
-# copy and save as E_from_eep.py
-# also run the command below in terminal
-# sudo chmod +x E_from_eep.py
 """
-This script calculates the enantioselctivity, E, of a
-kinetic resolution from the measured values of percent
-conversion and enantiomeric excess of the product in percent.
+This script calculates the conversion, c, needed to reach a target
+enantiomeric excess of product, ee_p, for a kinetic resolution with a
+known enantioselectivity, E. The equation
+
+    E = ln(1 - c(1+ee_p)) / ln(1 - c(1-ee_p))
+
+cannot be rearranged to solve for c directly, so this script finds c
+by bisection: repeatedly halving a search interval known to contain
+the answer.
 """
 import math  # load math functions needed to calculate logarithms
 
-# enter values for percent conversion and enantiomeric excess of the product
-percentconv = int(input("Enter the conversion in % (example = 25): "))
-percenteep = int(input("Enter the ee of the product in % (example = 90): "))
+def ratio(c, eep):
+  # E as a function of c, for a fixed target eep
+  return math.log(1-c*(1+eep))/math.log(1-c*(1-eep))
 
-# calculate enantioselectivity and round to one digit after decimal
-def ecalc(percentconv,percenteep):
-  conv = percentconv/100.0 # convert percent to a fraction between 0 & 1
-  eep = percenteep/100.0
-  E = round((math.log(1-conv*(1+eep)))/(math.log(1-conv*(1-eep))),1)
-  # math.log(x) calculates the natural logarithm of x
-  return E
- # display result
-print('If the enantiomeric excess of the product is',percenteep,'\b% ee at', percentconv,'\b% conversion, then the enantioselectivity is', ecalc(percentconv,percenteep),'\b.')
+def c_from_E_eep(E, percenteep, tol=1e-6):
+  eep = percenteep/100.0  # convert percent to a fraction between 0 & 1
+
+  # As c -> 0, the ratio approaches its smallest possible value,
+  # (1+eep)/(1-eep). E below this means no conversion ever reaches
+  # eep -- there is nothing to bisect for.
+  min_E = (1+eep)/(1-eep)
+  if E < min_E:
+    print('An enantioselectivity of',E,'is too low to ever reach',
+          percenteep,'\b% ee (the highest reachable ee needs E of at least',
+          round(min_E,1),'\b).')
+    return None
+
+  # ratio(c, eep) rises from min_E (near c = 0) to infinity (as c
+  # approaches the conversion where 1 - c(1+eep) reaches zero), so
+  # bisecting this interval for ratio(c, eep) = E is safe.
+  lo, hi = tol, 1/(1+eep)-tol
+  while hi-lo > tol:
+    mid = (lo+hi)/2
+    if ratio(mid,eep) < E:
+      lo = mid
+    else:
+      hi = mid
+  c = (lo+hi)/2
+
+  print('To reach',percenteep,'\b% ee with an enantioselectivity of',E,
+        '\b, stop the reaction at c =',round(c,3),
+        '('+format(100*c,'.1f')+'\b% conversion).')
+  return c
+
+# example: change these two numbers to try a different case
+c_from_E_eep(35, 92)
 ```
+
+Running the script as shown prints: "To reach 92% ee with an enantioselectivity of 35, stop the reaction at c = 0.295 (29.5% conversion)." Changing the example line to `c_from_E_eep(35, 95)` and re-running instead prints: "An enantioselectivity of 35 is too low to ever reach 95% ee (the highest reachable ee needs E of at least 39.0)."
 
 ## Problems {-}
 1\. Draw an achiral molecule and identify its plane of symmetry. Draw two regioisomers that can result from the electrophilic aromatic substitution of toluene with chlorine. Draw a pair of achiral diastereomers and a pair of chiral diastereomers. 
