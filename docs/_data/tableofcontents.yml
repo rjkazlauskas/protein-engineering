@@ -25,11 +25,14 @@ docs:
 - title: 7. In revision
   url: /book/chapter7.html
 
-- title: 8. In revision
+- title: 8. Engineering Enzyme Selectivity
   url: /book/chapter8.html
 
 - title: 9. Introduction to Directed Evolution
   url: /book/chapter9.html
+
+- title: 10. In revision
+  url: /book/chapter10.html
 
 - title: Download the full book (PDF)
   url: /book/Protein-Engineering.pdf
