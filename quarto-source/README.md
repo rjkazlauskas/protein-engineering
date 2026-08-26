@@ -1,8 +1,8 @@
 # Protein Engineering textbook — Quarto book project
 
 This is a working Quarto book project converted from your Markdown/LaTeX
-source. It builds successfully to both HTML and PDF. Chapters 1–6 and 9 are
-converted; 7 and 8 are "In revision" placeholders holding their chapter
+source. It builds successfully to both HTML and PDF. Chapters 1–6, 8, and 9
+are converted; 7 and 10 are "In revision" placeholders holding their chapter
 numbers until you're ready to convert them.
 
 **If you're picking this project back up to add or edit a chapter, read the
@@ -17,7 +17,7 @@ next section before doing anything else.**
 - Every in-text "Figure X.X" / "Table X.X" mention must render bold in both HTML and PDF, for every chapter (see `bold-figtbl-xref.lua` / `bold-caption-labels.html` / the CSS rule under "Known book-wide fixes").
 - **The copyright line must be copied verbatim from the source markdown — word for word, never composed, paraphrased, or assumed from memory or from what an earlier session's copy said.** The wording after "All rights reserved." varies (some chapters say "Last revised: <Month Year>", chapter 9's has said both "Last revised: March 2026." and, after the source was edited later, "Last updated July 2026." — these are genuinely different strings, not equivalent phrasings) and it changes over time as the author edits the source. Whatever the *current* source file literally says is what belongs in the qmd and in the rendered output, in both HTML and PDF — nothing more, nothing less, nothing reworded. This has actually broken once already: chapter 9's qmd went stale after the source was updated post-conversion and the copyright line wasn't re-synced. Every session that touches a chapter — not just new conversions — must re-check this line against the current source with:
   ```bash
-  for n in 1 2 3 4 5 6 9; do
+  for n in 1 2 3 4 5 6 8 9; do
     diff <(grep -m1 '^©' ../../../Prot_Eng_${n}_*/*.md) <(grep -m1 '^©' chapter${n}.qmd) && echo "chapter $n: OK"
   done
   ```
@@ -70,14 +70,15 @@ not touching its own build.
    be caught and fixed after the fact by diffing against source.
 3. **Check which chapter number the new content actually is.** The
    `chapters:` list in `_quarto.yml` currently runs
-   `index, 1, 2, 3, 4, 5, 6, 7, 8, 9`, with 7 and 8 as `# In revision`
-   placeholders. A placeholder still *consumes* its chapter number in
-   Quarto's book numbering (it is **not** marked `{.unnumbered}`) —
-   replacing `chapter7.qmd`'s placeholder text in place keeps it as chapter
-   7; inserting a *new* chapterN.qmd file changes the count and shifts every
-   later chapter's number. Decide up front whether you're replacing a
-   placeholder or appending a new chapter at the end, and update
-   `_quarto.yml`'s `chapters:` list accordingly.
+   `index, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10`, with 7 and 10 as `# In revision`
+   placeholders (10 was added as a trailing placeholder for
+   `Prot_Eng_10_Mult_Subs` — see "Conversion history"). A placeholder still
+   *consumes* its chapter number in Quarto's book numbering (it is **not**
+   marked `{.unnumbered}`) — replacing `chapter7.qmd`'s placeholder text in
+   place keeps it as chapter 7; inserting a *new* chapterN.qmd file changes
+   the count and shifts every later chapter's number. Decide up front
+   whether you're replacing a placeholder or appending a new chapter at the
+   end, and update `_quarto.yml`'s `chapters:` list accordingly.
 
 ### Converting the markdown
 
@@ -207,6 +208,35 @@ the reasoning):
   `::: {#refs}`. Using `#refs` will silently merge the new chapter's
   citations into the book-wide bibliography and hide them from their own
   chapter page.
+- **`chapter-refs.lua`'s chapter-boundary detection is tied to internal
+  Quarto behavior that has already changed once and can change again.**
+  During the chapter 8 session, a book-wide PDF-only bug surfaced: every
+  chapter's PDF reference list contained the *entire* book's bibliography
+  (240 citations / 211 unique entries) instead of just its own — HTML was
+  unaffected. Root cause: the filter split the merged book document into
+  chapters by looking for a `Header` block at `level == 1` (each chapter's
+  `# Title`), but the installed Quarto (1.8.26) no longer represents a
+  chapter's title that way by the time `post-quarto` filters run for a
+  book's PDF/LaTeX target — the title becomes raw LaTeX `\chapter{}`
+  content instead, and *every* other Header in the merged document sits at
+  level 2 or deeper. So the level-1 check never matched, the whole
+  1000+-block book collapsed into a single "chapter," and one
+  `pandoc.utils.citeproc()` call filled every chapter's `refs` div with the
+  same complete bibliography. (HTML was fine because Quarto's HTML book
+  renderer invokes pandoc separately per chapter file, so this filter only
+  ever saw one chapter's own blocks there regardless.) Fixed by splitting
+  on the `<!-- quarto-file-metadata: <base64 JSON> -->` `RawBlock` Quarto
+  actually inserts at each source file's boundary when merging a book for
+  PDF — found by dumping block types/content right at the filter's
+  `Pandoc(doc)` entry point (add temporary `io.stderr:write` calls, render
+  `--to pdf`, read the log) rather than guessing. **If this ever regresses
+  again** (a chapter's PDF reference list containing citations you know it
+  doesn't cite — check by picking one of that chapter's own citation keys
+  and confirming it doesn't appear on any other chapter's page, e.g. via
+  `pdftotext -layout _book/Protein-Engineering.pdf - | grep -c
+  "<distinctive citation text>"`, which should be 1), re-diagnose the same
+  way rather than assuming the current fix still matches — don't just
+  revert to the old level-1 Header check.
 - **`table-header-scope.lua`** and **`symbol-footnotes.lua`** (HTML-only)
   need no per-chapter action — they apply automatically to every table and
   footnote in the book.
@@ -272,8 +302,11 @@ the reasoning):
 _quarto.yml                    Book configuration (chapters, HTML+PDF format)
 index.qmd                      Book landing page / preface
 chapter1.qmd .. chapter6.qmd    Converted chapters (see Conversion history below)
-chapter7.qmd, chapter8.qmd      "In revision" placeholders (hold chapter numbers 7, 8)
+chapter7.qmd                    "In revision" placeholder (holds chapter number 7)
+chapter8.qmd                    Converted from 8_Engineering_selectivity.md
 chapter9.qmd                    Converted from 9_Intro_Dir_Evol.md
+chapter10.qmd                   "In revision" placeholder (holds chapter number 10,
+                                 for Prot_Eng_10_Mult_Subs)
 chapter-refs.lua                Pandoc filter: per-chapter citation numbering and bibliography
 symbol-footnotes.lua            Pandoc filter (HTML only): footnote markers as symbols (*, †, ‡...)
 table-header-scope.lua          Pandoc filter (HTML only): adds scope="col" to every table header cell
@@ -668,6 +701,79 @@ meta).
 The PDF was not checked for these same issues — only the HTML build is
 being made accessible (see the scope decision above).
 
+### Chapter 8 (this session)
+
+- Converted `8_Engineering_selectivity.md` to `chapter8.qmd` in place of its
+  "In revision" placeholder, following the syntax table above; verified
+  against source with the normalized-diff method in "Verifying before
+  calling it done" — every remaining diff line was one of the intended
+  transformations (crossref syntax, figure paths/fig-alt, references div
+  rename, the Answers-section wrapper conversion), no prose changes.
+- Converted all 21 figures (16 EPS, 5 already-PDF) to matching `.svg`+`.pdf`
+  pairs in `figures/chapter8/` via the epstool → Ghostscript → Inkscape
+  pipeline, and wrote `fig-alt` text for each from actually looking at the
+  rendered image (none of chapter 8's source figures had any alt text at
+  all, unlike chapters 1–6/9's `short-alt`/leftover-none cases).
+- **`kazrule.pdf` had the same oversized-MediaBox bug documented above for
+  chapters 1/2/4/5** (full US-Letter 612×792 MediaBox, actual content in a
+  349×205pt CropBox) — cropped with `pdfcrop --margins 0`, regenerated its
+  SVG. This is the only figure among chapter 8's five already-PDF figures
+  with the problem; the other four (`sitagliptin_synthesis`,
+  `perfect_resolution`, `imperfect_kinetic_resolution`, `crl_pockets`)
+  already had tight MediaBoxes.
+- **Fixed a pre-existing math-escaping bug**: `$>$95\%` (twice, in Problem
+  4c) trips the same pandoc dollar-heuristic documented for chapter 6's
+  `$\approx$100-fold` bug above — a closing `$` immediately followed by a
+  digit isn't recognized as math, leaving literal `$` characters in the
+  rendered PDF text. Fixed the same way, with a space (`$>$ 95\%`); meaning
+  unchanged. Fixed in both the qmd and the source `.md` so they don't
+  diverge on the next sync.
+- **Copyright line needed a judgment call, not a mechanical copy.** The
+  source's copyright line was `© \the\year{} Romas Kazlauskas revised
+  August 2026` — a LaTeX auto-year macro, not literal text, and it didn't
+  match the `© YYYY-2026 ... All rights reserved. Last revised: <Month
+  Year>.` pattern every other chapter uses. Per the "copy verbatim, never
+  compose" rule above, this was flagged to you rather than silently
+  resolved; you chose to match the established pattern. Resolved to
+  `© 2023-2026 Romas Kazlauskas. All rights reserved. Last revised: August
+  2026.` in the qmd, and — at your later request — the source `.md` was
+  updated to read the same way so future sessions' verbatim-diff check
+  doesn't flag a permanent, expected mismatch.
+- **The chapter's Supporting Information script went through two rounds of
+  direction.** The source had `**Code Block S8.1**` (an enantioselectivity
+  Python script) sitting inside an HTML comment after the Answers section —
+  no visible Supporting Information heading at all — even though the body
+  text explicitly says "a Python script in the supporting information."
+  First told to leave it hidden (so it was dropped entirely from the qmd);
+  you then changed your mind and asked for it to be un-hidden. Un-hid it in
+  *both* files: added a real `## Supporting Information {-}` section (with
+  `**Code Block S8.1.**`, matching chapter 9's punctuation convention)
+  before Problems in the qmd, and restructured the source `.md` the same
+  way (real heading, no HTML comment) rather than just deleting the
+  comment markers, so the source stays the reference copy for future syncs.
+  **Not yet resolved**: the script itself (which calculates E from a known
+  conversion and product ee) doesn't match what the surrounding prose
+  describes needing ("solving iteratively... yields c = 0.295," the
+  reverse calculation) — see "Two things that need your input" below.
+- Found and fixed **the book-wide PDF bibliography-scoping bug** described
+  under "Known book-wide fixes" above (`chapter-refs.lua`'s chapter
+  boundary detection no longer matched anything in the current Quarto).
+  Not something introduced this session — it would have affected every
+  chapter's PDF reference list — but only surfaced now because this was
+  the first time a `Supporting Information` heading was added right after
+  a `References` div and the resulting page was actually inspected
+  closely. Verified fixed book-wide: every chapter's PDF reference count
+  now matches its HTML count exactly, and total PDF page count dropped
+  from ~617 to 415.
+- Also caught, per the "every session" re-check rule: **chapter 4's
+  copyright line had gone stale** (source said "Last revised: August
+  2026," qmd still said "March 2026"). Fixed to match. Not related to
+  chapter 8 itself — a reminder that the re-check step catches real drift
+  even in chapters nobody's actively touching.
+- Added `chapter10.qmd` as a new trailing "In revision" placeholder
+  (appending, not replacing — there was no existing placeholder for it)
+  so `Prot_Eng_10_Mult_Subs` has its chapter number reserved.
+
 ### Chapter 9 (this session)
 
 - Converted `9_Intro_Dir_Evol.md` to `chapter9.qmd` following the syntax
@@ -745,7 +851,7 @@ being made accessible (see the scope decision above).
     Needs correcting in the Zotero item itself; any fix to the local copy
     here would be overwritten on the next bib sync.
 
-## Two things that need your input
+## Things that need your input
 
 **1. Two broken reference links in chapter 5.** In the "consensus
 sequence" section, `\href{}{Consensus Finder}` and `\href{}{FireProt}`
@@ -762,3 +868,36 @@ for the background shading). GitHub's build servers normally use a full
 TeX Live install and should already have all three, so this is unlikely
 to affect the GitHub Actions build, but flagging it in case you hit a
 "file not found" error for any of them when building locally.
+
+**3. Chapter 8's Supporting Information script doesn't match the prose
+around it.** The body text (in the section on iteratively solving for
+conversion given a target enantiomeric excess) says a script "in the
+supporting information" solves *iteratively for c* given E and $ee_p$,
+citing the result $c = 0.295$. The actual `Code Block S8.1` script
+(`E_from_eep.py`) calculates the reverse: E from a known conversion and
+$ee_p$. Not something to guess-fix — either the prose needs to describe
+what the script actually does, or a different (iterative) script needs to
+replace it.
+
+**4. Note for a future revision: in-text link underlining.** You asked
+whether the underline on blue in-text links is an accessibility feature.
+It isn't a deliberate one — there's no CSS rule anywhere in this project
+that sets `text-decoration: underline` on body/in-text links; the only
+explicit `text-decoration` rules in `custom.scss` are scoped to the site
+header nav bar. The underline you're seeing on citation/URL links is
+purely the unmodified Bootstrap/browser default for `<a>` elements.
+
+That said, it isn't free to remove either. The link blue (`$link-color:
+#2a7ae2`) has a contrast ratio of roughly 4.5:1 against the body text
+color (`#111111`) — above the 3:1 threshold that WCAG's technique G183
+uses to justify distinguishing links by color alone instead of an
+underline, which is the relevant consideration here (SC 1.4.1, "Use of
+Color": links inside a paragraph of differently-colored text need *some*
+non-color cue, since colorblind readers may not perceive the blue at all).
+But G183 also requires an *additional* visual change on hover/keyboard
+focus, and no such rule exists for in-text links today (only the header
+nav has an explicit `:hover` style). So: if you remove the underline in a
+future revision, add a hover/focus indicator for in-text links at the same
+time (e.g. underline-on-hover) to keep the "more than color alone"
+guarantee intact — don't just delete the default and leave links as
+color-only.
