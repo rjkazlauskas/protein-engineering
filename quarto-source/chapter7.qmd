@@ -598,11 +598,19 @@ Submit this file to the site <https://server.poissonboltzmann.org/pdb2pqr>. Regi
 
 If you run into difficulty with the website, you may use the data below to answer the questions.
 
+```{=latex}
+\begingroup\tiny
+```
+
 ```
                             DESOLVATION  EFFECTS       SIDECHAIN          BACKBONE        COULOMBIC
  RESIDUE    pKa    BURIED     REGULAR      RE        HYDROGEN BOND     HYDROGEN BOND      INTERACTION
 HIS 251 A   5.96   100 %   -3.59  638   0.00    0    1.60 ASP 222 A    0.00 XXX   0 X   -0.58 HIS 218 A
 HIS 251 A                                            0.00 XXX   0 X    0.00 XXX   0 X    2.03 ASP 222 A
+```
+
+```{=latex}
+\endgroup
 ```
 
 ## Answers {-}
