@@ -1,9 +1,9 @@
 # Protein Engineering textbook — Quarto book project
 
 This is a working Quarto book project converted from your Markdown/LaTeX
-source. It builds successfully to both HTML and PDF. Chapters 1–6, 8, and 9
-are converted; 7 and 10 are "In revision" placeholders holding their chapter
-numbers until you're ready to convert them.
+source. It builds successfully to both HTML and PDF. Chapters 1–9 are
+converted; 10 is an "In revision" placeholder holding its chapter number
+until you're ready to convert it.
 
 **If you're picking this project back up to add or edit a chapter, read the
 next section before doing anything else.**
@@ -17,7 +17,7 @@ next section before doing anything else.**
 - Every in-text "Figure X.X" / "Table X.X" mention must render bold in both HTML and PDF, for every chapter (see `bold-figtbl-xref.lua` / `bold-caption-labels.html` / the CSS rule under "Known book-wide fixes").
 - **The copyright line must be copied verbatim from the source markdown — word for word, never composed, paraphrased, or assumed from memory or from what an earlier session's copy said.** The wording after "All rights reserved." varies (some chapters say "Last revised: <Month Year>", chapter 9's has said both "Last revised: March 2026." and, after the source was edited later, "Last updated July 2026." — these are genuinely different strings, not equivalent phrasings) and it changes over time as the author edits the source. Whatever the *current* source file literally says is what belongs in the qmd and in the rendered output, in both HTML and PDF — nothing more, nothing less, nothing reworded. This has actually broken once already: chapter 9's qmd went stale after the source was updated post-conversion and the copyright line wasn't re-synced. Every session that touches a chapter — not just new conversions — must re-check this line against the current source with:
   ```bash
-  for n in 1 2 3 4 5 6 8 9; do
+  for n in 1 2 3 4 5 6 7 8 9; do
     diff <(grep -m1 '^©' ../../../Prot_Eng_${n}_*/*.md) <(grep -m1 '^©' chapter${n}.qmd) && echo "chapter $n: OK"
   done
   ```
@@ -879,6 +879,78 @@ being made accessible (see the scope decision above).
     Needs correcting in the Zotero item itself; any fix to the local copy
     here would be overwritten on the next bib sync.
 
+### Chapter 7 (this session)
+
+- Converted `7_engineering_faster_enzymes.md` to `chapter7.qmd` in place of
+  its "In revision" placeholder, following the syntax table above; verified
+  against source with the normalized-diff method in "Verifying before
+  calling it done" — every remaining diff line was an intended
+  transformation (crossref syntax, figure paths/fig-alt, stripped redundant
+  "Fig"/"Table" words, box/equation/footnote conversions below), no prose
+  dropped or altered.
+- Converted all 30 figures (all EPS) to matching `.svg`+`.pdf` pairs in
+  `figures/chapter7/` via the epstool → Ghostscript → Inkscape pipeline, and
+  wrote `fig-alt` text for each by reading the SVG's own text labels
+  alongside its caption (the captions in this chapter are already unusually
+  detailed, but alt text still needed to be a distinct, concise description
+  of the visual structure rather than a re-paste of the caption).
+  **`mm_plot.eps` on disk was actually named `MM_plot.eps`** (case
+  mismatch against the source markdown's lowercase `figures/mm_plot.eps`
+  reference) — harmless on the case-insensitive standalone-build Mac
+  filesystem, but would 404 on GitHub Pages' case-sensitive hosting, so the
+  converted `.svg`/`.pdf` pair was named lowercase to match what the qmd
+  actually references.
+- **Two `\begin{tcolorbox}` asides (Box 7.1, Box 7.2) converted to Quarto
+  `::: {.callout-note}` blocks** — the first callouts used anywhere in this
+  project. This needed `fontawesome5.sty` installed via `sudo tlmgr install
+  fontawesome5` (flagged to the user, who ran it) before the PDF callout
+  environment would render at all; confirmed with a standalone test qmd
+  before touching the real chapter. Box 7.1's raw-LaTeX title itself had a
+  pre-existing brace bug in the *standalone* source (`title={...}` closed
+  one word too early, leaving "in a Gibbs Energy Diagram" outside the title
+  argument) — fixed in the standalone `.md` earlier in the same session,
+  so the qmd conversion started from the corrected title text.
+- **Copyright line needed a judgment call, not a mechanical copy** — the
+  same situation chapter 8 hit: the source's `© \the\year{} Romas
+  Kazlauskas` is a LaTeX auto-year macro with no "All rights reserved"/
+  "Last revised" text, not literal text, and doesn't match every other
+  chapter's pattern. Flagged to the user rather than silently resolved;
+  they chose to match the established pattern. Resolved to `© 2023-2026
+  Romas Kazlauskas. All rights reserved. Last revised: August 2026.` in the
+  qmd. (Unlike chapter 8, the source `.md` was left as-is — updating it
+  wasn't requested this session, so the verbatim-diff check in "Hard
+  requirements" will keep flagging chapter 7 as a mismatch until someone
+  either updates the source or is told to ignore it.)
+- Renamed the chapter's `[^fn2]` footnote to `[^fn7-1]` — it collided with
+  chapter 6's existing `[^fn2]` (bare `fn`+number labels aren't
+  chapter-scoped; see "Known book-wide fixes" above). The other three
+  footnote labels (`quasi-eq`, `nonlinear`, `PROPKA_note`) were already
+  descriptive/unique, no collision, left as-is.
+- Converted the two `\begin{equation}\label{}\begin{split}...\end{split}
+  \end{equation}` raw-LaTeX multi-line equations to `$$\begin{split}...
+  \end{split}$$ {#eq-name}`, matching chapter 6's convention for the same
+  construct; converted `\begin{lstlisting}`/`\lstset` code blocks to plain
+  fenced code blocks, `\textsc{l}`/`\textsc{d}` to `[l]{.smallcaps}`/
+  `[d]{.smallcaps}` (matching chapters 1/3/9's convention over chapters
+  5/8's leftover raw-LaTeX version), `\url{}` to bare `<url>`, and the
+  `\rotatebox{180}{\begin{minipage}...}` answer-hiding trick to the
+  standard `details`/`\color{gray}` wrapper every other chapter uses.
+  Dropped the standalone build's `\setcounter{figure}`/`\renewcommand{
+  \theequation}` page-and-figure-renumbering hacks entirely (Quarto
+  numbers per chapter automatically; no equivalent chapter carries these
+  over) and dropped a large HTML-commented block of superseded draft
+  problems/answers at the end of the source (same as chapter 6's
+  conversion did with its own commented-out scratch content).
+- Verified citation scoping (a chapter-7-only citation appears exactly
+  once in the whole merged PDF, only on chapter 7's own pages) and checked
+  for stray literal `$` in both chapter 7's HTML and its span of the PDF
+  text — the only 4 hits are legitimate matplotlib axis-label strings
+  (`'1/[S], $mM^{-1}$'`) inside a Python code block, not math-escaping
+  errors.
+- Updated `docs/_data/tableofcontents.yml`'s chapter 7 entry from "In
+  revision" to "Engineering Faster Enzymes" (no chapter added/removed, so
+  `_quarto.yml`'s `chapters:` list didn't need touching).
+
 ## Things that need your input
 
 **1. Two broken reference links in chapter 5.** In the "consensus
@@ -896,4 +968,15 @@ for the background shading). GitHub's build servers normally use a full
 TeX Live install and should already have all three, so this is unlikely
 to affect the GitHub Actions build, but flagging it in case you hit a
 "file not found" error for any of them when building locally.
+
+**3. Chapter 7's source `.md` copyright line was not updated to match
+the qmd.** The source has `© \the\year{} Romas Kazlauskas` (a LaTeX macro,
+not the standard literal pattern); you chose to render the qmd as `©
+2023-2026 Romas Kazlauskas. All rights reserved. Last revised: August
+2026.` but the source itself was left as-is (unlike chapter 8's equivalent
+situation, where the source was also updated at your request). This means
+the copyright verbatim-diff check in "Hard requirements" will keep
+flagging chapter 7 as a mismatch every session — that's expected, not a
+new bug, until you either update the source `.md` to match or say to
+leave it as a permanent known exception.
 
