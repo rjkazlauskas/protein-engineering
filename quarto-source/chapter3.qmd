@@ -1,6 +1,6 @@
 # The Logic of Protein Engineering
 
-© 2023-2026 Romas Kazlauskas. All rights reserved. Last revised: March 2026.
+© 2023-2026 Romas Kazlauskas. All rights reserved. Last revised: September 2026.
 
 **Summary**. Gibbs energy diagrams are the conceptual tool that connects the goals of protein engineering to the changes in amino acid sequence. Gibbs energy diagrams show the states available to a protein, the relative energies of these states and barriers between them. Protein states (macrostates) are different protein forms, for example, folded and unfolded protein states. Protein states differ in their flexibility and in their non-covalent interactions within the protein and between protein, solvent and any ligands. These differences in molecular interactions in different protein states create Gibbs energy differences between them. The Gibbs energy differences between protein states determine the properties of proteins, including those usually targeted for protein engineering: stability, binding, reactivity and selectivity. Protein engineering works by selecting amino acid replacements that alter the relative Gibbs energy of protein states. 
 
@@ -226,8 +226,8 @@ $$\begin{aligned}
  & = -T R\ln \left( \frac{\text{\# of microstates}_{product}}{\text{\# of microstates}_{starting \ material}} \right)
 \end{aligned}$$ {#eq-entropy_contribution}
 
-If the flexible side chain in the product has three rotatable bonds, each of which can adopt three stable conformations, then there are nine possible microstates in the product state. The fixed side chain in the starting material can adopt only one microstate. At 25 °C, 
-$$ \text{entropy contribution to } \Delta G = -298\text{ K} \cdot 1.987\text{ cal/mol·K} \cdot ln(9/1) = -1.3\text{ kcal/mol} $$
+If the flexible side chain in the product has three rotatable bonds, each of which can adopt three stable conformations, then there are twenty-seven possible microstates ($3 \cdot 3 \cdot 3 = 27$) in the product state. The fixed side chain in the starting material can adopt only one microstate. At 25 °C,
+$$ \text{entropy contribution to } \Delta G = -298\text{ K} \cdot 1.987\text{ cal/mol·K} \cdot ln(27/1) = -2.0\text{ kcal/mol} $$
 
 Thus, amino acid substitutions that increase the disorder or flexibility of a state stabilize that state. While protein structures show stabilizing non-covalent interactions like hydrogen bonds, static structures do not show the flexibility of a state. One must remember to consider differences in flexibility in addition to structural differences when estimating Gibbs energy differences between states. 
 
