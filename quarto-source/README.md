@@ -951,6 +951,23 @@ being made accessible (see the scope decision above).
   revision" to "Engineering Faster Enzymes" (no chapter added/removed, so
   `_quarto.yml`'s `chapters:` list didn't need touching).
 
+### Chapter 5 revision (September 2026)
+
+- Re-synced `chapter5.qmd` with the author's revised `5_Stability.md`
+  (text only — no figures changed since the July conversion): copyright
+  line → "Last revised: September 2026."; new ProteinMPNN paragraph after
+  PROSS; rewritten chemical-modification/deamidation paragraphs (new
+  Geiger 1987 citation, 1.4 d half-life, Asp-Gly sentence); K34R sentence
+  added to the semaglutide caption. Reference count 79 → 82.
+- Found by normalized-diffing the source against the qmd (the source
+  folder's own git history is too old to be useful). The author then fixed
+  three source issues flagged in review (two doubled "the the" in captions,
+  a stray period after a citation, one extra "aspartate"), which were
+  synced as well, so the qmd again matches the source except for the
+  standard conversion transformations.
+- Pre-existing, not fixed: a doubled "the the" in `chapter7.qmd` (line
+  ~462) and in the chapter 4 and 11 sources.
+
 ## Things that need your input
 
 **1. Two broken reference links in chapter 5.** In the "consensus
