@@ -965,6 +965,10 @@ being made accessible (see the scope decision above).
   a stray period after a citation, one extra "aspartate"), which were
   synced as well, so the qmd again matches the source except for the
   standard conversion transformations.
+- Second revision the same day: the consensus-sequence section was
+  rewritten (three paragraphs → five), adding a fuller ancestral sequence
+  reconstruction discussion with a new FireProt-ASR citation (Musil 2021).
+  Reference count 82 → 83.
 - Pre-existing, not fixed: a doubled "the the" in `chapter7.qmd` (line
   ~462) and in the chapter 4 and 11 sources.
 
