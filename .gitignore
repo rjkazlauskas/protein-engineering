@@ -5,3 +5,7 @@ _site
 .Rhistory
 
 **/*.quarto_ipynb
+
+# iCloud sync-conflict duplicates ("name 2.svg"); never commit these
+* [0-9].*
+* [0-9]

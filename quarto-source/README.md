@@ -397,6 +397,22 @@ process is entirely manual:
 3. If you added, removed, or retitled a chapter, update
    `../docs/_data/tableofcontents.yml` to match — this file is hand-maintained,
    it does not regenerate from anything.
+3b. **Check for iCloud duplicate files before staging — every time.** This
+   project lives in an iCloud-synced folder, and iCloud sometimes creates
+   conflict copies named `name 2.svg`, `quarto 2.js`, etc. (a space and a
+   number before the extension), especially in `docs/book/` right after the
+   `rm -rf` + `cp -R` above. They have been committed and pushed by accident
+   before (37 files, September 2026). Both commands below must print nothing:
+   ```bash
+   cd ..      # repo root
+   find . -name '* [0-9].*' -not -path './.git/*'
+   git status --short | grep -E ' [0-9]\.[A-Za-z0-9]+"?$'
+   ```
+   If anything shows up, delete those files (`find . -name '* [0-9].*' -not
+   -path './.git/*' -delete`), re-run the checks, and only then `git add`.
+   The repo's `.gitignore` also ignores `* [0-9].*` as a safety net, but don't
+   rely on it: check the file list yourself, and re-check *after* `git add -A`
+   with `git diff --cached --name-only | grep -E ' [0-9]\.'` (must be empty).
 4. From the repo root (one level up from `quarto-source/`), review before
    committing — `_book/` and `.quarto/` inside `quarto-source/` are gitignored,
    so they won't get staged, but always check `git status` before `git add`:
@@ -404,6 +420,7 @@ process is entirely manual:
    cd ..
    git status
    git add -A
+   git diff --cached --name-only | grep -E ' [0-9]\.'   # must print nothing
    git commit -m "..."
    git push origin main
    ```
