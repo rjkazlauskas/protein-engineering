@@ -24,11 +24,11 @@ The highest energy structure along the path from substrate to product is the tra
 
 Catalysts act by stabilizing the transition state and lowering the activation energy. For example, bond breaking or making in a transition state often creates partial charges. A catalyst can orient the substrate for reaction and provide compensating charges, thereby stabilizing the transition state, lowering the barrier from substrate to product and speeding up the reaction.
 
-Transition state theory connects the rate constant for the reaction, $k$, to the Gibbs energy of the transition state, $\Delta G^{\ddag}$, eq. @eq-delG_rate. Transition state theory assumes a quasi-equilibrium[^quasi-eq] between the substrate and transition state. The constants in eq. @eq-delG_rate account for the fraction of molecules that react once they reach the top of the barrier. The activation Gibbs energy is a positive value because the value of $\frac{k}{\text{constants}}$ is <1, which makes $\ln\left(\frac{k}{\text{constants}}\right)$ a negative value. 
+Transition state theory connects the rate constant for the reaction, $k$, to the Gibbs energy of the transition state, $\Delta G^{\ddag}$, @eq-delG_rate. Transition state theory assumes a quasi-equilibrium[^quasi-eq] between the substrate and transition state. The constants in @eq-delG_rate account for the fraction of molecules that react once they reach the top of the barrier. The activation Gibbs energy is a positive value because the value of $\frac{k}{\text{constants}}$ is <1, which makes $\ln\left(\frac{k}{\text{constants}}\right)$ a negative value. 
 
 $$\Delta G^{\ddag}=-RT\ln\left( \frac{k}{\text{constants}}\right)$$ {#eq-delG_rate}
 
-A lower activation energy corresponds to a lower barrier and a faster reaction (larger $k$). A faster rate, or larger $k$, decreases the absolute value of $\ln\frac{k}{\text{constants}}$, which leads to a smaller activation energy. For example, the $\ln(0.001)$ is –6.9, while the $\ln(0.1)$ is –2.3. The decrease in activation energy for a catalyzed reaction as compared to a non-catalyzed reaction is proportional to the natural logarithm of the ratio of the rate constants for the catalyzed and non-catalyzed reactions, eq @eq-delG_cat_non.
+A lower activation energy corresponds to a lower barrier and a faster reaction (larger $k$). A faster rate, or larger $k$, decreases the absolute value of $\ln\frac{k}{\text{constants}}$, which leads to a smaller activation energy. For example, the $\ln(0.001)$ is –6.9, while the $\ln(0.1)$ is –2.3. The decrease in activation energy for a catalyzed reaction as compared to a non-catalyzed reaction is proportional to the natural logarithm of the ratio of the rate constants for the catalyzed and non-catalyzed reactions, @eq-delG_cat_non.
 
 $$
 \begin{split}
@@ -41,7 +41,7 @@ Transition state stabilization accounts for most of the catalytic effect of enzy
 
 ## Measuring reaction rates
 
-Consider the rate of a unimolecular chemical reaction, eq. @eq-chem.  
+Consider the rate of a unimolecular chemical reaction, @eq-chem.  
 
 $$[S] \rightarrow [P] $$ {#eq-chem}
 
@@ -49,29 +49,29 @@ The rate of reaction, $V$, is the disappearance of substrate over time, $-d[S]/d
 
 ![The rate of reaction for a unimolecular chemical reaction (top) and a single substrate enzyme-catalyzed reaction (bottom). In both cases the rate of reaction, $V$, increases with increasing substrate concentration, $[S]$, but this increase flattens for the enzyme-catalyzed reaction. The slope of the line, $k$, describes the speed of a unimolecular chemical reaction, while two constants are needed to describe the speed of the enzyme-catalyzed reaction. The constant $K_M$ in units of concentration is the concentration at which the reaction rate reaches half of the maximum rate. $K_M$ also indicates the substrate concentration at which the curve starts to flatten. The constant $V_{max}$ in units of concentration/time indicates the maximum rate.](figures/chapter7/chem_enz.svg){#fig-chem_enz width=300px fig-alt="Two rate-versus-substrate-concentration plots stacked vertically: the top plot is a straight line through the origin (V = k·[S]) for an uncatalyzed chemical reaction; the bottom plot is a curve that rises then flattens (V = Vmax·[S]/(KM+[S])) for an enzyme-catalyzed reaction, illustrating saturation kinetics."}
 
-The proportionality constant, $k$, for this rate increase is the rate constant and has units of time$^{-1}$, eq. @eq-chem_rate.
+The proportionality constant, $k$, for this rate increase is the rate constant and has units of time$^{-1}$, @eq-chem_rate.
 
 $$ V = -\frac{d[S]}{dt}=k \cdot [S] $$ {#eq-chem_rate}
 
 This rate constant reveals the inherent propensity of the substrate to react. If another reaction has a larger rate constant, then it is faster. It will convert more molecules into product over the same time at the same concentration of substrate. 
 
-The rate of an enzyme-catalyzed reaction, eq. @eq-enz, also varies with the concentration of substrate, but the relationship between $V$ and [S] is not linear, but curved, see @fig-chem_enz above.
+The rate of an enzyme-catalyzed reaction, @eq-enz, also varies with the concentration of substrate, but the relationship between $V$ and [S] is not linear, but curved, see @fig-chem_enz above.
 
 $$ [S] \xrightarrow{\text{enzyme}} [P]$$ {#eq-enz}
 
-The equation that describes this curve, eq. @eq-enz_VK, contains two constants: $V_{max}$ and $K_M$. These constants reveal the inherent speed of an enzyme-catalyzed reaction.
+The equation that describes this curve, @eq-enz_VK, contains two constants: $V_{max}$ and $K_M$. These constants reveal the inherent speed of an enzyme-catalyzed reaction.
 
 $$V=\frac{V_{max} \cdot [S]}{K_M + [S]}$$ {#eq-enz_VK}
 
 $V_{max}$ is the reaction rate at high substrate concentration, while $K_M$ is the substrate concentration at which the reaction rate is half of $V_{max}$. For a chemical process, the physical meaning of the constant k is the inherent rate of the spontaneous reaction of the substrate. For the enzymatic process, the physical meanings of the constants $V_{max}$ and ${K_M}$ depend on the mechanism of the enzyme-catalyzed reaction and will be discussed below. At this time, they are simply kinetic constants.
 
-Consider the two limiting cases of low substrate concentration and high substrate concentration. Here low and high are in comparison to $K_M$ for the reaction. At low substrate concentration, [S] is much smaller than $K_M$, so the denominator of eq. @eq-enz_VK simplifies to $K_M$. Equation @eq-enz_VK simplifies to eq. @eq-enz_low.
+Consider the two limiting cases of low substrate concentration and high substrate concentration. Here low and high are in comparison to $K_M$ for the reaction. At low substrate concentration, [S] is much smaller than $K_M$, so the denominator of @eq-enz_VK simplifies to $K_M$. @eq-enz_VK simplifies to @eq-enz_low.
 
 $$V_{low [S]}=\frac{V_{max}}{K_M} \cdot [S]$$ {#eq-enz_low}
 
-This equation resembles the equation for a chemical reaction, eq. @eq-chem_rate above, where the ratio $V_{max}/K_M$ corresponds to the rate constant for the reaction. Thus, at low substrate concentration, one compares the rates of enzyme-catalyzed reactions by comparing $V_{max}/K_M$. Higher values correspond to faster reactions.
+This equation resembles the equation for a chemical reaction, @eq-chem_rate above, where the ratio $V_{max}/K_M$ corresponds to the rate constant for the reaction. Thus, at low substrate concentration, one compares the rates of enzyme-catalyzed reactions by comparing $V_{max}/K_M$. Higher values correspond to faster reactions.
 
-At high substrate concentration, $K_M$ is much smaller than [S], so the denominator of eq. @eq-enz_VK simplifies to [S]. Next, [S] cancels out since it appears as a factor in both the numerator and denominator. Equation @eq-enz_VK simplifies to eq. @eq-enz_high.
+At high substrate concentration, $K_M$ is much smaller than [S], so the denominator of @eq-enz_VK simplifies to [S]. Next, [S] cancels out since it appears as a factor in both the numerator and denominator. @eq-enz_VK simplifies to @eq-enz_high.
 
 $$V_{high [S]}=V_{max}$$ 	{#eq-enz_high}
 
@@ -79,7 +79,7 @@ At high substrate concentration, the reaction rate is independent of substrate c
 
 The comparison of reaction rates described in this section is steady-state kinetics. The steady-state refers to constant conditions over the time of the experiment. The temperature, pH and substrate concentration are all constant over the course of the experiment. To keep the substrate concentration constant, researchers measure the initial rates of the reaction only while the first few percent of the substrate react, that is, the initial rate of the reaction. There is a large excess of substrate as compared to enzyme. Each enzyme molecule completes many catalytic cycles over the course of the measurement. The large excess of substrate also ensures that formation of an enzyme-substrate complex does not significantly alter the concentration of free substrate.
 
-To measure the steady-state kinetic parameters for a reaction, $K_M$ and $V_{max}$, one measures the initial rate of the reaction at varying substrate concentrations and find the values of $K_M$ and $V_{max}$ for equation @eq-enz_VK that best fit the data. Huitema & Horsman (2018) provide scripts for this fitting using the statistical program R. The supporting information of this chapter provides a Python script to find the best values of $V_{max}$ and ${K_M}$.[^nonlinear] For a good fit one needs data points that define both the low [S] and high [S] regions of the curve; that is, measurements at substrate concentrations both above and below $K_S$.
+To measure the steady-state kinetic parameters for a reaction, $K_M$ and $V_{max}$, one measures the initial rate of the reaction at varying substrate concentrations and find the values of $K_M$ and $V_{max}$ for @eq-enz_VK that best fit the data. Huitema & Horsman (2018) provide scripts for this fitting using the statistical program R. The supporting information of this chapter provides a Python script to find the best values of $V_{max}$ and ${K_M}$.[^nonlinear] For a good fit one needs data points that define both the low [S] and high [S] regions of the curve; that is, measurements at substrate concentrations both above and below $K_S$.
 
 ### The Michaelis-Menten model
 
@@ -87,9 +87,9 @@ The simplest model of the physical steps within an enzyme-catalyzed reaction is 
 
 ![The Michaelis-Menten model of an enzyme-catalyzed reaction involves two physical steps: reversible equilibration of free substrate and enzyme with the enzyme-substrate complex, $E \cdot S$, followed by reaction of $E \cdot S$ to form and release the product, P.](figures/chapter7/mm_rxn.svg){#fig-mm_rxn width=200px fig-alt="Reaction scheme showing free enzyme and substrate (E + S) reversibly forming the complex E·S with rate constants k1 and k-1, which then converts irreversibly to E + P with rate constant k2."}
 
-Starting from this simple model, one can derive an equation with the same form as eq. @eq-enz_VK. This derivation will assign physical meanings to the constants $V_{max}$ and $K_M$. 
+Starting from this simple model, one can derive an equation with the same form as @eq-enz_VK. This derivation will assign physical meanings to the constants $V_{max}$ and $K_M$. 
 
-In the Michaelis-Menten model, the rate of product formation, $V$, depends on the amount of enzyme-substrate complex, $[E \cdot S]$, and the rate at which it is converted to product, $k_2$, eq. @eq-derive_1.
+In the Michaelis-Menten model, the rate of product formation, $V$, depends on the amount of enzyme-substrate complex, $[E \cdot S]$, and the rate at which it is converted to product, $k_2$, @eq-derive_1.
 
 $$ V = k_2 \cdot [E \cdot S] $$ {#eq-derive_1}
 
@@ -101,11 +101,11 @@ Second, we assumed that $[E]$ and $[S]$ are in equilibrium with $[E \cdot S]$, s
 
 $$ \frac{k_1}{k_{-1}} = \frac{[E \cdot S]}{[E] \cdot [S]} $$ {#eq-define_ES_equil}
 
-Combining these two equations and solving for $[E \cdot S]$ yields eq. @eq-derive_2, 
+Combining these two equations and solving for $[E \cdot S]$ yields @eq-derive_2, 
 
 $$ [E \cdot S] = \frac{[E]_0 \cdot [S]}{\frac{k_{-1}}{k_1}+[S]} $$ {#eq-derive_2}
 
-Combining eq. @eq-derive_1 and eq. @eq-derive_2 yields the Michaelis-Menten equation, eq. @eq-MMeq_orig where $K_D = \frac{k_{-1}}{k_1}$
+Combining @eq-derive_1 and @eq-derive_2 yields the Michaelis-Menten equation, @eq-MMeq_orig where $K_D = \frac{k_{-1}}{k_1}$
 
 $$V=\frac{k_2 \cdot [E]_0 \cdot [S]}{K_D + [S]}$$ 				{#eq-MMeq_orig}
 
@@ -185,19 +185,19 @@ The simple Michaelis-Menten model makes several simplifying assumptions, @tbl-as
 
 Table: Assumptions within the Michaelis-Menten model of enzyme catalysis and how they can be removed. {#tbl-assumptions}
 
-The Michaelis-Menten model includes only one substrate, but it can be be extended to two or more substrates by repeating the measurements under different limiting conditions. To extend the model to two-substrate enzyme-catalyzed reactions one first adds a large excess of one substrate. The other substrate now limits the reaction rate according to eq. @eq-enz_VK, so varying its concentration reveals its steady-state kinetic parameters. Next, a second set of experiments with saturating amounts of the other substrate allows measurement of the kinetic parameters of the first substrate.
+The Michaelis-Menten model includes only one substrate, but it can be be extended to two or more substrates by repeating the measurements under different limiting conditions. To extend the model to two-substrate enzyme-catalyzed reactions one first adds a large excess of one substrate. The other substrate now limits the reaction rate according to @eq-enz_VK, so varying its concentration reveals its steady-state kinetic parameters. Next, a second set of experiments with saturating amounts of the other substrate allows measurement of the kinetic parameters of the first substrate.
 
-The Michaelis-Menten model assumed that the free enzyme and substrate are in equilibrium with the enzyme substrate complex in eq. @eq-define_ES_equil above. This assumption was needed in order to define the concentration of $E \cdot S$. The Briggs-Haldane approach replaces this assumption with a more relaxed assumption, that the concentration of $E \cdot S$ is constant. The assumption, known as the steady-state approximation, is less restrictive and leads to a different physical meaning for $K_M$.
+The Michaelis-Menten model assumed that the free enzyme and substrate are in equilibrium with the enzyme substrate complex in @eq-define_ES_equil above. This assumption was needed in order to define the concentration of $E \cdot S$. The Briggs-Haldane approach replaces this assumption with a more relaxed assumption, that the concentration of $E \cdot S$ is constant. The assumption, known as the steady-state approximation, is less restrictive and leads to a different physical meaning for $K_M$.
 
-The steady state assumption means that the rate of formation of $E \cdot S$ ($k_1$ term in eq. @eq-steady_state) must be equal to the rate of destruction of $E \cdot S$  ($k_{–1} + k_2$ term in eq. @eq-steady_state). 
+The steady state assumption means that the rate of formation of $E \cdot S$ ($k_1$ term in @eq-steady_state) must be equal to the rate of destruction of $E \cdot S$  ($k_{–1} + k_2$ term in @eq-steady_state). 
 
 $$ k_1 \cdot [E] \cdot [S] = (k_{-1} + k_2)[E \cdot S]$$ {#eq-steady_state}
 
-This equation is used in place of eq. @eq-define_E0 above to express $[E \cdot S]$ in terms of known quantities. Combining eq. @eq-steady_state with eq. @eq-define_E0 and solving for $[E \cdot S]$ yields the equation below.
+This equation is used in place of @eq-define_E0 above to express $[E \cdot S]$ in terms of known quantities. Combining @eq-steady_state with @eq-define_E0 and solving for $[E \cdot S]$ yields the equation below.
 
 $$ [E \cdot S] = \frac{[E]_0 \cdot [S]}{\frac{k_{-1} + k_2}{k_1}+[S]} $$ {#eq-BH_derive_2}
 
-Combining this equation with eq. @eq-derive_1 above yields eq @eq-BHeq_orig below. 
+Combining this equation with @eq-derive_1 above yields @eq-BHeq_orig below. 
 
 $$
 \begin{split}
@@ -210,7 +210,7 @@ The form of the equation and the definition of $V_{max}$ is the same as for the 
 
 Many enzyme-catalyzed reactions involve multiple steps, not just the single step in the Michaelis-Menten model. For example, many enzyme-catalyzed reaction form an intermediate, EI, @fig-enz_w_intermediate. Subtilisin-catalyzed hydrolysis of esters involves an acyl-enzyme intermediate. Later in this chapter, @fig-canonical_Ser_esterase_mechanism shows a detailed mechanism.
 
-![Many enzyme-catalyzed reactions involve an enzyme-bound intermediate. These reactions have two steps that involve bond-making and bond-breaking, $k_2$ and $k_3$, instead of just one in the Michaelis-Menten model. These reactions still follow the curve in eq. @eq-enz_VK, but multiple physical steps contribute to $V_{max}$ and ${K_M}$.](figures/chapter7/enz_w_intermediate.svg){#fig-enz_w_intermediate width=250px fig-alt="Reaction scheme showing E + S reversibly forming E·S (k1, k-1), which converts to a covalent enzyme intermediate EI (k2), which then releases product to give E + P (k3)."}
+![Many enzyme-catalyzed reactions involve an enzyme-bound intermediate. These reactions have two steps that involve bond-making and bond-breaking, $k_2$ and $k_3$, instead of just one in the Michaelis-Menten model. These reactions still follow the curve in @eq-enz_VK, but multiple physical steps contribute to $V_{max}$ and ${K_M}$.](figures/chapter7/enz_w_intermediate.svg){#fig-enz_w_intermediate width=250px fig-alt="Reaction scheme showing E + S reversibly forming E·S (k1, k-1), which converts to a covalent enzyme intermediate EI (k2), which then releases product to give E + P (k3)."}
 
 The steady-state enzyme kinetics for subtilisin still follow the Michaelis-Menten equation, but both $K_M$ and $k_{cat}$ are combinations of multiple physical steps: 
 
@@ -396,7 +396,7 @@ A general equation for pH-dependent behavior is
 
 $$k_{obs}=\frac{k_{A^–} \cdot K_a+k_{HA} \cdot [H^+]}{K_a+[H^+]}$$ {#eq-gen_pH}
 
-where $k_{A^–}$ is the rate constant of the deprotonated form, $k_{HA}$ is the rate constant for the protonated form and $K_a$ is the ionization constant of the acid. If the reaction requires the basic form, then one sets $k_{HA}$ to zero and equation @eq-gen_pH simplifies to equation @eq-base_form_reactive below. The observed rate constant, $k_{obs}$, is the rate constant for the deprotonated form, $k_{A^–}$, scaled by the fraction of the molecule in the deprotonated form.[^fn7-1]  
+where $k_{A^–}$ is the rate constant of the deprotonated form, $k_{HA}$ is the rate constant for the protonated form and $K_a$ is the ionization constant of the acid. If the reaction requires the basic form, then one sets $k_{HA}$ to zero and @eq-gen_pH simplifies to @eq-base_form_reactive below. The observed rate constant, $k_{obs}$, is the rate constant for the deprotonated form, $k_{A^–}$, scaled by the fraction of the molecule in the deprotonated form.[^fn7-1]  
 
 $$k_{obs}=k_{A^–} \cdot \frac{ K_a}{K_a+[H^+]}$$ {#eq-base_form_reactive}
 
@@ -406,13 +406,13 @@ Besides solvation, hydrogen bonding and electrostatic effects also shift the p$K
 
 ![The p$K_a$ of a carboxylic acid changes in a folded protein as compared to solution due different in the interactions between the protein and the two protonation states. Placing the carboxylic acid in a hydrophobic pocket destabilizes the charged form more than the neutral form, thereby shifting the equilibrium toward the neutral form. Hydrogen bond donors and acceptors stabilize different protonation forms and shift the p$K_a$ in opposite directions. These hydrogen bond donor and acceptors can also interact with the carboxylic acid/carboxylate in other ways; the interactions shown are those that cause differences in the interactions. Electrostatic effects also shift the p$K_a$ of the carboxylic acid.](figures/chapter7/environ_shifts_pKa.svg){#fig-environ_shifts_pKa width=300 fig-alt="Grid of schematic environments for a carboxylic acid/carboxylate pair — solution reference, a hydrophobic pocket, a nearby hydrogen-bond donor, a nearby hydrogen-bond acceptor, and a nearby added charge — each labeled with whether it stabilizes or destabilizes the charged carboxylate form and whether the pKa increases or decreases as a result."}
 
-**PROPKA predicts shifts in p$K_a$.** PROPKA estimates the p$K_a$ of ionizable groups in a protein (p$K_a^{protein}$) by adjusting the p$K_a$ of the groups in solution (p$K_a^{solution}$) for their different environment in the folded protein.[@olssonProteinElectrostaticsPKa2011] The estimate requires a protein structure and assumes that the structure is static. The program uses empirical equations and parameters to account for desolvation ($\Delta \text{p}K_a^{desolvation}$, disfavors charged form), formation of hydrogen bonds ($\Delta \text{p}K_a^{hydrogen \: bonds}$, H-bond donors favor deprotonated form, H-bond acceptors favor protonated form) and electrostatic effects of nearby charged groups ($\Delta \text{p}K_a^{electrostatic}$, oppositely charged groups favor charged form), eq. @eq-PROPKA. A web interface of PROPKA is available at <https://server.poissonboltzmann.org/pdb2pqr>.[^PROPKA_note]
+**PROPKA predicts shifts in p$K_a$.** PROPKA estimates the p$K_a$ of ionizable groups in a protein (p$K_a^{protein}$) by adjusting the p$K_a$ of the groups in solution (p$K_a^{solution}$) for their different environment in the folded protein.[@olssonProteinElectrostaticsPKa2011] The estimate requires a protein structure and assumes that the structure is static. The program uses empirical equations and parameters to account for desolvation ($\Delta \text{p}K_a^{desolvation}$, disfavors charged form), formation of hydrogen bonds ($\Delta \text{p}K_a^{hydrogen \: bonds}$, H-bond donors favor deprotonated form, H-bond acceptors favor protonated form) and electrostatic effects of nearby charged groups ($\Delta \text{p}K_a^{electrostatic}$, oppositely charged groups favor charged form), @eq-PROPKA. A web interface of PROPKA is available at <https://server.poissonboltzmann.org/pdb2pqr>.[^PROPKA_note]
 
 [^PROPKA_note]: Run the PDB2PQR configuration calculation using default settings, then look in the log file to find the PROPKA calculations.
 
 $$\text{p}K_a^{protein} = \text{p}K_a^{solution} + \Delta \text{p}K_a^{desolvation} + \Delta \text{p}K_a^{hydrogen \: bonds} + \Delta \text{p}K_a^{electrostatic}$$ {#eq-PROPKA}
 
-A more detailed look at the predicted altered p$K_a$ of Tyr80 in the active site of xylanase, @fig-Tyr80_PROPKA, shows that, besides desolvation mentioned above, hydrogen bond differences and Coulombic interactions also contribute. The phenoxide is disfavored because desolvation destabilized the phenoxide as mentioned above, because Glu172 makes a favorable hydrogen bond with the phenol form, and because two nearby negatively-charged glutamates create unfavorable Coulombic interactions with the phenoxide, eq. @eq-Tyr80_shift. PROPKA predictions typically fit experimentally determined values with an rmsd <1 p$K_a$ unit.
+A more detailed look at the predicted altered p$K_a$ of Tyr80 in the active site of xylanase, @fig-Tyr80_PROPKA, shows that, besides desolvation mentioned above, hydrogen bond differences and Coulombic interactions also contribute. The phenoxide is disfavored because desolvation destabilized the phenoxide as mentioned above, because Glu172 makes a favorable hydrogen bond with the phenol form, and because two nearby negatively-charged glutamates create unfavorable Coulombic interactions with the phenoxide, @eq-Tyr80_shift. PROPKA predictions typically fit experimentally determined values with an rmsd <1 p$K_a$ unit.
 
 $$\text{p}K_a^{Tyr80} = 10 + 3.55 + 0.79 + 4.63 = 18.98$$ {#eq-Tyr80_shift}
 
@@ -435,9 +435,9 @@ For example, to increase the activity of a serine hydrolase (subtilisin) at lowe
 
 Catalysis often requires several ionizable groups in the correct protonation state. For, example, glycosidases require two acids, one in the acidic form, the other in the basic form, @fig-glycosidase. 
 
-![A glycosidase requires one glutamate in its acid form and another in its basic form. Their catalytic activity peaks in the range where both are in the correct protonation state. The first step of the catalytic mechanism requires Glu167 to act as an acid and Glu356 to act as a nucleophile, which requires the basic form. If the p$K^{Glu356}_a = 5.4$ and p$K^{Glu167}_a = 12.5$, then the glycosidase is the fully catalytic form between pH 7 and 11. At lower pH Glu356 is not deprotonated, while at higher pH Glu167 is not protonated. The curve is drawn from equation @eq-two_ionizable_groups.](figures/chapter7/glycosidase.svg){#fig-glycosidase width=400 fig-alt="Glycosidase reaction mechanism showing Glu356 acting as a deprotonated nucleophile (pKa 5.4) attacking the substrate while Glu167 acts as a protonated general acid (pKa 12.5), forming a covalent glycosyl-enzyme intermediate with Glu356 before hydrolysis releases product."}
+![A glycosidase requires one glutamate in its acid form and another in its basic form. Their catalytic activity peaks in the range where both are in the correct protonation state. The first step of the catalytic mechanism requires Glu167 to act as an acid and Glu356 to act as a nucleophile, which requires the basic form. If the p$K^{Glu356}_a = 5.4$ and p$K^{Glu167}_a = 12.5$, then the glycosidase is the fully catalytic form between pH 7 and 11. At lower pH Glu356 is not deprotonated, while at higher pH Glu167 is not protonated. The curve is drawn from @eq-two_ionizable_groups.](figures/chapter7/glycosidase.svg){#fig-glycosidase width=400 fig-alt="Glycosidase reaction mechanism showing Glu356 acting as a deprotonated nucleophile (pKa 5.4) attacking the substrate while Glu167 acts as a protonated general acid (pKa 12.5), forming a covalent glycosyl-enzyme intermediate with Glu356 before hydrolysis releases product."}
 
-Eq. @eq-two_ionizable_groups below predicts the fraction of the enzyme that exists in the catalytically active form at different pH. The $k_{obs}$ is the rate constant at the pH in question, while $k_{best}$ is the rate of the catalytically active form and $K_{a1}$ and $K_{a2}$ are the acid ionization constants of the two ionizable groups. The active form of the enzyme requires the deprotonated form of group 1 and the protonated form of group 2.
+@eq-two_ionizable_groups below predicts the fraction of the enzyme that exists in the catalytically active form at different pH. The $k_{obs}$ is the rate constant at the pH in question, while $k_{best}$ is the rate of the catalytically active form and $K_{a1}$ and $K_{a2}$ are the acid ionization constants of the two ionizable groups. The active form of the enzyme requires the deprotonated form of group 1 and the protonated form of group 2.
 
 $$k_{obs} = k_{best} \cdot \frac{[H^+]K_{a1}}{[H^+]K_{a1}+[H^+]^2+K_{a1}K_{a2}} $$ {#eq-two_ionizable_groups}
 
@@ -561,7 +561,7 @@ $V_{max}$
 :::
 
 [^quasi-eq]: It is not a true equilibrium because some of the molecules that reach the transition state continue along the reaction coordinate to form product. In a true equilibrium, they would always return to the substrate species. 
-[^nonlinear]: An older approach used a rearranged form of equation @eq-enz_VK to fit the experimental data. This rearrangement allowed fitting a line to the data instead of a curve. This Lineweaver-Burke plot was more convenient when computers to fit data to a curve were not available, but has the disadvantage that it overweights data at low substrate concentration, which can lead to small errors. See supporting information for details.
+[^nonlinear]: An older approach used a rearranged form of @eq-enz_VK to fit the experimental data. This rearrangement allowed fitting a line to the data instead of a curve. This Lineweaver-Burke plot was more convenient when computers to fit data to a curve were not available, but has the disadvantage that it overweights data at low substrate concentration, which can lead to small errors. See supporting information for details.
 [^fn7-1]: The fraction deprotonated, $\frac{[A^-]}{[A^-]+[HA]}$ at a given pH depends on the pH and the acid dissociation constant, $K_a$. The acid dissociation constant is defined as:
 $$K_a = \frac{[H^+] \cdot [A^-]}{[HA]}$$
 Solving for $[HA]$ yields: 
@@ -639,11 +639,11 @@ HIS 251 A                                            0.00 XXX   0 X    0.00 XXX 
 
 **Fitting steady-state kinetic data using Lineweaver-Burke plots (linear fit) yields less accurate estimates of $V_{max}$ and ${K_M}$.**
 
-The text recommends finding  $V_{max}$ and ${K_M}$ by fitting the Michaelis-Menten equation below, eq. @eq-MM, directly to the experimental data (measured rates, $V$, at different substrate concentrations, $[S]$). This equation describes a curve since it has the form $y=\frac{ax}{b+x}$ so fitting this equation to the data requires a non-linear fitting program. Convenient examples include Microsoft Excel,[@kemmerNonlinearLeastsquaresData2010] R scripts, [@huitemaAnalyzingEnzymeKinetic2018] or the Python script given below. Non-linear least squares fitting of eq. @eq-MM to the data starts with initial guesses for $V_{max}$ and ${K_M}$ followed by iteration to find the best values.
+The text recommends finding  $V_{max}$ and ${K_M}$ by fitting the Michaelis-Menten equation below, @eq-MM, directly to the experimental data (measured rates, $V$, at different substrate concentrations, $[S]$). This equation describes a curve since it has the form $y=\frac{ax}{b+x}$ so fitting this equation to the data requires a non-linear fitting program. Convenient examples include Microsoft Excel,[@kemmerNonlinearLeastsquaresData2010] R scripts, [@huitemaAnalyzingEnzymeKinetic2018] or the Python script given below. Non-linear least squares fitting of @eq-MM to the data starts with initial guesses for $V_{max}$ and ${K_M}$ followed by iteration to find the best values.
 
 $$ V = \frac{V_{max} \cdot [S]}{K_M + [S]} $$ {#eq-MM}
 
-Before the widespread use of computers, fitting a curve to experimental data was difficult, so an alternative was to rearrange the Michaelis-Menten equation to a form that yields a straight line, eq. @eq-LB. 
+Before the widespread use of computers, fitting a curve to experimental data was difficult, so an alternative was to rearrange the Michaelis-Menten equation to a form that yields a straight line, @eq-LB. 
 
 $$ \frac{1}{v} = \frac{1}{S} \cdot \frac{K_M}{V_{max}} +  \frac{1}{V_{max}}$$	{#eq-LB}				
 
@@ -651,7 +651,7 @@ Plotting 1/v on the y-axis and 1/[S] on the x-axis yields a straight line with a
 
 Both methods would yield the same values of ${K_M}$ and $V_{max}$ if the data were perfect. Typically, errors in measuring reaction rates are approximately constant; for example, one might measure V = 5±1 at low [S] and 50±1 at high [S]. That is, rates measured at low [S] have a higher percentage error (20% for this example) than rates measured at high [S] (2%). When fitting the data to the Michaelis-Menten curve, the deviation of each data point from the curve counts equally. This is the best approach when the data points have equal absolute errors as suggested above.
 
-In contrast, fitting the data to eq. @eq-LB minimizes the deviation of each 1/V data point from the line. In our example, the error for the value at low [S], 1/V = 0.20±0.04, is 10-fold higher than the error for the value at high [S], 0.0200±0.0004. Since deviations from either data point count equally, but the uncertainty is higher for data point at low [S], this approach yields estimates of $V_{max}$ and ${K_M}$ that weight the data points at low [S] too heavily. These data have high errors, but are treated as having the same errors as values at high [S].
+In contrast, fitting the data to @eq-LB minimizes the deviation of each 1/V data point from the line. In our example, the error for the value at low [S], 1/V = 0.20±0.04, is 10-fold higher than the error for the value at high [S], 0.0200±0.0004. Since deviations from either data point count equally, but the uncertainty is higher for data point at low [S], this approach yields estimates of $V_{max}$ and ${K_M}$ that weight the data points at low [S] too heavily. These data have high errors, but are treated as having the same errors as values at high [S].
 
 For example, fitting the Michaelis-Menten curve and the Lineweaver-Burke line to the imperfect data below yields different estimates for $V_{max}$ and ${K_M}$. These simulated data start with a perfect fit to the Michaelis-Menten equation and add Gaussian random error to simulate experimental error.[@kemmerNonlinearLeastsquaresData2010]
 ```python
@@ -661,7 +661,7 @@ V = (-2, 153, 231, 342, 396, 438, 467, 505, 523, 523, 539,
      548, 555, 554) # units = mM/s
 ```
 
-Fitting the Michaelis-Menten curve, eq. @eq-MM, to the data yields $V_{max} = 598\pm3\:mM/s$, ${K_M} = 7.6\pm0.2\:mM$, while fitting the Lineweaver-Burke line, eq. @eq-LB, to the same data yields $V_{max} = 591\pm7\:mM/s$, ${K_M} = 7.3\pm0.2\:mM$, @fig-MMvsLBfit. The $V_{max}$ differs by 1.2%, while ${K_M}$ differs by 4.5%. The first data point (S = 0, V = -2) was omitted from the linear fit because 1/0 is undefined. The differences are within the estimated errors (standard deviations) for the values.
+Fitting the Michaelis-Menten curve, @eq-MM, to the data yields $V_{max} = 598\pm3\:mM/s$, ${K_M} = 7.6\pm0.2\:mM$, while fitting the Lineweaver-Burke line, @eq-LB, to the same data yields $V_{max} = 591\pm7\:mM/s$, ${K_M} = 7.3\pm0.2\:mM$, @fig-MMvsLBfit. The $V_{max}$ differs by 1.2%, while ${K_M}$ differs by 4.5%. The first data point (S = 0, V = -2) was omitted from the linear fit because 1/0 is undefined. The differences are within the estimated errors (standard deviations) for the values.
 
 ![Fitting the Michaelis-Menten equation of a curve (left) to experimental data and fitting the Lineweaver-Burke line to the same data (right). The best fit yields slightly different values of $K_M$ and $V_{max}$. Error bars correspond to a fixed error of ±30 ($\sim 5\%$ of $V_{max}$) for the values of V.](figures/chapter7/MMvsLBfit.svg){#fig-MMvsLBfit width=450px fig-alt="Two plots side by side comparing curve fits to the same simulated kinetic data with error bars: the left panel shows the Michaelis-Menten curve fit (Vmax = 598 ± 3 mM/s, KM = 7.6 ± 0.2 mM); the right panel shows the Lineweaver-Burke double-reciprocal line fit to the same data (Vmax = 591 ± 7 mM/s, KM = 7.3 ± 0.2 mM)."}
 

@@ -33,6 +33,22 @@ next section before doing anything else.**
   pdftotext -layout _book/Protein-Engineering.pdf - | grep -n '\$'
   ```
   A hit doesn't automatically mean an error — a legitimate use would be a literal dollar amount (e.g. "$50") — but every hit needs to be looked at and reported.
+- **No doubled crossref words ("Figure Figure 5.2", "eq. Equation 5.3", "Table Table 5.1").** Quarto's `@fig-x`/`@tbl-x`/`@eq-x`/`@sec-x` already expand to the full label ("Figure 5.2", "Equation 5.3"), so a literal word typed before one prints twice. The standalone pandoc-crossref sources *do* use the literal words (`Figure @fig:x`, `eq. @eq:x`), so **this bug comes back every time a chapter is re-synced from its source `.md`** — strip the words from the qmd after every sync, then check the rendered PDF/HTML. Fix (run in `quarto-source/`; safe to re-run, and run it twice to catch chained prefixes like "Equation eq. @eq-"):
+  ```bash
+  python3 - <<'EOF'
+  import re,glob
+  pat=re.compile(r'\b(?:Figures?|Fig\.?|Tables?|Sections?|Sec\.?|Equations?|Eqs?\.?|eqs?\.?|equations?)\s+(?=@(?:fig|tbl|eq|sec)-)')
+  for f in sorted(glob.glob('chapter*.qmd')):
+      t=open(f).read(); n,c=pat.subn('',t)
+      if c: open(f,'w').write(n); print(f,c)
+  EOF
+  ```
+  Verify after rendering (both commands must print nothing; the first checks the source, the second the built PDF):
+  ```bash
+  grep -nE "\b(Figures?|Fig\.?|Tables?|Sections?|Sec\.?|Equations?|Eqs?\.?|eqs?\.?|equations?)\s+@(fig|tbl|eq|sec)-" chapter*.qmd
+  pdftotext -layout _book/Protein-Engineering.pdf - | grep -nE "\b(Figures?|Fig\.?|Tables?|Sections?|Sec\.?|Equations?|Eqs?\.?|eqs?\.?|equations?)\s+(Figure|Table|Equation|Section) [0-9]"
+  ```
+  Also check `_book/chapter*.html` for the same doubled pattern (`grep -lE "(Figure|Table|Equation|Section) (Figure|Table|Equation|Section) [0-9]"`). A crossref at the start of a sentence, or written as "eq." mid-sentence, will render as a capitalized "Equation 5.3" — that is the intended Quarto form.
 - **Rendering this project does not update the live site by itself.** `quarto render` only writes to `_book/` here. Getting changes onto `www.betterenzyme.com` is a separate, manual step — see "Updating the live GitHub Pages site" below — and always needs an explicit go-ahead from the user before the actual `git push`, same as any other push to shared/remote state.
 
 ## Adding a new chapter
@@ -105,8 +121,9 @@ grep -noE ".{15}@(fig|tbl|eq|sec):[A-Za-z_]+" SOURCE.md
 ```
 Only lines with a literal "Figure"/"Table"/"Fig" immediately before the
 match need fixing; bare references after a comma/paren are fine as-is.
-(Chapters 2, 5, and 6 already have a few uncorrected instances of this bug —
-not this chapter's problem to fix, but don't introduce new ones.)
+(All existing instances were stripped in the September 2026 sweep — see
+"No doubled crossref words" under Hard requirements, and re-run that fix after
+any re-sync from source, since the standalone sources still contain the words.)
 
 **Cross-check in-text references to Supporting Information scripts/tables**
 against their actual position — the chapter 9 source had "Script 9.2" in the
@@ -971,6 +988,21 @@ being made accessible (see the scope decision above).
   Reference count 82 → 83.
 - Pre-existing, not fixed: a doubled "the the" in `chapter7.qmd` (line
   ~462) and in the chapter 4 and 11 sources.
+
+### Crossref cleanup and chapter 5/8 equation sync (September 2026)
+
+- Synced the author's revised equations into `chapter5.qmd` (the
+  `eq-entropy_microstates` equation now reads ΔΔG with W_unfolded/W_folded; the
+  worked one-amino-acid example is now a single ΔΔG equation placed before
+  Figure 5.4's figure block, following the source's new order) and
+  `chapter8.qmd` (`eq-E_ees` numerator/denominator now (1−ee_s)/(1+ee_s),
+  matching the source). The figure line was kept as the qmd's `.svg` + `fig-alt`
+  version rather than the source's `.eps`.
+- **Doubled crossref labels in the PDF and HTML** ("Figure Figure 5.2",
+  "eq. Equation 5.3", "Table Table 5.1", "Section Section 5.1"): 174 literal
+  words removed in chapters 2, 4, 5, 6, 7, 8. Cause: the standalone sources'
+  pandoc-crossref habit of typing the word before the reference. See the
+  Hard requirements checklist item for the fix and the verification greps.
 
 ## Things that need your input
 
