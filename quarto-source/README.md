@@ -410,9 +410,10 @@ process is entirely manual:
    ```
    If anything shows up, delete those files (`find . -name '* [0-9].*' -not
    -path './.git/*' -delete`), re-run the checks, and only then `git add`.
-   The repo's `.gitignore` also ignores `* [0-9].*` as a safety net, but don't
-   rely on it: check the file list yourself, and re-check *after* `git add -A`
-   with `git diff --cached --name-only | grep -E ' [0-9]\.'` (must be empty).
+   The duplicates are deliberately **not** gitignored: hiding them would let
+   them pile up unnoticed. The goal is that they do not exist at all, so
+   delete them, don't mask them. Re-check *after* `git add -A` with
+   `git diff --cached --name-only | grep -E ' [0-9]\.'` (must be empty).
 4. From the repo root (one level up from `quarto-source/`), review before
    committing — `_book/` and `.quarto/` inside `quarto-source/` are gitignored,
    so they won't get staged, but always check `git status` before `git add`:
