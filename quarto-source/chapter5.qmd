@@ -424,7 +424,7 @@ These two active proteins are fused to the Fc fragment of human IgG, which incre
 ![Etanercept is a fusion protein of two copies of the extracellular domain of tumor necrosis factor receptor (blue) with a single copy of the Fc fragment of IgG (gray). It is used to reduce inflammation of rheumatoid arthritis.](figures/chapter5/etanercept.png){#fig-etanercept width=100 fig-alt="Simplified schematic of the fusion protein etanercept: two identical rod shapes, each labeled “extracellular domain of p75 tumor necrosis factor receptor (~55 kDa each),” joined at the bottom to a Y-shaped structure labeled “Fc fragment of human IgG (~50 kDa).”"}
 
 Another approach to increasing the serum half-life of therapeutic proteins is to create insoluble depot of the protein that slowly releases into the bloodstream.
-One example is the noncovalent entrapment of a GLP-1 homolog in poly(\textsc{d}, \textsc{l}-lactide-co-glycolide) to form 60 $\mu$m microspheres.
+One example is the noncovalent entrapment of a GLP-1 homolog in poly([d]{.smallcaps}, [l]{.smallcaps}-lactide-co-glycolide) to form 60 $\mu$m microspheres.
 Diffusion and hydrolysis of the polymer release the GLP-1 homolog with a half-life of 5-6 days.
 Another example is a long-acting insulin called insulin glargine. 
 The protein sequence has been modified to alter the isoelectric point so that it precipitates as microcrystals at physiological pH and then slowly dissolves over twenty-four hours.

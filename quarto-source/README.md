@@ -49,6 +49,20 @@ next section before doing anything else.**
   pdftotext -layout _book/Protein-Engineering.pdf - | grep -nE "\b(Figures?|Fig\.?|Tables?|Sections?|Sec\.?|Equations?|Eqs?\.?|eqs?\.?|equations?)\s+(Figure|Table|Equation|Section) [0-9]"
   ```
   Also check `_book/chapter*.html` for the same doubled pattern (`grep -lE "(Figure|Table|Equation|Section) (Figure|Table|Equation|Section) [0-9]"`). A crossref at the start of a sentence, or written as "eq." mid-sentence, will render as a capitalized "Equation 5.3" — that is the intended Quarto form.
+- **No raw-LaTeX `\url{...}` / `\href{...}{...}` in the qmd.** Raw LaTeX is silently dropped from the HTML build, so the link (and its visible text) vanishes — e.g. chapter 8 read "simplifies this calculation: ." with the web-tool URL missing. The standalone sources use `\url{}`, so, like the crossref words above, this **comes back on every re-sync from source**. Replace in the qmd only (leave the source `.md` alone): `\url{URL}` → `<URL>`, and `\href{URL}{text}` → `[text](URL)`. Check after editing (must print nothing), and confirm the rendered HTML link appears:
+  ```bash
+  grep -nE '\\(url|href)\{' chapter*.qmd
+  ```
+  Fix for `\url`:
+  ```bash
+  python3 - <<'EOF'
+  import re,glob
+  for f in sorted(glob.glob('chapter*.qmd')):
+      t=open(f).read(); n,c=re.subn(r'\\url\{([^}]*)\}',r'<\1>',t)
+      if c: open(f,'w').write(n); print(f,c)
+  EOF
+  ```
+  The same applies to `\textsc{d}`/`\textsc{l}` (dropped from HTML, leaving "A -selective"): write `[d]{.smallcaps}` / `[l]{.smallcaps}` instead, including inside former `$\textsc{l}$` math. Check with `grep -n 'textsc' chapter*.qmd` (must print nothing).
 - **Rendering this project does not update the live site by itself.** `quarto render` only writes to `_book/` here. Getting changes onto `www.betterenzyme.com` is a separate, manual step — see "Updating the live GitHub Pages site" below — and always needs an explicit go-ahead from the user before the actual `git push`, same as any other push to shared/remote state.
 
 ## Adding a new chapter
@@ -1008,6 +1022,8 @@ being made accessible (see the scope decision above).
   ~462) and in the chapter 4 and 11 sources.
 
 ### Crossref cleanup and chapter 5/8 equation sync (September 2026)
+
+- Swept all chapters for `\url{}`/`\href{}` (found only chapter 8's two `\url{}` web-tool links, converted to `<URL>`) and re-verified no doubled crossref words in source, PDF, or any chapter's HTML. Also converted 5 dropped `\textsc{d}`/`\textsc{l}` (chapter 5: 2, chapter 8: 3) to `[d]{.smallcaps}`/`[l]{.smallcaps}`.
 
 - Synced the author's revised equations into `chapter5.qmd` (the
   `eq-entropy_microstates` equation now reads ΔΔG with W_unfolded/W_folded; the
